@@ -1,0 +1,97 @@
+{% extends 'layout.html' %}
+
+{% block title %}Scan Results - {{ scan.target }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/history">Scan History</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Scan Results</li>
+            </ol>
+        </nav>
+        
+        <div class="card bg-dark mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">
+                    <i class="fas fa-search me-2"></i> 
+                    Scan Results: {{ scan.target }}
+                </h4>
+                <span class="badge bg-secondary">
+                    <i class="far fa-clock me-1"></i>
+                    {{ scan.get_formatted_timestamp() }}
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="mb-4">
+                    <h5><i class="fas fa-info-circle me-2"></i> Scan Summary</h5>
+                    <p>
+                        <strong>Target:</strong> {{ scan.target }}<br>
+                        <strong>Scan Date:</strong> {{ scan.get_formatted_timestamp() }}<br>
+                        <strong>Result:</strong> {{ scan.get_summary() }}
+                    </p>
+                    
+                    <button class="btn btn-sm btn-outline-info mb-3" id="speak-results">
+                        <i class="fas fa-volume-up me-2"></i> Speak Results
+                    </button>
+                </div>
+                
+                <h5><i class="fas fa-terminal me-2"></i> Detailed Output</h5>
+                <pre class="scan-output mb-3">{{ scan.result }}</pre>
+                
+                <div class="d-flex justify-content-between">
+                    <a href="/history" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left me-2"></i> Back to History
+                    </a>
+                    <a href="/" class="btn btn-primary">
+                        <i class="fas fa-search me-2"></i> New Scan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add event listener for the speak button
+    const speakButton = document.getElementById('speak-results');
+    if (speakButton) {
+        speakButton.addEventListener('click', function() {
+            const target = '{{ scan.target }}';
+            const summary = '{{ scan.get_summary() }}';
+            
+            // Use the voice assistant to speak the results
+            if (window.assistant) {
+                window.assistant.speak(`Scan results for ${target}. ${summary}`);
+            } else {
+                // Fallback if assistant is not initialized
+                const utterance = new SpeechSynthesisUtterance(`Scan results for ${target}. ${summary}`);
+                window.speechSynthesis.speak(utterance);
+            }
+        });
+    }
+    
+    // Colorize the scan output
+    const scanOutput = document.querySelector('.scan-output');
+    if (scanOutput) {
+        let html = scanOutput.innerHTML;
+        
+        // Highlight open ports (green)
+        html = html.replace(/(\d+\/\w+\s+open\s+\w+)/g, '<span class="text-success">$1</span>');
+        
+        // Highlight closed ports (red)
+        html = html.replace(/(\d+\/\w+\s+closed\s+\w+)/g, '<span class="text-danger">$1</span>');
+        
+        // Highlight filtered ports (yellow)
+        html = html.replace(/(\d+\/\w+\s+filtered\s+\w+)/g, '<span class="text-warning">$1</span>');
+        
+        scanOutput.innerHTML = html;
+    }
+});
+</script>
+{% endblock %}

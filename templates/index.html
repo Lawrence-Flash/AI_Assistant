@@ -1,0 +1,125 @@
+{% extends 'layout.html' %}
+
+{% block title %}Cybersecurity Assistant - Network Scanner{% endblock %}
+
+{% block content %}
+<div class="hero-section p-4 p-md-5 mb-4">
+    <div class="row align-items-center">
+        <div class="col-md-8">
+            <h1 class="display-5 fw-bold">Voice-Enabled Cybersecurity Assistant</h1>
+            <p class="lead">Perform network security scans using voice commands or text input</p>
+            <p>This tool integrates with Nmap to provide comprehensive network scanning capabilities, all accessible through an intuitive interface or voice commands.</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <i class="fas fa-network-wired feature-icon display-1 text-info"></i>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 bg-dark">
+            <div class="card-body text-center">
+                <i class="fas fa-microphone feature-icon"></i>
+                <h5 class="card-title">Voice Control</h5>
+                <p class="card-text">Use voice commands like "scan example.com" to initiate network scans</p>
+                <button id="mic-button" class="btn btn-primary">
+                    <i class="fas fa-microphone me-2"></i> Start Listening
+                </button>
+                <p id="voice-status" class="mt-2">Microphone off</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 bg-dark">
+            <div class="card-body text-center">
+                <i class="fas fa-search feature-icon"></i>
+                <h5 class="card-title">Network Scanning</h5>
+                <p class="card-text">Perform fast port scans on domains or IP addresses to identify security vulnerabilities</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 bg-dark">
+            <div class="card-body text-center">
+                <i class="fas fa-history feature-icon"></i>
+                <h5 class="card-title">Scan History</h5>
+                <p class="card-text">Review past scan results to track changes in network security over time</p>
+                <a href="/history" class="btn btn-outline-info">
+                    <i class="fas fa-history me-2"></i> View History
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card bg-dark mb-4">
+            <div class="card-header">
+                <h4 class="mb-0"><i class="fas fa-search me-2"></i> Network Scanner</h4>
+            </div>
+            <div class="card-body">
+                <form id="scan-form">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="fas fa-globe"></i>
+                        </span>
+                        <input type="text" class="form-control" id="target-input" 
+                               placeholder="Enter domain name or IP address (e.g., example.com or 192.168.1.1)" 
+                               required>
+                        <button class="btn btn-info" type="submit">
+                            <i class="fas fa-search me-2"></i> Scan
+                        </button>
+                    </div>
+                </form>
+                
+                <div id="loading-spinner" class="spinner-container d-none">
+                    <div class="spinner-border text-info" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <span class="ms-2">Scanning... this may take a moment</span>
+                </div>
+                
+                <div id="scan-results">
+                    <!-- Scan results will be displayed here -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="card bg-dark mb-4">
+            <div class="card-header">
+                <h4 class="mb-0"><i class="fas fa-info-circle me-2"></i> Voice Commands</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="list-group mb-3">
+                            <div class="list-group-item bg-dark text-light border-secondary">
+                                <strong><i class="fas fa-microphone me-2"></i> "Scan example.com"</strong>
+                                <p class="mb-0 text-secondary">Scans the specified domain or IP address</p>
+                            </div>
+                            <div class="list-group-item bg-dark text-light border-secondary">
+                                <strong><i class="fas fa-microphone me-2"></i> "Show history"</strong>
+                                <p class="mb-0 text-secondary">Displays the history of past scans</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="list-group">
+                            <div class="list-group-item bg-dark text-light border-secondary">
+                                <strong><i class="fas fa-microphone me-2"></i> "Go home"</strong>
+                                <p class="mb-0 text-secondary">Returns to the main page</p>
+                            </div>
+                            <div class="list-group-item bg-dark text-light border-secondary">
+                                <strong><i class="fas fa-microphone me-2"></i> "Help"</strong>
+                                <p class="mb-0 text-secondary">Provides information about available commands</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
