@@ -10,8 +10,6 @@ from flask_talisman import Talisman
 from werkzeug.exceptions import BadRequest
 from extensions import db 
 
-
-
 # Configure logging
 # the logging module is used to log messages to a file and the console,
 # this helps in debugging and monitoring the application
@@ -63,13 +61,13 @@ with app.app_context():
         from models import ScanResult
         from utils import run_nmap_scan, is_valid_target
         db.create_all()
+    except ImportError as e:
+        logging.error(f"ImportError: {e}. Ensure the 'models' and 'utils' modules exist and are correctly named.")
+        raise
     except Exception as e:
-        logging.error(f"Error initialising database: {e}")
-        raise        
-    if not os.environ.get("SESSION_SECRET"):
-        logging.warning("SESSION_SECRET is not set. Using a default key for testing.")
-    if not os.environ.get("DATABASE_URL"):
-        logging.warning("DATABASE_URL is not set. Using SQLite as the default database.")
+        logging.error(f"Error initializing database: {e}")
+        raise
+    
 
 @app.route('/')
 def index():

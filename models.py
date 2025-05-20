@@ -1,7 +1,5 @@
-from app import db
 from datetime import datetime
-import json
-from extensions import db 
+from extensions import db  # Import db from extensions
 
 class ScanResult(db.Model):
     """Model for storing network scan results"""
@@ -15,7 +13,6 @@ class ScanResult(db.Model):
     
     def get_summary(self):
         """Extract a summary from the scan results"""
-        # Try to find open ports in the scan results
         try:
             lines = self.result.split('\n')
             open_ports = [line for line in lines if 'open' in line]
