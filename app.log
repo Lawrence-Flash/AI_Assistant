@@ -1,0 +1,3 @@
+2025-05-20 15:24:30,925 [ERROR] Error initialising database: cannot import name 'ScanResult' from 'models' (consider renaming '/home/law/Documents/AI_Assistant/models.py' if it has the same name as a library you intended to import)
+2025-05-20 15:24:30,925 [ERROR] Error initialising database: cannot import name 'ScanResult' from 'models' (consider renaming '/home/law/Documents/AI_Assistant/models.py' if it has the same name as a library you intended to import)
+2025-05-20 15:24:30,929 [ERROR] Error initialising database: cannot import name 'ScanResult' from 'models' (consider renaming '/home/law/Documents/AI_Assistant/models.py' if it has the same name as a library you intended to import)

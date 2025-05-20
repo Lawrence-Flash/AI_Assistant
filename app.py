@@ -8,6 +8,9 @@ from sqlalchemy.orm import DeclarativeBase
 from werkzeug.middleware.proxy_fix import ProxyFix
 from flask_talisman import Talisman
 from werkzeug.exceptions import BadRequest
+from extensions import db 
+
+
 
 # Configure logging
 # the logging module is used to log messages to a file and the console,

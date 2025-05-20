@@ -1,13 +1,14 @@
 from app import db
 from datetime import datetime
 import json
+from extensions import db 
 
 class ScanResult(db.Model):
     """Model for storing network scan results"""
     id = db.Column(db.Integer, primary_key=True)
     target = db.Column(db.String(255), nullable=False)
     result = db.Column(db.Text, nullable=False)
-    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+    timestamp = db.Column(db.DateTime, nullable=False)
     
     def __repr__(self):
         return f'<ScanResult {self.id}: {self.target}>'
