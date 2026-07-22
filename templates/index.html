@@ -1,125 +1,398 @@
-{% extends 'layout.html' %}
-
-{% block title %}Cybersecurity Assistant - Network Scanner{% endblock %}
-
-{% block content %}
-<div class="hero-section p-4 p-md-5 mb-4">
-    <div class="row align-items-center">
-        <div class="col-md-8">
-            <h1 class="display-5 fw-bold">Voice-Enabled Cybersecurity Assistant</h1>
-            <p class="lead">Perform network security scans using voice commands or text input</p>
-            <p>This tool integrates with Nmap to provide comprehensive network scanning capabilities, all accessible through an intuitive interface or voice commands.</p>
-        </div>
-        <div class="col-md-4 text-center">
-            <i class="fas fa-network-wired feature-icon display-1 text-info"></i>
-        </div>
-    </div>
-</div>
-
-<div class="row mb-4">
-    <div class="col-md-4 mb-4">
-        <div class="card h-100 bg-dark">
-            <div class="card-body text-center">
-                <i class="fas fa-microphone feature-icon"></i>
-                <h5 class="card-title">Voice Control</h5>
-                <p class="card-text">Use voice commands like "scan example.com" to initiate network scans</p>
-                <button id="mic-button" class="btn btn-primary">
-                    <i class="fas fa-microphone me-2"></i> Start Listening
-                </button>
-                <p id="voice-status" class="mt-2">Microphone off</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise AI Cyber Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .terminal { background-color: #020617; color: #4ade80; font-family: monospace; }
+        pre { white-space: pre-wrap; word-wrap: break-word; }
+        .tab-active { border-bottom: 2px solid #22d3ee; color: #22d3ee; }
+        
+        /* Chat Scrollbar */
+        #chat-messages::-webkit-scrollbar { width: 6px; }
+        #chat-messages::-webkit-scrollbar-track { background: transparent; }
+        #chat-messages::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="glass-panel p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-wider text-cyan-400">
+                <i class="fa-solid fa-shield-halved mr-2"></i>Enterprise Cyber AI
+            </h1>
+            <div class="flex space-x-6 items-center">
+                <button onclick="switchTab('scanner')" id="tab-scanner" class="font-semibold pb-1 tab-active hover:text-cyan-400 transition">Scanner</button>
+                <button onclick="switchTab('monitoring')" id="tab-monitoring" class="font-semibold pb-1 text-gray-400 hover:text-cyan-400 transition">Monitoring</button>
+                <span id="nmap-status" class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-700 ml-4">Checking Nmap...</span>
             </div>
         </div>
-    </div>
-    <div class="col-md-4 mb-4">
-        <div class="card h-100 bg-dark">
-            <div class="card-body text-center">
-                <i class="fas fa-search feature-icon"></i>
-                <h5 class="card-title">Network Scanning</h5>
-                <p class="card-text">Perform fast port scans on domains or IP addresses to identify security vulnerabilities</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4 mb-4">
-        <div class="card h-100 bg-dark">
-            <div class="card-body text-center">
-                <i class="fas fa-history feature-icon"></i>
-                <h5 class="card-title">Scan History</h5>
-                <p class="card-text">Review past scan results to track changes in network security over time</p>
-                <a href="/history" class="btn btn-outline-info">
-                    <i class="fas fa-history me-2"></i> View History
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+    </nav>
 
-<div class="row">
-    <div class="col-lg-12">
-        <div class="card bg-dark mb-4">
-            <div class="card-header">
-                <h4 class="mb-0"><i class="fas fa-search me-2"></i> Network Scanner</h4>
+    <!-- MAIN APP WRAPPER -->
+    <main class="container mx-auto flex-grow p-4 md:p-8">
+        
+        <!-- SCANNER VIEW -->
+        <div id="view-scanner" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Sidebar: Scanner Control -->
+            <div class="lg:col-span-1 space-y-6">
+                <div class="glass-panel rounded-xl p-6 shadow-2xl">
+                    <h2 class="text-xl font-semibold mb-4 text-white"><i class="fa-solid fa-crosshairs mr-2"></i>New Scan</h2>
+                    <form id="scan-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-1">Target (IP or Domain)</label>
+                            <input type="text" id="target" placeholder="e.g., 192.168.1.1" required
+                                class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-cyan-400 transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-400 mb-1">Scan Type</label>
+                            <select id="scan-type" class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-cyan-400">
+                                <option value="fast">Fast Scan (-F)</option>
+                                <option value="advanced">Advanced Scan (-sV -O)</option>
+                                <option value="vuln">Vuln Scan (--script vuln) - SLOW</option>
+                            </select>
+                        </div>
+                        <button type="submit" id="scan-btn" class="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+                            Launch Scan <i class="fa-solid fa-rocket ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- History -->
+                <div class="glass-panel rounded-xl p-6 shadow-2xl max-h-96 overflow-y-auto">
+                    <h2 class="text-xl font-semibold mb-4 text-white"><i class="fa-solid fa-clock-rotate-left mr-2"></i>History</h2>
+                    <ul id="history-list" class="space-y-3"></ul>
+                </div>
             </div>
-            <div class="card-body">
-                <form id="scan-form">
-                    <div class="input-group mb-3">
-                        <span class="input-group-text">
-                            <i class="fas fa-globe"></i>
-                        </span>
-                        <input type="text" class="form-control" id="target-input" 
-                               placeholder="Enter domain name or IP address (e.g., example.com or 192.168.1.1)" 
-                               required>
-                        <button class="btn btn-info" type="submit">
-                            <i class="fas fa-search me-2"></i> Scan
+
+            <!-- Main Display -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Loading -->
+                <div id="loading-state" class="hidden glass-panel rounded-xl p-12 text-center h-full flex flex-col justify-center items-center">
+                    <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-cyan-400 mb-4"></div>
+                    <h3 class="text-xl font-bold text-cyan-400">Analyzing Target...</h3>
+                    <p class="text-gray-400 mt-2">Running scan & extracting vulnerability data.</p>
+                </div>
+
+                <!-- Results -->
+                <div id="results-state" class="hidden space-y-6">
+                    
+                    <div class="flex justify-end">
+                        <button onclick="downloadPDF()" class="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-lg font-semibold shadow-lg transition">
+                            <i class="fa-solid fa-file-pdf mr-2"></i> Export Report
                         </button>
                     </div>
-                </form>
-                
-                <div id="loading-spinner" class="spinner-container d-none">
-                    <div class="spinner-border text-info" role="status">
-                        <span class="visually-hidden">Loading...</span>
+
+                    <!-- Report Content to Export -->
+                    <div id="report-content" class="space-y-6">
+                        <!-- AI Analysis -->
+                        <div class="glass-panel rounded-xl p-6 shadow-2xl border-l-4 border-l-purple-500 bg-slate-900">
+                            <h2 class="text-xl font-bold mb-4 text-purple-400"><i class="fa-solid fa-brain mr-2"></i> Security Analysis</h2>
+                            <div id="ai-output" class="text-gray-200 leading-relaxed text-sm"></div>
+                        </div>
+
+                        <!-- OSINT Data -->
+                        <div class="glass-panel rounded-xl overflow-hidden border border-slate-700 mt-4">
+                            <div class="bg-slate-800 px-4 py-2 text-sm text-gray-400 font-mono border-b border-slate-700">OSINT Data (Whois & DNS)</div>
+                            <div class="p-4 terminal max-h-64 overflow-y-auto text-xs">
+                                <pre id="osint-output"></pre>
+                            </div>
+                        </div>
+
+                        <!-- Raw Nmap Output -->
+                        <div class="glass-panel rounded-xl overflow-hidden border border-slate-700">
+                            <div class="bg-slate-800 px-4 py-2 text-sm text-gray-400 font-mono border-b border-slate-700">Raw Data</div>
+                            <div class="p-4 terminal max-h-64 overflow-y-auto text-xs">
+                                <pre id="nmap-output"></pre>
+                            </div>
+                        </div>
                     </div>
-                    <span class="ms-2">Scanning... this may take a moment</span>
+
+                    <!-- AI Chat Advisor -->
+                    <div class="glass-panel rounded-xl p-0 flex flex-col shadow-2xl overflow-hidden border border-cyan-800">
+                        <div class="bg-cyan-900 bg-opacity-50 px-4 py-3 border-b border-cyan-800">
+                            <h3 class="font-semibold text-cyan-300"><i class="fa-solid fa-robot mr-2"></i>Cyber Advisor Chat</h3>
+                        </div>
+                        <div id="chat-messages" class="p-4 h-64 overflow-y-auto space-y-3 bg-slate-900 bg-opacity-50 text-sm">
+                            <div class="text-gray-400 italic text-center">Ask the AI questions about this scan to get remediation help.</div>
+                        </div>
+                        <div class="p-3 border-t border-slate-700 bg-slate-800 flex">
+                            <input type="text" id="chat-input" placeholder="e.g. How do I fix the FTP vulnerability?" class="flex-grow bg-slate-700 border-none rounded-l-lg px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-cyan-500">
+                            <button onclick="sendChatMessage()" class="bg-cyan-600 hover:bg-cyan-500 px-4 py-2 rounded-r-lg text-white transition">
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
-                
-                <div id="scan-results">
-                    <!-- Scan results will be displayed here -->
+
+                <!-- Empty State -->
+                <div id="empty-state" class="glass-panel rounded-xl p-12 text-center h-full flex flex-col justify-center items-center">
+                    <i class="fa-solid fa-radar text-6xl text-slate-600 mb-4"></i>
+                    <h3 class="text-xl font-bold text-slate-400">Awaiting Target</h3>
                 </div>
             </div>
         </div>
+
+        <!-- MONITORING VIEW -->
+        <div id="view-monitoring" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-1 space-y-6">
+                <!-- Webhook Settings -->
+                <div class="glass-panel rounded-xl p-6 shadow-2xl mb-6">
+                    <h2 class="text-xl font-semibold mb-4 text-white"><i class="fa-solid fa-gear mr-2"></i>Settings</h2>
+                    <form id="settings-form" class="space-y-4">
+                        <label class="block text-sm font-medium text-gray-400 mb-1">Alert Webhook URL (Discord/Slack)</label>
+                        <input type="text" id="webhook-url" placeholder="https://discord.com/api/webhooks/..." class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white">
+                        <button type="submit" class="w-full bg-cyan-600 hover:bg-cyan-500 text-white py-2 rounded-lg">Save Settings</button>
+                    </form>
+                </div>
+
+                <!-- Add Watchlist -->
+                <div class="glass-panel rounded-xl p-6 shadow-2xl">
+                    <h2 class="text-xl font-semibold mb-4 text-white"><i class="fa-solid fa-eye mr-2"></i>Add to Watchlist</h2>
+                    <form id="watchlist-form" class="space-y-4">
+                        <input type="text" id="watch-target" placeholder="Target IP" required class="w-full bg-slate-800 rounded-lg px-4 py-2 text-white">
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white py-2 rounded-lg">Add to Monitoring</button>
+                    </form>
+                </div>
+                
+                <!-- Current Watchlist -->
+                <div class="glass-panel rounded-xl p-6 shadow-2xl">
+                    <h2 class="text-xl font-semibold mb-4 text-white">Monitored Targets</h2>
+                    <ul id="watchlist-list" class="space-y-2"></ul>
+                </div>
+            </div>
+
+            <!-- Diff Logs -->
+            <div class="lg:col-span-2 space-y-6">
+                <div class="glass-panel rounded-xl p-6 shadow-2xl h-full">
+                    <h2 class="text-xl font-semibold mb-4 text-white"><i class="fa-solid fa-bell mr-2"></i>Alerts & Diff Logs</h2>
+                    <div id="diff-logs" class="space-y-4 max-h-[600px] overflow-y-auto"></div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // Global State
+        let currentScanContext = "";
+        let chatHistory = [];
+
+        // App Initialization
+        fetch('/check_nmap')
+            .then(res => res.json())
+            .then(data => {
+                const badge = document.getElementById('nmap-status');
+                if(data.installed) {
+                    badge.textContent = "Nmap Active";
+                    badge.className = "px-3 py-1 rounded-full text-xs font-semibold bg-green-600 text-white ml-4";
+                } else {
+                    badge.textContent = "Nmap Missing";
+                    badge.className = "px-3 py-1 rounded-full text-xs font-semibold bg-red-600 text-white ml-4";
+                }
+            });
+
+        loadHistory();
+
+        // --- UI Logic ---
+        function switchTab(tab) {
+            document.getElementById('view-scanner').classList.add('hidden');
+            document.getElementById('view-monitoring').classList.add('hidden');
+            document.getElementById('tab-scanner').classList.remove('tab-active', 'text-cyan-400');
+            document.getElementById('tab-monitoring').classList.remove('tab-active', 'text-cyan-400');
+            document.getElementById('tab-scanner').classList.add('text-gray-400');
+            document.getElementById('tab-monitoring').classList.add('text-gray-400');
+
+            if (tab === 'scanner') {
+                document.getElementById('view-scanner').classList.remove('hidden');
+                document.getElementById('tab-scanner').classList.add('tab-active', 'text-cyan-400');
+                document.getElementById('tab-scanner').classList.remove('text-gray-400');
+            } else {
+                document.getElementById('view-monitoring').classList.remove('hidden');
+                document.getElementById('tab-monitoring').classList.add('tab-active', 'text-cyan-400');
+                document.getElementById('tab-monitoring').classList.remove('text-gray-400');
+                loadWatchlist();
+                loadDiffLogs();
+            }
+        }
+
+        function formatMarkdown(text) {
+            return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                       .replace(/\n/g, '<br/>')
+                       .replace(/\* (.*?)(<br\/>|$)/g, '<li class="ml-4 list-disc">$1</li>');
+        }
+
+        // --- SCANNER LOGIC ---
+        document.getElementById('scan-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const target = document.getElementById('target').value;
+            const scanType = document.getElementById('scan-type').value;
+            
+            document.getElementById('empty-state').classList.add('hidden');
+            document.getElementById('results-state').classList.add('hidden');
+            document.getElementById('loading-state').classList.remove('hidden');
+            
+            // Reset Chat
+            chatHistory = [];
+            document.getElementById('chat-messages').innerHTML = '<div class="text-gray-400 italic text-center">Ask the AI questions about this scan to get remediation help.</div>';
+            currentScanContext = "";
+
+            fetch('/scan', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ target: target, scan_type: scanType })
+            }).then(res => res.json()).then(data => {
+                document.getElementById('loading-state').classList.add('hidden');
+                if(data.success) {
+                    document.getElementById('results-state').classList.remove('hidden');
+                    document.getElementById('ai-output').innerHTML = formatMarkdown(data.ai_analysis);
+                    document.getElementById('nmap-output').textContent = data.nmap_result;
+                    document.getElementById('osint-output').textContent = JSON.stringify(data.osint_result, null, 2);
+                    currentScanContext = data.nmap_result;
+                    loadHistory();
+                } else {
+                    alert("Scan failed: " + data.error);
+                    document.getElementById('empty-state').classList.remove('hidden');
+                }
+            }).catch(err => {
+                document.getElementById('loading-state').classList.add('hidden');
+                document.getElementById('empty-state').classList.remove('hidden');
+            });
+        });
+
+        // --- CHAT LOGIC ---
+        function sendChatMessage() {
+            const input = document.getElementById('chat-input');
+            const msg = input.value.trim();
+            if(!msg || !currentScanContext) return;
+
+            const chatBox = document.getElementById('chat-messages');
+            chatBox.innerHTML += `<div class="text-right mb-2"><span class="bg-cyan-700 text-white px-3 py-1 rounded-lg inline-block">${msg}</span></div>`;
+            input.value = '';
+            
+            // Show loading
+            const loadingId = 'loading-' + Date.now();
+            chatBox.innerHTML += `<div id="${loadingId}" class="text-left mb-2 text-gray-500 text-xs italic">AI is typing...</div>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            fetch('/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    message: msg,
+                    history: chatHistory,
+                    scan_context: currentScanContext
+                })
+            }).then(res => res.json()).then(data => {
+                document.getElementById(loadingId).remove();
+                chatBox.innerHTML += `<div class="text-left mb-2"><span class="bg-slate-700 text-cyan-300 px-3 py-2 rounded-lg inline-block border border-slate-600">${formatMarkdown(data.reply)}</span></div>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+                
+                chatHistory.push({role: "user", content: msg});
+                chatHistory.push({role: "model", content: data.reply});
+            });
+        }
+
+        // --- PDF EXPORT ---
+        function downloadPDF() {
+            const element = document.getElementById('report-content');
+            const opt = {
+                margin:       0.5,
+                filename:     'cybersecurity-report.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2 },
+                jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+
+        // --- MONITORING LOGIC ---
+        function loadHistory() {
+            fetch('/history').then(res => res.json()).then(data => {
+                const list = document.getElementById('history-list');
+                list.innerHTML = data.length ? '' : '<li class="text-gray-500 text-sm">No scans yet.</li>';
+                data.forEach(scan => {
+                    list.innerHTML += `<li class="bg-slate-800 rounded p-3 text-sm border-l-2 border-l-cyan-500"><div class="font-semibold text-cyan-300">${scan.target}</div><div class="text-xs text-gray-500 mt-1">${scan.timestamp}</div></li>`;
+                });
+            });
+        }
+
+        function loadWatchlist() {
+            fetch('/watchlist').then(res => res.json()).then(data => {
+                const list = document.getElementById('watchlist-list');
+                list.innerHTML = data.length ? '' : '<li class="text-gray-500 text-sm">No targets monitored.</li>';
+                data.forEach(item => {
+                    list.innerHTML += `<li class="bg-slate-800 rounded p-3 text-sm flex justify-between items-center"><span>${item.target}</span> <span class="text-xs text-gray-400">Last: ${item.last_scanned || 'Never'}</span></li>`;
+                });
+            });
+        }
+
+        function loadDiffLogs() {
+            fetch('/diff_logs').then(res => res.json()).then(data => {
+                const list = document.getElementById('diff-logs');
+                list.innerHTML = data.length ? '' : '<p class="text-gray-500 text-sm">No alerts generated yet.</p>';
+                data.forEach(log => {
+                    const color = log.alert_level === 'warning' ? 'border-l-yellow-500 bg-yellow-900 bg-opacity-20' : 'border-l-blue-500 bg-slate-800';
+                    list.innerHTML += `
+                        <div class="p-4 rounded-lg border-l-4 ${color} shadow">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-bold text-white">${log.target}</span>
+                                <span class="text-xs text-gray-400">${log.timestamp}</span>
+                            </div>
+                            <div class="text-sm text-gray-300">${formatMarkdown(log.diff_text)}</div>
+                        </div>
+                    `;
+                });
+            });
+        }
+
+        document.getElementById('watchlist-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const target = document.getElementById('watch-target').value;
+            fetch('/watchlist', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ target: target })
+            }).then(res => res.json()).then(data => {
+                if(data.success) {
+                    document.getElementById('watch-target').value = '';
+                    loadWatchlist();
+                } else {
+                    alert(data.error);
+                }
+            });
+        });
+
+        // --- SETTINGS LOGIC ---
+        function loadSettings() {
+            fetch('/settings').then(res => res.json()).then(data => {
+                document.getElementById('webhook-url').value = data.webhook_url || '';
+            });
+        }
         
-        <div class="card bg-dark mb-4">
-            <div class="card-header">
-                <h4 class="mb-0"><i class="fas fa-info-circle me-2"></i> Voice Commands</h4>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="list-group mb-3">
-                            <div class="list-group-item bg-dark text-light border-secondary">
-                                <strong><i class="fas fa-microphone me-2"></i> "Scan example.com"</strong>
-                                <p class="mb-0 text-secondary">Scans the specified domain or IP address</p>
-                            </div>
-                            <div class="list-group-item bg-dark text-light border-secondary">
-                                <strong><i class="fas fa-microphone me-2"></i> "Show history"</strong>
-                                <p class="mb-0 text-secondary">Displays the history of past scans</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="list-group">
-                            <div class="list-group-item bg-dark text-light border-secondary">
-                                <strong><i class="fas fa-microphone me-2"></i> "Go home"</strong>
-                                <p class="mb-0 text-secondary">Returns to the main page</p>
-                            </div>
-                            <div class="list-group-item bg-dark text-light border-secondary">
-                                <strong><i class="fas fa-microphone me-2"></i> "Help"</strong>
-                                <p class="mb-0 text-secondary">Provides information about available commands</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{% endblock %}
+        document.getElementById('settings-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const webhookUrl = document.getElementById('webhook-url').value;
+            fetch('/settings', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ webhook_url: webhookUrl })
+            }).then(res => res.json()).then(data => {
+                if(data.success) {
+                    alert("Settings saved successfully!");
+                }
+            });
+        });
+        
+        // Initial load
+        loadSettings();
+    </script>
+</body>
+</html>

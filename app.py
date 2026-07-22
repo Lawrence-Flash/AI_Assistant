@@ -1,129 +1,166 @@
-"""this application is a simple web application that allows users to perform network scans using nmap."""
-import os
+from flask import Flask, render_template, request, jsonify
+from utils import run_nmap_scan, check_nmap, analyze_scan_with_ai, chat_with_ai, run_osint, send_webhook_alert
+from db import init_db, save_scan, get_history, add_to_watchlist, get_watchlist, get_diff_logs, save_diff_log, update_watchlist_time, get_latest_scan, get_setting, set_setting, save_osint, get_latest_osint
+from flask_apscheduler import APScheduler
 import logging
-from datetime import datetime
-from flask import Flask, render_template, request, jsonify, session, redirect, url_for, flash
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import DeclarativeBase
-from werkzeug.middleware.proxy_fix import ProxyFix
-from flask_talisman import Talisman
-from werkzeug.exceptions import BadRequest
-from extensions import db 
+import threading
 
-# Configure logging
-# the logging module is used to log messages to a file and the console,
-# this helps in debugging and monitoring the application
-log_file = os.environ.get("LOG_FILE", "app.log")
-logging.basicConfig(
-    level=logging.DEBUG,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    handlers=[
-        logging.FileHandler(log_file),
-        logging.StreamHandler()
-    ]
-)
+app = Flask(__name__)
+app.secret_key = "cybersecurity-ai-assistant-secret"
 
-# Database Setup: 
-# this class is used to define database base class
-class Base(DeclarativeBase):
-    pass
+# Configure Scheduler
+class Config:
+    SCHEDULER_API_ENABLED = True
 
-# Initialize SQLAlchemy object is used to interact with the database
-db = SQLAlchemy(model_class=Base)
+app.config.from_object(Config())
+scheduler = APScheduler()
+scheduler.init_app(app)
+scheduler.start()
 
-# The Flask app is created with static folder and url path
-# The static folder is used to serve static files like CSS, JS, and images
-# The url path is used to access these files in the browser
-app = Flask(__name__, static_folder='static', static_url_path='/static')
-app.secret_key = os.environ.get("SESSION_SECRET", "dev_key_for_testing")
-app.wsgi_app = ProxyFix(app.wsgi_app, x_proto=1, x_host=1)
+# Initialize database
+init_db()
 
-# Secure the app with Talisman: securs the app with HTTPS and other secuirty features
-# Talisman is a Flask extension that helps secure Flask applications
-Talisman(app)
-
-# Configure database URI which is Fetched from the DATABASE_URL environment variable
-# If not set, it defaults to a SQLite database file named 'cybersecurity.db'
-# The SQLAlchemy engine options are set to recycle connections every 300 seconds
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL", "sqlite:///cybersecurity.db")
-app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
-    "pool_recycle": 300,
-    "pool_pre_ping": True,
-}
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-
-# Initialize the app with the extension
-db.init_app(app)
-
-# Import routes and models after initializing db to avoid circular imports
-with app.app_context():
-    try:
-        from models import ScanResult
-        from utils import run_nmap_scan, is_valid_target
-        db.create_all()
-    except ImportError as e:
-        logging.error(f"ImportError: {e}. Ensure the 'models' and 'utils' modules exist and are correctly named.")
-        raise
-    except Exception as e:
-        logging.error(f"Error initializing database: {e}")
-        raise
-    
-
-@app.route('/')
+@app.route("/")
 def index():
-    """Render the main page of the application"""
-    return render_template('index.html')
+    return render_template("index.html")
 
-@app.route('/scan', methods=['POST'])
+@app.route("/scan", methods=["POST"])
 def scan():
-    """Endpoint to handle scan requests"""
-    target = request.form.get('target', '').strip()
+    data = request.json
+    target = data.get("target")
+    scan_type = data.get("scan_type", "fast")
     
-    if not is_valid_target(target):
-        raise BadRequest('Invalid target. Please provide a valid IP address or domain name.')
-    
-    # Run the scan
-    success, result = run_nmap_scan(target)
-    
-    if success:
-        # Save scan result to database
-        scan_result = ScanResult(
-            target=target,
-            result=result,
-            timestamp=datetime.now()
-        )
-        db.session.add(scan_result)
-        db.session.commit()
+    if not target:
+        return jsonify({"error": "Target is required"}), 400
         
-        return jsonify({
-            'success': True,
-            'result': result,
-            'scan_id': scan_result.id
-        })
-    else:
-        return jsonify({
-            'success': False,
-            'error': result  # Result contains error message
-        })
+    # Run the Nmap scan
+    success, nmap_result = run_nmap_scan(target, scan_type)
+    
+    # Run OSINT
+    osint_result = run_osint(target)
+    
+    if not success:
+        return jsonify({"error": nmap_result}), 500
+        
+    # Run the AI Analysis
+    ai_prompt = f"--- NMAP RAW ---\n{nmap_result}\n\n--- OSINT DATA ---\n{osint_result}"
+    ai_analysis = analyze_scan_with_ai(ai_prompt)
+    
+    # Save to database
+    save_osint(target, str(osint_result))
+    full_result = f"{ai_prompt}\n\n--- AI ANALYSIS ---\n{ai_analysis}"
+    save_scan(target, full_result)
+    
+    return jsonify({
+        "success": True,
+        "nmap_result": nmap_result,
+        "osint_result": osint_result,
+        "ai_analysis": ai_analysis
+    })
 
-@app.route('/scan/<int:scan_id>')
-def scan_details(scan_id):
-    """Display detailed results of a specific scan"""
-    scan_result = ScanResult.query.get_or_404(scan_id)
-    return render_template('scan_results.html', scan=scan_result)
+@app.route("/settings", methods=["GET", "POST"])
+def settings():
+    if request.method == "POST":
+        data = request.json
+        webhook_url = data.get("webhook_url", "")
+        set_setting("webhook_url", webhook_url)
+        return jsonify({"success": True, "message": "Settings saved"})
+    
+    webhook_url = get_setting("webhook_url", "")
+    return jsonify({"webhook_url": webhook_url})
 
-@app.route('/history')
+@app.route("/chat", methods=["POST"])
+def chat():
+    data = request.json
+    chat_history = data.get("history", [])
+    new_message = data.get("message")
+    scan_context = data.get("scan_context", "")
+    
+    if not new_message:
+        return jsonify({"error": "Message is required"}), 400
+        
+    ai_reply = chat_with_ai(chat_history, new_message, scan_context)
+    return jsonify({"reply": ai_reply})
+
+@app.route("/watchlist", methods=["GET", "POST"])
+def manage_watchlist():
+    if request.method == "POST":
+        data = request.json
+        target = data.get("target")
+        scan_type = data.get("scan_type", "fast")
+        interval = data.get("interval", 24)
+        
+        if not target:
+            return jsonify({"error": "Target required"}), 400
+            
+        success = add_to_watchlist(target, scan_type, interval)
+        if success:
+            return jsonify({"success": True, "message": f"Added {target} to Watchlist"})
+        else:
+            return jsonify({"success": False, "error": f"{target} is already in Watchlist"}), 400
+            
+    # GET method
+    watchlist_data = get_watchlist()
+    formatted = [{"id": r[0], "target": r[1], "scan_type": r[2], "interval": r[3], "last_scanned": r[4]} for r in watchlist_data]
+    return jsonify(formatted)
+
+@app.route("/diff_logs")
+def diff_logs():
+    logs = get_diff_logs()
+    formatted = [{"id": r[0], "target": r[1], "diff_text": r[2], "alert_level": r[3], "timestamp": r[4]} for r in logs]
+    return jsonify(formatted)
+
+@app.route("/history")
 def history():
-    """Display history of all scans"""
-    scans = ScanResult.query.order_by(ScanResult.timestamp.desc()).all()
-    return render_template('history.html', scans=scans)
+    history_data = get_history()
+    # Format for JSON response
+    formatted_history = [
+        {"id": row[0], "target": row[1], "timestamp": row[2], "result": row[3]} 
+        for row in history_data
+    ]
+    return jsonify(formatted_history)
 
-@app.route('/check_nmap', methods=['GET'])
-def check_nmap_availability():
-    """Check if Nmap is available on the system"""
-    from utils import check_nmap
-    return jsonify({'available': check_nmap()})
+@app.route("/check_nmap")
+def check_nmap_status():
+    is_installed = check_nmap()
+    return jsonify({"installed": is_installed})
 
-if __name__ == '__main__':
-    debug_mode = os.environ.get("FLASK_DEBUG", "false").lower() == "true"
-    app.run(host='0.0.0.0', port=5000, debug=debug_mode)
+# --- Background Task: Continuous Monitoring ---
+@scheduler.task('interval', id='run_watchlist_scans', hours=1)
+def run_watchlist_scans():
+    # In a real app, you would check interval_hours for each target.
+    # For this portfolio piece, we will simply scan every target in the watchlist
+    # whenever this runs (we'll set it to run every hour, but users can trigger it manually for testing)
+    with app.app_context():
+        targets = get_watchlist()
+        for t in targets:
+            target_ip = t[1]
+            scan_type = t[2]
+            
+            # Run scan
+            success, new_result = run_nmap_scan(target_ip, scan_type)
+            if not success:
+                continue
+                
+            update_watchlist_time(target_ip)
+            
+            # Get old scan
+            old_result = get_latest_scan(target_ip)
+            
+            # Very basic diffing logic (If the new raw Nmap text is different from the old)
+            # In a true enterprise app, we'd use AI to diff it intelligently.
+            if old_result and old_result != new_result:
+                # Ask AI to explain the difference
+                diff_prompt = f"Previous Scan:\n{old_result}\n\nNew Scan:\n{new_result}\n\nWhat changed? Is it dangerous?"
+                ai_diff = analyze_scan_with_ai(diff_prompt)
+                save_diff_log(target_ip, ai_diff, "warning")
+                
+                webhook_url = get_setting("webhook_url")
+                if webhook_url:
+                    send_webhook_alert(webhook_url, f"Change detected on {target_ip}!\n\nAI Analysis:\n{ai_diff}", "warning")
+                
+            # Save the new scan
+            save_scan(target_ip, new_result)
+
+if __name__ == "__main__":
+    app.run(debug=True, port=5001, use_reloader=False) # use_reloader=False prevents scheduler from running twice

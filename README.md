@@ -1,184 +1,76 @@
-# AI Assistant for Network Scanning
+# AI-Cybersecurity Assistant
 
-This is a simple web application built with Flask that allows users to perform network scans using Nmap. The application provides a user-friendly interface to initiate scans, view scan results, and check the availability of Nmap on the system.
-
----
-
-## Features
-
-- **Network Scanning**: Perform network scans using Nmap by providing a target IP address or domain.
-- **Scan History**: View the history of all scans performed, including detailed results.
-- **Nmap Availability Check**: Verify if Nmap is installed and available on the system.
-- **Secure Application**: Uses Flask-Talisman to enforce HTTPS and secure headers.
-- **Database Integration**: Stores scan results in a database using SQLAlchemy.
+An advanced, AI-powered network scanning and OSINT monitoring tool designed for both CLI and Web interfaces. It leverages `nmap` for robust network reconnaissance, `dnspython`/`python-whois` for Open-Source Intelligence (OSINT), and Google's Gemini AI to analyze scan results, providing actionable cybersecurity insights.
 
 ---
 
-## Prerequisites
+## 🚀 Key Features
 
-- Python 3.7 or higher
-- Nmap installed on the system
-- Flask and required Python libraries (see `requirements.txt`)
+- **Dual Interfaces**: Use the sleek "hacker-style" terminal interface (`cli.py`) or the modern, responsive web dashboard (`app.py`).
+- **AI Security Analysis**: Automatically analyzes raw `nmap` and OSINT output using Gemini AI to identify vulnerabilities, explain open ports, and provide remediation steps.
+- **OSINT Enrichment**: Automatically fetches Whois data and DNS records (A, MX, etc.) to provide context alongside network scans.
+- **Continuous Monitoring & Webhooks**: Add targets to a background Watchlist. The system will scan them periodically and fire a Discord/Slack Webhook alert (along with AI analysis) if the attack surface changes (e.g., a new port opens).
+- **History Tracking**: Saves all previous scans and AI analysis reports to a local SQLite database for future review and diffing.
 
 ---
 
-## Installation
+## 📋 Prerequisites
+
+- Python 3.11+
+- Nmap installed and available in your system's PATH.
+
+---
+
+## 🛠️ Installation
 
 1. **Clone the Repository**:
    ```bash
-   git clone <repository-url>
-   cd AI_Assistant
-
-# Project Structure
-AI_Assistant/
-├── app.py               # Main application file
-├── models.py            # Database models (e.g., ScanResult)
-├── utils.py             # Utility functions (e.g., run_nmap_scan, is_valid_target)
-├── templates/           # HTML templates for rendering pages
-├── static/              # Static files (CSS, JS, images)
-├── requirements.txt     # Python dependencies
-└── README.md            # Project documentation
-
-# Security
-Here’s a sample `README.md` file for your project:
-
-```markdown
-# AI Assistant for Network Scanning
-
-This is a simple web application built with Flask that allows users to perform network scans using Nmap. The application provides a user-friendly interface to initiate scans, view scan results, and check the availability of Nmap on the system.
-
----
-
-## Features
-
-- **Network Scanning**: Perform network scans using Nmap by providing a target IP address or domain.
-- **Scan History**: View the history of all scans performed, including detailed results.
-- **Nmap Availability Check**: Verify if Nmap is installed and available on the system.
-- **Secure Application**: Uses Flask-Talisman to enforce HTTPS and secure headers.
-- **Database Integration**: Stores scan results in a database using SQLAlchemy.
-
----
-
-## Prerequisites
-
-- Python 3.7 or higher
-- Nmap installed on the system
-- Flask and required Python libraries (see `requirements.txt`)
-
----
-
-## Installation
-
-1. **Clone the Repository**:
-   ```bash
-   git clone <repository-url>
+   git clone https://github.com/Lawrence-Flash/AI_Assistant.git
    cd AI_Assistant
    ```
 
-2. **Set Up a Virtual Environment**:
+2. **Install Dependencies**:
+   Ensure you have all the required networking and web packages:
    ```bash
-   python3 -m venv venv
-   source venv/bin/activate
+   pip install .
    ```
 
-3. **Install Dependencies**:
+3. **Configure Environment Variables**:
+   Open the `.env` file (or create one) and set your Gemini API key:
    ```bash
-   pip install -r requirements.txt
+   GEMINI_API_KEY=your_api_key_here
    ```
-
-4. **Set Environment Variables**:
-   - Create a `.env` file or export the following variables:
-     ```bash
-     export FLASK_APP=app.py
-     export FLASK_ENV=development
-     export SESSION_SECRET=your_secret_key
-     export DATABASE_URL=sqlite:///cybersecurity.db
-     ```
 
 ---
 
-## Usage
+## 💻 Usage
 
-1. **Run the Application**:
-   ```bash
-   flask run
-   ```
-   Alternatively:
-   ```bash
-   python app.py
-   ```
+### 🌐 Web Dashboard (Recommended)
+Run the Flask server to access the modern web interface:
+```bash
+python app.py
+```
+Then navigate to [http://127.0.0.1:5001](http://127.0.0.1:5001) in your browser. From here you can run scans, view OSINT data, chat with the AI, and configure your webhook settings!
 
-2. **Access the Application**:
-   Open your browser and navigate to [http://127.0.0.1:5000](http://127.0.0.1:5000).
+### ⌨️ CLI Mode (Hacker Terminal)
+Run the interactive rich-based command-line interface:
+```bash
+python cli.py
+```
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 AI_Assistant/
-├── app.py               # Main application file
-├── models.py            # Database models (e.g., ScanResult)
-├── utils.py             # Utility functions (e.g., run_nmap_scan, is_valid_target)
-├── templates/           # HTML templates for rendering pages
-├── static/              # Static files (CSS, JS, images)
-├── requirements.txt     # Python dependencies
-└── README.md            # Project documentation
+├── .env                 # API Keys (Do not commit to public repo)
+├── app.py               # Flask web server & scheduled background jobs
+├── cli.py               # Command-line interface
+├── db.py                # SQLite database management (history, settings, watchlists)
+├── utils.py             # Core logic (Nmap execution, OSINT gathering, AI analysis)
+├── templates/
+│   └── index.html       # Web interface HTML/JS/CSS
+├── pyproject.toml       # Python dependencies configuration
+└── README.md            # Documentation
 ```
-
----
-
-## Endpoints
-
-### `/`
-- **Method**: `GET`
-- **Description**: Renders the main page of the application.
-
-### `/scan`
-- **Method**: `POST`
-- **Description**: Accepts a target IP or domain and performs a network scan.
-
-### `/scan/<int:scan_id>`
-- **Method**: `GET`
-- **Description**: Displays detailed results of a specific scan.
-
-### `/history`
-- **Method**: `GET`
-- **Description**: Displays the history of all scans.
-
-### `/check_nmap`
-- **Method**: `GET`
-- **Description**: Checks if Nmap is installed and available on the system.
-
----
-
-## Security
-
-- **Flask-Talisman**: Enforces HTTPS and secure headers.
-- **Input Validation**: Ensures valid IP addresses or domain names are provided for scans.
-- **Environment Variables**: Sensitive configurations like `SESSION_SECRET` and `DATABASE_URL` are managed via environment variables.
-
----
-
-## Troubleshooting
-
-- **Nmap Not Found**: Ensure Nmap is installed and accessible in your system's PATH.
-- **Database Issues**: Check if the `DATABASE_URL` environment variable is set correctly.
-- **Permission Errors**: Run the application with appropriate permissions or use a virtual environment.
-
----
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
----
-
-## Acknowledgments
-
-- [Flask](https://flask.palletsprojects.com/) - Web framework
-- [SQLAlchemy](https://www.sqlalchemy.org/) - Database ORM
-- [Nmap](https://nmap.org/) - Network scanning tool
-```
-
-This `README.md` provides a comprehensive overview of your project, including setup instructions, usage, and key features. Let me know if you'd like to customize it further!This `README.md` provides a comprehensive overview of your project, including setup instructions, usage, and key features. Let me know if you'd like to customize it further!
