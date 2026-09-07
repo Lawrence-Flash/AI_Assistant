@@ -4,176 +4,570 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enterprise AI Cyber Assistant</title>
+    <link rel="icon" type="image/png" href="/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- Marked.js for markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-serif; }
-        .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
-        .terminal { background-color: #020617; color: #4ade80; font-family: monospace; }
+        body { background-color: #0b0f19; color: #f8fafc; font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+        .glass-panel { background: rgba(17, 24, 39, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .glass-card { background: rgba(31, 41, 55, 0.5); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .terminal { background-color: #030712; color: #4ade80; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
         pre { white-space: pre-wrap; word-wrap: break-word; }
-        .tab-active { border-bottom: 2px solid #22d3ee; color: #22d3ee; }
+        .tab-active { border-bottom: 2px solid #06b6d4; color: #22d3ee; }
         
-        /* Chat Scrollbar */
-        #chat-messages::-webkit-scrollbar { width: 6px; }
-        #chat-messages::-webkit-scrollbar-track { background: transparent; }
-        #chat-messages::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        /* Markdown formatting inside AI output */
+        .prose-cyber h1, .prose-cyber h2, .prose-cyber h3, .prose-cyber h4 {
+            color: #38bdf8;
+            font-weight: 700;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .prose-cyber h1 { font-size: 1.35rem; border-bottom: 1px solid #334155; padding-bottom: 0.25rem; }
+        .prose-cyber h2 { font-size: 1.2rem; }
+        .prose-cyber h3 { font-size: 1.05rem; }
+        .prose-cyber p { margin-bottom: 0.75rem; line-height: 1.6; }
+        .prose-cyber ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 0.75rem; }
+        .prose-cyber ol { list-style-type: decimal; margin-left: 1.5rem; margin-bottom: 0.75rem; }
+        .prose-cyber li { margin-bottom: 0.25rem; }
+        .prose-cyber code { background: #1e293b; color: #a5f3fc; padding: 0.15rem 0.35rem; border-radius: 0.25rem; font-size: 0.85em; }
+        .prose-cyber pre code { display: block; background: #020617; padding: 0.75rem; border-radius: 0.5rem; overflow-x: auto; color: #e2e8f0; }
+        .prose-cyber table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+        .prose-cyber th, .prose-cyber td { border: 1px solid #334155; padding: 0.5rem 0.75rem; text-align: left; }
+        .prose-cyber th { background-color: #1e293b; color: #38bdf8; }
+
+        /* Custom Scrollbars */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col antialiased">
     <!-- Navbar -->
-    <nav class="glass-panel p-4 sticky top-0 z-50">
+    <nav class="glass-panel p-4 sticky top-0 z-50 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold tracking-wider text-cyan-400">
-                <i class="fa-solid fa-shield-halved mr-2"></i>Enterprise Cyber AI
-            </h1>
+            <div class="flex items-center space-x-3">
+                <div class="h-9 w-9 rounded-lg bg-gradient-to-tr from-cyan-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
+                    <i class="fa-solid fa-shield-halved text-white text-lg"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-wide text-white flex items-center gap-2">
+                        AI Cyber Assistant
+                        <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-cyan-900/60 text-cyan-300 border border-cyan-700/50">v2.0 PRO</span>
+                    </h1>
+                </div>
+            </div>
+            
             <div class="flex space-x-6 items-center">
-                <button onclick="switchTab('scanner')" id="tab-scanner" class="font-semibold pb-1 tab-active hover:text-cyan-400 transition">Scanner</button>
-                <button onclick="switchTab('monitoring')" id="tab-monitoring" class="font-semibold pb-1 text-gray-400 hover:text-cyan-400 transition">Monitoring</button>
-                <span id="nmap-status" class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-700 ml-4">Checking Nmap...</span>
+                <button onclick="switchTab('scanner')" id="tab-scanner" class="font-semibold pb-1 tab-active hover:text-cyan-400 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-crosshairs text-sm"></i> Scanner
+                </button>
+                <button onclick="switchTab('discovery')" id="tab-discovery" class="font-semibold pb-1 text-gray-400 hover:text-cyan-400 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-network-wired text-sm"></i> LAN Discovery
+                </button>
+                <button onclick="switchTab('monitoring')" id="tab-monitoring" class="font-semibold pb-1 text-gray-400 hover:text-cyan-400 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-bell text-sm"></i> Monitoring & Diff
+                </button>
+                <span id="nmap-status" class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-800 text-gray-400 ml-4 border border-gray-700 flex items-center gap-1.5">
+                    <span class="h-2 w-2 rounded-full bg-gray-500 animate-pulse"></span> Checking Nmap...
+                </span>
             </div>
         </div>
     </nav>
 
-    <!-- MAIN APP WRAPPER -->
+    <!-- Main Container -->
     <main class="container mx-auto flex-grow p-4 md:p-8">
         
-        <!-- SCANNER VIEW -->
+        <!-- ================= SCANNER VIEW ================= -->
         <div id="view-scanner" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Sidebar: Scanner Control -->
+            <!-- Left Column: Controls & History -->
             <div class="lg:col-span-1 space-y-6">
+                <!-- Launch Scan Card -->
                 <div class="glass-panel rounded-xl p-6 shadow-2xl">
-                    <h2 class="text-xl font-semibold mb-4 text-white"><i class="fa-solid fa-crosshairs mr-2"></i>New Scan</h2>
-                    <form id="scan-form" class="space-y-4">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-lg font-semibold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-bolt text-cyan-400"></i> New Target Scan
+                        </h2>
+                        <button onclick="switchTab('discovery')" class="text-xs text-cyan-400 hover:underline flex items-center gap-1">
+                            <i class="fa-solid fa-magnifying-glass"></i> Find hosts
+                        </button>
+                    </div>
+                    <form id="scan-form" class="space-y-3.5">
                         <div>
-                            <label class="block text-sm font-medium text-gray-400 mb-1">Target (IP or Domain)</label>
-                            <input type="text" id="target" placeholder="e.g., 192.168.1.1" required
-                                class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-cyan-400 transition">
+                            <label class="block text-xs font-medium text-gray-400 mb-1">Target IP, Hostname or Domain</label>
+                            <input type="text" id="target" placeholder="e.g. 192.168.1.1 or scanme.nmap.org" required
+                                class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3.5 py-2.5 text-white text-sm focus:outline-none focus:border-cyan-400 transition font-mono">
+                        </div>
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <div>
+                                <label class="block text-xs font-medium text-gray-400 mb-1">Scan Profile</label>
+                                <select id="scan-type" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white text-xs focus:outline-none focus:border-cyan-400">
+                                    <option value="fast">Fast Recon (-F: Top 100)</option>
+                                    <option value="advanced">Deep Service & OS (-sV -O)</option>
+                                    <option value="web">Web App Audit (http-*)</option>
+                                    <option value="stealth">Stealth SYN Scan (-sS -Pn)</option>
+                                    <option value="vuln">Vulnerability Audit (--script vuln)</option>
+                                    <option value="full">Full 65,535 Ports (-p-)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-gray-400 mb-1">Client / Project Tag</label>
+                                <input type="text" id="client-tag" placeholder="e.g. Acme Corp" value="General"
+                                    class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white text-xs focus:outline-none focus:border-cyan-400">
+                            </div>
                         </div>
                         <div>
-                            <label class="block text-sm font-medium text-gray-400 mb-1">Scan Type</label>
-                            <select id="scan-type" class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-cyan-400">
-                                <option value="fast">Fast Scan (-F)</option>
-                                <option value="advanced">Advanced Scan (-sV -O)</option>
-                                <option value="vuln">Vuln Scan (--script vuln) - SLOW</option>
-                            </select>
+                            <label class="block text-xs font-medium text-gray-400 mb-1 flex justify-between items-center">
+                                <span>Custom Port Selection (Optional)</span>
+                                <span class="text-[10px] text-gray-500">e.g. 80,443 or 1-1024</span>
+                            </label>
+                            <input type="text" id="custom-ports" placeholder="Leave empty for profile default"
+                                class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white text-xs focus:outline-none focus:border-cyan-400 font-mono">
                         </div>
-                        <button type="submit" id="scan-btn" class="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
-                            Launch Scan <i class="fa-solid fa-rocket ml-2"></i>
+                        <button type="submit" id="scan-btn" class="w-full bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 text-white font-semibold py-2.5 px-4 rounded-lg transition duration-200 shadow-lg shadow-cyan-600/30 flex items-center justify-center gap-2">
+                            <span>Execute Scan</span> <i class="fa-solid fa-crosshairs"></i>
                         </button>
                     </form>
                 </div>
 
-                <!-- History -->
-                <div class="glass-panel rounded-xl p-6 shadow-2xl max-h-96 overflow-y-auto">
-                    <h2 class="text-xl font-semibold mb-4 text-white"><i class="fa-solid fa-clock-rotate-left mr-2"></i>History</h2>
-                    <ul id="history-list" class="space-y-3"></ul>
+                <!-- Scan History -->
+                <div class="glass-panel rounded-xl p-6 shadow-2xl">
+                    <div class="flex justify-between items-center mb-2">
+                        <h2 class="text-md font-semibold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-clock-rotate-left text-cyan-400"></i> Scan History
+                        </h2>
+                        <span id="history-count" class="text-xs bg-slate-800 text-gray-400 px-2 py-0.5 rounded-full">0</span>
+                    </div>
+                    <!-- Quick search filter -->
+                    <input type="text" id="history-filter" placeholder="Search by target or client tag..." oninput="filterHistory()"
+                        class="w-full bg-slate-950 border border-slate-800 rounded-lg px-2.5 py-1.5 text-xs text-white placeholder-gray-500 mb-2.5 focus:outline-none focus:border-cyan-500">
+                    <ul id="history-list" class="space-y-2.5 max-h-[380px] overflow-y-auto pr-1"></ul>
                 </div>
             </div>
 
-            <!-- Main Display -->
+            <!-- Right Column: Results & Analysis -->
             <div class="lg:col-span-2 space-y-6">
-                <!-- Loading -->
-                <div id="loading-state" class="hidden glass-panel rounded-xl p-12 text-center h-full flex flex-col justify-center items-center">
-                    <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-cyan-400 mb-4"></div>
-                    <h3 class="text-xl font-bold text-cyan-400">Analyzing Target...</h3>
-                    <p class="text-gray-400 mt-2">Running scan & extracting vulnerability data.</p>
+                <!-- Loading State with Progress Steps -->
+                <div id="loading-state" class="hidden glass-panel rounded-xl p-12 text-center flex flex-col justify-center items-center">
+                    <div class="relative mb-6">
+                        <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-cyan-400"></div>
+                        <i class="fa-solid fa-shield-virus absolute inset-0 m-auto text-cyan-400 text-xl flex items-center justify-center"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-cyan-400" id="scan-status-title">Performing Reconnaissance...</h3>
+                    <p class="text-gray-400 text-sm mt-1" id="scan-status-desc">Executing Nmap probes, querying OSINT intelligence, and invoking Gemini AI.</p>
+                    <div class="mt-6 flex items-center gap-4 text-xs text-gray-400">
+                        <span class="flex items-center gap-1.5 text-cyan-300"><i class="fa-solid fa-check-circle"></i> Target Validated</span>
+                        <span class="flex items-center gap-1.5 text-cyan-300 animate-pulse"><i class="fa-solid fa-spinner animate-spin"></i> Active Probing</span>
+                        <span class="flex items-center gap-1.5 text-gray-500"><i class="fa-regular fa-circle"></i> AI Threat Synthesis</span>
+                    </div>
                 </div>
 
-                <!-- Results -->
+                <!-- Empty State -->
+                <div id="empty-state" class="glass-panel rounded-xl p-16 text-center flex flex-col justify-center items-center">
+                    <div class="w-16 h-16 rounded-full bg-slate-800/80 flex items-center justify-center mb-4 text-slate-500">
+                        <i class="fa-solid fa-radar text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-300">Ready to Scan</h3>
+                    <p class="text-slate-500 text-sm max-w-sm mt-1">Specify a target IP or domain, or select a previous scan from your history to view detailed threat intelligence.</p>
+                </div>
+
+                <!-- Results Display -->
                 <div id="results-state" class="hidden space-y-6">
                     
-                    <div class="flex justify-end">
-                        <button onclick="downloadPDF()" class="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-lg font-semibold shadow-lg transition">
-                            <i class="fa-solid fa-file-pdf mr-2"></i> Export Report
-                        </button>
+                    <!-- Target Summary Banner & Action Buttons -->
+                    <div class="glass-panel rounded-xl p-5 shadow-xl flex flex-wrap justify-between items-center gap-4 border-l-4 border-l-cyan-500">
+                        <div class="flex items-center gap-3">
+                            <div class="h-11 w-11 rounded-lg bg-cyan-950/60 border border-cyan-800 flex items-center justify-center text-cyan-400">
+                                <i class="fa-solid fa-server text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <h2 id="result-target-title" class="text-xl font-bold text-white font-mono">192.168.1.1</h2>
+                                    <span id="result-risk-badge" class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-red-900/60 text-red-300 border border-red-700/60">
+                                        RISK: UNKNOWN
+                                    </span>
+                                </div>
+                                <div class="text-xs text-gray-400 mt-0.5 flex items-center gap-3">
+                                    <span id="result-port-count"><i class="fa-solid fa-network-wired mr-1"></i> 0 Open Ports</span>
+                                    <span id="result-timestamp"><i class="fa-regular fa-clock mr-1"></i> Just now</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Toolbar -->
+                        <div class="flex items-center gap-2">
+                            <button onclick="openHardeningModal()" title="Generate Automated Remediation & Hardening Script" class="bg-indigo-950/80 hover:bg-indigo-900 text-indigo-300 border border-indigo-700/80 px-3 py-1.5 rounded-lg text-xs font-semibold shadow transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-shield-cat"></i> Hardening Script
+                            </button>
+                            <button onclick="copyAnalysis()" title="Copy AI Analysis to Clipboard" class="bg-slate-800 hover:bg-slate-700 text-gray-300 hover:text-white px-3 py-1.5 rounded-lg text-xs font-medium transition border border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-regular fa-copy"></i> Copy Report
+                            </button>
+                            <button onclick="downloadJSON()" title="Download raw JSON data" class="bg-slate-800 hover:bg-slate-700 text-gray-300 hover:text-white px-3 py-1.5 rounded-lg text-xs font-medium transition border border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-code"></i> JSON
+                            </button>
+                            <button onclick="downloadPDF()" title="Export PDF report" class="bg-red-950/70 hover:bg-red-900 text-red-200 border border-red-800/80 px-3.5 py-1.5 rounded-lg text-xs font-semibold shadow transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-file-pdf"></i> Export PDF
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Report Content to Export -->
                     <div id="report-content" class="space-y-6">
-                        <!-- AI Analysis -->
-                        <div class="glass-panel rounded-xl p-6 shadow-2xl border-l-4 border-l-purple-500 bg-slate-900">
-                            <h2 class="text-xl font-bold mb-4 text-purple-400"><i class="fa-solid fa-brain mr-2"></i> Security Analysis</h2>
-                            <div id="ai-output" class="text-gray-200 leading-relaxed text-sm"></div>
+                        <!-- AI Security Analysis Section -->
+                        <div class="glass-panel rounded-xl p-6 shadow-2xl border-l-4 border-l-purple-500 bg-slate-900/90">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-md font-bold text-purple-300 flex items-center gap-2">
+                                    <i class="fa-solid fa-brain text-purple-400"></i> AI Cybersecurity Threat Assessment
+                                </h2>
+                                <span class="text-xs text-purple-400 bg-purple-950/60 px-2 py-0.5 rounded border border-purple-800/50">Gemini 3.6 Flash PRO</span>
+                            </div>
+                            <div id="ai-output" class="prose-cyber text-gray-200 text-sm"></div>
                         </div>
 
-                        <!-- OSINT Data -->
-                        <div class="glass-panel rounded-xl overflow-hidden border border-slate-700 mt-4">
-                            <div class="bg-slate-800 px-4 py-2 text-sm text-gray-400 font-mono border-b border-slate-700">OSINT Data (Whois & DNS)</div>
-                            <div class="p-4 terminal max-h-64 overflow-y-auto text-xs">
-                                <pre id="osint-output"></pre>
+                        <!-- Detected Ports & Services Table -->
+                        <div class="glass-panel rounded-xl p-6 shadow-2xl border border-slate-800">
+                            <h2 class="text-md font-bold text-white mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-list-check text-cyan-400"></i> Detected Ports & Running Services
+                            </h2>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left text-xs border-collapse">
+                                    <thead>
+                                        <tr class="bg-slate-800/80 text-gray-400 border-b border-slate-700">
+                                            <th class="p-2.5 font-semibold">Port / Proto</th>
+                                            <th class="p-2.5 font-semibold">State</th>
+                                            <th class="p-2.5 font-semibold">Service</th>
+                                            <th class="p-2.5 font-semibold">Version Details</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="ports-table-body" class="divide-y divide-slate-800"></tbody>
+                                </table>
                             </div>
                         </div>
 
-                        <!-- Raw Nmap Output -->
-                        <div class="glass-panel rounded-xl overflow-hidden border border-slate-700">
-                            <div class="bg-slate-800 px-4 py-2 text-sm text-gray-400 font-mono border-b border-slate-700">Raw Data</div>
-                            <div class="p-4 terminal max-h-64 overflow-y-auto text-xs">
+                        <!-- HTTP Web Security & Security Headers Audit -->
+                        <div id="http-sec-card" class="hidden glass-panel rounded-xl p-6 shadow-2xl border border-slate-800">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-md font-bold text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-shield-virus text-indigo-400"></i> HTTP Security Headers & Web Posture Audit
+                                </h2>
+                                <span id="http-grade-badge" class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-950 text-indigo-300 border border-indigo-700">
+                                    GRADE: N/A
+                                </span>
+                            </div>
+                            
+                            <!-- Badges Grid -->
+                            <div id="http-headers-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4"></div>
+
+                            <!-- Server & Technology Banners -->
+                            <div id="http-leaks-container" class="space-y-2 mb-4 text-xs font-mono"></div>
+
+                            <!-- Recommendations -->
+                            <div id="http-recs-container" class="bg-slate-950/80 rounded-lg p-3.5 border border-slate-800/80 text-xs text-gray-300 space-y-1.5"></div>
+                        </div>
+
+                        <!-- Subdomain Reconnaissance Map -->
+                        <div id="subdomains-card" class="hidden glass-panel rounded-xl p-6 shadow-2xl border border-slate-800">
+                            <div class="flex justify-between items-center mb-3">
+                                <h2 class="text-md font-bold text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-sitemap text-emerald-400"></i> Discovered Subdomains & Attack Surface
+                                </h2>
+                                <span id="subdomains-count" class="text-xs bg-emerald-950 text-emerald-400 px-2 py-0.5 rounded-full border border-emerald-800">0 found</span>
+                            </div>
+                            <p class="text-xs text-gray-400 mb-3">Active & passive DNS mapped targets ready for on-demand scanning.</p>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left text-xs border-collapse">
+                                    <thead>
+                                        <tr class="bg-slate-800/80 text-gray-400 border-b border-slate-700">
+                                            <th class="p-2.5 font-semibold">Subdomain</th>
+                                            <th class="p-2.5 font-semibold">Resolved IP(s)</th>
+                                            <th class="p-2.5 font-semibold text-right">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="subdomains-table-body" class="divide-y divide-slate-800"></tbody>
+                                </table>
+                            </div>
+                        <!-- Domain & Email Security Intelligence Card -->
+                        <div id="domain-intel-card" class="hidden glass-panel rounded-xl p-6 shadow-2xl border border-slate-800">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-md font-bold text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-globe text-cyan-400"></i> Domain Posture & Anti-Spoofing Defense
+                                </h2>
+                                <span id="domain-spoofing-badge" class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-950 text-emerald-300 border border-emerald-700">
+                                    PROTECTED
+                                </span>
+                            </div>
+                            
+                            <!-- Badges Grid: Resolved IPs, CDN Shield, SSL Validity -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+                                <div class="bg-slate-950/80 rounded-lg p-3 border border-slate-800">
+                                    <div class="text-[10px] uppercase font-bold text-gray-400 mb-1">Resolved IP(s)</div>
+                                    <div id="domain-resolved-ips" class="font-mono text-xs text-cyan-300 font-semibold truncate">-</div>
+                                </div>
+                                <div class="bg-slate-950/80 rounded-lg p-3 border border-slate-800">
+                                    <div class="text-[10px] uppercase font-bold text-gray-400 mb-1">Cloud / CDN Shield</div>
+                                    <div id="domain-cdn-badge" class="font-mono text-xs text-yellow-300 font-semibold truncate">Direct Origin</div>
+                                </div>
+                                <div class="bg-slate-950/80 rounded-lg p-3 border border-slate-800">
+                                    <div class="text-[10px] uppercase font-bold text-gray-400 mb-1">SSL/TLS Expiry</div>
+                                    <div id="domain-ssl-badge" class="font-mono text-xs text-emerald-300 font-semibold truncate">Valid</div>
+                                </div>
+                            </div>
+
+                            <!-- Email Authentication: SPF & DMARC -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-2">
+                                <div class="bg-slate-950/80 rounded-lg p-3.5 border border-slate-800/80 text-xs">
+                                    <div class="flex justify-between items-center mb-1.5">
+                                        <span class="font-semibold text-gray-200">SPF (Sender Policy)</span>
+                                        <span id="domain-spf-status" class="px-2 py-0.5 rounded text-[10px] font-bold">PASS</span>
+                                    </div>
+                                    <div id="domain-spf-detail" class="text-gray-400 font-mono text-[11px] truncate">v=spf1 ...</div>
+                                </div>
+                                <div class="bg-slate-950/80 rounded-lg p-3.5 border border-slate-800/80 text-xs">
+                                    <div class="flex justify-between items-center mb-1.5">
+                                        <span class="font-semibold text-gray-200">DMARC Enforcement</span>
+                                        <span id="domain-dmarc-status" class="px-2 py-0.5 rounded text-[10px] font-bold">PASS</span>
+                                    </div>
+                                    <div id="domain-dmarc-detail" class="text-gray-400 font-mono text-[11px] truncate">p=reject</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OSINT & Intelligence Breakdown -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- DNS & GeoIP -->
+                            <div class="glass-panel rounded-xl p-5 shadow border border-slate-800">
+                                <h3 class="text-xs font-bold text-gray-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-globe text-cyan-400"></i> Network & GeoIP Intelligence
+                                </h3>
+                                <div id="osint-summary" class="text-xs space-y-1.5 text-gray-300 font-mono"></div>
+                            </div>
+                            
+                            <!-- Whois & SSL -->
+                            <div class="glass-panel rounded-xl p-5 shadow border border-slate-800">
+                                <h3 class="text-xs font-bold text-gray-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-lock text-cyan-400"></i> Whois & SSL Security
+                                </h3>
+                                <div id="osint-whois-summary" class="text-xs space-y-1.5 text-gray-300 font-mono"></div>
+                            </div>
+                        </div>
+
+                        <!-- Engagement Documentation & Analyst Notes -->
+                        <div class="glass-panel rounded-xl p-6 shadow-2xl border border-slate-800 bg-slate-900/60">
+                            <div class="flex justify-between items-center mb-3">
+                                <h2 class="text-md font-bold text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-pen-to-square text-amber-400"></i> Analyst Notes & Engagement Documentation
+                                </h2>
+                                <span id="notes-save-status" class="text-xs text-gray-400"></span>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                    <div>
+                                        <label class="block text-[11px] font-medium text-gray-400 mb-1">Client / Project Tag</label>
+                                        <input type="text" id="report-client-tag" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-1.5 text-white text-xs focus:outline-none focus:border-amber-400 font-medium">
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label class="block text-[11px] font-medium text-gray-400 mb-1">Auditor Commentary & Findings Verification</label>
+                                        <textarea id="report-analyst-notes" rows="2" placeholder="Record vulnerability validation, false positives, compliance tags, or internal ticket links..."
+                                            class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-white text-xs focus:outline-none focus:border-amber-400"></textarea>
+                                    </div>
+                                </div>
+                                <div class="flex justify-end">
+                                    <button onclick="saveAnalystNotes()" class="bg-amber-600 hover:bg-amber-500 text-slate-950 font-semibold px-4 py-1.5 rounded-lg text-xs transition shadow flex items-center gap-1.5">
+                                        <i class="fa-solid fa-floppy-disk"></i> Save Documentation
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Raw Nmap Output Accordion/Details -->
+                        <details class="glass-panel rounded-xl overflow-hidden border border-slate-800">
+                            <summary class="bg-slate-800/60 px-4 py-3 text-xs text-gray-400 font-mono cursor-pointer hover:text-cyan-300 transition flex justify-between items-center">
+                                <span><i class="fa-solid fa-terminal mr-2"></i> View Raw Nmap Console Output</span>
+                                <span class="text-xs text-gray-500">Toggle</span>
+                            </summary>
+                            <div class="p-4 terminal max-h-72 overflow-y-auto text-xs">
                                 <pre id="nmap-output"></pre>
                             </div>
-                        </div>
+                        </details>
                     </div>
 
-                    <!-- AI Chat Advisor -->
-                    <div class="glass-panel rounded-xl p-0 flex flex-col shadow-2xl overflow-hidden border border-cyan-800">
-                        <div class="bg-cyan-900 bg-opacity-50 px-4 py-3 border-b border-cyan-800">
-                            <h3 class="font-semibold text-cyan-300"><i class="fa-solid fa-robot mr-2"></i>Cyber Advisor Chat</h3>
+                    <!-- AI Cyber Advisor Interactive Chat -->
+                    <div class="glass-panel rounded-xl flex flex-col shadow-2xl overflow-hidden border border-cyan-900/60">
+                        <div class="bg-cyan-950/70 px-4 py-3 border-b border-cyan-900/50 flex justify-between items-center">
+                            <h3 class="text-sm font-semibold text-cyan-300 flex items-center gap-2">
+                                <i class="fa-solid fa-robot"></i> Interactive Cyber Advisor Chat
+                            </h3>
+                            <span class="text-xs text-cyan-400/80">Context Aware</span>
                         </div>
-                        <div id="chat-messages" class="p-4 h-64 overflow-y-auto space-y-3 bg-slate-900 bg-opacity-50 text-sm">
-                            <div class="text-gray-400 italic text-center">Ask the AI questions about this scan to get remediation help.</div>
+                        
+                        <!-- Chat message log -->
+                        <div id="chat-messages" class="p-4 h-72 overflow-y-auto space-y-3 bg-slate-950/60 text-sm">
+                            <div class="text-gray-400 italic text-center text-xs">
+                                Ask the AI advisor questions about this scan, remediation rules, or exploit mitigation.
+                            </div>
                         </div>
-                        <div class="p-3 border-t border-slate-700 bg-slate-800 flex">
-                            <input type="text" id="chat-input" placeholder="e.g. How do I fix the FTP vulnerability?" class="flex-grow bg-slate-700 border-none rounded-l-lg px-3 py-2 text-white focus:outline-none focus:ring-1 focus:ring-cyan-500">
-                            <button onclick="sendChatMessage()" class="bg-cyan-600 hover:bg-cyan-500 px-4 py-2 rounded-r-lg text-white transition">
-                                <i class="fa-solid fa-paper-plane"></i>
+
+                        <!-- Quick suggestion chips -->
+                        <div class="px-4 py-2 bg-slate-900/90 border-t border-slate-800 flex flex-wrap gap-2 text-xs">
+                            <button onclick="quickPrompt('How do I fix the most critical vulnerability found?')" class="bg-slate-800 hover:bg-cyan-900/50 text-cyan-300 px-2.5 py-1 rounded-full border border-slate-700 transition">
+                                🛡️ Fix top vulnerability
+                            </button>
+                            <button onclick="quickPrompt('Generate iptables rules to block unauthorized access to open ports.')" class="bg-slate-800 hover:bg-cyan-900/50 text-cyan-300 px-2.5 py-1 rounded-full border border-slate-700 transition">
+                                🧱 Generate firewall rules
+                            </button>
+                            <button onclick="quickPrompt('What CVE numbers might apply to these service versions?')" class="bg-slate-800 hover:bg-cyan-900/50 text-cyan-300 px-2.5 py-1 rounded-full border border-slate-700 transition">
+                                🔍 Relevant CVEs
+                            </button>
+                        </div>
+
+                        <!-- Input box -->
+                        <div class="p-3 border-t border-slate-800 bg-slate-900 flex gap-2">
+                            <input type="text" id="chat-input" placeholder="Ask questions about this scan or remediation..." 
+                                onkeypress="if(event.key === 'Enter') sendChatMessage()"
+                                class="flex-grow bg-slate-800 border border-slate-700 rounded-lg px-3.5 py-2 text-white text-sm focus:outline-none focus:border-cyan-400">
+                            <button onclick="sendChatMessage()" class="bg-cyan-600 hover:bg-cyan-500 px-4 py-2 rounded-lg text-white text-sm font-medium transition flex items-center gap-1">
+                                <span>Send</span> <i class="fa-solid fa-paper-plane text-xs"></i>
                             </button>
                         </div>
                     </div>
 
                 </div>
+            </div>
+        </div>
 
-                <!-- Empty State -->
-                <div id="empty-state" class="glass-panel rounded-xl p-12 text-center h-full flex flex-col justify-center items-center">
-                    <i class="fa-solid fa-radar text-6xl text-slate-600 mb-4"></i>
-                    <h3 class="text-xl font-bold text-slate-400">Awaiting Target</h3>
+        <!-- ================= LAN DISCOVERY VIEW ================= -->
+        <div id="view-discovery" class="hidden space-y-6">
+            <div class="glass-panel rounded-xl p-6 shadow-2xl">
+                <div class="max-w-xl">
+                    <h2 class="text-xl font-bold text-white flex items-center gap-2 mb-1">
+                        <i class="fa-solid fa-network-wired text-cyan-400"></i> Local Network Host Sweeper
+                    </h2>
+                    <p class="text-sm text-gray-400 mb-4">
+                        Discover active hosts, IP addresses, and hardware vendors on your local subnet using an Nmap ping sweep (<code class="text-cyan-300">nmap -sn</code>).
+                    </p>
+                    <form id="discovery-form" class="flex gap-3">
+                        <input type="text" id="subnet-target" placeholder="e.g. 192.168.1.0/24 or 10.0.0.0/24" value="192.168.1.0/24" required
+                            class="flex-grow bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-white text-sm focus:outline-none focus:border-cyan-400">
+                        <button type="submit" id="discovery-btn" class="bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-5 py-2.5 rounded-lg transition flex items-center gap-2 text-sm shadow-lg shadow-indigo-600/30">
+                            <span>Discover Hosts</span> <i class="fa-solid fa-radar"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Discovery Results -->
+            <div class="glass-panel rounded-xl p-6 shadow-2xl">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-md font-semibold text-white">Discovered Active Devices</h3>
+                    <span id="discovery-count" class="text-xs bg-slate-800 text-gray-400 px-2 py-0.5 rounded-full">0 Hosts</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs">
+                        <thead>
+                            <tr class="bg-slate-800/80 text-gray-400 border-b border-slate-700">
+                                <th class="p-3 font-semibold">IP Address</th>
+                                <th class="p-3 font-semibold">Hostname</th>
+                                <th class="p-3 font-semibold">Latency / Status</th>
+                                <th class="p-3 font-semibold">MAC / Hardware Vendor</th>
+                                <th class="p-3 font-semibold text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="discovery-table-body" class="divide-y divide-slate-800">
+                            <tr>
+                                <td colspan="5" class="p-6 text-center text-gray-500">Run a discovery scan above to find live devices on your network.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
 
-        <!-- MONITORING VIEW -->
+        <!-- ================= MONITORING & DIFF VIEW ================= -->
         <div id="view-monitoring" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div class="lg:col-span-1 space-y-6">
-                <!-- Webhook Settings -->
-                <div class="glass-panel rounded-xl p-6 shadow-2xl mb-6">
-                    <h2 class="text-xl font-semibold mb-4 text-white"><i class="fa-solid fa-gear mr-2"></i>Settings</h2>
-                    <form id="settings-form" class="space-y-4">
-                        <label class="block text-sm font-medium text-gray-400 mb-1">Alert Webhook URL (Discord/Slack)</label>
-                        <input type="text" id="webhook-url" placeholder="https://discord.com/api/webhooks/..." class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white">
-                        <button type="submit" class="w-full bg-cyan-600 hover:bg-cyan-500 text-white py-2 rounded-lg">Save Settings</button>
+                <!-- Webhook Alert Settings -->
+                <div class="glass-panel rounded-xl p-6 shadow-2xl">
+                    <h2 class="text-lg font-semibold mb-3 text-white flex items-center gap-2">
+                        <i class="fa-solid fa-bell text-cyan-400"></i> Alert Webhook
+                    </h2>
+                    <p class="text-xs text-gray-400 mb-4">Send instant alerts to Discord or Slack when an attack surface change or newly opened port is detected.</p>
+                    <form id="settings-form" class="space-y-3">
+                        <label class="block text-xs font-medium text-gray-400">Webhook URL</label>
+                        <input type="url" id="webhook-url" placeholder="https://discord.com/api/webhooks/..." 
+                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3.5 py-2 text-white text-xs focus:outline-none focus:border-cyan-400">
+                        <div class="flex gap-2">
+                            <button type="submit" class="flex-1 bg-cyan-600 hover:bg-cyan-500 text-white text-xs py-2 rounded-lg font-medium transition">
+                                Save Webhook
+                            </button>
+                            <button type="button" onclick="testWebhook()" class="bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-slate-700 text-xs px-3 py-2 rounded-lg font-medium transition flex items-center gap-1">
+                                <i class="fa-solid fa-paper-plane text-xs"></i> Test Ping
+                            </button>
+                        </div>
+                        <div id="webhook-feedback" class="text-xs hidden mt-1"></div>
                     </form>
                 </div>
 
-                <!-- Add Watchlist -->
+                <!-- Add Monitored Target -->
                 <div class="glass-panel rounded-xl p-6 shadow-2xl">
-                    <h2 class="text-xl font-semibold mb-4 text-white"><i class="fa-solid fa-eye mr-2"></i>Add to Watchlist</h2>
-                    <form id="watchlist-form" class="space-y-4">
-                        <input type="text" id="watch-target" placeholder="Target IP" required class="w-full bg-slate-800 rounded-lg px-4 py-2 text-white">
-                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white py-2 rounded-lg">Add to Monitoring</button>
+                    <h2 class="text-lg font-semibold mb-2 text-white flex items-center gap-2">
+                        <i class="fa-solid fa-shield-halved text-indigo-400"></i> Add to Watchlist
+                    </h2>
+                    <p class="text-xs text-gray-400 mb-4">Periodically scans targets in the background and computes diff logs.</p>
+                    <form id="watchlist-form" class="space-y-3">
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-1">Target IP or Domain</label>
+                            <input type="text" id="watch-target" placeholder="e.g. 192.168.1.100" required 
+                                class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3.5 py-2 text-white text-xs focus:outline-none focus:border-indigo-400">
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="block text-xs text-gray-400 mb-1">Scan Type</label>
+                                <select id="watch-scan-type" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-2 text-white text-xs">
+                                    <option value="fast">Fast (-F)</option>
+                                    <option value="advanced">Advanced (-sV)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-400 mb-1">Interval</label>
+                                <select id="watch-interval" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-2.5 py-2 text-white text-xs">
+                                    <option value="1">Every 1 hr</option>
+                                    <option value="6">Every 6 hrs</option>
+                                    <option value="24" selected>Every 24 hrs</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-xs py-2 rounded-lg transition shadow">
+                            Start Continuous Monitoring
+                        </button>
                     </form>
                 </div>
                 
-                <!-- Current Watchlist -->
+                <!-- Watchlist Items -->
                 <div class="glass-panel rounded-xl p-6 shadow-2xl">
-                    <h2 class="text-xl font-semibold mb-4 text-white">Monitored Targets</h2>
-                    <ul id="watchlist-list" class="space-y-2"></ul>
+                    <h2 class="text-md font-semibold mb-3 text-white flex items-center justify-between">
+                        <span>Monitored Targets</span>
+                        <span id="watchlist-count" class="text-xs bg-slate-800 text-gray-400 px-2 py-0.5 rounded-full">0</span>
+                    </h2>
+                    <ul id="watchlist-list" class="space-y-2.5 max-h-80 overflow-y-auto pr-1"></ul>
                 </div>
             </div>
 
-            <!-- Diff Logs -->
+            <!-- Diff Logs & Alerts -->
             <div class="lg:col-span-2 space-y-6">
-                <div class="glass-panel rounded-xl p-6 shadow-2xl h-full">
-                    <h2 class="text-xl font-semibold mb-4 text-white"><i class="fa-solid fa-bell mr-2"></i>Alerts & Diff Logs</h2>
-                    <div id="diff-logs" class="space-y-4 max-h-[600px] overflow-y-auto"></div>
+                <div class="glass-panel rounded-xl p-6 shadow-2xl h-full flex flex-col">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-lg font-semibold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-code-compare text-yellow-400"></i> Attack Surface Diffs & Alerts
+                        </h2>
+                        <button onclick="loadDiffLogs()" class="text-xs text-cyan-400 hover:underline flex items-center gap-1">
+                            <i class="fa-solid fa-rotate-right"></i> Refresh
+                        </button>
+                    </div>
+                    <p class="text-xs text-gray-400 mb-4">Whenever a monitored target's open ports or service signatures change, the AI diff engine logs an alert here.</p>
+                    <div id="diff-logs" class="space-y-4 flex-grow max-h-[650px] overflow-y-auto pr-1"></div>
                 </div>
             </div>
         </div>
@@ -183,103 +577,667 @@
     <script>
         // Global State
         let currentScanContext = "";
+        let currentRawData = null;
         let chatHistory = [];
 
         // App Initialization
-        fetch('/check_nmap')
-            .then(res => res.json())
-            .then(data => {
-                const badge = document.getElementById('nmap-status');
-                if(data.installed) {
-                    badge.textContent = "Nmap Active";
-                    badge.className = "px-3 py-1 rounded-full text-xs font-semibold bg-green-600 text-white ml-4";
-                } else {
-                    badge.textContent = "Nmap Missing";
-                    badge.className = "px-3 py-1 rounded-full text-xs font-semibold bg-red-600 text-white ml-4";
+        window.addEventListener('DOMContentLoaded', () => {
+            checkNmap();
+            loadHistory();
+            loadSettings();
+        });
+
+        function checkNmap() {
+            fetch('/check_nmap')
+                .then(res => res.json())
+                .then(data => {
+                    const badge = document.getElementById('nmap-status');
+                    if(data.installed) {
+                        badge.innerHTML = '<span class="h-2 w-2 rounded-full bg-green-400"></span> Nmap Active';
+                        badge.className = "px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-300 border border-emerald-800 ml-4 flex items-center gap-1.5";
+                    } else {
+                        badge.innerHTML = '<span class="h-2 w-2 rounded-full bg-red-400"></span> Nmap Missing';
+                        badge.className = "px-3 py-1 rounded-full text-xs font-semibold bg-red-950/80 text-red-300 border border-red-800 ml-4 flex items-center gap-1.5";
+                    }
+                }).catch(() => {});
+        }
+
+        // --- Tab Switching ---
+        function switchTab(tab) {
+            const tabs = ['scanner', 'discovery', 'monitoring'];
+            tabs.forEach(t => {
+                const elView = document.getElementById(`view-${t}`);
+                const elTab = document.getElementById(`tab-${t}`);
+                if (elView) elView.classList.add('hidden');
+                if (elTab) {
+                    elTab.classList.remove('tab-active', 'text-cyan-400');
+                    elTab.classList.add('text-gray-400');
                 }
             });
 
-        loadHistory();
+            const activeView = document.getElementById(`view-${tab}`);
+            const activeTab = document.getElementById(`tab-${tab}`);
+            if (activeView) activeView.classList.remove('hidden');
+            if (activeTab) {
+                activeTab.classList.add('tab-active', 'text-cyan-400');
+                activeTab.classList.remove('text-gray-400');
+            }
 
-        // --- UI Logic ---
-        function switchTab(tab) {
-            document.getElementById('view-scanner').classList.add('hidden');
-            document.getElementById('view-monitoring').classList.add('hidden');
-            document.getElementById('tab-scanner').classList.remove('tab-active', 'text-cyan-400');
-            document.getElementById('tab-monitoring').classList.remove('tab-active', 'text-cyan-400');
-            document.getElementById('tab-scanner').classList.add('text-gray-400');
-            document.getElementById('tab-monitoring').classList.add('text-gray-400');
-
-            if (tab === 'scanner') {
-                document.getElementById('view-scanner').classList.remove('hidden');
-                document.getElementById('tab-scanner').classList.add('tab-active', 'text-cyan-400');
-                document.getElementById('tab-scanner').classList.remove('text-gray-400');
-            } else {
-                document.getElementById('view-monitoring').classList.remove('hidden');
-                document.getElementById('tab-monitoring').classList.add('tab-active', 'text-cyan-400');
-                document.getElementById('tab-monitoring').classList.remove('text-gray-400');
+            if (tab === 'monitoring') {
                 loadWatchlist();
                 loadDiffLogs();
             }
         }
 
-        function formatMarkdown(text) {
-            return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                       .replace(/\n/g, '<br/>')
-                       .replace(/\* (.*?)(<br\/>|$)/g, '<li class="ml-4 list-disc">$1</li>');
+        // Global State
+        let currentScanContext = "";
+        let currentRawData = null;
+        let chatHistory = [];
+        let allHistory = [];
+
+        // App Initialization
+        window.addEventListener('DOMContentLoaded', () => {
+            checkNmap();
+            loadHistory();
+            loadSettings();
+        });
+
+        function checkNmap() {
+            fetch('/check_nmap')
+                .then(res => res.json())
+                .then(data => {
+                    const badge = document.getElementById('nmap-status');
+                    if(data.installed) {
+                        badge.innerHTML = '<span class="h-2 w-2 rounded-full bg-green-400"></span> Nmap Active';
+                        badge.className = "px-3 py-1 rounded-full text-xs font-semibold bg-emerald-950/80 text-emerald-300 border border-emerald-800 ml-4 flex items-center gap-1.5";
+                    } else {
+                        badge.innerHTML = '<span class="h-2 w-2 rounded-full bg-red-400"></span> Nmap Missing';
+                        badge.className = "px-3 py-1 rounded-full text-xs font-semibold bg-red-950/80 text-red-300 border border-red-800 ml-4 flex items-center gap-1.5";
+                    }
+                }).catch(() => {});
+        }
+
+        // --- Tab Switching ---
+        function switchTab(tab) {
+            const tabs = ['scanner', 'discovery', 'monitoring'];
+            tabs.forEach(t => {
+                const elView = document.getElementById(`view-${t}`);
+                const elTab = document.getElementById(`tab-${t}`);
+                if (elView) elView.classList.add('hidden');
+                if (elTab) {
+                    elTab.classList.remove('tab-active', 'text-cyan-400');
+                    elTab.classList.add('text-gray-400');
+                }
+            });
+
+            const activeView = document.getElementById(`view-${tab}`);
+            const activeTab = document.getElementById(`tab-${tab}`);
+            if (activeView) activeView.classList.remove('hidden');
+            if (activeTab) {
+                activeTab.classList.add('tab-active', 'text-cyan-400');
+                activeTab.classList.remove('text-gray-400');
+            }
+
+            if (tab === 'monitoring') {
+                loadWatchlist();
+                loadDiffLogs();
+            }
+        }
+
+        // --- Render Markdown using Marked.js ---
+        function renderMarkdown(text) {
+            if (!text) return "";
+            try {
+                return marked.parse(text);
+            } catch (e) {
+                return text;
+            }
         }
 
         // --- SCANNER LOGIC ---
         document.getElementById('scan-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            const target = document.getElementById('target').value;
+            const target = document.getElementById('target').value.trim();
             const scanType = document.getElementById('scan-type').value;
+            const customPorts = document.getElementById('custom-ports').value.trim();
+            const clientTag = document.getElementById('client-tag').value.trim() || 'General';
             
             document.getElementById('empty-state').classList.add('hidden');
             document.getElementById('results-state').classList.add('hidden');
             document.getElementById('loading-state').classList.remove('hidden');
             
-            // Reset Chat
             chatHistory = [];
-            document.getElementById('chat-messages').innerHTML = '<div class="text-gray-400 italic text-center">Ask the AI questions about this scan to get remediation help.</div>';
+            document.getElementById('chat-messages').innerHTML = '<div class="text-gray-400 italic text-center text-xs">Ask the AI advisor questions about this scan to get remediation help.</div>';
             currentScanContext = "";
 
             fetch('/scan', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ target: target, scan_type: scanType })
+                body: JSON.stringify({ 
+                    target: target, 
+                    scan_type: scanType, 
+                    custom_ports: customPorts, 
+                    client_tag: clientTag 
+                })
             }).then(res => res.json()).then(data => {
                 document.getElementById('loading-state').classList.add('hidden');
                 if(data.success) {
-                    document.getElementById('results-state').classList.remove('hidden');
-                    document.getElementById('ai-output').innerHTML = formatMarkdown(data.ai_analysis);
-                    document.getElementById('nmap-output').textContent = data.nmap_result;
-                    document.getElementById('osint-output').textContent = JSON.stringify(data.osint_result, null, 2);
-                    currentScanContext = data.nmap_result;
+                    displayScanResults(data);
                     loadHistory();
                 } else {
-                    alert("Scan failed: " + data.error);
+                    alert("Scan failed: " + (data.error || "Unknown error"));
                     document.getElementById('empty-state').classList.remove('hidden');
                 }
             }).catch(err => {
                 document.getElementById('loading-state').classList.add('hidden');
                 document.getElementById('empty-state').classList.remove('hidden');
+                alert("Scan request failed: " + err);
             });
         });
 
-        // --- CHAT LOGIC ---
+        function displayScanResults(data) {
+            currentRawData = data;
+            document.getElementById('results-state').classList.remove('hidden');
+            document.getElementById('result-target-title').textContent = data.target;
+            
+            // Populate Documentation / Tags
+            document.getElementById('report-client-tag').value = data.client_tag || 'General';
+            document.getElementById('report-analyst-notes').value = data.analyst_notes || '';
+            document.getElementById('notes-save-status').textContent = '';
+
+            // Risk Badge
+            const riskBadge = document.getElementById('result-risk-badge');
+            const risk = (data.risk_level || 'LOW').toUpperCase();
+            riskBadge.textContent = `RISK: ${risk}`;
+            if (risk === 'CRITICAL') {
+                riskBadge.className = "px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-red-900/80 text-red-200 border border-red-500 animate-pulse";
+            } else if (risk === 'HIGH') {
+                riskBadge.className = "px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-orange-900/80 text-orange-200 border border-orange-500";
+            } else if (risk === 'MEDIUM') {
+                riskBadge.className = "px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-yellow-900/80 text-yellow-200 border border-yellow-500";
+            } else {
+                riskBadge.className = "px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-900/80 text-emerald-200 border border-emerald-500";
+            }
+
+            // Open Ports Count
+            const ports = data.ports || [];
+            document.getElementById('result-port-count').innerHTML = `<i class="fa-solid fa-network-wired mr-1"></i> ${ports.length} Open Ports`;
+            if (data.timestamp) {
+                document.getElementById('result-timestamp').innerHTML = `<i class="fa-regular fa-clock mr-1"></i> ${data.timestamp}`;
+            }
+
+            // AI Analysis Output
+            document.getElementById('ai-output').innerHTML = renderMarkdown(data.ai_analysis);
+
+            // Detected Ports Table
+            const tbody = document.getElementById('ports-table-body');
+            tbody.innerHTML = '';
+            if (ports.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" class="p-4 text-center text-gray-400">No open ports detected on target.</td></tr>';
+            } else {
+                ports.forEach(p => {
+                    tbody.innerHTML += `
+                        <tr class="hover:bg-slate-800/50 transition">
+                            <td class="p-2.5 font-mono text-cyan-300 font-semibold">${p.port}</td>
+                            <td class="p-2.5"><span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-emerald-950 text-emerald-400 border border-emerald-700">${p.state}</span></td>
+                            <td class="p-2.5 text-gray-200 font-mono">${p.service}</td>
+                            <td class="p-2.5 text-gray-400 font-mono text-[11px]">${p.version || 'N/A'}</td>
+                        </tr>
+                    `;
+                });
+            }
+
+            // HTTP Security Headers Audit Rendering
+            const httpCard = document.getElementById('http-sec-card');
+            const httpData = data.osint_result && data.osint_result.http_security;
+            if (httpData && httpData.available) {
+                httpCard.classList.remove('hidden');
+                const badge = document.getElementById('http-grade-badge');
+                badge.textContent = `GRADE: ${httpData.grade} (${httpData.score}/100)`;
+                badge.className = httpData.grade === 'A' || httpData.grade === 'B' 
+                    ? 'px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-950 text-emerald-300 border border-emerald-700'
+                    : 'px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-950 text-amber-300 border border-amber-700';
+
+                const grid = document.getElementById('http-headers-grid');
+                grid.innerHTML = '';
+                for (const [hName, hObj] of Object.entries(httpData.headers_audit || {})) {
+                    const isPass = hObj.status === 'PASS';
+                    grid.innerHTML += `
+                        <div class="p-2.5 rounded-lg border ${isPass ? 'border-emerald-800/60 bg-emerald-950/20' : 'border-rose-900/60 bg-rose-950/20'}">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="font-mono text-[11px] text-gray-200 font-semibold truncate" title="${hName}">${hName}</span>
+                                <span class="text-[10px] font-bold px-1.5 py-0.2 rounded ${isPass ? 'bg-emerald-900/60 text-emerald-300' : 'bg-rose-900/60 text-rose-300'}">${hObj.status}</span>
+                            </div>
+                            <div class="text-[10px] text-gray-400 truncate" title="${hObj.value || 'Not configured'}">${hObj.value || 'Not set'}</div>
+                        </div>
+                    `;
+                }
+
+                const leaks = document.getElementById('http-leaks-container');
+                leaks.innerHTML = '';
+                if (httpData.server_leak) {
+                    leaks.innerHTML += `<div class="p-2 rounded bg-amber-950/30 border border-amber-800/50 text-amber-300"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Web Server Header Leak: <strong>${httpData.server_leak}</strong></div>`;
+                }
+                if (httpData.powered_by) {
+                    leaks.innerHTML += `<div class="p-2 rounded bg-amber-950/30 border border-amber-800/50 text-amber-300"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Technology Stack Leak: <strong>X-Powered-By: ${httpData.powered_by}</strong></div>`;
+                }
+
+                const recs = document.getElementById('http-recs-container');
+                if (httpData.recommendations && httpData.recommendations.length) {
+                    recs.innerHTML = '<div class="font-semibold text-gray-200 mb-1">Web Security Hardening Checklist:</div>' + 
+                        httpData.recommendations.map(r => `<div>• ${r}</div>`).join('');
+                    recs.classList.remove('hidden');
+                } else {
+                    recs.classList.add('hidden');
+                }
+            } else {
+                httpCard.classList.add('hidden');
+            }
+
+            // Subdomains Map Rendering
+            const subCard = document.getElementById('subdomains-card');
+            const subs = (data.osint_result && data.osint_result.subdomains) || [];
+            if (subs.length) {
+                subCard.classList.remove('hidden');
+                document.getElementById('subdomains-count').textContent = `${subs.length} discovered`;
+                const stbody = document.getElementById('subdomains-table-body');
+                stbody.innerHTML = '';
+                subs.forEach(s => {
+                    stbody.innerHTML += `
+                        <tr class="hover:bg-slate-800/50 transition">
+                            <td class="p-2.5 font-mono text-cyan-300 font-semibold">${s.subdomain}</td>
+                            <td class="p-2.5 text-gray-300 font-mono">${(s.ips || []).join(', ')}</td>
+                            <td class="p-2.5 text-right">
+                                <button onclick="scanSubdomain('${s.subdomain}')" class="bg-cyan-950 hover:bg-cyan-900 text-cyan-300 border border-cyan-700/60 px-2 py-0.5 rounded text-[11px] font-medium transition">
+                                    <i class="fa-solid fa-crosshairs mr-1"></i> Scan Target
+                                </button>
+                            </td>
+                        </tr>
+                    `;
+                });
+            } else {
+                subCard.classList.add('hidden');
+            }
+
+            // OSINT Summaries
+            renderOsintSummaries(data.osint_result);
+
+            // Raw Output
+            document.getElementById('nmap-output').textContent = data.nmap_result;
+
+            // Update chat context
+            currentScanContext = `Target: ${data.target}\nNmap:\n${data.nmap_result}\nAI Assessment:\n${data.ai_analysis}`;
+        }
+
+        function scanSubdomain(subdomain) {
+            switchTab('scanner');
+            document.getElementById('target').value = subdomain;
+            document.getElementById('scan-form').dispatchEvent(new Event('submit'));
+        }
+
+        function saveAnalystNotes() {
+            if (!currentRawData) return;
+            const scanId = currentRawData.scan_id || currentRawData.id;
+            const notes = document.getElementById('report-analyst-notes').value;
+            const clientTag = document.getElementById('report-client-tag').value.trim() || 'General';
+            const statusEl = document.getElementById('notes-save-status');
+            statusEl.textContent = 'Saving documentation...';
+            statusEl.className = 'text-xs text-cyan-400';
+
+            fetch(`/scan/${scanId}/notes`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ analyst_notes: notes, client_tag: clientTag })
+            }).then(res => res.json()).then(res => {
+                if (res.success) {
+                    statusEl.textContent = '✅ Saved';
+                    statusEl.className = 'text-xs text-emerald-400 font-semibold';
+                    loadHistory();
+                    setTimeout(() => statusEl.textContent = '', 3000);
+                } else {
+                    statusEl.textContent = '❌ ' + (res.error || 'Failed');
+                    statusEl.className = 'text-xs text-red-400';
+                }
+            }).catch(err => {
+                statusEl.textContent = '❌ Network error';
+                statusEl.className = 'text-xs text-red-400';
+            });
+        }
+
+        function openHardeningModal() {
+            if (!currentRawData) {
+                alert("Please execute or select a scan first.");
+                return;
+            }
+            document.getElementById('hardening-target-desc').textContent = `Target: ${currentRawData.target}`;
+            document.getElementById('hardening-modal').classList.remove('hidden');
+            generateHardeningScript();
+        }
+
+        function closeHardeningModal() {
+            document.getElementById('hardening-modal').classList.add('hidden');
+        }
+
+        function generateHardeningScript() {
+            if (!currentRawData) return;
+            const platform = document.getElementById('hardening-platform').value;
+            const loading = document.getElementById('hardening-loading');
+            const codeEl = document.getElementById('hardening-script-code');
+            loading.classList.remove('hidden');
+            codeEl.textContent = '';
+
+            const summary = `Target: ${currentRawData.target}\nNmap:\n${currentRawData.nmap_result}\nAI Assessment:\n${currentRawData.ai_analysis}`;
+            fetch('/remediation', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ target: currentRawData.target, scan_summary: summary, platform: platform })
+            }).then(res => res.json()).then(data => {
+                loading.classList.add('hidden');
+                if (data.success) {
+                    codeEl.textContent = data.script;
+                } else {
+                    codeEl.textContent = "# Error: " + (data.error || "Failed to generate hardening script.");
+                }
+            }).catch(err => {
+                loading.classList.add('hidden');
+                codeEl.textContent = "# Network Error: " + err;
+            });
+        }
+
+        function copyHardeningScript() {
+            const code = document.getElementById('hardening-script-code').textContent;
+            navigator.clipboard.writeText(code).then(() => alert("Hardening script copied to clipboard!"));
+        }
+
+        function downloadHardeningScript() {
+            const code = document.getElementById('hardening-script-code').textContent;
+            const platform = document.getElementById('hardening-platform').value;
+            const ext = platform === 'linux' ? 'sh' : 'ps1';
+            const filename = `harden_${(currentRawData && currentRawData.target ? currentRawData.target : 'host').replace(/[^a-zA-Z0-9]/g, '_')}.${ext}`;
+            const blob = new Blob([code], { type: 'text/plain' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = filename;
+            a.click();
+        }
+
+        function renderOsintSummaries(osint) {
+            const netDiv = document.getElementById('osint-summary');
+            const whoisDiv = document.getElementById('osint-whois-summary');
+            const domainCard = document.getElementById('domain-intel-card');
+            
+            if (!osint) {
+                if (domainCard) domainCard.classList.add('hidden');
+                netDiv.textContent = "No OSINT intelligence gathered.";
+                whoisDiv.textContent = "No Whois intelligence gathered.";
+                return;
+            }
+
+            // Domain Intelligence Card Rendering
+            if (domainCard && (osint.is_domain || osint.email_security || osint.cdn_proxy)) {
+                domainCard.classList.remove('hidden');
+                
+                // Resolved IPs
+                const ipv4s = (osint.dns && osint.dns.ipv4) ? osint.dns.ipv4 : [];
+                document.getElementById('domain-resolved-ips').textContent = ipv4s.length ? ipv4s.join(', ') : (osint.target || '-');
+
+                // CDN Shield
+                const cdn = osint.cdn_proxy;
+                const cdnEl = document.getElementById('domain-cdn-badge');
+                if (cdn && cdn.is_proxied) {
+                    cdnEl.textContent = `🛡️ ${cdn.provider}`;
+                    cdnEl.className = "font-mono text-xs text-amber-300 font-semibold truncate";
+                } else {
+                    cdnEl.textContent = "Direct Origin";
+                    cdnEl.className = "font-mono text-xs text-emerald-300 font-semibold truncate";
+                }
+
+                // SSL Expiry
+                const sslDet = osint.ssl_cert_details;
+                const sslEl = document.getElementById('domain-ssl-badge');
+                if (sslDet && sslDet.available) {
+                    const days = sslDet.days_remaining !== null ? `${sslDet.days_remaining}d left` : '';
+                    sslEl.textContent = `${sslDet.status} ${days ? '(' + days + ')' : ''}`;
+                    sslEl.className = sslDet.status === 'ACTIVE' ? "font-mono text-xs text-emerald-300 font-semibold truncate" : "font-mono text-xs text-amber-300 font-semibold truncate";
+                } else {
+                    sslEl.textContent = "Not Available";
+                    sslEl.className = "font-mono text-xs text-gray-500 font-semibold truncate";
+                }
+
+                // Email Anti-Spoofing Posture
+                const emailSec = osint.email_security;
+                const badgeEl = document.getElementById('domain-spoofing-badge');
+                if (emailSec) {
+                    const overall = emailSec.overall || 'UNKNOWN';
+                    badgeEl.textContent = overall;
+                    if (overall === 'PROTECTED') {
+                        badgeEl.className = "px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-950 text-emerald-300 border border-emerald-700";
+                    } else if (overall === 'PARTIALLY PROTECTED') {
+                        badgeEl.className = "px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-950 text-amber-300 border border-amber-700";
+                    } else {
+                        badgeEl.className = "px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-red-950 text-red-300 border border-red-700";
+                    }
+
+                    // SPF
+                    const spf = emailSec.spf || {};
+                    const spfStatusEl = document.getElementById('domain-spf-status');
+                    spfStatusEl.textContent = spf.status || 'MISSING';
+                    spfStatusEl.className = spf.status === 'PASS' ? "px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-950 text-emerald-300" : "px-2 py-0.5 rounded text-[10px] font-bold bg-red-950 text-red-300";
+                    document.getElementById('domain-spf-detail').textContent = spf.policy || spf.record || 'No SPF record found';
+
+                    // DMARC
+                    const dmarc = emailSec.dmarc || {};
+                    const dmarcStatusEl = document.getElementById('domain-dmarc-status');
+                    dmarcStatusEl.textContent = dmarc.status || 'MISSING';
+                    dmarcStatusEl.className = dmarc.status === 'PASS' ? "px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-950 text-emerald-300" : "px-2 py-0.5 rounded text-[10px] font-bold bg-amber-950 text-amber-300";
+                    document.getElementById('domain-dmarc-detail').textContent = dmarc.policy || dmarc.record || 'No DMARC record found';
+                } else {
+                    badgeEl.textContent = "NO DATA";
+                    badgeEl.className = "px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-gray-800 text-gray-400 border border-gray-700";
+                }
+            } else if (domainCard) {
+                domainCard.classList.add('hidden');
+            }
+
+            // Network / GeoIP
+            let netHtml = '';
+            if (osint.geoip) {
+                const g = osint.geoip;
+                if (g.is_private) {
+                    netHtml += `<div><span class="text-gray-400">Scope:</span> <span class="text-amber-400">${g.info}</span></div>`;
+                } else {
+                    netHtml += `<div><span class="text-gray-400">Location:</span> <span class="text-cyan-300">${g.city || 'N/A'}, ${g.country || 'N/A'}</span></div>`;
+                    netHtml += `<div><span class="text-gray-400">ISP / Org:</span> <span class="text-gray-200">${g.isp || g.org || 'N/A'}</span></div>`;
+                }
+            }
+            if (osint.dns && typeof osint.dns === 'object') {
+                for (const [k, v] of Object.entries(osint.dns)) {
+                    netHtml += `<div><span class="text-cyan-400 font-bold">${k}:</span> <span class="text-gray-300">${Array.isArray(v) ? v.join(', ') : v}</span></div>`;
+                }
+            }
+            netDiv.innerHTML = netHtml || '<span class="text-gray-500">No public DNS/GeoIP records resolved.</span>';
+
+            // Whois & SSL
+            let secHtml = '';
+            if (osint.ssl_tls) {
+                const s = osint.ssl_tls;
+                secHtml += `<div><span class="text-gray-400">SSL/TLS:</span> <span class="text-emerald-400">${s.tls_version || 'Active'} (${s.cipher || ''})</span></div>`;
+            }
+            if (osint.whois) {
+                if (typeof osint.whois === 'object') {
+                    secHtml += `<div><span class="text-gray-400">Domain:</span> <span class="text-purple-300">${osint.whois.domain_name || 'N/A'}</span></div>`;
+                    secHtml += `<div><span class="text-gray-400">Registrar:</span> <span class="text-gray-300">${osint.whois.registrar || 'N/A'}</span></div>`;
+                    secHtml += `<div><span class="text-gray-400">Created:</span> <span class="text-gray-400">${osint.whois.creation_date || 'N/A'}</span></div>`;
+                } else {
+                    secHtml += `<div class="truncate text-gray-400">${osint.whois}</div>`;
+                }
+            }
+            whoisDiv.innerHTML = secHtml || '<span class="text-gray-500">No Whois or SSL data available.</span>';
+        }
+
+        // --- HISTORY MANAGEMENT ---
+        function loadHistory() {
+            fetch('/history').then(res => res.json()).then(data => {
+                allHistory = data;
+                renderHistoryItems(allHistory);
+            });
+        }
+
+        function filterHistory() {
+            const query = (document.getElementById('history-filter').value || '').toLowerCase();
+            if (!query) {
+                renderHistoryItems(allHistory);
+                return;
+            }
+            const filtered = allHistory.filter(h => 
+                (h.target && h.target.toLowerCase().includes(query)) ||
+                (h.client_tag && h.client_tag.toLowerCase().includes(query)) ||
+                (h.risk_level && h.risk_level.toLowerCase().includes(query))
+            );
+            renderHistoryItems(filtered);
+        }
+
+        function renderHistoryItems(items) {
+            const list = document.getElementById('history-list');
+            document.getElementById('history-count').textContent = items.length;
+            list.innerHTML = items.length ? '' : '<li class="text-gray-500 text-xs italic py-2">No matching scans found.</li>';
+            
+            items.forEach(scan => {
+                const riskColor = scan.risk_level === 'CRITICAL' ? 'bg-red-950 text-red-400 border-red-800' :
+                                  scan.risk_level === 'HIGH' ? 'bg-orange-950 text-orange-400 border-orange-800' :
+                                  scan.risk_level === 'MEDIUM' ? 'bg-yellow-950 text-yellow-400 border-yellow-800' :
+                                  'bg-slate-800 text-cyan-400 border-slate-700';
+
+                list.innerHTML += `
+                    <li class="bg-slate-900/80 hover:bg-slate-800/80 rounded-lg p-3 text-xs border border-slate-800 hover:border-cyan-800/50 transition cursor-pointer flex justify-between items-center group"
+                        onclick="loadScanDetail(${scan.id})">
+                        <div class="flex-grow">
+                            <div class="font-semibold text-cyan-300 font-mono flex items-center gap-2">
+                                ${scan.target}
+                                <span class="px-1.5 py-0.2 text-[9px] rounded font-bold border ${riskColor}">${scan.risk_level || 'LOW'}</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-[10px] text-gray-500 mt-1">
+                                <span class="bg-slate-800/80 px-1.5 py-0.5 rounded text-gray-400 border border-slate-700/50">${scan.client_tag || 'General'}</span>
+                                <span>${scan.timestamp}</span>
+                            </div>
+                        </div>
+                        <button onclick="event.stopPropagation(); deleteScanItem(${scan.id})" title="Delete scan" class="opacity-0 group-hover:opacity-100 p-1.5 text-gray-500 hover:text-red-400 transition">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </li>
+                `;
+            });
+        }
+
+        function loadScanDetail(scanId) {
+            document.getElementById('empty-state').classList.add('hidden');
+            document.getElementById('results-state').classList.add('hidden');
+            document.getElementById('loading-state').classList.remove('hidden');
+            document.getElementById('scan-status-title').textContent = "Loading Archived Scan...";
+            document.getElementById('scan-status-desc').textContent = `Retrieving scan #${scanId} from database.`;
+
+            fetch(`/scan/${scanId}`).then(res => res.json()).then(data => {
+                document.getElementById('loading-state').classList.add('hidden');
+                if (data.error) {
+                    alert("Failed to load scan: " + data.error);
+                } else {
+                    displayScanResults(data);
+                }
+            }).catch(err => {
+                document.getElementById('loading-state').classList.add('hidden');
+                alert("Error: " + err);
+            });
+        }
+
+        function deleteScanItem(scanId) {
+            if (!confirm(`Are you sure you want to delete scan #${scanId}?`)) return;
+            fetch(`/history/${scanId}`, { method: 'DELETE' })
+                .then(res => res.json())
+                .then(data => {
+                    loadHistory();
+                });
+        }
+
+        // --- LAN DISCOVERY LOGIC ---
+        document.getElementById('discovery-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const subnet = document.getElementById('subnet-target').value.trim();
+            const btn = document.getElementById('discovery-btn');
+            const tbody = document.getElementById('discovery-table-body');
+            
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i> <span>Sweeping...</span>';
+            tbody.innerHTML = '<tr><td colspan="5" class="p-8 text-center text-cyan-400"><i class="fa-solid fa-radar fa-spin text-2xl mb-2"></i><br>Sweeping subnet for responsive hosts...</td></tr>';
+
+            fetch('/discover', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ subnet: subnet })
+            }).then(res => res.json()).then(data => {
+                btn.disabled = false;
+                btn.innerHTML = '<span>Discover Hosts</span> <i class="fa-solid fa-radar"></i>';
+                if (data.success) {
+                    document.getElementById('discovery-count').textContent = `${data.hosts.length} Hosts Found`;
+                    tbody.innerHTML = '';
+                    if (data.hosts.length === 0) {
+                        tbody.innerHTML = '<tr><td colspan="5" class="p-6 text-center text-gray-500">No active hosts replied to ping sweep.</td></tr>';
+                    } else {
+                        data.hosts.forEach(h => {
+                            tbody.innerHTML += `
+                                <tr class="hover:bg-slate-800/40 transition">
+                                    <td class="p-3 font-mono font-bold text-cyan-300">${h.ip}</td>
+                                    <td class="p-3 text-gray-300">${h.hostname || 'Unknown'}</td>
+                                    <td class="p-3"><span class="px-2 py-0.5 rounded-full text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-800">${h.latency || 'Online'}</span></td>
+                                    <td class="p-3 text-gray-400 font-mono text-[11px]">${h.vendor || h.mac || 'N/A'}</td>
+                                    <td class="p-3 text-right">
+                                        <button onclick="targetFromDiscovery('${h.ip}')" class="bg-cyan-600 hover:bg-cyan-500 text-white text-[11px] font-semibold px-3 py-1 rounded transition">
+                                            Scan Target
+                                        </button>
+                                    </td>
+                                </tr>
+                            `;
+                        });
+                    }
+                } else {
+                    alert("Discovery failed: " + data.error);
+                }
+            }).catch(err => {
+                btn.disabled = false;
+                btn.innerHTML = '<span>Discover Hosts</span> <i class="fa-solid fa-radar"></i>';
+                alert("Network discovery failed: " + err);
+            });
+        });
+
+        function targetFromDiscovery(ip) {
+            document.getElementById('target').value = ip;
+            switchTab('scanner');
+        }
+
+        // --- AI CHAT ADVISOR ---
+        function quickPrompt(promptText) {
+            document.getElementById('chat-input').value = promptText;
+            sendChatMessage();
+        }
+
         function sendChatMessage() {
             const input = document.getElementById('chat-input');
             const msg = input.value.trim();
             if(!msg || !currentScanContext) return;
 
             const chatBox = document.getElementById('chat-messages');
-            chatBox.innerHTML += `<div class="text-right mb-2"><span class="bg-cyan-700 text-white px-3 py-1 rounded-lg inline-block">${msg}</span></div>`;
+            chatBox.innerHTML += `
+                <div class="text-right mb-2">
+                    <span class="bg-cyan-600 text-white px-3.5 py-1.5 rounded-lg inline-block text-xs font-medium">${msg}</span>
+                </div>
+            `;
             input.value = '';
             
-            // Show loading
             const loadingId = 'loading-' + Date.now();
-            chatBox.innerHTML += `<div id="${loadingId}" class="text-left mb-2 text-gray-500 text-xs italic">AI is typing...</div>`;
+            chatBox.innerHTML += `
+                <div id="${loadingId}" class="text-left mb-2 text-cyan-400 text-xs italic flex items-center gap-1.5">
+                    <i class="fa-solid fa-spinner animate-spin"></i> AI Advisor analyzing question...
+                </div>
+            `;
             chatBox.scrollTop = chatBox.scrollHeight;
 
             fetch('/chat', {
@@ -291,21 +1249,52 @@
                     scan_context: currentScanContext
                 })
             }).then(res => res.json()).then(data => {
-                document.getElementById(loadingId).remove();
-                chatBox.innerHTML += `<div class="text-left mb-2"><span class="bg-slate-700 text-cyan-300 px-3 py-2 rounded-lg inline-block border border-slate-600">${formatMarkdown(data.reply)}</span></div>`;
+                const loadingElem = document.getElementById(loadingId);
+                if (loadingElem) loadingElem.remove();
+                
+                chatBox.innerHTML += `
+                    <div class="text-left mb-2">
+                        <div class="prose-cyber bg-slate-800 text-gray-200 px-4 py-3 rounded-lg inline-block border border-slate-700 text-xs max-w-[90%]">
+                            ${renderMarkdown(data.reply)}
+                        </div>
+                    </div>
+                `;
                 chatBox.scrollTop = chatBox.scrollHeight;
                 
                 chatHistory.push({role: "user", content: msg});
                 chatHistory.push({role: "model", content: data.reply});
+            }).catch(err => {
+                const loadingElem = document.getElementById(loadingId);
+                if (loadingElem) loadingElem.remove();
             });
         }
 
-        // --- PDF EXPORT ---
+        // --- EXPORT TOOLS ---
+        function copyAnalysis() {
+            if (!currentRawData) return;
+            const textToCopy = `TARGET: ${currentRawData.target}\nRISK: ${currentRawData.risk_level}\n\nAI CYBERSECURITY REPORT:\n${currentRawData.ai_analysis}`;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert("Security report copied to clipboard!");
+            });
+        }
+
+        function downloadJSON() {
+            if (!currentRawData) return;
+            const blob = new Blob([JSON.stringify(currentRawData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `cyber-scan-${currentRawData.target}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
         function downloadPDF() {
             const element = document.getElementById('report-content');
+            const targetName = currentRawData ? currentRawData.target : 'target';
             const opt = {
-                margin:       0.5,
-                filename:     'cybersecurity-report.pdf',
+                margin:       0.4,
+                filename:     `security-report-${targetName}.pdf`,
                 image:        { type: 'jpeg', quality: 0.98 },
                 html2canvas:  { scale: 2 },
                 jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
@@ -313,40 +1302,72 @@
             html2pdf().set(opt).from(element).save();
         }
 
-        // --- MONITORING LOGIC ---
-        function loadHistory() {
-            fetch('/history').then(res => res.json()).then(data => {
-                const list = document.getElementById('history-list');
-                list.innerHTML = data.length ? '' : '<li class="text-gray-500 text-sm">No scans yet.</li>';
-                data.forEach(scan => {
-                    list.innerHTML += `<li class="bg-slate-800 rounded p-3 text-sm border-l-2 border-l-cyan-500"><div class="font-semibold text-cyan-300">${scan.target}</div><div class="text-xs text-gray-500 mt-1">${scan.timestamp}</div></li>`;
+        // --- MONITORING & WATCHLIST LOGIC ---
+        function loadWatchlist() {
+            fetch('/watchlist').then(res => res.json()).then(data => {
+                const list = document.getElementById('watchlist-list');
+                document.getElementById('watchlist-count').textContent = data.length;
+                list.innerHTML = data.length ? '' : '<li class="text-gray-500 text-xs py-2">No targets monitored.</li>';
+                data.forEach(item => {
+                    list.innerHTML += `
+                        <li class="bg-slate-900/80 rounded-lg p-3 text-xs border border-slate-800 flex justify-between items-center">
+                            <div>
+                                <span class="font-bold text-white font-mono">${item.target}</span>
+                                <div class="text-[10px] text-gray-500 mt-0.5">Last: ${item.last_scanned || 'Never'} (${item.scan_type})</div>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                <button onclick="triggerWatchlistScan(${item.id})" title="Scan Now" class="p-1.5 text-xs bg-slate-800 hover:bg-cyan-900/60 text-cyan-300 rounded border border-slate-700 transition">
+                                    <i class="fa-solid fa-play text-[10px]"></i>
+                                </button>
+                                <button onclick="deleteWatchlistItem(${item.id})" title="Remove" class="p-1.5 text-xs bg-slate-800 hover:bg-red-950 text-gray-400 hover:text-red-400 rounded border border-slate-700 transition">
+                                    <i class="fa-solid fa-trash-can text-[10px]"></i>
+                                </button>
+                            </div>
+                        </li>
+                    `;
                 });
             });
         }
 
-        function loadWatchlist() {
-            fetch('/watchlist').then(res => res.json()).then(data => {
-                const list = document.getElementById('watchlist-list');
-                list.innerHTML = data.length ? '' : '<li class="text-gray-500 text-sm">No targets monitored.</li>';
-                data.forEach(item => {
-                    list.innerHTML += `<li class="bg-slate-800 rounded p-3 text-sm flex justify-between items-center"><span>${item.target}</span> <span class="text-xs text-gray-400">Last: ${item.last_scanned || 'Never'}</span></li>`;
+        function triggerWatchlistScan(targetId) {
+            fetch(`/watchlist/scan/${targetId}`, { method: 'POST' })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(data.message);
+                        loadWatchlist();
+                        loadDiffLogs();
+                    } else {
+                        alert("Scan failed: " + data.error);
+                    }
                 });
-            });
+        }
+
+        function deleteWatchlistItem(targetId) {
+            if(!confirm("Remove this target from continuous monitoring?")) return;
+            fetch(`/watchlist/${targetId}`, { method: 'DELETE' })
+                .then(res => res.json())
+                .then(data => {
+                    loadWatchlist();
+                });
         }
 
         function loadDiffLogs() {
             fetch('/diff_logs').then(res => res.json()).then(data => {
                 const list = document.getElementById('diff-logs');
-                list.innerHTML = data.length ? '' : '<p class="text-gray-500 text-sm">No alerts generated yet.</p>';
+                list.innerHTML = data.length ? '' : '<p class="text-gray-500 text-xs py-4 text-center">No attack surface changes or alerts logged yet.</p>';
                 data.forEach(log => {
-                    const color = log.alert_level === 'warning' ? 'border-l-yellow-500 bg-yellow-900 bg-opacity-20' : 'border-l-blue-500 bg-slate-800';
+                    const isWarn = log.alert_level === 'warning';
+                    const border = isWarn ? 'border-l-yellow-500 bg-yellow-950/20' : 'border-l-blue-500 bg-slate-900/60';
                     list.innerHTML += `
-                        <div class="p-4 rounded-lg border-l-4 ${color} shadow">
+                        <div class="p-4 rounded-lg border-l-4 ${border} border border-slate-800 shadow">
                             <div class="flex justify-between items-center mb-2">
-                                <span class="font-bold text-white">${log.target}</span>
-                                <span class="text-xs text-gray-400">${log.timestamp}</span>
+                                <span class="font-bold text-white font-mono flex items-center gap-2">
+                                    <i class="fa-solid fa-triangle-exclamation text-yellow-400"></i> ${log.target}
+                                </span>
+                                <span class="text-xs text-gray-500">${log.timestamp}</span>
                             </div>
-                            <div class="text-sm text-gray-300">${formatMarkdown(log.diff_text)}</div>
+                            <div class="prose-cyber text-xs text-gray-300">${renderMarkdown(log.diff_text)}</div>
                         </div>
                     `;
                 });
@@ -355,11 +1376,14 @@
 
         document.getElementById('watchlist-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            const target = document.getElementById('watch-target').value;
+            const target = document.getElementById('watch-target').value.trim();
+            const scanType = document.getElementById('watch-scan-type').value;
+            const interval = parseInt(document.getElementById('watch-interval').value);
+            
             fetch('/watchlist', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ target: target })
+                body: JSON.stringify({ target: target, scan_type: scanType, interval: interval })
             }).then(res => res.json()).then(data => {
                 if(data.success) {
                     document.getElementById('watch-target').value = '';
@@ -370,29 +1394,104 @@
             });
         });
 
-        // --- SETTINGS LOGIC ---
+        // --- SETTINGS & WEBHOOK ---
         function loadSettings() {
             fetch('/settings').then(res => res.json()).then(data => {
-                document.getElementById('webhook-url').value = data.webhook_url || '';
+                if (data.webhook_url) {
+                    document.getElementById('webhook-url').value = data.webhook_url;
+                }
             });
         }
         
         document.getElementById('settings-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            const webhookUrl = document.getElementById('webhook-url').value;
+            const webhookUrl = document.getElementById('webhook-url').value.trim();
             fetch('/settings', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ webhook_url: webhookUrl })
             }).then(res => res.json()).then(data => {
                 if(data.success) {
-                    alert("Settings saved successfully!");
+                    const fb = document.getElementById('webhook-feedback');
+                    fb.textContent = "Webhook settings saved.";
+                    fb.className = "text-xs text-emerald-400 mt-1 block";
+                    setTimeout(() => fb.classList.add('hidden'), 4000);
                 }
             });
         });
-        
-        // Initial load
-        loadSettings();
+
+        function testWebhook() {
+            const webhookUrl = document.getElementById('webhook-url').value.trim();
+            const fb = document.getElementById('webhook-feedback');
+            fb.textContent = "Sending test ping...";
+            fb.className = "text-xs text-cyan-400 mt-1 block";
+
+            fetch('/test_webhook', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ webhook_url: webhookUrl })
+            }).then(res => res.json()).then(data => {
+                if (data.success) {
+                    fb.textContent = "✅ " + data.message;
+                    fb.className = "text-xs text-emerald-400 mt-1 block";
+                } else {
+                    fb.textContent = "❌ " + data.error;
+                    fb.className = "text-xs text-red-400 mt-1 block";
+                }
+            }).catch(err => {
+                fb.textContent = "❌ Network error sending test ping.";
+                fb.className = "text-xs text-red-400 mt-1 block";
+            });
+        }
     </script>
+
+    <!-- Hardening Script Generator Modal -->
+    <div id="hardening-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="glass-panel bg-slate-900/95 border border-cyan-700/60 rounded-2xl max-w-3xl w-full p-6 shadow-2xl space-y-4">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                <div class="flex items-center gap-2.5">
+                    <div class="h-8 w-8 rounded-lg bg-cyan-900/50 flex items-center justify-center text-cyan-400 border border-cyan-700">
+                        <i class="fa-solid fa-shield-cat"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold text-white">Automated Hardening & Remediation Script</h3>
+                        <p class="text-xs text-gray-400" id="hardening-target-desc">Target: 192.168.1.1</p>
+                    </div>
+                </div>
+                <button onclick="closeHardeningModal()" class="text-gray-400 hover:text-white text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Platform Selector -->
+            <div class="flex items-center justify-between gap-4">
+                <div class="flex items-center gap-2">
+                    <label class="text-xs font-semibold text-gray-300">Target Operating System:</label>
+                    <select id="hardening-platform" onchange="generateHardeningScript()" class="bg-slate-950 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-cyan-400">
+                        <option value="linux">Linux (Bash / UFW / iptables / sysctl)</option>
+                        <option value="windows">Windows (PowerShell / NetFirewall)</option>
+                    </select>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button onclick="copyHardeningScript()" class="bg-slate-800 hover:bg-slate-700 text-cyan-300 px-3 py-1.5 rounded-lg text-xs font-medium border border-slate-700 flex items-center gap-1.5 transition">
+                        <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                    <button onclick="downloadHardeningScript()" class="bg-cyan-600 hover:bg-cyan-500 text-white px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition shadow">
+                        <i class="fa-solid fa-download"></i> Download Script
+                    </button>
+                </div>
+            </div>
+
+            <!-- Script Content Box -->
+            <div class="relative">
+                <div id="hardening-loading" class="hidden absolute inset-0 bg-slate-950/90 rounded-xl flex items-center justify-center z-10">
+                    <div class="flex items-center gap-2 text-cyan-400 text-sm font-semibold">
+                        <i class="fa-solid fa-spinner animate-spin"></i> Generating battle-tested remediation script...
+                    </div>
+                </div>
+                <pre id="hardening-script-code" class="bg-slate-950 p-4 rounded-xl text-xs font-mono text-cyan-300 max-h-96 overflow-y-auto border border-slate-800 whitespace-pre-wrap leading-relaxed"></pre>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
