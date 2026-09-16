@@ -65,6 +65,61 @@ def index():
 def favicon():
     return send_from_directory(".", "generated-icon.png", mimetype="image/png")
 
+import requests
+import json
+import logging
+
+# ... (Keep existing imports and setup) ...
+
+@app.route("/search_cve", methods=["POST"])
+def search_cve():
+    """
+    Queries the National Vulnerability Database (NVD) via NIST API or CIRCL CVE API
+    to find known exploits for a specific service or keyword.
+    """
+    data = request.json or {}
+    keyword = data.get("keyword")
+    if not keyword:
+        return jsonify({"error": "Keyword (e.g., 'apache 2.4.49') is required."}), 400
+
+    try:
+        # Using CIRCL's public CVE API as it doesn't require an API key and is fast for mobile
+        url = f"https://cve.circl.lu/api/search/{keyword.lower()}"
+        response = requests.get(url, timeout=10)
+
+        if response.status_code == 200:
+            results = response.json()
+            if hasattr(results, 'get') and results.get("error"):
+                # Handle unexpected API errors gracefully
+                 return jsonify({"success": True, "keyword": keyword, "cves": []})
+
+            # Format the top 5 CVEs
+            formatted_cves = []
+            # CIRCL sometimes returns a dictionary depending on exact match vs full text search
+            # We'll handle it if it returns a list of CVE objects
+            if isinstance(results, list):
+                for item in results[:5]:
+                    formatted_cves.append({
+                        "id": item.get("id", "Unknown"),
+                        "cvss": item.get("cvss", "N/A"),
+                        "summary": item.get("summary", "")[:200] + "..."
+                    })
+            return jsonify({"success": True, "keyword": keyword, "cves": formatted_cves})
+        else:
+            return jsonify({"error": f"CVE Database returned status {response.status_code}"}), 502
+    except Exception as e:
+        return jsonify({"error": f"Failed to query CVE database: {str(e)}"}), 500
+
+@app.route("/audit_config", methods=["POST"])
+def audit_config():
+    data = request.json or {}
+    config_text = data.get("config_text")
+    if not config_text:
+        return jsonify({"error": "Configuration text is required."}), 400
+
+    analysis = audit_local_config(config_text)
+    return jsonify({"success": True, "analysis": analysis})
+
 @app.route("/scan", methods=["POST"])
 def scan():
     data = request.json or {}
@@ -418,4 +473,5 @@ def run_watchlist_scans():
             save_scan(target_ip, new_result, nmap_result=new_result)
 
 if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=5001, use_reloader=False)
     app.run(debug=True, port=5001, use_reloader=False)

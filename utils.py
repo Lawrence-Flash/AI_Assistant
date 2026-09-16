@@ -427,17 +427,17 @@ def analyze_scan_with_ai(nmap_output):
     try:
         genai.configure(api_key=api_key)
         prompt = (
-            "You are a Senior Principal Cybersecurity Analyst and Penetration Tester. "
-            "Analyze the following Nmap scan and OSINT intelligence data.\n\n"
+            "You are a Senior Security Operations Center (SOC) Analyst conducting an authorized internal audit. "
+            "Analyze the following network diagnostic data.\n\n"
             "Produce a structured, professional security assessment report formatted with markdown headers:\n"
             "1. **Risk Level**: Output exactly one of: CRITICAL, HIGH, MEDIUM, LOW, or INFORMATIONAL on this line: "
             "'Risk Level: [LEVEL]'.\n"
             "2. **Executive Summary**: High-level posture analysis in 2-3 sentences (including domain / CDN context if applicable).\n"
             "3. **Exposed Services & Attack Surface Analysis**: Breakdown of detected open ports, running services, and versions.\n"
             "4. **Domain & Web Posture**: Evaluate DNS, Email Security (SPF/DMARC spoofing defense), SSL/TLS certificate validity, and HTTP security headers (if applicable).\n"
-            "5. **Identified Vulnerabilities & Threat Vectors**: Potential CVEs, misconfigurations, default credentials, or OSINT exposures.\n"
+            "5. **Security Recommendations**: Best practices to secure the exposed services, misconfigurations, or OSINT exposures.\n"
             "6. **Actionable Remediation Checklist**: Specific, priority-ranked steps (including firewall rules, DNS/DMARC hardening, service updates) to secure the target.\n\n"
-            f"--- SCAN & OSINT TARGET DATA ---\n{nmap_output}"
+            f"--- DIAGNOSTIC DATA ---\n{nmap_output}"
         )
         return call_gemini_with_fallback(prompt)
     except Exception as e:
@@ -882,6 +882,28 @@ def analyze_domain(domain):
         "domain": clean_domain,
         "data": osint_data
     }
+
+def audit_local_config(config_text):
+    """
+    Analyzes local system configuration snippets for misconfigurations
+    and privilege escalation vectors.
+    """
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        return "Analysis failed: No API key found."
+
+    try:
+        genai.configure(api_key=api_key)
+        prompt = (
+            "You are a Senior System Administrator and Security Auditor. "
+            "Analyze the following local system configuration or enumeration output. "
+            "Identify any security misconfigurations, insecure file permissions, exposed local services, "
+            "or potential privilege escalation vectors. Provide a structured, educational summary of the risks.\n\n"
+            f"--- SYSTEM OUTPUT ---\n{config_text}"
+        )
+        return call_gemini_with_fallback(prompt)
+    except Exception as e:
+        return f"AI analysis error: {str(e)}"
 
 def run_osint(target):
     """

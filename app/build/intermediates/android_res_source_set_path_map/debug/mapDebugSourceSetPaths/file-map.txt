@@ -1,0 +1,7 @@
+com.example.aiassistant.app-updated_navigation_xml-0 C:\Users\lawre\Documents\github\Per_projects\AI_Assistant\app\build\generated\updated_navigation_xml\debug
+com.example.aiassistant.app-packageDebugResources-1 C:\Users\lawre\Documents\github\Per_projects\AI_Assistant\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.aiassistant.app-packageDebugResources-2 C:\Users\lawre\Documents\github\Per_projects\AI_Assistant\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.aiassistant.app-debug-3 C:\Users\lawre\Documents\github\Per_projects\AI_Assistant\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.example.aiassistant.app-debug-4 C:\Users\lawre\Documents\github\Per_projects\AI_Assistant\app\src\debug\res
+com.example.aiassistant.app-main-5 C:\Users\lawre\Documents\github\Per_projects\AI_Assistant\app\src\main\res
+gradleHome-0 C:\Users\lawre\.gradle
