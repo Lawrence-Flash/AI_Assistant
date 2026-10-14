@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security Threat Brief</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="mast">
+      <p class="kicker">For small businesses in South Africa</p>
+      <h1>Security Threat Brief</h1>
+      <p class="lede">Today's short list from public vulnerability feeds, scored for the software a small business is likely to run, with a plain-English "what to do" line. This is not a scan of your computers.</p>
+      <nav aria-label="Sections">
+        <a href="index.html" aria-current="page">Today's brief</a>
+        <a href="affected.html">Am I affected?</a>
+      </nav>
+    </header>
+    <main>
+      <p id="status" class="status" role="status">Loading today's brief…</p>
+      <p id="meta" class="meta hidden"></p>
+      <div id="warnings"></div>
+      <form id="filters" class="filters hidden" aria-label="Filter the brief">
+        <label>Search
+          <input id="q" type="search" placeholder="Exchange, router, ransomware">
+        </label>
+        <label>Minimum score
+          <input id="min" type="number" min="0" max="100" step="1" value="0">
+        </label>
+        <label>Type
+          <select id="kind">
+            <option value="all">CVEs and news</option>
+            <option value="cve">CVEs only</option>
+            <option value="news">News only</option>
+          </select>
+        </label>
+        <label>Software list
+          <select id="profile"><option value="">Any</option></select>
+        </label>
+        <label class="check"><input id="kev" type="checkbox"> Known exploited only</label>
+        <label class="check"><input id="smb" type="checkbox"> Small-business software only</label>
+      </form>
+      <p id="count" class="status hidden"></p>
+      <div id="list"></div>
+      <details id="formula" class="formula hidden"></details>
+    </main>
+    <footer>
+      <p>Sources are the CISA Known Exploited Vulnerabilities catalog, the NVD CVE API, FIRST EPSS, and the RSS feeds named in the data file. None of this is a South African government feed, a certification, or a POPIA compliance check. Confirm any patch with the software vendor or the person who looks after your IT.</p>
+    </footer>
+  </div>
+  <script src="js/brief.js"></script>
+</body>
+</html>

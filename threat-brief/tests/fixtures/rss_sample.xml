@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Example Security</title>
+    <item>
+      <title>Exchange flaw CVE-2024-11111 used in attacks</title>
+      <link>https://example.com/exchange</link>
+      <pubDate>Sat, 11 Jan 2026 08:00:00 GMT</pubDate>
+      <description>Attackers are using &lt;b&gt;CVE-2024-11111&lt;/b&gt; against on-prem Exchange servers.</description>
+    </item>
+    <item>
+      <title>Small retailers warned about point of sale ransomware</title>
+      <link>https://example.com/pos</link>
+      <pubDate>Mon, 12 Jan 2026 08:00:00 GMT</pubDate>
+      <description>A ransomware crew is hitting point of sale terminals at small shops.</description>
+    </item>
+    <item>
+      <title>Unrelated astronomy photo contest</title>
+      <link>https://example.com/stars</link>
+      <pubDate>Tue, 13 Jan 2026 08:00:00 GMT</pubDate>
+      <description>Photos of the night sky from a local club.</description>
+    </item>
+    <item>
+      <title>Old breach writeup</title>
+      <link>https://example.com/old</link>
+      <pubDate>Wed, 01 Jan 2020 08:00:00 GMT</pubDate>
+      <description>A ransomware note from years ago about point of sale systems.</description>
+    </item>
+  </channel>
+</rss>

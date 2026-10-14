@@ -1,0 +1,53 @@
+{
+  "formula_id": "smb-sa-v1",
+  "formula_summary": "Score out of 100 for a small South African business. CVSS contributes up to 40, CISA KEV contributes 25 or 0, FIRST EPSS contributes up to 20, and a match against the configurable small-business software list contributes 15 or 0. Each part is rounded to one decimal, then added, and the total is capped at 100. Missing data scores 0 for that part and is explained in the reasons. News items do not use this formula.",
+  "weights": {
+    "cvss": 40,
+    "kev": 25,
+    "epss": 20,
+    "smb": 15
+  },
+  "news_formula_id": "news-relevance-v1",
+  "news_weights": {
+    "smb": 10,
+    "urgency": 10
+  },
+  "urgency_terms": [
+    "ransomware",
+    "actively exploited",
+    "zero-day",
+    "zero day",
+    "0-day",
+    "under attack",
+    "data breach"
+  ],
+  "nvd_days": 7,
+  "kev_recent_days": 30,
+  "nvd_severities": ["CRITICAL", "HIGH"],
+  "nvd_delay_seconds": 6,
+  "nvd_page_size": 2000,
+  "epss_batch_size": 100,
+  "epss_delay_seconds": 1,
+  "request_timeout_seconds": 45,
+  "max_retries": 4,
+  "max_brief_items": 40,
+  "max_news_items": 8,
+  "news_max_age_days": 7,
+  "max_version_ranges": 40,
+  "max_description_chars": 500,
+  "summariser": "rules-v1",
+  "feeds": [
+    {
+      "name": "CISA advisories",
+      "url": "https://www.cisa.gov/cybersecurity-advisories/all.xml"
+    },
+    {
+      "name": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/feed/"
+    },
+    {
+      "name": "The Hacker News",
+      "url": "https://feeds.feedburner.com/TheHackersNews"
+    }
+  ]
+}

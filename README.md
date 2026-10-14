@@ -97,5 +97,83 @@ AI_Assistant/
 ├── templates/
 │   └── index.html       # Single-page web dashboard (Tailwind, Marked.js, html2pdf)
 ├── pyproject.toml       # Project configuration and dependencies
+├── threat-brief/        # Separate daily briefing and "Am I affected?" site
 └── README.md            # Documentation
 ```
+
+---
+
+## Security Threat Brief
+
+This is a separate, free tool in `threat-brief/`. It does not change the assistant above, and it does not use the Gemini API.
+
+It builds a daily briefing for small South African businesses from public feeds: the CISA Known Exploited Vulnerabilities catalog, recent High and Critical CVEs from the NVD API 2.0 (no API key), FIRST EPSS scores for that recent set, and three RSS feeds. It removes duplicate CVEs, scores each one, writes a rule-based plain-English summary with a "what to do" line, and publishes a static site. The "Am I affected?" page compares a CSV inventory in the browser. The file is not uploaded.
+
+### What it does not do
+
+- It does not scan a network, a computer, or an inbox, and it cannot see software that is missing from the CSV.
+- It does not call a language model. Summaries are templates. The only summariser shipped here is `rules-v1`.
+- It is not a certification, an audit, a penetration test, or a POPIA compliance product.
+- It is not a feed from the South African government. CISA KEV is a US federal catalog used as a public signal.
+- It is not a complete CVE database. The daily job requests only High and Critical CVEs from the last 7 days, because the keyless NVD limit is 5 requests per 30 seconds. Older KEV rows often have no CVSS and no EPSS in this dataset. The score reasons say when a part is missing.
+- EPSS is a probability published by FIRST, not a promise that a business will be attacked.
+- Version matching is approximate. Names are matched loosely, version ranges are a capped flat list of CPE matches, and NVD's AND/OR configuration trees are not evaluated. Many KEV entries have no version.
+- The small-business software list (Microsoft 365/Exchange, Windows, WordPress, Fortinet, MikroTik, TP-Link, card machines) is a configurable starting point in `threat-brief/config/smb_software.json`, not a census.
+- News headlines are copied from third parties and are not fact-checked.
+
+### Score
+
+Formula `smb-sa-v1`, out of 100. Defaults in `threat-brief/config/settings.json`: CVSS up to 40 (`score / 10 × 40`), KEV 25 or 0, EPSS up to 20 (`probability × 20`), small-business software 15 or 0. Each part is rounded to one decimal and the total is capped at 100. The reasons are stored with the number. News uses a separate relevance score capped at 20. "Patch soon" and "Check this week" are reading labels, not extra points. A known-exploited item is labelled "Patch soon" even when CVSS is missing.
+
+### Architecture
+
+```mermaid
+flowchart LR
+  subgraph feeds [Public feeds, no API key]
+    KEV[CISA KEV JSON]
+    NVD[NVD CVE API 2.0]
+    EPSS[FIRST EPSS]
+    RSS[RSS feeds]
+  end
+  subgraph job [GitHub Actions, once a day]
+    COL[Python collector]
+    SCORE[Score and rule-based summary]
+  end
+  subgraph site [GitHub Pages]
+    BRIEF[Today's brief]
+    CHECK[Am I affected?]
+  end
+  KEV --> COL
+  NVD --> COL
+  EPSS --> COL
+  RSS --> COL
+  COL --> SCORE
+  SCORE --> BRIEF
+  SCORE --> CHECK
+  CSV[Inventory CSV, stays in the browser] --> CHECK
+```
+
+### Run it locally
+
+No extra Python packages.
+
+```bash
+python3 -m unittest discover -s threat-brief/tests -v
+node threat-brief/tests/match.test.mjs
+python3 threat-brief/collect.py --fixtures
+python3 threat-brief/collect.py
+cd threat-brief/site && python3 -m http.server 8765
+```
+
+`--fixtures` uses the recorded samples and does not touch the network. Then open `http://127.0.0.1:8765/` and `http://127.0.0.1:8765/affected.html`. Use **Load the sample inventory** for the demo. More detail is in `threat-brief/README.md`.
+
+### Enable Pages
+
+The workflow is `.github/workflows/threat-brief.yml`. It runs daily at 04:15 UTC and from the Actions tab. It does not run on every push. Before the first run, the owner needs to:
+
+1. Open **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**. Save.
+2. Open **Settings → Actions → General → Workflow permissions** and select **Read and write permissions**. Save.
+3. Open **Actions → Threat brief → Run workflow**.
+4. If GitHub asks for approval to deploy to the `github-pages` environment, approve it.
+
+After a successful deploy, the Pages settings show the site URL. For this public repository that is expected to be `https://lawrence-flash.github.io/AI_Assistant/`. If branch protection blocks `github-actions[bot]` from pushing to `main`, the data commit will fail until that push is allowed.
