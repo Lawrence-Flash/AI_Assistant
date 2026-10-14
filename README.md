@@ -97,5 +97,113 @@ AI_Assistant/
 ├── templates/
 │   └── index.html       # Single-page web dashboard (Tailwind, Marked.js, html2pdf)
 ├── pyproject.toml       # Project configuration and dependencies
+├── threat-brief/        # Separate daily briefing and "Am I affected?" site
 └── README.md            # Documentation
 ```
+
+---
+
+## Security Threat Brief
+
+This is a separate, free tool in `threat-brief/`. It does not change the assistant above, and it does not use the Gemini API.
+
+It builds a daily briefing for small South African businesses from public feeds: the CISA Known Exploited Vulnerabilities catalog, recent High and Critical CVEs from the NVD API 2.0 (no API key), FIRST EPSS scores for that recent set, and three RSS feeds. It removes duplicate CVEs, scores each one, writes a rule-based plain-English summary with a "what to do" line, and publishes a static site. The "Am I affected?" page compares a CSV inventory, or an nmap XML file, in the browser. The file is not uploaded.
+
+An optional local command, `python3 threat-brief/scan.py`, turns an nmap service scan of a private network you own into that CSV plus a local report. The published site does not scan anything. What the whole repository actually does, including the assistant, is written without the marketing language in `threat-brief/CAPABILITIES.md`.
+
+### What it does not do
+
+- The website does not scan a network, a computer, or an inbox. The optional local scanner only lists services nmap could see. Software that is not listening, and anything missing from the CSV, stays invisible.
+- `scan.py` does not run exploit scripts and does not call Gemini.
+- It does not call a language model. Summaries are templates. The only summariser shipped here is `rules-v1`.
+- It is not a certification, an audit, a penetration test, or a POPIA compliance product.
+- It is not a feed from the South African government. CISA KEV is a US federal catalog used as a public signal.
+- It is not a complete CVE database. The daily job requests only High and Critical CVEs from the last 7 days, because the keyless NVD limit is 5 requests per 30 seconds. Older KEV rows often have no CVSS and no EPSS in this dataset. The score reasons say when a part is missing.
+- EPSS is a probability published by FIRST, not a promise that a business will be attacked.
+- Version matching is approximate. Names are matched loosely, version ranges are a capped flat list of CPE matches, and NVD's AND/OR configuration trees are not evaluated. Many KEV entries have no version. Vague catalog names such as "Server" or "HTTP Server" match only when the vendor is also present.
+- The small-business software list (Microsoft 365/Exchange, Windows, WordPress, Fortinet, MikroTik, TP-Link, card machines) is a configurable starting point in `threat-brief/config/smb_software.json`, not a census.
+- News headlines are copied from third parties and are not fact-checked.
+
+### Score
+
+Formula `smb-sa-v1`, out of 100. Defaults in `threat-brief/config/settings.json`: CVSS up to 40 (`score / 10 × 40`), KEV 25 or 0, EPSS up to 20 (`probability × 20`), small-business software 15 or 0. Each part is rounded to one decimal and the total is capped at 100. The reasons are stored with the number. News uses a separate relevance score capped at 20. "Patch soon" and "Check this week" are reading labels, not extra points. A known-exploited item is labelled "Patch soon" even when CVSS is missing.
+
+### Architecture
+
+```mermaid
+flowchart LR
+  subgraph feeds [Public feeds, no API key]
+    KEV[CISA KEV JSON]
+    NVD[NVD CVE API 2.0]
+    EPSS[FIRST EPSS]
+    RSS[RSS feeds]
+  end
+  subgraph job [GitHub Actions, once a day]
+    COL[Python collector]
+    SCORE[Score and rule-based summary]
+  end
+  subgraph site [GitHub Pages]
+    BRIEF[Today's brief]
+    CHECK[Am I affected?]
+  end
+  KEV --> COL
+  NVD --> COL
+  EPSS --> COL
+  RSS --> COL
+  COL --> SCORE
+  SCORE --> BRIEF
+  SCORE --> CHECK
+  CSV[Inventory CSV, stays in the browser] --> CHECK
+  subgraph local [On your computer, optional]
+    NMAP[nmap -sV]
+    SCAN[scan.py]
+  end
+  NMAP --> SCAN
+  XML[Saved nmap XML] --> SCAN
+  SCAN --> CSV
+  XML --> CHECK
+```
+
+### Run it locally
+
+No extra Python packages.
+
+```bash
+python3 -m unittest discover -s threat-brief/tests -v
+node threat-brief/tests/match.test.mjs
+node threat-brief/tests/nmap.test.mjs
+python3 threat-brief/collect.py --fixtures
+python3 threat-brief/collect.py
+cd threat-brief/site && python3 -m http.server 8765
+```
+
+`--fixtures` uses the recorded samples and does not touch the network. Then open `http://127.0.0.1:8765/` and `http://127.0.0.1:8765/affected.html`. Use **Load the sample inventory** or **Load the sample scan** for the demo.
+
+A saved nmap file can be turned into a report without sending packets:
+
+```bash
+sudo apt install nmap python-is-python3
+python3 threat-brief/scan.py --from-xml threat-brief/site/sample-nmap.xml
+explorer.exe threat-brief/scan-out/report.html
+```
+
+To scan a LAN you own:
+
+```bash
+python3 threat-brief/scan.py --target 192.168.1.0/24 --i-own-this-network
+```
+
+Only scan a network you own or have written permission to test. The Cybercrimes Act 19 of 2020 includes offences for unlawful access and for interfering with a computer system. That is not legal advice. The command refuses to run unless you pass `--i-own-this-network`, and it refuses public addresses unless you also pass `--allow-public`.
+
+WSL2 often cannot see the Windows LAN. `ip -4 addr` in WSL may show only a `172.x` virtual network. On Windows, run `ipconfig`, read the Wi-Fi IPv4 address and mask, and scan that range (for `192.168.1.23` and mask `255.255.255.0`, use `192.168.1.0/24`). If WSL still cannot reach it, run Nmap or Zenmap on Windows, save XML, and pass it with `--from-xml`. The full notes are in `threat-brief/README.md`.
+
+### Enable Pages
+
+The workflow is `.github/workflows/threat-brief.yml`. It runs daily at 04:15 UTC and from the Actions tab. It does not run on every push. Before the first run, the owner needs to:
+
+1. Open **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**. Save.
+2. Open **Settings → Actions → General → Workflow permissions** and select **Read and write permissions**. Save.
+3. Open **Actions → Threat brief → Run workflow**.
+4. If GitHub asks for approval to deploy to the `github-pages` environment, approve it.
+
+After a successful deploy, the Pages settings show the site URL. For this public repository that is expected to be `https://lawrence-flash.github.io/AI_Assistant/`. If branch protection blocks `github-actions[bot]` from pushing to `main`, the data commit will fail until that push is allowed.
