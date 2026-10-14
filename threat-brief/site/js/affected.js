@@ -12,9 +12,12 @@
   function renderPreview(rows) {
     var wrap = document.getElementById("preview");
     wrap.replaceChildren();
+    var showWhere = rows.some(function (row) { return row.host || row.port; });
     var table = el("table");
     var head = el("tr");
-    ["Name", "Vendor", "Version"].forEach(function (label) {
+    var labels = ["Name", "Vendor", "Version"];
+    if (showWhere) labels.push("Host", "Port");
+    labels.forEach(function (label) {
       head.appendChild(el("th", null, label));
     });
     var thead = el("thead");
@@ -26,6 +29,10 @@
       tr.appendChild(el("td", null, row.name));
       tr.appendChild(el("td", null, row.vendor || "—"));
       tr.appendChild(el("td", null, row.version || "—"));
+      if (showWhere) {
+        tr.appendChild(el("td", null, row.host || "—"));
+        tr.appendChild(el("td", null, row.port || "—"));
+      }
       body.appendChild(tr);
     });
     table.appendChild(body);
@@ -62,6 +69,9 @@
       shown.forEach(function (item) {
         var tr = el("tr");
         var yours = item.inventory.name + (item.inventory.version ? " " + item.inventory.version : "");
+        if (item.inventory.host) {
+          yours += " · " + item.inventory.host + (item.inventory.port ? ":" + item.inventory.port : "");
+        }
         var record = item.cve_id + " · " + (item.product || item.title || "");
         if (item.kev_date_added) record += " · catalog date " + item.kev_date_added;
         addCells(tr, [
@@ -88,7 +98,11 @@
     }
 
     function sameRow(item, row) {
-      return item.inventory.name === row.name && item.inventory.vendor === (row.vendor || "") && item.inventory.version === (row.version || "");
+      return item.inventory.name === row.name
+        && item.inventory.vendor === (row.vendor || "")
+        && item.inventory.version === (row.version || "")
+        && (item.inventory.host || "") === (row.host || "")
+        && (item.inventory.port || "") === (row.port ? String(row.port) : "");
     }
     var unmatched = result._rows.filter(function (row) {
       var mentioned = result.affected.concat(result.cleared);
@@ -98,7 +112,8 @@
       root.appendChild(el("h2", null, "No catalog match"));
       var list = el("ul");
       unmatched.forEach(function (row) {
-        list.appendChild(el("li", null, row.name + (row.vendor ? " (" + row.vendor + ")" : "") + " — nothing in this catalog matched the name."));
+        var where = row.host ? " on " + row.host + (row.port ? ":" + row.port : "") : "";
+        list.appendChild(el("li", null, row.name + (row.vendor ? " (" + row.vendor + ")" : "") + where + " — nothing in this catalog matched the name."));
       });
       root.appendChild(list);
     }
@@ -117,10 +132,19 @@
     }
   }
 
+  function rowsFromText(text) {
+    var trimmed = String(text || "").replace(/^\uFEFF/, "").trim();
+    if (trimmed.charAt(0) === "<") {
+      if (!window.ThreatNmap) throw new Error("The nmap reader did not load.");
+      return window.ThreatNmap.inventoryRows(window.ThreatNmap.parseNmapXml(trimmed));
+    }
+    return window.ThreatMatch.parseInventoryCsv(text);
+  }
+
   function run(text) {
     var rows;
     try {
-      rows = window.ThreatMatch.parseInventoryCsv(text);
+      rows = rowsFromText(text);
     } catch (error) {
       document.getElementById("results").replaceChildren(el("p", "banner", error.message));
       return;
@@ -141,7 +165,17 @@
       });
   }
 
+  function loadSampleScan() {
+    fetch("sample-nmap.xml")
+      .then(function (response) { return response.text(); })
+      .then(run)
+      .catch(function () {
+        document.getElementById("results").replaceChildren(el("p", null, "The sample scan could not be loaded. Serve this folder with a local web server, then try again."));
+      });
+  }
+
   document.getElementById("sample").addEventListener("click", loadSample);
+  document.getElementById("sample-scan").addEventListener("click", loadSampleScan);
   document.getElementById("file").addEventListener("change", function (event) {
     var file = event.target.files && event.target.files[0];
     if (!file) return;
@@ -157,7 +191,7 @@
     })
     .then(function (payload) {
       catalog = payload.items || [];
-      document.getElementById("status").textContent = catalog.length + " catalog records loaded in this browser. Choose a CSV or load the sample. Nothing is uploaded.";
+      document.getElementById("status").textContent = catalog.length + " catalog records loaded in this browser. Choose a CSV or nmap XML, or load a sample. Nothing is uploaded.";
     })
     .catch(function () {
       document.getElementById("status").textContent = "The catalog file is missing. Run python3 threat-brief/collect.py, then reload this page.";

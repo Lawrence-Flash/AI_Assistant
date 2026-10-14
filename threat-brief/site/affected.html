@@ -11,7 +11,7 @@
     <header class="mast">
       <p class="kicker">For small businesses in South Africa</p>
       <h1>Am I affected?</h1>
-      <p class="lede">Compare a software inventory with the public catalog. Matching runs in this browser. The file stays on this device.</p>
+      <p class="lede">Compare a software inventory, or an nmap XML file, with the public catalog. Matching runs in this browser. The file stays on this device.</p>
       <nav aria-label="Sections">
         <a href="index.html">Today's brief</a>
         <a href="affected.html" aria-current="page">Am I affected?</a>
@@ -19,17 +19,18 @@
     </header>
     <main>
       <div class="banner">
-        <p><strong>Version matching is approximate.</strong> A dotted version is compared with a shortened list of version ranges from NVD. Many exploited bugs in the CISA catalog have no version range, so a name match still needs a person to confirm it. This page does not send your inventory anywhere.</p>
+        <p><strong>Version matching is approximate.</strong> A dotted version is compared with a shortened list of version ranges from NVD. Many exploited bugs in the CISA catalog have no version range, so a name match still needs a person to confirm it. This page does not send your file anywhere. It also does not scan a network. Risk notes for open Telnet, file sharing, and similar services are in the local report from <code>scan.py</code>, not on this page.</p>
       </div>
       <p id="status" class="status" role="status">Loading the catalog…</p>
       <div class="tools">
-        <label>Your inventory CSV
-          <input id="file" type="file" accept=".csv,text/csv">
+        <label>Your inventory CSV or nmap XML
+          <input id="file" type="file" accept=".csv,.xml,text/csv,text/xml,application/xml">
         </label>
         <button id="sample" type="button">Load the sample inventory</button>
+        <button id="sample-scan" type="button" class="secondary">Load the sample scan</button>
         <a class="button secondary" href="sample-inventory.csv" download>Download the sample CSV</a>
       </div>
-      <p class="status">The sample is a 30-second demo: Exchange, Windows, WordPress, FortiOS, RouterOS, a TP-Link model, a Yoco card machine, and a printer that should not match. Columns are <code>name</code>, <code>vendor</code>, <code>version</code>.</p>
+      <p class="status">The sample CSV is a 30-second demo: Exchange, Windows, WordPress, FortiOS, RouterOS, a TP-Link model, a Yoco card machine, and a printer that should not match. Columns are <code>name</code>, <code>vendor</code>, <code>version</code>. The sample scan is a fictional nmap XML file of a private LAN. Open ports become inventory rows in this browser.</p>
       <div id="preview"></div>
       <div id="results"></div>
     </main>
@@ -38,6 +39,7 @@
     </footer>
   </div>
   <script src="js/match.js"></script>
+  <script src="js/nmap.js"></script>
   <script src="js/affected.js"></script>
 </body>
 </html>

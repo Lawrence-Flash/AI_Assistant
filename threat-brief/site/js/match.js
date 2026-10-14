@@ -8,7 +8,7 @@
   }
   root.ThreatMatch = api;
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
-  var GENERIC_PRODUCTS = { core: true, firmware: true, "http server": true };
+  var GENERIC_PRODUCTS = { core: true, firmware: true, "http server": true, server: true };
   var GENERIC_PREFIX = "multiple";
   var HEADER_ALIASES = {
     name: "name",
@@ -23,7 +23,11 @@
     version: "version",
     ver: "version",
     product_version: "version",
-    "product version": "version"
+    "product version": "version",
+    host: "host",
+    ip: "host",
+    address: "host",
+    port: "port"
   };
   var CONFIDENCE_LABELS = {
     version_in_range: "Version looks inside a published range. This check is approximate.",
@@ -119,16 +123,23 @@
     var candidates = [];
     if (normalise(item.product || "")) candidates.push(item.product);
     for (var i = 0; i < candidates.length; i += 1) {
+      if (isGeneric(candidates[i])) {
+        if (vendorInRow(item.vendor || "", row)) return true;
+        continue;
+      }
       if (productsCompatible(row.name || "", candidates[i])) return true;
-      if (isGeneric(candidates[i]) && vendorInRow(item.vendor || "", row)) return true;
     }
     var aliases = item.aliases || [];
     for (var a = 0; a < aliases.length; a += 1) {
       var alias = aliases[a];
       if (vendorsContradict(row.vendor || "", { vendor: alias.vendor || "", aliases: [] })) continue;
       var product = String(alias.product || "").replace(/_/g, " ");
+      var vendor = alias.vendor || item.vendor || "";
+      if (isGeneric(product)) {
+        if (vendorInRow(vendor, row)) return true;
+        continue;
+      }
       if (productsCompatible(row.name || "", product)) return true;
-      if (isGeneric(product) && vendorInRow(alias.vendor || item.vendor || "", row)) return true;
     }
     return false;
   }
@@ -139,9 +150,11 @@
       var product = String(range.product || "").replace(/_/g, " ");
       var vendor = range.vendor || "";
       if (vendorsContradict(row.vendor || "", { vendor: vendor, aliases: [] })) return;
-      if (productsCompatible(row.name || "", product) || (isGeneric(product) && vendorInRow(vendor, row))) {
-        ranges.push(range);
+      if (isGeneric(product)) {
+        if (vendorInRow(vendor, row)) ranges.push(range);
+        return;
       }
+      if (productsCompatible(row.name || "", product)) ranges.push(range);
     });
     return ranges;
   }
@@ -223,7 +236,7 @@
     }
     var items = [];
     for (var r = 1; r < table.length; r += 1) {
-      var item = { name: "", vendor: "", version: "", line: r + 1 };
+      var item = { name: "", vendor: "", version: "", host: "", port: "", line: r + 1 };
       table[r].forEach(function (cell, index) {
         var field = mapping[index];
         var value = String(cell || "").trim();
@@ -246,7 +259,13 @@
         if (!recordMatchesRow(row, item)) return;
         var confidence = confidenceFor(row, item);
         var entry = {
-          inventory: { name: row.name || "", vendor: row.vendor || "", version: row.version || "" },
+          inventory: {
+            name: row.name || "",
+            vendor: row.vendor || "",
+            version: row.version || "",
+            host: row.host || "",
+            port: row.port ? String(row.port) : ""
+          },
           cve_id: item.cve_id,
           title: item.title || item.cve_id,
           vendor: item.vendor || "",

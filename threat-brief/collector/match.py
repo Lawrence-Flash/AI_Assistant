@@ -16,7 +16,7 @@ import re
 
 from collector.textutil import contains_phrase, normalise
 
-GENERIC_PRODUCTS = {"core", "firmware", "http server"}
+GENERIC_PRODUCTS = {"core", "firmware", "http server", "server"}
 GENERIC_PREFIX = "multiple"
 
 HEADER_ALIASES = {
@@ -33,6 +33,10 @@ HEADER_ALIASES = {
     "ver": "version",
     "product_version": "version",
     "product version": "version",
+    "host": "host",
+    "ip": "host",
+    "address": "host",
+    "port": "port",
 }
 
 
@@ -53,7 +57,7 @@ def parse_inventory_csv(text: str) -> list[dict]:
         raise ValueError("The inventory CSV needs a column named name, product, or software.")
     rows = []
     for index, raw in enumerate(reader, start=2):
-        item = {"name": "", "vendor": "", "version": "", "line": index}
+        item = {"name": "", "vendor": "", "version": "", "host": "", "port": "", "line": index}
         for header, field in mapping.items():
             value = (raw.get(header) or "").strip()
             if value and not item[field]:
@@ -80,7 +84,13 @@ def match_inventory(rows: list[dict], catalog: list[dict]) -> dict:
                 continue
             confidence = _confidence(row, item)
             entry = {
-                "inventory": {"name": row.get("name", ""), "vendor": row.get("vendor", ""), "version": row.get("version", "")},
+                "inventory": {
+                    "name": row.get("name", ""),
+                    "vendor": row.get("vendor", ""),
+                    "version": row.get("version", ""),
+                    "host": row.get("host", ""),
+                    "port": str(row.get("port") or ""),
+                },
                 "cve_id": item.get("cve_id"),
                 "title": item.get("title") or item.get("cve_id"),
                 "vendor": item.get("vendor") or "",
@@ -120,17 +130,18 @@ def record_matches_row(row: dict, item: dict) -> bool:
     candidates = _product_candidates(item)
     inventory_name = row.get("name") or ""
     for candidate in candidates:
-        if _products_compatible(inventory_name, candidate):
+        if _generic_vendor_match(candidate, item.get("vendor") or "", row):
             return True
-        if _is_generic(candidate) and _vendor_in_row(item.get("vendor") or "", row):
+        if not _is_generic(candidate) and _products_compatible(inventory_name, candidate):
             return True
     for alias in item.get("aliases") or []:
         if _vendors_contradict(row.get("vendor") or "", {"vendor": alias.get("vendor") or "", "aliases": []}):
             continue
         product = (alias.get("product") or "").replace("_", " ")
-        if _products_compatible(inventory_name, product):
+        vendor = alias.get("vendor") or item.get("vendor") or ""
+        if _generic_vendor_match(product, vendor, row):
             return True
-        if _is_generic(product) and _vendor_in_row(alias.get("vendor") or item.get("vendor") or "", row):
+        if not _is_generic(product) and _products_compatible(inventory_name, product):
             return True
     return False
 
@@ -205,10 +216,11 @@ def _relevant_ranges(row: dict, item: dict) -> list[dict]:
         vendor = rng.get("vendor") or ""
         if _vendors_contradict(row.get("vendor") or "", {"vendor": vendor, "aliases": []}):
             continue
-        if _products_compatible(row.get("name") or "", product):
-            ranges.append(rng)
+        if _is_generic(product):
+            if _vendor_in_row(vendor, row):
+                ranges.append(rng)
             continue
-        if _is_generic(product) and _vendor_in_row(vendor, row):
+        if _products_compatible(row.get("name") or "", product):
             ranges.append(rng)
     return ranges
 
@@ -220,6 +232,11 @@ def _product_candidates(item: dict) -> list[str]:
 
 def _products_compatible(inventory_name: str, product: str) -> bool:
     return contains_phrase(inventory_name, product) or contains_phrase(product, inventory_name)
+
+
+def _generic_vendor_match(product: str, vendor: str, row: dict) -> bool:
+    """A vague product name matches only when the vendor is also present."""
+    return _is_generic(product) and _vendor_in_row(vendor, row)
 
 
 def _is_generic(product: str) -> bool:

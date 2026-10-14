@@ -176,6 +176,41 @@ class MatchTests(unittest.TestCase):
         self.assertEqual(yoco, [])
         self.assertIn("approximate", result["affected"][0]["confidence_label"])
 
+    def test_generic_product_names_need_the_vendor(self):
+        catalog = CATALOG + [
+            {
+                "cve_id": "CVE-APACHE",
+                "kind": "cve",
+                "vendor": "Apache",
+                "product": "HTTP Server",
+                "score": 25,
+                "what_to_do": "Patch Apache.",
+                "summary": "Apache.",
+                "reasons": [],
+                "version_ranges": [],
+                "aliases": [],
+            },
+            {
+                "cve_id": "CVE-TRUECONF",
+                "kind": "cve",
+                "vendor": "TrueConf",
+                "product": "Server",
+                "score": 25,
+                "what_to_do": "Patch TrueConf.",
+                "summary": "TrueConf.",
+                "reasons": [],
+                "version_ranges": [],
+                "aliases": [],
+            },
+        ]
+        rows = parse_inventory_csv("name,vendor,version\nHP HTTP Server,,\nApache HTTP Server,Apache,\n")
+        result = match_inventory(rows, catalog)
+        printer = [item["cve_id"] for item in result["affected"] if item["inventory"]["name"] == "HP HTTP Server"]
+        apache = [item["cve_id"] for item in result["affected"] if item["inventory"]["name"] == "Apache HTTP Server"]
+        self.assertEqual(printer, [])
+        self.assertIn("CVE-APACHE", apache)
+        self.assertNotIn("CVE-TRUECONF", apache)
+
     def test_equal_scores_put_the_newer_catalog_date_first(self):
         rows = parse_inventory_csv("name,vendor,version\nWindows,Microsoft,\n")
         catalog = [

@@ -152,4 +152,13 @@ const tied = matchInventory(
 );
 assert.deepEqual(tied.affected.map((item) => item.cve_id), ["CVE-NEW", "CVE-OLD"]);
 
+const genericCatalog = catalog.concat([
+  { cve_id: "CVE-APACHE", kind: "cve", vendor: "Apache", product: "HTTP Server", score: 25, version_ranges: [], aliases: [], what_to_do: "Patch Apache.", summary: "Apache.", reasons: [] },
+  { cve_id: "CVE-TRUECONF", kind: "cve", vendor: "TrueConf", product: "Server", score: 25, version_ranges: [], aliases: [], what_to_do: "Patch TrueConf.", summary: "TrueConf.", reasons: [] }
+]);
+const generic = matchInventory(parseInventoryCsv("name,vendor,version\nHP HTTP Server,,\nApache HTTP Server,Apache,\n"), genericCatalog);
+assert.equal(generic.affected.some((item) => item.inventory.name === "HP HTTP Server"), false);
+assert.equal(generic.affected.some((item) => item.inventory.name === "Apache HTTP Server" && item.cve_id === "CVE-APACHE"), true);
+assert.equal(generic.affected.some((item) => item.cve_id === "CVE-TRUECONF"), false);
+
 console.log("match.js tests passed");

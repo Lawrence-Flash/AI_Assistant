@@ -7,3 +7,4 @@ __pycache__/
 .venv/
 .venv_wsl/
 .pytest_cache/
+threat-brief/scan-out/
