@@ -47,15 +47,15 @@ An enterprise-ready, AI-powered network security auditor, OSINT intelligence pla
 
 ## 🛠️ Automated Setup in WSL (Recommended)
 
-Because the project is located on your Windows drive (`C:\Users\lawre\Documents\github\Per_projects\AI_Assistant`), it is automatically mounted in WSL Ubuntu at:
+Because the project is located on your Windows drive (`C:..`), it is automatically mounted in WSL Ubuntu at:
 ```bash
-/mnt/c/Users/lawre/Documents/github/Per_projects/AI_Assistant
+/mnt/c..
 ```
 
 ### 1-Click Automated Setup
 Inside your WSL terminal, navigate to the folder and run:
 ```bash
-cd /mnt/c/Users/lawre/Documents/github/Per_projects/AI_Assistant
+cd ..
 chmod +x setup_wsl.sh
 ./setup_wsl.sh
 ```
