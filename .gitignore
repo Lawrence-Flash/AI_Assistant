@@ -4,6 +4,16 @@ __pycache__/
 *.pyo
 *.pyd
 *.db
+*.sqlite
+*.sqlite3
 .venv/
 .venv_wsl/
 .pytest_cache/
+
+# Android packages and Gradle/Android build outputs
+*.apk
+*.aab
+*.ap_
+*.dex
+build/
+.gradle/
