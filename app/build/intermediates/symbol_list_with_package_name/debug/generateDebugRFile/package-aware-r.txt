@@ -1,3 +1,0 @@
-com.example.aiassistant
-string app_name
-style Theme_AIAssistant
