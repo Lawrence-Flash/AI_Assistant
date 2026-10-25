@@ -1,0 +1,36 @@
+# Runs the threat-brief unit tests on pull requests.
+# This job does not collect feeds, deploy Pages, or push.
+name: Threat brief tests
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Python tests
+        run: python3 -m unittest discover -s threat-brief/tests
+
+      - name: Inventory match tests
+        run: node threat-brief/tests/match.test.mjs
+
+      - name: Nmap XML tests
+        run: node threat-brief/tests/nmap.test.mjs

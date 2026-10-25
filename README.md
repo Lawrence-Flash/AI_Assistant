@@ -1,209 +1,410 @@
-# AI-Cybersecurity Assistant v2.5 (Enterprise Work Edition)
+# AI Cybersecurity Assistant
 
-An enterprise-ready, AI-powered network security auditor, OSINT intelligence platform, and attack surface monitoring suite designed for security engineers, penetration testers, and SOC analysts. It combines `nmap` reconnaissance, deep HTTP security posture checks, subdomain mapping, multi-source OSINT (DNS, Whois, GeoIP, SSL/TLS), and Google Gemini AI to produce structured threat assessments, automated hardening scripts, and client-ready audit reports.
+**Author:** [Lawrence Tshabalala](https://github.com/Lawrence-Flash)
 
----
+A local lab tool for authorized network and domain checks. It runs Nmap, collects DNS, WHOIS, GeoIP, SPF/DMARC, TLS, and HTTP-header data, stores the results in SQLite, and can ask Google Gemini to write a structured summary. The same API backs a browser dashboard, a terminal menu, and a small Android client.
 
-## 🚀 Key Features
+The Python package version in `pyproject.toml` is **1.0.0**. Python **3.11+** is required.
 
-- **Enterprise Scan Engine & Target Normalization**:
-  - **First-Class Domain Name & URL Support**: Enter domain names (`scanme.nmap.org`), full URLs (`https://example.com/login`), hostnames with custom ports (`example.com:8443`), or raw IPs. Targets are automatically normalized, resolving clean hostnames and extracting custom ports.
-  - **Work Scan Profiles**: Fast Recon (`-F`), Deep Service & OS (`-sV -O`), Web App Audit (`http-*`), Full Stealth SYN (`-sS -Pn`), Vulnerability Audit (`--script vuln`), and Full 65,535 Port Sweep (`-p-`).
-  - **Custom Port Range Selector**: Specify exact ports or ranges (e.g. `80,443`, `1-1024`, `22,3389,8080`) safely without limitation.
-- **Domain Intelligence & DNS Profile Engine**:
-  - Automatically resolves IPv4 (`A`), IPv6 (`AAAA`), Canonical aliases (`CNAME`), Mail Servers with priorities (`MX`), Name Servers (`NS`), Text verification records (`TXT`), and Zone Start of Authority (`SOA`).
-- **Email Security & Anti-Spoofing Assessment**:
-  - Evaluates **SPF** (`v=spf1 ...`) records, identifying strictness (`-all` HardFail, `~all` SoftFail, `?all` Neutral, `+all` Critical Vulnerability).
-  - Evaluates **DMARC** (`_dmarc.<domain>`) records, parsing policy (`p=reject`, `p=quarantine`, `p=none`), percentage coverage (`pct=`), and aggregate forensic report mailboxes (`rua=`).
-  - Automatically rates domain spoofing exposure (`PROTECTED`, `PARTIALLY PROTECTED`, or `VULNERABLE TO SPOOFING`).
-- **Cloud / CDN & Reverse Proxy Detection**:
-  - Identifies whether the domain is behind Cloudflare, AWS CloudFront, Akamai, Fastly, Azure Front Door, or Imperva Incapsula via CNAME and HTTP headers.
-  - Notifies analysts and Gemini AI whether port scans reflect edge proxy nodes rather than the origin server.
-- **Deep SSL/TLS Certificate Audit**:
-  - Connects using SNI hostname and extracts Certificate Authority (Issuer), Subject, Subject Alternative Names (SANs), TLS protocol versions, cipher suites, and expiry date with an automated **days remaining** countdown.
-- **HTTP Security Headers & Web Posture Audit**:
-  - Automatically evaluates HTTP/HTTPS web endpoints on targets for essential security headers: `Strict-Transport-Security` (HSTS), `Content-Security-Policy` (CSP), `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, and `Permissions-Policy`.
-  - Computes a security rating (Grades A-F) with color-coded pass/fail badges.
-  - Flags sensitive banner leaks (`Server`, `X-Powered-By`) and inspects Cookie security flags (`Secure`, `HttpOnly`, `SameSite`).
-- **Subdomain Reconnaissance & Attack Surface Mapping**:
-  - Maps corporate and infrastructure subdomains (`api`, `dev`, `staging`, `vpn`, `app`, `admin`, `portal`, `auth`, `corp`, `cdn`, `beta`, `sso`, `gitlab`, `jenkins`, `dashboard`, `internal`, `db`, `smtp`, `origin`, `m`, etc.) with resolved IP addresses.
-  - 1-click **"Scan Target"** button on discovered subdomains.
-- **Automated Remediation & Hardening Script Generator**:
-  - Instantly generates production-ready, battle-tested **Bash** (UFW, iptables, sysctl, SSH hardening) or **PowerShell** (NetFirewall rules) hardening scripts tailored specifically to the open ports and vulnerabilities found.
-  - 1-click **Copy** and **Download Script** (`.sh` or `.ps1`).
-- **Client / Engagement Tagging & Analyst Notes**:
-  - Tag scans by organization, project, or audit engagement (e.g. `Acme Corp - Q3`, `Internal Audit`).
-  - Add persistent auditor commentary, false positive documentation, or verification notes stored in the database.
-  - Quick-search filter by target or client tag in the scan history.
-- **Dual Work Interfaces**: 
-  - **Modern Cyber Dashboard** (`app.py`): Glassmorphism responsive UI with real-time feedback, Domain Posture cards, Markdown report rendering, interactive chat advisor, and export to PDF/JSON.
-  - **Interactive Terminal Console** (`cli.py`): Rich CLI with colored port tables, Domain & DNS profile tables, Email Anti-Spoofing tables, SSL/TLS certificate tables, HTTP audit tables, subdomain tables, and instant domain deep-dive option `[4]`.
-- **LAN & Subnet Sweeper**: Discover live hosts across subnets or CIDR ranges (`nmap -sn`) with hardware vendor detection.
-- **Continuous Monitoring & Attack Surface Diffing**:
-  - Scheduled target monitoring with port change detection.
-  - Instant **Discord/Slack Webhook alerts** when changes occur.
+Use it only on systems you own or have written permission to test. `scanme.nmap.org` is Nmap's public demonstration host and is the safe example used below.
 
----
+## Security Threat Brief
 
-## 🛠️ Automated Setup in WSL (Recommended)
+`threat-brief/` is a separate tool. It does not change the assistant above, and it does not call Gemini or any paid API.
 
-Because the project is located on your Windows drive (`C:\Users\lawre\Documents\github\Per_projects\AI_Assistant`), it is automatically mounted in WSL Ubuntu at:
-```bash
-/mnt/c/Users/lawre/Documents/github/Per_projects/AI_Assistant
+It reads public feeds (CISA Known Exploited Vulnerabilities, recent High and Critical CVEs from the NVD API 2.0 with no API key, FIRST EPSS for that recent set, and three RSS feeds), scores each item with the documented `smb-sa-v1` formula, and writes a static site. The "Am I affected?" page matches a CSV or an nmap XML file in the browser. The file is not uploaded. `python3 threat-brief/scan.py` can build that inventory from a service scan of a network you own, or from a saved nmap XML file without sending packets. A live scan requires `--i-own-this-network` and refuses public addresses unless `--allow-public` is also passed. The published site does not scan a network.
+
+How to run the collector, the local scan, and the tests, and which GitHub settings the daily job needs, are in [threat-brief/README.md](threat-brief/README.md).
+
+## What it does
+
+One scan from the dashboard, CLI, or `POST /scan` does the following:
+
+1. Normalizes the target. A URL, a `host:port` value, or a bracketed IPv6 address is reduced to a host, and an explicit port is kept for Nmap.
+2. Rejects strings that are not an IP address, `localhost`, or a domain name.
+3. Runs Nmap with one of six profiles, or with a caller-supplied port list.
+4. Collects OSINT for that host (details below).
+5. Sends the Nmap text and the OSINT JSON to Gemini, when `GEMINI_API_KEY` is set.
+6. Reads a risk label from the model text (`CRITICAL`, `HIGH`, `MEDIUM`, `LOW`, or `INFORMATIONAL`) and stores the scan.
+
+Without an API key, Nmap and the local checks still run. The AI field then contains the message that no key was found.
+
+## Features
+
+### Nmap profiles
+
+`run_nmap_scan` in `utils.py` builds the argument list. A custom port list replaces `-F` or an existing `-p` value when it matches `80`, `80,443`, `1-1024`, or `22,80-90,443` style input. Ports must be between 1 and 65535.
+
+| Profile | Flags when the process is root | Flags otherwise |
+| --- | --- | --- |
+| `fast` (default) | `-F` | `-F` |
+| `advanced` | `-sV -O -T4` | `-sV --version-all -T4` |
+| `web` | `-sV -p 80,443,8080,8443,3000,5000,8000 --script http-title,http-headers,http-methods,ssl-cert` | same |
+| `stealth` | `-sS -sV -Pn -T4 --top-ports 1000` | `-sT` instead of `-sS` |
+| `vuln` | `-sV -T4 --script vuln` | same |
+| `full` | `-p- -T4 -sV` | same |
+
+If Nmap exits with "requires root privileges", the function retries once: it drops `-O` and replaces `-sS` with `-sT`. Each Nmap invocation has a 600 second timeout. Host discovery (`nmap -sn`) has a 120 second timeout.
+
+Host discovery parses "Nmap scan report" lines, latency, and `MAC Address` lines (address and vendor text when Nmap prints them). It accepts a CIDR such as `192.168.1.0/24` or a single valid host.
+
+### Domain and IP intelligence
+
+For a domain, `run_osint` gathers:
+
+- WHOIS via `python-whois` (registrar, created date, expiry, emails, org when the library returns them).
+- DNS `A`, `AAAA`, `CNAME`, `MX` (with preference), `NS`, `TXT`, and `SOA` via dnspython. Resolver lifetime is 2.5 seconds.
+- SPF and DMARC (see below).
+- CDN / reverse-proxy hints from CNAME text.
+- A TLS certificate read on port 443 using the hostname as SNI.
+- GeoIP for the first IPv4 answer, from `http://ip-api.com/json/...`.
+- An HTTP header audit.
+- Subdomain `A` lookups against a fixed wordlist.
+
+For an IP address it tries `A`, `MX`, `NS`, `TXT`, and a PTR lookup, plus GeoIP. Private and loopback addresses skip the GeoIP request and are labeled as local.
+
+`POST /domain_audit` runs this OSINT path and returns it. It does not run Nmap.
+
+### SPF and DMARC
+
+`analyze_email_security` reads the domain's TXT records and `_dmarc.<domain>`:
+
+- SPF `-all` and `~all` are `PASS`. `?all` is `WEAK`. `+all` is `CRITICAL`. A record with no `all` qualifier is `WARNING`. No record is `MISSING`.
+- DMARC `p=reject` and `p=quarantine` are `PASS`. `p=none` is `WARNING`. The parser also keeps `pct` and `rua`.
+- Combined label: `PROTECTED` when both are `PASS`, `PARTIALLY PROTECTED` when SPF passes and DMARC is `WARNING` or `MISSING`, otherwise `VULNERABLE`.
+
+### TLS certificate check
+
+`get_detailed_ssl_cert` connects to port 443 and records issuer, subject CN, up to 15 DNS subject-alternative names, not-before, not-after, TLS version, and cipher. Remaining lifetime is computed from the certificate date. Status is `ACTIVE`, `EXPIRING_SOON` (30 days or fewer), `EXPIRED`, `UNTRUSTED_OR_EXPIRED`, or `UNAVAILABLE`.
+
+A second helper, `get_ssl_cert_info`, records only TLS version, cipher name, and whether a certificate was presented. Domain OSINT stores the detailed certificate and this short probe. IP OSINT stores the short probe.
+
+### HTTP header audit
+
+`analyze_http_security` strips any explicit port from the host, then requests `https://<host>` and, if that fails, `http://<host>` (3 second timeout, redirects followed, certificate verification disabled). It checks:
+
+- `Strict-Transport-Security` (25)
+- `Content-Security-Policy` (25)
+- `X-Frame-Options` (15)
+- `X-Content-Type-Options: nosniff` (15)
+- `Referrer-Policy` (10)
+- `Permissions-Policy` (10)
+
+The score maps to a grade: A at 85 or above, B at 70, C at 50, D at 30, otherwise F. The audit also records `Server` and `X-Powered-By` when those headers are present, and notes the `Secure`, `HttpOnly`, and `SameSite` flags on cookies in the response.
+
+### Subdomain wordlist
+
+`enumerate_subdomains` resolves `A` records for 32 prefixes: `www`, `api`, `mail`, `dev`, `staging`, `admin`, `vpn`, `app`, `portal`, `auth`, `corp`, `cdn`, `test`, `remote`, `gateway`, `cloud`, `secure`, `status`, `beta`, `sso`, `gitlab`, `jenkins`, `dashboard`, `internal`, `db`, `smtp`, `stage`, `origin`, `m`, `docs`, `support`, `mx`. IP addresses return an empty list. Each lookup uses a 1.5 second lifetime.
+
+### CDN name matching
+
+`detect_cdn_proxy` flags a target when a CNAME contains `cloudflare`, `cloudfront.net`, `akamai`, `edgekey.net`, `fastly`, `azureedge.net`, `azurefd.net`, `incapdns.net`, or `sucuri`. It also recognizes the header names `cf-ray`, `x-amz-cf-id`, `x-fastly-request-id`, and `x-azure-ref`, and a `Server` header that contains `cloudflare`. During a normal OSINT run the CNAME list is what gets passed in. A follow-up call passes the header-audit map, whose keys are the six security-header names above, so that follow-up does not see the raw CDN headers.
+
+### Gemini summaries, chat, and hardening text
+
+`call_gemini_with_fallback` tries, in order:
+
+1. `GEMINI_MODEL` if set, otherwise `gemini-3.6-flash`
+2. `gemini-3.5-flash-lite`
+3. `gemini-flash-latest`
+4. `gemini-pro-latest`
+
+Scan analysis asks the model for a markdown report with a `Risk Level:` line, an executive summary, exposed services, domain and web posture, recommendations, and a remediation checklist. `extract_risk_score` reads that line. If it is missing, a few keyword checks can still return `CRITICAL`, `HIGH`, or `MEDIUM`; otherwise the stored level is `LOW`.
+
+`POST /chat` answers one message with optional prior turns. The web UI and the CLI send `{role, content}` history, which is the shape `chat_with_ai` reads. The Android client sends the new message with an empty history list.
+
+`POST /remediation` asks the model for a Bash script (`platform=linux`) or a PowerShell script (`platform=windows`) from the scan text. Fenced code is unwrapped when the model returns it. With no API key, every platform receives the same short Bash stub: UFW default deny incoming, default allow outgoing, allow TCP/22, then `ufw enable`. The repository never executes that text.
+
+`POST /audit_config` is meant to send a pasted config snippet to `audit_local_config`. The route calls that function, and the function is defined in `utils.py`, but `app.py` does not import it. Calling the route raises `NameError` until that import is added.
+
+### CVE keyword search
+
+`POST /search_cve` queries `https://cve.circl.lu/api/search/<keyword>` with a 10 second timeout. When the body is a list, the route returns the first five items with `id`, `cvss`, and a summary cut at 200 characters. The Android help text calls this the National Vulnerability Database. The handler that actually runs is the CIRCL search URL.
+
+### History, notes, and watchlist
+
+SQLite file `cybersecurity.db` is created in the process working directory. Tables:
+
+- `scan_results` — target, raw text, Nmap text, OSINT JSON, AI text, risk level, client tag, analyst notes, timestamp
+- `watchlist` — target (unique), scan type, `interval_hours` (default 24), last scanned time
+- `diff_logs` — target, diff text, alert level, timestamp (the reader returns the latest 50)
+- `settings` — key/value store; the webhook URL is stored under `webhook_url`
+- `osint_results` — a separate copy of OSINT JSON written on each full scan
+
+`POST /scan/<id>/notes` updates analyst notes and, when supplied, the client tag. History can be filtered in the browser by target or client tag.
+
+APScheduler starts with the Flask process and runs `run_watchlist_scans` every hour. That job scans every watchlist row with the stored scan type. It does not read `interval_hours`. On a changed Nmap text blob it asks Gemini for a comparison, writes a `diff_logs` row at level `warning`, and POSTs a Discord-style embed to the saved webhook URL. `POST /watchlist/scan/<id>` does the same comparison on demand.
+
+The webhook payload is a JSON body with `content` and `embeds`. Success is HTTP 200 or 204. `POST /test_webhook` sends a fixed test embed.
+
+### Browser dashboard
+
+`templates/index.html` is one page styled with Tailwind from the Tailwind CDN, icons from Font Awesome, Markdown via Marked, and PDF export via html2pdf.js. Tabs:
+
+- **Scanner** — target, profile, client tag, optional ports, history, port table, HTTP grade, subdomain table, domain/SPF/DMARC/TLS cards, WHOIS and GeoIP text, analyst notes, raw Nmap output, JSON download, PDF download, hardening-script panel, and a chat box tied to the scan on screen.
+- **Discovery** — subnet form, default placeholder `192.168.1.0/24`, table of hosts returned by `POST /discover`.
+- **Monitoring** — webhook URL, test button, watchlist form (fast or advanced profile; interval choices 1, 6, or 24 hours), and the diff-log list.
+
+The page title in the HTML is "Enterprise AI Cyber Assistant". The server listens on port **5001**.
+
+### Terminal client
+
+`python cli.py` is a Rich menu:
+
+1. Nmap plus OSINT plus Gemini, then optional hardening text and a chat loop
+2. Hardening text from a typed summary
+3. Subnet discovery, with an option to scan a discovered host
+4. Domain OSINT only
+5. Subdomain wordlist, with an option to scan one result
+6. History: view, edit notes, generate hardening text, or delete
+7. Check whether `nmap` is on `PATH`
+8. Exit
+
+### Android client
+
+`app/` is a Jetpack Compose app (`com.example.aiassistant`, minSdk 24, compileSdk and targetSdk 34, versionName `1.0`). It uses Retrofit and Gson with 60 second connect, read, and write timeouts. `AndroidManifest.xml` allows cleartext HTTP.
+
+`ApiClient.kt` points at a fixed base URL: `http://192.168.2.110:5001/`. Change that constant to the machine that is running `app.py` before installing the app. The phone or emulator has to reach that address.
+
+The terminal screen accepts `help`, `scan <target> [-p ports] [-t type]`, `subdomains`, `dns` / `whois`, `searchcve` / `cve`, `audit "<text>"`, `history`, `chat`, and `clear`. The dashboard screen shows the latest in-memory scan (target, risk color, and the AI text cut at 300 characters with `...` appended) and can request a Linux hardening script. History loaded in the terminal is also shown there.
+
+The Gradle wrapper properties request Gradle **9.7.1**. The Android Gradle Plugin is **9.4.0** and the Compose compiler plugin is **2.4.20**. `gradle/wrapper/gradle-wrapper.jar` is not in the repository. Android Studio can regenerate the wrapper; a command-line build needs that jar or a local Gradle install. `local.properties` in the tree points at one Windows SDK path and is specific to that machine.
+
+### Earlier voice sketch
+
+`attached_assets/assistant.py` is a separate voice-and-text loop that shells out to `nmap -F`. It imports `speech_recognition` and `pyttsx3`, which are not listed in `requirements.txt`, and `app.py` does not import this file.
+
+## Architecture
+
+```
+templates/index.html          browser dashboard
+cli.py                        Rich menu
+app/ (Jetpack Compose)        Android client, Retrofit
+        |                             |
+        +---------- HTTP -------------+
+                      |
+                   app.py             Flask on 0.0.0.0:5001
+                      |               APScheduler, hourly watchlist job
+          +-----------+-----------+
+          |                       |
+       utils.py                  db.py
+       nmap, DNS, WHOIS,         SQLite cybersecurity.db
+       TLS, HTTP, Gemini,
+       CIRCL CVE search,
+       webhooks
 ```
 
-### 1-Click Automated Setup
-Inside your WSL terminal, navigate to the folder and run:
+External calls made by the server, when the matching feature runs:
+
+| Destination | When |
+| --- | --- |
+| The scan target (Nmap, TCP/443, HTTP) | Scan, discovery, TLS, HTTP audit, watchlist |
+| DNS resolvers | Domain OSINT and subdomain wordlist |
+| WHOIS | Domain OSINT |
+| `http://ip-api.com` | Public IP GeoIP |
+| `https://cve.circl.lu` | `POST /search_cve` |
+| Google Gemini | Scan summary, chat, hardening text, config audit, diff summary |
+| The saved webhook URL | Watchlist change or webhook test |
+
+## Project layout
+
+```
+app.py                  Flask routes and the hourly watchlist job
+cli.py                  Terminal menu
+utils.py                Nmap, OSINT, Gemini, webhooks
+db.py                   SQLite schema and queries
+templates/index.html    Dashboard
+tests/test_suite.py     unittest suite
+setup_wsl.sh            apt packages, venv, requirements, tests
+requirements.txt        Runtime Python dependencies
+pyproject.toml          Package metadata (version 1.0.0, Python >= 3.11)
+app/                    Android Compose client
+gradle/                 Gradle wrapper properties only
+attached_assets/        Unused voice-command sketch
+threat-brief/           Daily brief, browser checker, and local nmap inventory
+```
+
+`.replit` still launches `gunicorn ... main:app` on port 5000. This repository's module is `app:app`, and the development server in `app.py` uses port 5001. Gunicorn is not in `requirements.txt`.
+
+## Quick start (WSL or Ubuntu)
+
+Run this on Ubuntu, including Ubuntu under WSL. You need `sudo`, `apt`, and outbound network access. On Windows, open the Ubuntu app, `cd` to the clone, and use the Linux Python there. The Windows browser can open `http://127.0.0.1:5001` when WSL localhost forwarding is on, which is the usual WSL 2 default.
+
+Install Python 3.11 or newer if `python3 --version` is older. Ubuntu 24.04's `python3` package meets that. The setup script installs the distro `python3` and does not upgrade it.
+
 ```bash
-cd /mnt/c/Users/lawre/Documents/github/Per_projects/AI_Assistant
+sudo apt-get update
+sudo apt-get install -y nmap python3 python3-pip python3-venv dnsutils
+python3 --version
+
 chmod +x setup_wsl.sh
 ./setup_wsl.sh
 ```
-This automatically:
-1. Installs `nmap`, `python3`, `python3-venv`, and system dependencies via `apt-get`.
-2. Creates and activates the Linux virtual environment (`.venv_wsl`).
-3. Installs all Python dependencies.
-4. Executes the automated test suite (`python -m unittest tests/test_suite.py`) to verify everything is working.
 
----
+`setup_wsl.sh` refuses to run when `uname -s` is not `Linux`. It then:
 
-## 💻 Running the Assistant in WSL
+1. Installs `nmap`, `python3`, `python3-pip`, `python3-venv`, and `dnsutils`.
+2. Creates `.venv_wsl` if it is missing, and activates it.
+3. Installs `requirements.txt`, then runs `pip install -e . --no-deps`.
+4. Runs `python -m unittest tests/test_suite.py`.
 
-### 🌐 Web Dashboard
+Create a `.env` file in the project root if you want Gemini output:
+
+```bash
+GEMINI_API_KEY=your-key-here
+# optional, overrides the first model name in utils.py
+# GEMINI_MODEL=gemini-3.6-flash
+```
+
+`.env` is gitignored. `python-dotenv` loads it when `utils.py` is imported.
+
+Start the dashboard:
+
 ```bash
 source .venv_wsl/bin/activate
 python app.py
 ```
-Open your browser on Windows and navigate to:
-👉 **[http://127.0.0.1:5001](http://127.0.0.1:5001)**
 
-### ⌨️ Terminal CLI
+The first `app.run` call binds `0.0.0.0:5001` with `debug=True` and the reloader off. A second `app.run` sits below it and does not execute.
+
+Start the terminal UI in another shell after activating the same virtualenv:
+
 ```bash
-source .venv_wsl/bin/activate
 python cli.py
 ```
 
----
-
-## 📁 Project Structure
-
-```
-AI_Assistant/
-├── .env                 # Environment variables (GEMINI_API_KEY)
-├── app.py               # Flask web server, REST API, & APScheduler cron jobs
-├── cli.py               # Rich interactive command-line interface
-├── db.py                # SQLite database management (history, diffs, watchlists)
-├── utils.py             # Reconnaissance engine (Nmap, OSINT, AI, Subnet sweeper)
-├── templates/
-│   └── index.html       # Single-page web dashboard (Tailwind, Marked.js, html2pdf)
-├── pyproject.toml       # Project configuration and dependencies
-├── threat-brief/        # Separate daily briefing and "Am I affected?" site
-└── README.md            # Documentation
-```
-
----
-
-## Security Threat Brief
-
-This is a separate, free tool in `threat-brief/`. It does not change the assistant above, and it does not use the Gemini API.
-
-It builds a daily briefing for small South African businesses from public feeds: the CISA Known Exploited Vulnerabilities catalog, recent High and Critical CVEs from the NVD API 2.0 (no API key), FIRST EPSS scores for that recent set, and three RSS feeds. It removes duplicate CVEs, scores each one, writes a rule-based plain-English summary with a "what to do" line, and publishes a static site. The "Am I affected?" page compares a CSV inventory, or an nmap XML file, in the browser. The file is not uploaded.
-
-An optional local command, `python3 threat-brief/scan.py`, turns an nmap service scan of a private network you own into that CSV plus a local report. The published site does not scan anything. What the whole repository actually does, including the assistant, is written without the marketing language in `threat-brief/CAPABILITIES.md`.
-
-### What it does not do
-
-- The website does not scan a network, a computer, or an inbox. The optional local scanner only lists services nmap could see. Software that is not listening, and anything missing from the CSV, stays invisible.
-- `scan.py` does not run exploit scripts and does not call Gemini.
-- It does not call a language model. Summaries are templates. The only summariser shipped here is `rules-v1`.
-- It is not a certification, an audit, a penetration test, or a POPIA compliance product.
-- It is not a feed from the South African government. CISA KEV is a US federal catalog used as a public signal.
-- It is not a complete CVE database. The daily job requests only High and Critical CVEs from the last 7 days, because the keyless NVD limit is 5 requests per 30 seconds. Older KEV rows often have no CVSS and no EPSS in this dataset. The score reasons say when a part is missing.
-- EPSS is a probability published by FIRST, not a promise that a business will be attacked.
-- Version matching is approximate. Names are matched loosely, version ranges are a capped flat list of CPE matches, and NVD's AND/OR configuration trees are not evaluated. Many KEV entries have no version. Vague catalog names such as "Server" or "HTTP Server" match only when the vendor is also present.
-- The small-business software list (Microsoft 365/Exchange, Windows, WordPress, Fortinet, MikroTik, TP-Link, card machines) is a configurable starting point in `threat-brief/config/smb_software.json`, not a census.
-- News headlines are copied from third parties and are not fact-checked.
-
-### Score
-
-Formula `smb-sa-v1`, out of 100. Defaults in `threat-brief/config/settings.json`: CVSS up to 40 (`score / 10 × 40`), KEV 25 or 0, EPSS up to 20 (`probability × 20`), small-business software 15 or 0. Each part is rounded to one decimal and the total is capped at 100. The reasons are stored with the number. News uses a separate relevance score capped at 20. "Patch soon" and "Check this week" are reading labels, not extra points. A known-exploited item is labelled "Patch soon" even when CVSS is missing.
-
-### Architecture
-
-```mermaid
-flowchart LR
-  subgraph feeds [Public feeds, no API key]
-    KEV[CISA KEV JSON]
-    NVD[NVD CVE API 2.0]
-    EPSS[FIRST EPSS]
-    RSS[RSS feeds]
-  end
-  subgraph job [GitHub Actions, once a day]
-    COL[Python collector]
-    SCORE[Score and rule-based summary]
-  end
-  subgraph site [GitHub Pages]
-    BRIEF[Today's brief]
-    CHECK[Am I affected?]
-  end
-  KEV --> COL
-  NVD --> COL
-  EPSS --> COL
-  RSS --> COL
-  COL --> SCORE
-  SCORE --> BRIEF
-  SCORE --> CHECK
-  CSV[Inventory CSV, stays in the browser] --> CHECK
-  subgraph local [On your computer, optional]
-    NMAP[nmap -sV]
-    SCAN[scan.py]
-  end
-  NMAP --> SCAN
-  XML[Saved nmap XML] --> SCAN
-  SCAN --> CSV
-  XML --> CHECK
-```
-
-### Run it locally
-
-No extra Python packages.
+Run the tests alone:
 
 ```bash
-python3 -m unittest discover -s threat-brief/tests -v
-node threat-brief/tests/match.test.mjs
-node threat-brief/tests/nmap.test.mjs
-python3 threat-brief/collect.py --fixtures
-python3 threat-brief/collect.py
-cd threat-brief/site && python3 -m http.server 8765
+source .venv_wsl/bin/activate
+python -m unittest tests/test_suite.py
 ```
 
-`--fixtures` uses the recorded samples and does not touch the network. Then open `http://127.0.0.1:8765/` and `http://127.0.0.1:8765/affected.html`. Use **Load the sample inventory** or **Load the sample scan** for the demo.
+The suite covers target, subnet, and port validation, Nmap text parsing, risk-label extraction, SQLite insert/update/delete, several Flask routes with the test client, target normalization, SPF scoring, and CDN name matching. `test_advanced_security_features` opens a short HTTP connection to `192.0.2.1` (TEST-NET-1) and expects that call to fail. That test needs no listening web server, and it can take a few seconds while the timeouts expire.
 
-A saved nmap file can be turned into a report without sending packets:
+Manual install, if you prefer not to run the script:
 
 ```bash
-sudo apt install nmap python-is-python3
-python3 threat-brief/scan.py --from-xml threat-brief/site/sample-nmap.xml
-explorer.exe threat-brief/scan-out/report.html
+python3 -m venv .venv_wsl
+source .venv_wsl/bin/activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
 ```
 
-To scan a LAN you own:
+Dependencies: `rich`, `flask`, `google-generativeai`, `python-dotenv`, `Flask-APScheduler`, `python-whois`, `dnspython`, `requests`.
+
+## Usage examples
+
+Confirm Nmap is visible to the server:
 
 ```bash
-python3 threat-brief/scan.py --target 192.168.1.0/24 --i-own-this-network
+curl -s http://127.0.0.1:5001/check_nmap
 ```
 
-Only scan a network you own or have written permission to test. The Cybercrimes Act 19 of 2020 includes offences for unlawful access and for interfering with a computer system. That is not legal advice. The command refuses to run unless you pass `--i-own-this-network`, and it refuses public addresses unless you also pass `--allow-public`.
+Domain checks without Nmap. These contact DNS, WHOIS, and the target's port 443 and HTTP ports:
 
-WSL2 often cannot see the Windows LAN. `ip -4 addr` in WSL may show only a `172.x` virtual network. On Windows, run `ipconfig`, read the Wi-Fi IPv4 address and mask, and scan that range (for `192.168.1.23` and mask `255.255.255.0`, use `192.168.1.0/24`). If WSL still cannot reach it, run Nmap or Zenmap on Windows, save XML, and pass it with `--from-xml`. The full notes are in `threat-brief/README.md`.
+```bash
+curl -s -X POST http://127.0.0.1:5001/domain_audit \
+  -H 'Content-Type: application/json' \
+  -d '{"domain":"scanme.nmap.org"}'
 
-### Enable Pages
+curl -s -X POST http://127.0.0.1:5001/http_audit \
+  -H 'Content-Type: application/json' \
+  -d '{"target":"scanme.nmap.org"}'
 
-The workflow is `.github/workflows/threat-brief.yml`. It runs daily at 04:15 UTC and from the Actions tab. It does not run on every push. Before the first run, the owner needs to:
+curl -s -X POST http://127.0.0.1:5001/subdomains \
+  -H 'Content-Type: application/json' \
+  -d '{"domain":"scanme.nmap.org"}'
+```
 
-1. Open **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**. Save.
-2. Open **Settings → Actions → General → Workflow permissions** and select **Read and write permissions**. Save.
-3. Open **Actions → Threat brief → Run workflow**.
-4. If GitHub asks for approval to deploy to the `github-pages` environment, approve it.
+A fast Nmap scan plus OSINT. This sends packets to the target:
 
-After a successful deploy, the Pages settings show the site URL. For this public repository that is expected to be `https://lawrence-flash.github.io/AI_Assistant/`. If branch protection blocks `github-actions[bot]` from pushing to `main`, the data commit will fail until that push is allowed.
+```bash
+curl -s -X POST http://127.0.0.1:5001/scan \
+  -H 'Content-Type: application/json' \
+  -d '{"target":"https://scanme.nmap.org/","scan_type":"fast","client_tag":"lab","analyst_notes":"demo"}'
+```
+
+Other accepted `scan_type` values are `advanced`, `web`, `stealth`, `vuln`, and `full`. `custom_ports` overrides the profile's port selection:
+
+```bash
+curl -s -X POST http://127.0.0.1:5001/scan \
+  -H 'Content-Type: application/json' \
+  -d '{"target":"scanme.nmap.org","scan_type":"fast","custom_ports":"22,80"}'
+```
+
+History and a saved report:
+
+```bash
+curl -s http://127.0.0.1:5001/history
+curl -s http://127.0.0.1:5001/scan/1
+```
+
+Ping sweep on a local subnet you are allowed to probe:
+
+```bash
+curl -s -X POST http://127.0.0.1:5001/discover \
+  -H 'Content-Type: application/json' \
+  -d '{"subnet":"192.168.1.0/24"}'
+```
+
+CVE keyword search (the keyword is sent to CIRCL):
+
+```bash
+curl -s -X POST http://127.0.0.1:5001/search_cve \
+  -H 'Content-Type: application/json' \
+  -d '{"keyword":"openssl"}'
+```
+
+Android terminal, after `ApiClient.BASE_URL` matches the Flask host:
+
+```text
+scan scanme.nmap.org -t fast -p 22,80
+dns scanme.nmap.org
+subdomains scanme.nmap.org
+searchcve openssl
+history
+```
+
+## Security notes
+
+These are properties of the code as it is checked in.
+
+- **Authorization is the operator's job.** The API will scan any host the machine can reach. There is no login, API token, or target allowlist. `vuln` runs Nmap's `vuln` script set, and `full` passes `-p-`.
+- **The development server listens on all interfaces.** `app.py` uses `host="0.0.0.0"`, `port=5001`, and `debug=True`. Anyone who can open that port can start scans, read history, change the webhook URL, and read stored notes.
+- **The Flask secret is a fixed string** in source: `cybersecurity-ai-assistant-secret`.
+- **TLS verification is turned off** for the HTTP header audit (`verify=False`), and urllib3's insecure-request warning is disabled in `utils.py`. The detailed certificate reader uses the default verification context first, then retries with verification disabled and records `UNTRUSTED_OR_EXPIRED`.
+- **Secrets and third parties.** `GEMINI_API_KEY` is read from the environment. Scan text, including open ports and WHOIS, is sent to Gemini when a key is set. GeoIP uses plain HTTP to ip-api.com. CVE search sends the keyword to cve.circl.lu. The webhook URL is stored in SQLite and receives scan-diff text.
+- **Generated scripts are untrusted output.** Review any Bash or PowerShell the model returns before running it. The offline fallback is a minimal UFW snippet, and it opens TCP/22.
+- **The database holds client tags, analyst notes, Nmap output, and the webhook URL** in `cybersecurity.db` in the working directory. `*.db` is gitignored for new files. One older database file is already tracked; see the pull request notes.
+- **The Android app allows cleartext** and ships with a LAN base URL in source. Traffic to that URL is HTTP.
+
+## Known limitations
+
+- `POST /audit_config` fails with `NameError` because `audit_local_config` is not imported in `app.py`.
+- Watchlist intervals of 1, 6, and 24 hours are stored and shown in the UI. The background job still scans every watchlist target once per hour.
+- The Android `SubdomainItem` model reads `ip`. The API returns `ips` (a list), so the terminal prints `Unknown IP`.
+- The Android `dns` command prints DNS keys `A`, `MX`, `NS`, and `TXT`, and email field `protection_status`. Domain OSINT uses `ipv4` / `mx` / `ns` / `txt` and email field `overall`. `MX`, `NS`, and `TXT` still line up.
+- Android chat sends the new message only. The web client is the one that sends prior `{role, content}` turns.
+- CDN header checks inside `run_osint` do not receive the raw response headers.
+- `setup_wsl.sh` prints "v2.5". `pyproject.toml` says `1.0.0`.
+- `attached_assets/assistant.py` and the Replit workflow are not part of the running Flask app.
+
+## Roadmap
+
+Work that matches gaps in the current tree:
+
+1. Add an import for `audit_local_config` on `/audit_config`, and cover that route in `tests/test_suite.py`.
+2. Require an API token, bind the development server to localhost unless a flag says otherwise, and turn debug off outside local use.
+3. Honor `interval_hours` in the scheduler, and compare parsed ports instead of the whole Nmap text blob.
+4. Pass the raw HTTP response headers into `detect_cdn_proxy`.
+5. Move the Android base URL to a build setting, require HTTPS for anything beyond a lab LAN, and match the API field names (`ips`, `ipv4`, `overall`).
+6. Point the CVE client and the Android help text at the same source, and keep using a keyless public API only while the response shape is documented.
+7. Add a CI job that runs `python -m unittest tests/test_suite.py` on Ubuntu with Python 3.11.
+8. Untrack the Android build tree, APKs, and the stray SQLite file already in history, now that `.gitignore` covers new ones.
+9. Replace the Replit launch command so it targets `app:app` on port 5001, or remove that workflow if Replit is unused.
+10. Keep generated hardening scripts behind an explicit review step, and mark the offline UFW sample as a stub.
+
+## License
+
+No license file is included in this repository.
