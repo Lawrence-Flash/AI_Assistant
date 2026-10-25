@@ -8,6 +8,14 @@ The Python package version in `pyproject.toml` is **1.0.0**. Python **3.11+** is
 
 Use it only on systems you own or have written permission to test. `scanme.nmap.org` is Nmap's public demonstration host and is the safe example used below.
 
+## Security Threat Brief
+
+`threat-brief/` is a separate tool. It does not change the assistant above, and it does not call Gemini or any paid API.
+
+It reads public feeds (CISA Known Exploited Vulnerabilities, recent High and Critical CVEs from the NVD API 2.0 with no API key, FIRST EPSS for that recent set, and three RSS feeds), scores each item with the documented `smb-sa-v1` formula, and writes a static site. The "Am I affected?" page matches a CSV or an nmap XML file in the browser. The file is not uploaded. `python3 threat-brief/scan.py` can build that inventory from a service scan of a network you own, or from a saved nmap XML file without sending packets. A live scan requires `--i-own-this-network` and refuses public addresses unless `--allow-public` is also passed. The published site does not scan a network.
+
+How to run the collector, the local scan, and the tests, and which GitHub settings the daily job needs, are in [threat-brief/README.md](threat-brief/README.md).
+
 ## What it does
 
 One scan from the dashboard, CLI, or `POST /scan` does the following:
@@ -213,6 +221,7 @@ pyproject.toml          Package metadata (version 1.0.0, Python >= 3.11)
 app/                    Android Compose client
 gradle/                 Gradle wrapper properties only
 attached_assets/        Unused voice-command sketch
+threat-brief/           Daily brief, browser checker, and local nmap inventory
 ```
 
 `.replit` still launches `gunicorn ... main:app` on port 5000. This repository's module is `app:app`, and the development server in `app.py` uses port 5001. Gunicorn is not in `requirements.txt`.

@@ -17,3 +17,12 @@ __pycache__/
 *.dex
 build/
 .gradle/
+
+# Local reports from threat-brief/scan.py (inventory.csv, report.html, report.md)
+threat-brief/scan-out/
+
+# The brief ships these. Do not let a broader ignore rule drop them.
+!threat-brief/site/data/
+!threat-brief/site/data/*.json
+!threat-brief/site/sample-nmap.xml
+!threat-brief/site/sample-inventory.csv

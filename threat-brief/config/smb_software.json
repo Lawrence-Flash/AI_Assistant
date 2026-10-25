@@ -1,0 +1,40 @@
+{
+  "note": "Edit this list to match the software your clients actually run. Matching is case-insensitive and uses whole words or phrases. A single short word is compared with the vendor and product name. A phrase of two or more words is also compared with the description. This is a starting point for small South African businesses, not a census.",
+  "profiles": [
+    {
+      "id": "m365",
+      "label": "Microsoft 365 / Exchange",
+      "patterns": ["microsoft 365", "office 365", "exchange server", "microsoft exchange", "sharepoint", "outlook"]
+    },
+    {
+      "id": "windows",
+      "label": "Windows",
+      "patterns": ["windows", "windows server", "remote desktop"]
+    },
+    {
+      "id": "wordpress",
+      "label": "WordPress",
+      "patterns": ["wordpress", "woocommerce"]
+    },
+    {
+      "id": "fortinet",
+      "label": "Fortinet",
+      "patterns": ["fortinet", "fortigate", "fortios", "fortiproxy"]
+    },
+    {
+      "id": "mikrotik",
+      "label": "MikroTik",
+      "patterns": ["mikrotik", "routeros"]
+    },
+    {
+      "id": "tplink",
+      "label": "TP-Link",
+      "patterns": ["tp-link", "tp link", "tplink"]
+    },
+    {
+      "id": "pos",
+      "label": "Card machines and POS",
+      "patterns": ["point of sale", "yoco", "ikhokha", "kazang", "pos"]
+    }
+  ]
+}
