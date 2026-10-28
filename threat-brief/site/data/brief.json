@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-27T09:50:35.555187+00:00",
+  "generated_at": "2026-10-28T10:36:54.415334+00:00",
   "mode": "live",
   "formula": {
     "id": "smb-sa-v1",
@@ -18,13 +18,13 @@
     }
   },
   "counts": {
-    "catalog_cves": 2136,
+    "catalog_cves": 1957,
     "brief_items": 48,
     "brief_cves": 40,
     "brief_news": 8,
-    "kev": 1758,
-    "nvd": 380,
-    "epss": 375
+    "kev": 1760,
+    "nvd": 199,
+    "epss": 150
   },
   "warnings": [],
   "sources": [
@@ -74,8 +74,8 @@
       "severity": "CRITICAL",
       "in_kev": true,
       "ransomware": "Unknown",
-      "epss": 0.99981,
-      "epss_percentile": 0.99981,
+      "epss": 0.99999,
+      "epss_percentile": 0.99998,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 81.8,
@@ -109,12 +109,12 @@
           "url": "http://www.openwall.com/lists/oss-security/2026/10/23/5"
         },
         {
-          "label": "0b142b55-0307-4c5a-b3c9-f314f3fb7c5e",
-          "url": "https://cert-portal.siemens.com/productcert/html/ssa-566512.html"
+          "label": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+          "url": "https://arcticwolf.com/resources/blog/php2shell-critical-php-vulnerabilities-enable-unauthenticated-remote-code-execution/"
         },
         {
-          "label": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
-          "url": "https://www.wiz.io/blog/php2shell-php-rce"
+          "label": "0b142b55-0307-4c5a-b3c9-f314f3fb7c5e",
+          "url": "https://cert-portal.siemens.com/productcert/html/ssa-566512.html"
         },
         {
           "label": "CISA advisories",
@@ -517,8 +517,8 @@
       "severity": "CRITICAL",
       "in_kev": true,
       "ransomware": "Unknown",
-      "epss": 0.99997,
-      "epss_percentile": 0.99989,
+      "epss": 0.99999,
+      "epss_percentile": 0.99999,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 81.8,
@@ -961,7 +961,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.99497,
-      "epss_percentile": 0.99944,
+      "epss_percentile": 0.99945,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 44.9,
@@ -1121,7 +1121,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.86766,
-      "epss_percentile": 0.9974,
+      "epss_percentile": 0.99741,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 42.4,
@@ -1146,46 +1146,6 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-105134",
-      "kind": "cve",
-      "cve_id": "CVE-2026-105134",
-      "title": "Ahsay AhsayCBS Command Injection Vulnerability",
-      "vendor": "Ahsay",
-      "product": "AhsayCBS",
-      "published": "2026-10-14",
-      "kev_date_added": "2026-10-14",
-      "description": "Ahsay AhsayCBS contains a command injection vulnerability that could allow a remote attacker to execute operating system commands via manipulation of the random parameter in the Replication Receiver component’s /rps/api/json/UpdateReceivers.do endpoint. This vulnerability can be chained with CVE-2026-105133.",
-      "cvss": null,
-      "cvss_version": null,
-      "severity": null,
-      "in_kev": true,
-      "ransomware": "Unknown",
-      "epss": 0.86266,
-      "epss_percentile": 0.99731,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 42.3,
-      "score_components": {
-        "cvss": 0.0,
-        "kev": 25.0,
-        "epss": 17.3,
-        "smb": 0.0
-      },
-      "reasons": [
-        "No CVSS score was published, so that part contributes 0 of 40.",
-        "Listed in the CISA Known Exploited Vulnerabilities catalog (added 2026-10-14), so that part contributes 25.0 of 25.",
-        "EPSS 0.86 means FIRST estimates about a 86% probability of exploitation activity in the next 30 days, percentile 1.00. That contributes 17.3 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 42.3 out of 100."
-      ],
-      "summary": "CVE-2026-105134 is a unspecified vulnerability in AhsayCBS. Ahsay AhsayCBS contains a command injection vulnerability that could allow a remote attacker to execute operating system commands via manipulation of the random parameter in the Replication Receiver component’s /rps/api/json/UpdateReceivers.do endpoint. The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "If you use AhsayCBS, apply the vendor update. CISA lists this as already exploited. If you do not use it, you can skip this item.",
-      "summary_engine": "rules-v1",
-      "references": [],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
       "id": "CVE-2026-96951",
       "kind": "cve",
       "cve_id": "CVE-2026-96951",
@@ -1201,7 +1161,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.09813,
-      "epss_percentile": 0.95516,
+      "epss_percentile": 0.95524,
       "smb_matches": [
         "Windows"
       ],
@@ -1228,6 +1188,46 @@
       "aliases": []
     },
     {
+      "id": "CVE-2026-105134",
+      "kind": "cve",
+      "cve_id": "CVE-2026-105134",
+      "title": "Ahsay AhsayCBS Command Injection Vulnerability",
+      "vendor": "Ahsay",
+      "product": "AhsayCBS",
+      "published": "2026-10-14",
+      "kev_date_added": "2026-10-14",
+      "description": "Ahsay AhsayCBS contains a command injection vulnerability that could allow a remote attacker to execute operating system commands via manipulation of the random parameter in the Replication Receiver component’s /rps/api/json/UpdateReceivers.do endpoint. This vulnerability can be chained with CVE-2026-105133.",
+      "cvss": null,
+      "cvss_version": null,
+      "severity": null,
+      "in_kev": true,
+      "ransomware": "Unknown",
+      "epss": 0.81763,
+      "epss_percentile": 0.99643,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 41.4,
+      "score_components": {
+        "cvss": 0.0,
+        "kev": 25.0,
+        "epss": 16.4,
+        "smb": 0.0
+      },
+      "reasons": [
+        "No CVSS score was published, so that part contributes 0 of 40.",
+        "Listed in the CISA Known Exploited Vulnerabilities catalog (added 2026-10-14), so that part contributes 25.0 of 25.",
+        "EPSS 0.82 means FIRST estimates about a 82% probability of exploitation activity in the next 30 days, percentile 1.00. That contributes 16.4 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 41.4 out of 100."
+      ],
+      "summary": "CVE-2026-105134 is a unspecified vulnerability in AhsayCBS. Ahsay AhsayCBS contains a command injection vulnerability that could allow a remote attacker to execute operating system commands via manipulation of the random parameter in the Replication Receiver component’s /rps/api/json/UpdateReceivers.do endpoint. The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "If you use AhsayCBS, apply the vendor update. CISA lists this as already exploited. If you do not use it, you can skip this item.",
+      "summary_engine": "rules-v1",
+      "references": [],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "CVE-2026-104286",
       "kind": "cve",
       "cve_id": "CVE-2026-104286",
@@ -1243,7 +1243,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.04573,
-      "epss_percentile": 0.91556,
+      "epss_percentile": 0.91572,
       "smb_matches": [
         "Fortinet"
       ],
@@ -1284,23 +1284,23 @@
       "severity": null,
       "in_kev": true,
       "ransomware": "Unknown",
-      "epss": 0.79236,
-      "epss_percentile": 0.99596,
+      "epss": 0.7947,
+      "epss_percentile": 0.99601,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 40.8,
+      "score": 40.9,
       "score_components": {
         "cvss": 0.0,
         "kev": 25.0,
-        "epss": 15.8,
+        "epss": 15.9,
         "smb": 0.0
       },
       "reasons": [
         "No CVSS score was published, so that part contributes 0 of 40.",
         "Listed in the CISA Known Exploited Vulnerabilities catalog (added 2026-10-14), so that part contributes 25.0 of 25.",
-        "EPSS 0.79 means FIRST estimates about a 79% probability of exploitation activity in the next 30 days, percentile 1.00. That contributes 15.8 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.79 means FIRST estimates about a 79% probability of exploitation activity in the next 30 days, percentile 1.00. That contributes 15.9 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 40.8 out of 100."
+        "Total 40.9 out of 100."
       ],
       "summary": "CVE-2026-105133 is a unspecified vulnerability in AhsayCBS. Ahsay AhsayCBS contains an improper authentication vulnerability that could allow a remote attacker to bypass authentication via manipulation of the random parameter in the API component’s checkSysPwd function. The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "If you use AhsayCBS, apply the vendor update. CISA lists this as already exploited. If you do not use it, you can skip this item.",
@@ -1325,7 +1325,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.01343,
-      "epss_percentile": 0.71162,
+      "epss_percentile": 0.71211,
       "smb_matches": [
         "Fortinet"
       ],
@@ -1352,720 +1352,225 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-81212",
+      "id": "CVE-2026-105781",
       "kind": "cve",
-      "cve_id": "CVE-2026-81212",
-      "title": "IBM DataStage on Cloud Pak for Data 5.4.0.0 allows an unauthenticated user to perform an arbitrary write into shared Redis under any tenant…",
+      "cve_id": "CVE-2026-105781",
+      "title": "Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnera…",
       "vendor": "",
       "product": "",
-      "published": "2026-10-20T22:19:51.737",
+      "published": "2026-10-27T17:16:56.430",
       "kev_date_added": "",
-      "description": "IBM DataStage on Cloud Pak for Data 5.4.0.0 allows an unauthenticated user to perform an arbitrary write into shared Redis under any tenant's key. This collapses the platform's credential-encryption boundary and lets an anonymous caller poison any tenant's cached flow parameters.",
+      "description": "Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability that could result in arbitrary code execution in the context of the current user. An attacker could exploit this vulnerability to execute arbitrary SQL commands, potentially gaining elevated access or control over the victim's account or session. Exploitation of this issue does not require user interaction. Scope is changed.",
       "cvss": 10.0,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.00267,
-      "epss_percentile": 0.18638,
+      "epss": null,
+      "epss_percentile": null,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 40.1,
+      "score": 40.0,
       "score_components": {
         "cvss": 40.0,
         "kev": 0.0,
-        "epss": 0.1,
+        "epss": 0.0,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 10.0 (3.1, CRITICAL) contributes 40.0 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.19. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 40.1 out of 100."
+        "Total 40.0 out of 100."
       ],
-      "summary": "CVE-2026-81212 is a critical vulnerability in the affected software. IBM DataStage on Cloud Pak for Data 5.4.0.0 allows an unauthenticated user to perform an arbitrary write into shared Redis under any tenant's key. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-105781 is a critical vulnerability in the affected software. Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability that could result in arbitrary code execution in the context of the current user. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7289603"
+          "label": "psirt@adobe.com",
+          "url": "https://www.adobe.com/trust/security/products/campaign/apsb26-162.html"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-87337",
+      "id": "CVE-2026-104351",
       "kind": "cve",
-      "cve_id": "CVE-2026-87337",
-      "title": "Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Authentication Engine).  Supported versions that…",
+      "cve_id": "CVE-2026-104351",
+      "title": "Adobe Campaign Classic (ACC) is affected by an Improper Control of Generation of Code ('Code Injection') vulnerability that could result in…",
       "vendor": "",
       "product": "",
-      "published": "2026-10-20T22:20:11.347",
+      "published": "2026-10-27T17:16:55.593",
       "kev_date_added": "",
-      "description": "Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Authentication Engine).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Access Manager.  While the vulnerability is in Oracle Access Manager, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  una…",
-      "cvss": 10.0,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00439,
-      "epss_percentile": 0.37904,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 40.1,
-      "score_components": {
-        "cvss": 40.0,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 10.0 (3.1, CRITICAL) contributes 40.0 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.38. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 40.1 out of 100."
-      ],
-      "summary": "CVE-2026-87337 is a critical vulnerability in the affected software. Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Authentication Engine). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-91216",
-      "kind": "cve",
-      "cve_id": "CVE-2026-91216",
-      "title": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-20T22:20:22.013",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via T3, IIOP to compromise Oracle SOA Suite.  While the vulnerability is in Oracle SOA Suite, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle SOA S…",
-      "cvss": 10.0,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00522,
-      "epss_percentile": 0.44025,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 40.1,
-      "score_components": {
-        "cvss": 40.0,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 10.0 (3.1, CRITICAL) contributes 40.0 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.44. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 40.1 out of 100."
-      ],
-      "summary": "CVE-2026-91216 is a critical vulnerability in the affected software. Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-91221",
-      "kind": "cve",
-      "cve_id": "CVE-2026-91221",
-      "title": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-20T22:20:22.580",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via T3, IIOP to compromise Oracle SOA Suite.  While the vulnerability is in Oracle SOA Suite, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle SOA S…",
-      "cvss": 10.0,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00522,
-      "epss_percentile": 0.44025,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 40.1,
-      "score_components": {
-        "cvss": 40.0,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 10.0 (3.1, CRITICAL) contributes 40.0 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.44. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 40.1 out of 100."
-      ],
-      "summary": "CVE-2026-91221 is a critical vulnerability in the affected software. Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-91231",
-      "kind": "cve",
-      "cve_id": "CVE-2026-91231",
-      "title": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Adapters).  Supported versions that are affected are…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-20T22:20:23.787",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Adapters).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle SOA Suite.  While the vulnerability is in Oracle SOA Suite, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle SOA Suite. CV…",
-      "cvss": 10.0,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00522,
-      "epss_percentile": 0.44025,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 40.1,
-      "score_components": {
-        "cvss": 40.0,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 10.0 (3.1, CRITICAL) contributes 40.0 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.44. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 40.1 out of 100."
-      ],
-      "summary": "CVE-2026-91231 is a critical vulnerability in the affected software. Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Adapters). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-101446",
-      "kind": "cve",
-      "cve_id": "CVE-2026-101446",
-      "title": "Vulnerability in the Siebel CRM Cloud Applications product of Oracle Siebel CRM (component: Siebel Cloud Manager).  Supported versions that…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-20T22:17:53.193",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Siebel CRM Cloud Applications product of Oracle Siebel CRM (component: Siebel Cloud Manager).  Supported versions that are affected are 17.0-26.9. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Siebel CRM Cloud Applications.  While the vulnerability is in Siebel CRM Cloud Applications, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeov…",
+      "description": "Adobe Campaign Classic (ACC) is affected by an Improper Control of Generation of Code ('Code Injection') vulnerability that could result in arbitrary code execution in the context of the current user. A low-privileged attacker could exploit this vulnerability to execute arbitrary code. Exploitation of this issue does not require user interaction. Scope is changed.",
       "cvss": 9.9,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.00447,
-      "epss_percentile": 0.38638,
+      "epss": null,
+      "epss_percentile": null,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 39.7,
+      "score": 39.6,
       "score_components": {
         "cvss": 39.6,
         "kev": 0.0,
-        "epss": 0.1,
+        "epss": 0.0,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.39. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.7 out of 100."
+        "Total 39.6 out of 100."
       ],
-      "summary": "CVE-2026-101446 is a critical vulnerability in the affected software. Vulnerability in the Siebel CRM Cloud Applications product of Oracle Siebel CRM (component: Siebel Cloud Manager). It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-104351 is a critical vulnerability in the affected software. Adobe Campaign Classic (ACC) is affected by an Improper Control of Generation of Code ('Code Injection') vulnerability that could result in arbitrary code execution in the context of the current user. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2026.html"
+          "label": "psirt@adobe.com",
+          "url": "https://www.adobe.com/trust/security/products/campaign/apsb26-162.html"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-101501",
+      "id": "CVE-2026-104353",
       "kind": "cve",
-      "cve_id": "CVE-2026-101501",
-      "title": "Vulnerability in Oracle Trusted Answer Search (component: PLSQL package).   The supported version that is affected is 26.1. Easily exploita…",
+      "cve_id": "CVE-2026-104353",
+      "title": "Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') v…",
       "vendor": "",
       "product": "",
-      "published": "2026-10-20T22:17:59.323",
+      "published": "2026-10-27T17:16:55.717",
       "kev_date_added": "",
-      "description": "Vulnerability in Oracle Trusted Answer Search (component: PLSQL package).   The supported version that is affected is 26.1. Easily exploitable vulnerability allows low privileged attacker with network access via Oracle Net to compromise Oracle Trusted Answer Search.  While the vulnerability is in Oracle Trusted Answer Search, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modificati…",
+      "description": "Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability that could result in arbitrary code execution in the context of the current user. A low-privileged attacker could exploit this vulnerability to execute arbitrary code. Exploitation of this issue does not require user interaction. Scope is changed.",
       "cvss": 9.9,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.00411,
-      "epss_percentile": 0.35035,
+      "epss": null,
+      "epss_percentile": null,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 39.7,
+      "score": 39.6,
       "score_components": {
         "cvss": 39.6,
         "kev": 0.0,
-        "epss": 0.1,
+        "epss": 0.0,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.35. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.7 out of 100."
+        "Total 39.6 out of 100."
       ],
-      "summary": "CVE-2026-101501 is a critical vulnerability in the affected software. Vulnerability in Oracle Trusted Answer Search (component: PLSQL package). It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-104353 is a critical vulnerability in the affected software. Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability that could result in arbitrary code execution in the context of the current user. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2026.html"
+          "label": "psirt@adobe.com",
+          "url": "https://www.adobe.com/trust/security/products/campaign/apsb26-162.html"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-101503",
+      "id": "CVE-2026-105489",
       "kind": "cve",
-      "cve_id": "CVE-2026-101503",
-      "title": "Vulnerability in Oracle Trusted Answer Search (component: PLSQL package).   The supported version that is affected is 26.1. Easily exploita…",
+      "cve_id": "CVE-2026-105489",
+      "title": "Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnera…",
       "vendor": "",
       "product": "",
-      "published": "2026-10-20T22:17:59.557",
+      "published": "2026-10-27T17:16:56.080",
       "kev_date_added": "",
-      "description": "Vulnerability in Oracle Trusted Answer Search (component: PLSQL package).   The supported version that is affected is 26.1. Easily exploitable vulnerability allows low privileged attacker with network access via Oracle Net to compromise Oracle Trusted Answer Search.  While the vulnerability is in Oracle Trusted Answer Search, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle Trusted Answer Search. CVSS…",
+      "description": "Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability that could result in arbitrary code execution in the context of the current user. A low-privileged attacker could exploit this vulnerability to execute arbitrary code. Exploitation of this issue does not require user interaction. Scope is changed.",
       "cvss": 9.9,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.00479,
-      "epss_percentile": 0.41092,
+      "epss": null,
+      "epss_percentile": null,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 39.7,
+      "score": 39.6,
       "score_components": {
         "cvss": 39.6,
         "kev": 0.0,
-        "epss": 0.1,
+        "epss": 0.0,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.41. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.7 out of 100."
+        "Total 39.6 out of 100."
       ],
-      "summary": "CVE-2026-101503 is a critical vulnerability in the affected software. Vulnerability in Oracle Trusted Answer Search (component: PLSQL package). It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-105489 is a critical vulnerability in the affected software. Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability that could result in arbitrary code execution in the context of the current user. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2026.html"
+          "label": "psirt@adobe.com",
+          "url": "https://www.adobe.com/trust/security/products/campaign/apsb26-162.html"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-101528",
+      "id": "CVE-2026-105780",
       "kind": "cve",
-      "cve_id": "CVE-2026-101528",
-      "title": "Vulnerability in the Oracle Enterprise Manager for Oracle Database product of Oracle Enterprise Manager (component: Data Guard Management).…",
+      "cve_id": "CVE-2026-105780",
+      "title": "Adobe Campaign Classic (ACC) is affected by an Incorrect Authorization vulnerability that could result in arbitrary code execution in the c…",
       "vendor": "",
       "product": "",
-      "published": "2026-10-20T22:18:02.180",
+      "published": "2026-10-27T17:16:56.313",
       "kev_date_added": "",
-      "description": "Vulnerability in the Oracle Enterprise Manager for Oracle Database product of Oracle Enterprise Manager (component: Data Guard Management).  Supported versions that are affected are 13.5 and  24.1. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Enterprise Manager for Oracle Database.  While the vulnerability is in Oracle Enterprise Manager for Oracle Database, attacks may significantly impact additional products (scope change).…",
+      "description": "Adobe Campaign Classic (ACC) is affected by an Incorrect Authorization vulnerability that could result in arbitrary code execution in the context of the current user. A low-privileged attacker could exploit this vulnerability to execute arbitrary code. Exploitation of this issue does not require user interaction. Scope is changed.",
       "cvss": 9.9,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.00479,
-      "epss_percentile": 0.41088,
+      "epss": null,
+      "epss_percentile": null,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 39.7,
+      "score": 39.6,
       "score_components": {
         "cvss": 39.6,
         "kev": 0.0,
-        "epss": 0.1,
+        "epss": 0.0,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.41. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.7 out of 100."
+        "Total 39.6 out of 100."
       ],
-      "summary": "CVE-2026-101528 is a critical vulnerability in the affected software. Vulnerability in the Oracle Enterprise Manager for Oracle Database product of Oracle Enterprise Manager (component: Data Guard Management). It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-105780 is a critical vulnerability in the affected software. Adobe Campaign Classic (ACC) is affected by an Incorrect Authorization vulnerability that could result in arbitrary code execution in the context of the current user. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-101529",
-      "kind": "cve",
-      "cve_id": "CVE-2026-101529",
-      "title": "Vulnerability in the Oracle Enterprise Manager for Oracle Database product of Oracle Enterprise Manager (component: Data Guard Management).…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-20T22:18:02.293",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle Enterprise Manager for Oracle Database product of Oracle Enterprise Manager (component: Data Guard Management).  Supported versions that are affected are 13.5 and  24.1. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Enterprise Manager for Oracle Database.  While the vulnerability is in Oracle Enterprise Manager for Oracle Database, attacks may significantly impact additional products (scope change).…",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00479,
-      "epss_percentile": 0.41091,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.7,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.41. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.7 out of 100."
-      ],
-      "summary": "CVE-2026-101529 is a critical vulnerability in the affected software. Vulnerability in the Oracle Enterprise Manager for Oracle Database product of Oracle Enterprise Manager (component: Data Guard Management). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-91222",
-      "kind": "cve",
-      "cve_id": "CVE-2026-91222",
-      "title": "Vulnerability in the Oracle Business Process Management Suite product of Oracle Fusion Middleware (component: Human Workflow (11g+)).  Supp…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-20T22:20:22.697",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle Business Process Management Suite product of Oracle Fusion Middleware (component: Human Workflow (11g+)).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via SOAP to compromise Oracle Business Process Management Suite.  While the vulnerability is in Oracle Business Process Management Suite, attacks may significantly impact additional products (scope change).  Suc…",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00447,
-      "epss_percentile": 0.38638,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.7,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.39. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.7 out of 100."
-      ],
-      "summary": "CVE-2026-91222 is a critical vulnerability in the affected software. Vulnerability in the Oracle Business Process Management Suite product of Oracle Fusion Middleware (component: Human Workflow (11g+)). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-91224",
-      "kind": "cve",
-      "cve_id": "CVE-2026-91224",
-      "title": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-20T22:20:22.937",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle SOA Suite.  While the vulnerability is in Oracle SOA Suite, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle SOA Suite.…",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00328,
-      "epss_percentile": 0.25744,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.7,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.26. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.7 out of 100."
-      ],
-      "summary": "CVE-2026-91224 is a critical vulnerability in the affected software. Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-91232",
-      "kind": "cve",
-      "cve_id": "CVE-2026-91232",
-      "title": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-20T22:20:23.897",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle SOA Suite.  While the vulnerability is in Oracle SOA Suite, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle SOA Suite.…",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00447,
-      "epss_percentile": 0.38594,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.7,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.39. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.7 out of 100."
-      ],
-      "summary": "CVE-2026-91232 is a critical vulnerability in the affected software. Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-91250",
-      "kind": "cve",
-      "cve_id": "CVE-2026-91250",
-      "title": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Adapters).  Supported versions that are affected are…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-20T22:20:25.970",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Adapters).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via multiple protocols to compromise Oracle SOA Suite.  While the vulnerability is in Oracle SOA Suite, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle…",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00447,
-      "epss_percentile": 0.38593,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.7,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.39. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.7 out of 100."
-      ],
-      "summary": "CVE-2026-91250 is a critical vulnerability in the affected software. Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Adapters). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-91251",
-      "kind": "cve",
-      "cve_id": "CVE-2026-91251",
-      "title": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Adapters).  Supported versions that are affected are…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-20T22:20:26.090",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Adapters).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle SOA Suite.  While the vulnerability is in Oracle SOA Suite, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle SOA Suite. CVS…",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00447,
-      "epss_percentile": 0.38591,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.7,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.39. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.7 out of 100."
-      ],
-      "summary": "CVE-2026-91251 is a critical vulnerability in the affected software. Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Adapters). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-91354",
-      "kind": "cve",
-      "cve_id": "CVE-2026-91354",
-      "title": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion Middleware (component: Outside In Clean Content SDK).   The supp…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-20T22:20:38.027",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle Outside In Technology product of Oracle Fusion Middleware (component: Outside In Clean Content SDK).   The supported version that is affected is 8.5.8. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Outside In Technology.  While the vulnerability is in Oracle Outside In Technology, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result…",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00328,
-      "epss_percentile": 0.25744,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.7,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.26. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.7 out of 100."
-      ],
-      "summary": "CVE-2026-91354 is a critical vulnerability in the affected software. Vulnerability in the Oracle Outside In Technology product of Oracle Fusion Middleware (component: Outside In Clean Content SDK). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2026.html"
+          "label": "psirt@adobe.com",
+          "url": "https://www.adobe.com/trust/security/products/campaign/apsb26-162.html"
         }
       ],
       "version_ranges": [],
@@ -2087,7 +1592,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00549,
-      "epss_percentile": 0.45702,
+      "epss_percentile": 0.45769,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.3,
@@ -2133,15 +1638,15 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-92885",
+      "id": "CVE-2026-106013",
       "kind": "cve",
-      "cve_id": "CVE-2026-92885",
-      "title": "The Qode Membership plugin for WordPress is vulnerable to Authentication Bypass leading to Account Takeover in all versions up to, and incl…",
+      "cve_id": "CVE-2026-106013",
+      "title": "The Jupiter X Core plugin for WordPress is vulnerable to Authentication Bypass via the Twitter/X Social Login handler in all versions up to…",
       "vendor": "",
       "product": "",
-      "published": "2026-10-27T09:16:34.630",
+      "published": "2026-10-28T02:17:01.303",
       "kev_date_added": "",
-      "description": "The Qode Membership plugin for WordPress is vulnerable to Authentication Bypass leading to Account Takeover in all versions up to, and including, 2.0.6.2 via the qode_membership_check_facebook_user AJAX action. This is due to a typographic error in the Facebook OAuth token verification guard within the qode_membership_login_user_from_social_network function — the guard condition tests an undefined variable ($check_social_useqoder instead of $check_social_user), causing empty() to always return…",
+      "description": "The Jupiter X Core plugin for WordPress is vulnerable to Authentication Bypass via the Twitter/X Social Login handler in all versions up to and including 4.61.0. The vulnerability exists within the verify_twitter_callback function because after exchanging the visitor's oauth_verifier for their access token, the handler never calls setOauthToken() to reassign the returned credentials to the TwitterOAuth client, causing the subsequent account/verify_credentials API call to remain signed with the…",
       "cvss": 9.8,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
@@ -2165,152 +1670,172 @@
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 39.2 out of 100."
       ],
-      "summary": "CVE-2026-92885 is a critical vulnerability in the affected software. The Qode Membership plugin for WordPress is vulnerable to Authentication Bypass leading to Account Takeover in all versions up to, and including, 2.0.6.2 via the qode_membership_check_facebook_user AJAX action. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-106013 is a critical vulnerability in the affected software. The Jupiter X Core plugin for WordPress is vulnerable to Authentication Bypass via the Twitter/X Social Login handler in all versions up to and including 4.61.0. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
           "label": "security@wordfence.com",
-          "url": "https://themeforest.net/item/bridge-creative-multipurpose-wordpress-theme/7315054"
+          "url": "https://plugins.trac.wordpress.org/changeset/3759312/jupiterx-core/trunk/includes/extensions/raven/includes/modules/forms/classes/social-login-handler/twitter.php"
         },
         {
           "label": "security@wordfence.com",
-          "url": "https://www.wordfence.com/threat-intel/vulnerabilities/id/26bca6c2-0999-4cf6-9c4e-ddaf528ef808?source=cve"
+          "url": "https://www.wordfence.com/threat-intel/vulnerabilities/id/1ad42de2-9ed1-4cf6-a031-22789be4cbe2?source=cve"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-87347",
+      "id": "CVE-2026-109218",
       "kind": "cve",
-      "cve_id": "CVE-2026-87347",
-      "title": "Vulnerability in the Oracle HTTP Server product of Oracle Fusion Middleware (component: OSSL Module).  Supported versions that are affected…",
+      "cve_id": "CVE-2026-109218",
+      "title": "The Contact Manager plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 9.1.2 via the add_mes…",
       "vendor": "",
       "product": "",
-      "published": "2026-10-20T22:20:12.357",
+      "published": "2026-10-28T07:16:44.120",
       "kev_date_added": "",
-      "description": "Vulnerability in the Oracle HTTP Server product of Oracle Fusion Middleware (component: OSSL Module).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle HTTP Server.  While the vulnerability is in Oracle HTTP Server, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized creation,…",
-      "cvss": 9.6,
+      "description": "The Contact Manager plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 9.1.2 via the add_message function. This is due to an incomplete extension blacklist that fails to detect dangerous extensions when a trailing dot causes the extension-derivation routine to return an empty string, which sanitize_file_name() then silently removes before the file is written to disk. This makes it possible for unauthenticated attackers to upload files that may be e…",
+      "cvss": 9.8,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.00376,
-      "epss_percentile": 0.31295,
+      "epss": null,
+      "epss_percentile": null,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 38.5,
+      "score": 39.2,
       "score_components": {
-        "cvss": 38.4,
+        "cvss": 39.2,
         "kev": 0.0,
-        "epss": 0.1,
+        "epss": 0.0,
         "smb": 0.0
       },
       "reasons": [
-        "CVSS 9.6 (3.1, CRITICAL) contributes 38.4 of 40.",
+        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.31. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 38.5 out of 100."
+        "Total 39.2 out of 100."
       ],
-      "summary": "CVE-2026-87347 is a critical vulnerability in the affected software. Vulnerability in the Oracle HTTP Server product of Oracle Fusion Middleware (component: OSSL Module). It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-109218 is a critical vulnerability in the affected software. The Contact Manager plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 9.1.2 via the add_message function. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2026.html"
+          "label": "security@wordfence.com",
+          "url": "https://fr.wordpress.org/plugins/contact-manager/"
+        },
+        {
+          "label": "security@wordfence.com",
+          "url": "https://plugins.trac.wordpress.org/browser/contact-manager/tags/9.1.2/contact-manager.php#L42"
+        },
+        {
+          "label": "security@wordfence.com",
+          "url": "https://plugins.trac.wordpress.org/browser/contact-manager/tags/9.1.2/includes/add-message.php#L254"
+        },
+        {
+          "label": "security@wordfence.com",
+          "url": "https://plugins.trac.wordpress.org/browser/contact-manager/tags/9.1.2/includes/add-message.php#L256"
+        },
+        {
+          "label": "security@wordfence.com",
+          "url": "https://plugins.trac.wordpress.org/browser/contact-manager/tags/9.1.2/includes/forms/processing.php#L102"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-91218",
+      "id": "CVE-2026-84999",
       "kind": "cve",
-      "cve_id": "CVE-2026-91218",
-      "title": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected…",
+      "cve_id": "CVE-2026-84999",
+      "title": "The Pie Register Premium plugin for WordPress is vulnerable to Unrestricted File Type Upload in all versions up to, and including, 3.8.4.0…",
       "vendor": "",
       "product": "",
-      "published": "2026-10-20T22:20:22.240",
+      "published": "2026-10-28T03:17:16.157",
       "kev_date_added": "",
-      "description": "Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle SOA Suite.  While the vulnerability is in Oracle SOA Suite, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized creation, delet…",
-      "cvss": 9.6,
+      "description": "The Pie Register Premium plugin for WordPress is vulnerable to Unrestricted File Type Upload in all versions up to, and including, 3.8.4.0 via the piereg_file_upload function. This is due to the plugin performing file type validation via wp_check_filetype and wp_check_filetype_and_ext but never checking whether those validation calls produced errors before move_uploaded_file() is called, combined with no nonce or capability check on the AJAX handler. This makes it possible for unauthenticated a…",
+      "cvss": 9.8,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.00365,
-      "epss_percentile": 0.30126,
+      "epss": null,
+      "epss_percentile": null,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 38.5,
+      "score": 39.2,
       "score_components": {
-        "cvss": 38.4,
+        "cvss": 39.2,
         "kev": 0.0,
-        "epss": 0.1,
+        "epss": 0.0,
         "smb": 0.0
       },
       "reasons": [
-        "CVSS 9.6 (3.1, CRITICAL) contributes 38.4 of 40.",
+        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.30. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 38.5 out of 100."
+        "Total 39.2 out of 100."
       ],
-      "summary": "CVE-2026-91218 is a critical vulnerability in the affected software. Vulnerability in the Oracle SOA Suite product of Oracle Fusion Middleware (component: Fabric Layer). It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-84999 is a critical vulnerability in the affected software. The Pie Register Premium plugin for WordPress is vulnerable to Unrestricted File Type Upload in all versions up to, and including, 3.8.4.0 via the piereg_file_upload function. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2026.html"
+          "label": "security@wordfence.com",
+          "url": "https://pieregister.com/"
+        },
+        {
+          "label": "security@wordfence.com",
+          "url": "https://www.wordfence.com/threat-intel/vulnerabilities/id/8385dd30-28e5-4572-8504-2f3e7029bad6?source=cve"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-91243",
+      "id": "CVE-2026-48360",
       "kind": "cve",
-      "cve_id": "CVE-2026-91243",
-      "title": "Vulnerability in the Oracle Business Process Management Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported ver…",
+      "cve_id": "CVE-2026-48360",
+      "title": "Adobe Connect is affected by an Improper Control of Generation of Code ('Code Injection') vulnerability that could result in arbitrary code…",
       "vendor": "",
       "product": "",
-      "published": "2026-10-20T22:20:25.167",
+      "published": "2026-10-27T17:17:00.740",
       "kev_date_added": "",
-      "description": "Vulnerability in the Oracle Business Process Management Suite product of Oracle Fusion Middleware (component: Fabric Layer).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Business Process Management Suite.  While the vulnerability is in Oracle Business Process Management Suite, attacks may significantly impact additional products (scope change).  Successful a…",
+      "description": "Adobe Connect is affected by an Improper Control of Generation of Code ('Code Injection') vulnerability that could result in arbitrary code execution in the context of the current user. An attacker could exploit this vulnerability to execute arbitrary code. Exploitation of this issue requires user interaction in that a victim must visit a maliciously crafted URL or interact with a compromised web page. Scope is changed.",
       "cvss": 9.6,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.00365,
-      "epss_percentile": 0.30127,
+      "epss": null,
+      "epss_percentile": null,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 38.5,
+      "score": 38.4,
       "score_components": {
         "cvss": 38.4,
         "kev": 0.0,
-        "epss": 0.1,
+        "epss": 0.0,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.6 (3.1, CRITICAL) contributes 38.4 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.30. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 38.5 out of 100."
+        "Total 38.4 out of 100."
       ],
-      "summary": "CVE-2026-91243 is a critical vulnerability in the affected software. Vulnerability in the Oracle Business Process Management Suite product of Oracle Fusion Middleware (component: Fabric Layer). It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-48360 is a critical vulnerability in the affected software. Adobe Connect is affected by an Improper Control of Generation of Code ('Code Injection') vulnerability that could result in arbitrary code execution in the context of the current user. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cpuoct2026.html"
+          "label": "psirt@adobe.com",
+          "url": "https://www.adobe.com/trust/security/products/connect/apsb26-182.html"
         }
       ],
       "version_ranges": [],
@@ -2332,7 +1857,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.01377,
-      "epss_percentile": 0.71873,
+      "epss_percentile": 0.7192,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.9,
@@ -2393,7 +1918,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00405,
-      "epss_percentile": 0.34526,
+      "epss_percentile": 0.34597,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.7,
@@ -2442,7 +1967,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00405,
-      "epss_percentile": 0.34527,
+      "epss_percentile": 0.34598,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.7,
@@ -2491,7 +2016,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00312,
-      "epss_percentile": 0.23843,
+      "epss_percentile": 0.23905,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.7,
@@ -2540,7 +2065,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.0221,
-      "epss_percentile": 0.82473,
+      "epss_percentile": 0.82502,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.6,
@@ -2553,7 +2078,7 @@
       "reasons": [
         "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.02 means FIRST estimates about a 2% probability of exploitation activity in the next 30 days, percentile 0.82. That contributes 0.4 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.02 means FIRST estimates about a 2% probability of exploitation activity in the next 30 days, percentile 0.83. That contributes 0.4 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 37.6 out of 100."
       ],
@@ -2586,6 +2111,63 @@
       "aliases": []
     },
     {
+      "id": "CVE-2026-112346",
+      "kind": "cve",
+      "cve_id": "CVE-2026-112346",
+      "title": "OpenHands Software Agent SDK before 1.52.0 contains an unauthenticated remote code execution vulnerability where the DockerWorkspace and Ap…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-26T16:17:14.110",
+      "kev_date_added": "",
+      "description": "OpenHands Software Agent SDK before 1.52.0 contains an unauthenticated remote code execution vulnerability where the DockerWorkspace and Apptainer workspace launchers bind the sandbox agent server to all network interfaces (0.0.0.0) with an empty session_api_keys list, disabling authentication by default. Attackers who can reach the published container port can send unauthenticated HTTP and WebSocket requests to execute arbitrary shell commands as root in the sandbox, access the mounted workspa…",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.01014,
+      "epss_percentile": 0.63074,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.4,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.2,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.63. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.4 out of 100."
+      ],
+      "summary": "CVE-2026-112346 is a critical vulnerability in the affected software. OpenHands Software Agent SDK before 1.52.0 contains an unauthenticated remote code execution vulnerability where the DockerWorkspace and Apptainer workspace launchers bind the sandbox agent server to all network interfaces (0.0.0.0) with an empty session_api_keys list, disabling… It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/OpenHands/software-agent-sdk/commit/7b66584ff8899144eb4ce679c2811861342af9de"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/5209"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/OpenHands/software-agent-sdk/releases/tag/v1.52.0"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/openhands-software-agent-sdk-unauthenticated-sandbox-agent-server-rce"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "CVE-2021-48016",
       "kind": "cve",
       "cve_id": "CVE-2021-48016",
@@ -2601,7 +2183,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00441,
-      "epss_percentile": 0.38022,
+      "epss_percentile": 0.38092,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.3,
@@ -2658,7 +2240,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00613,
-      "epss_percentile": 0.49064,
+      "epss_percentile": 0.49137,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.3,
@@ -2698,6 +2280,660 @@
         {
           "label": "disclosure@vulncheck.com",
           "url": "https://github.com/bytebase/bytebase/releases/tag/1.0.1"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-114383",
+      "kind": "cve",
+      "cve_id": "CVE-2026-114383",
+      "title": "A weakness has been identified in TOTOLINK EX200 5.2.3c.7200. This impacts the function setWiFiAclAddConfig of the file /cgi-bin/cstecgi.cg…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-21T22:16:49.077",
+      "kev_date_added": "",
+      "description": "A weakness has been identified in TOTOLINK EX200 5.2.3c.7200. This impacts the function setWiFiAclAddConfig of the file /cgi-bin/cstecgi.cgi of the component wireless.so. This manipulation of the argument macAddress causes stack-based buffer overflow. The attack can be initiated remotely. The exploit has been made available to the public and could be used for attacks.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00653,
+      "epss_percentile": 0.5109,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.3,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.51. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.3 out of 100."
+      ],
+      "summary": "CVE-2026-114383 is a critical vulnerability in the affected software. A weakness has been identified in TOTOLINK EX200 5.2.3c.7200. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://github.com/qwq-nm/CVE/blob/f5d61361eb7d846479f6d76c0aa4273e9af46d27/CVE2/report.md"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/cve/CVE-2026-114383"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/submit/1019883"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/424742"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/424742/cti"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-116214",
+      "kind": "cve",
+      "cve_id": "CVE-2026-116214",
+      "title": "MacCMS v10 before 2026.1000.4054 contains an authentication bypass vulnerability that allows unauthenticated attackers to reset any member'…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-26T14:16:34.173",
+      "kev_date_added": "",
+      "description": "MacCMS v10 before 2026.1000.4054 contains an authentication bypass vulnerability that allows unauthenticated attackers to reset any member's password because check_msg() never compares msg_to. Attackers can request a recovery code to their own mailbox via user/findpass_msg, then submit it to user/findpass_reset with the victim's email or phone to take over the account.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00458,
+      "epss_percentile": 0.39554,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.3,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.40. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.3 out of 100."
+      ],
+      "summary": "CVE-2026-116214 is a critical vulnerability in the affected software. MacCMS v10 before 2026.1000.4054 contains an authentication bypass vulnerability that allows unauthenticated attackers to reset any member's password because check_msg() never compares msg_to. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/maccmspro/maccms10"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/maccmspro/maccms10/blob/7f388ee0008faf5b01e5df7bf5e5a6ff4bbe13e8/application/common/model/User.php#L607-L630"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/maccmspro/maccms10/issues/30"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/magicblack/maccms10/commit/27bb1b004b9931c93f46b65e9c0e531466e7e02a"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/maccms-v10-before-2026.1000.4054-account-takeover-via-unbound-password-recovery-code"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-116485",
+      "kind": "cve",
+      "cve_id": "CVE-2026-116485",
+      "title": "danmu_api before 1.21.7 contains an authentication bypass vulnerability that allows unauthenticated attackers to modify server environment…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-26T14:16:37.040",
+      "kev_date_added": "",
+      "description": "danmu_api before 1.21.7 contains an authentication bypass vulnerability that allows unauthenticated attackers to modify server environment configuration when the default TOKEN is used and ADMIN_TOKEN is unset. Attackers can send POST requests to /api/env/set, /api/env/add, or /api/env/del to set ADMIN_TOKEN, lock out operators, redirect OTHER_SERVER or PROXY_URL for SSRF, and trigger redeployment.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00668,
+      "epss_percentile": 0.51694,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.3,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.52. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.3 out of 100."
+      ],
+      "summary": "CVE-2026-116485 is a critical vulnerability in the affected software. danmu_api before 1.21.7 contains an authentication bypass vulnerability that allows unauthenticated attackers to modify server environment configuration when the default TOKEN is used and ADMIN_TOKEN is unset. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/huangxd-/danmu_api"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/huangxd-/danmu_api/blob/5ef63a01bae7c4bad4dcd7bafbbcdcf33aa82564/danmu_api/worker.js#L223-L244"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/huangxd-/danmu_api/commit/6e93478064a0ce4e7ed3bc2eae88adaad1b7ab02"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/huangxd-/danmu_api/issues/531"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/danmu-api-before-1.21.7-authentication-bypass-via-default-token-in-env-endpoints"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-116508",
+      "kind": "cve",
+      "cve_id": "CVE-2026-116508",
+      "title": "A security flaw has been discovered in TOTOLINK A950RG 4.1.2cu.5268_B20221104. Affected by this issue is the function sub_402340 of the fil…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-26T22:16:54.373",
+      "kev_date_added": "",
+      "description": "A security flaw has been discovered in TOTOLINK A950RG 4.1.2cu.5268_B20221104. Affected by this issue is the function sub_402340 of the file infostat.cgi of the component Device-Information CGI. Performing a manipulation of the argument CONTENT_LENGTH results in stack-based buffer overflow. Remote exploitation of the attack is possible. The exploit has been released to the public and may be used for attacks.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00609,
+      "epss_percentile": 0.48926,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.3,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.49. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.3 out of 100."
+      ],
+      "summary": "CVE-2026-116508 is a critical vulnerability in the affected software. A security flaw has been discovered in TOTOLINK A950RG 4.1.2cu.5268_B20221104. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://gist.github.com/H3rmesk1t/ad72def4ccc232757d4cbabf45da72cb"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/cve/CVE-2026-116508"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/submit/1022557"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/426406"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/426406/cti"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-104350",
+      "kind": "cve",
+      "cve_id": "CVE-2026-104350",
+      "title": "Adobe Campaign Classic (ACC) is affected by a reflected Cross-Site Scripting (XSS) vulnerability. An attacker could exploit this vulnerabil…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-27T17:16:55.457",
+      "kev_date_added": "",
+      "description": "Adobe Campaign Classic (ACC) is affected by a reflected Cross-Site Scripting (XSS) vulnerability. An attacker could exploit this vulnerability to inject malicious scripts into a web page, potentially gaining elevated access or control over the victim's account or session. Exploitation of this issue requires user interaction in that a victim must visit a maliciously crafted URL or interact with a compromised web page. Scope is changed.",
+      "cvss": 9.3,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.2,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (3.1, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.2 out of 100."
+      ],
+      "summary": "CVE-2026-104350 is a critical vulnerability in the affected software. Adobe Campaign Classic (ACC) is affected by a reflected Cross-Site Scripting (XSS) vulnerability. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "psirt@adobe.com",
+          "url": "https://www.adobe.com/trust/security/products/campaign/apsb26-162.html"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-117532",
+      "kind": "cve",
+      "cve_id": "CVE-2026-117532",
+      "title": "REDAXO core from 5.3.0 before 5.21.4 contains an authentication bypass vulnerability in the structure/history plugin that allows unauthenti…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-27T11:17:33.597",
+      "kev_date_added": "",
+      "description": "REDAXO core from 5.3.0 before 5.21.4 contains an authentication bypass vulnerability in the structure/history plugin that allows unauthenticated attackers to forge temporary login tokens. Attackers can force the session-tied secret into a predictable state and forge tokens for accounts like admin, gaining backend access and code execution outside live mode.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.2,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.2 out of 100."
+      ],
+      "summary": "CVE-2026-117532 is a critical vulnerability in the affected software. REDAXO core from 5.3.0 before 5.21.4 contains an authentication bypass vulnerability in the structure/history plugin that allows unauthenticated attackers to forge temporary login tokens. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/redaxo/core/security/advisories/GHSA-px8f-whj8-hrpq"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/redaxo-core-5.3.0-before-5.21.4-authentication-bypass-via-history-plugin"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-117564",
+      "kind": "cve",
+      "cve_id": "CVE-2026-117564",
+      "title": "nest-admin before 1.0.1 contains an authentication bypass vulnerability that allows unauthenticated attackers to forge administrator tokens…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-27T14:16:38.720",
+      "kev_date_added": "",
+      "description": "nest-admin before 1.0.1 contains an authentication bypass vulnerability that allows unauthenticated attackers to forge administrator tokens by using a hardcoded JWT_SECRET committed in .env.production. Attackers can sign tokens with the known secret that JwtStrategy and RbacGuard trust, impersonating any user ID or claiming the admin role for full administrative access.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.2,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.2 out of 100."
+      ],
+      "summary": "CVE-2026-117564 is a critical vulnerability in the affected software. nest-admin before 1.0.1 contains an authentication bypass vulnerability that allows unauthenticated attackers to forge administrator tokens by using a hardcoded JWT_SECRET committed in .env.production. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/buqiyuan/nest-admin"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/buqiyuan/nest-admin/blob/2eeccc4cb699d1aedbe04b4437a9d095cde02c74/.env.production#L5"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/buqiyuan/nest-admin/commit/f2cec8cb776cbf113115b33164dac69a46d24097"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/buqiyuan/nest-admin/issues/92"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/buqiyuan/nest-admin/issues/93"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-117601",
+      "kind": "cve",
+      "cve_id": "CVE-2026-117601",
+      "title": "Electrum before 4.8.3 fails to verify signatures of wallet-owned inputs in unconfirmed mempool transactions, allowing malicious servers to…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-27T14:16:39.947",
+      "kev_date_added": "",
+      "description": "Electrum before 4.8.3 fails to verify signatures of wallet-owned inputs in unconfirmed mempool transactions, allowing malicious servers to replace a just-broadcast transaction with a conflicting one. Attackers can swallow the user's transaction and display an invalid zero-fee copy paying an attacker address, tricking users into RBF fee-bumping and signing it.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.2,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.2 out of 100."
+      ],
+      "summary": "CVE-2026-117601 is a critical vulnerability in the affected software. Electrum before 4.8.3 fails to verify signatures of wallet-owned inputs in unconfirmed mempool transactions, allowing malicious servers to replace a just-broadcast transaction with a conflicting one. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/spesmilo/electrum/commit/90fe30822561e515a9d2d6e5a352cc07780999eb"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/spesmilo/electrum/security/advisories/GHSA-6jp4-8v48-cc5v"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/electrum-before-4.8.3-missing-signature-verification-of-mempool-transactions"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-114403",
+      "kind": "cve",
+      "cve_id": "CVE-2026-114403",
+      "title": "PHPOffice PHPPresentation through 1.2.0 contains an insecure deserialization vulnerability that allows attackers to instantiate arbitrary P…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-21T13:18:31.753",
+      "kev_date_added": "",
+      "description": "PHPOffice PHPPresentation through 1.2.0 contains an insecure deserialization vulnerability that allows attackers to instantiate arbitrary PHP objects by supplying a crafted presentation file. Attackers can upload a ZIP containing PhpPresentation.xml that IOFactory::load passes to unserialize(), enabling gadget-chain code execution, file writes, or denial of service.",
+      "cvss": 9.2,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00477,
+      "epss_percentile": 0.41017,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 36.9,
+      "score_components": {
+        "cvss": 36.8,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.41. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 36.9 out of 100."
+      ],
+      "summary": "CVE-2026-114403 is a critical vulnerability in the affected software. PHPOffice PHPPresentation through 1.2.0 contains an insecure deserialization vulnerability that allows attackers to instantiate arbitrary PHP objects by supplying a crafted presentation file. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/PHPOffice/PHPPresentation"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/PHPOffice/PHPPresentation/blob/1.2.0/src/PhpPresentation/IOFactory.php#L39"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/PHPOffice/PHPPresentation/blob/1.2.0/src/PhpPresentation/Reader/Serialized.php#L77-L109"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://hackmd.io/@leediay/multiple_vulnerable_phppresentation"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/phpoffice-phppresentation-through-1.2.0-deserialization-via-reader-serialized-load"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-115324",
+      "kind": "cve",
+      "cve_id": "CVE-2026-115324",
+      "title": "mem0 0.1.117 before 1.0.8 contains an sql injection vulnerability in mem0/vector_stores/databricks.py that allows attackers to inject SQL b…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-22T11:17:51.263",
+      "kev_date_added": "",
+      "description": "mem0 0.1.117 before 1.0.8 contains an sql injection vulnerability in mem0/vector_stores/databricks.py that allows attackers to inject SQL by influencing stored memory content. Attackers can supply crafted memory text, metadata, or message names that reach unescaped insert() and update() string interpolation to execute injected SQL on the configured Databricks SQL warehouse.",
+      "cvss": 9.2,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00322,
+      "epss_percentile": 0.25062,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 36.9,
+      "score_components": {
+        "cvss": 36.8,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.25. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 36.9 out of 100."
+      ],
+      "summary": "CVE-2026-115324 is a critical vulnerability in the affected software. mem0 0.1.117 before 1.0.8 contains an sql injection vulnerability in mem0/vector_stores/databricks.py that allows attackers to inject SQL by influencing stored memory content. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/mem0ai/mem0"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/mem0ai/mem0/blob/v1.0.7/mem0/vector_stores/databricks.py"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/mem0ai/mem0/commit/a2ffca32660537b7b304305f36774ae2a13452cb"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/mem0ai/mem0/issues/4073"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/mem0ai/mem0/pull/4558"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "news-dd9aab4f2b42",
+      "kind": "news",
+      "cve_id": null,
+      "title": "Anthropic's Unreleased AI Model Chains Flaws Into Working Chrome, Safari, Windows and Linux Exploits",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-28T13:45:07+05:30",
+      "description": "An unreleased Anthropic AI model found security flaws in Chrome, Safari, Android, Windows, and Linux and chained them into working proof-of-concept exploits, the company said in its latest report. The exploits were built in the lab after the model was prompted, not seen in any real attack, and Anthropic reported every flaw to the vendor first, so all of them are already patched. One proof of",
+      "source": "The Hacker News",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [
+        "Windows"
+      ],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 10.0,
+        "urgency": 0.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Mentions software on the small-business list (Windows): 10.0 of 10.",
+        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from The Hacker News: Anthropic's Unreleased AI Model Chains Flaws Into Working Chrome, Safari, Windows and Linux Exploits. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "If you use Windows, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "The Hacker News",
+          "url": "https://thehackernews.com/2026/10/anthropics-unreleased-ai-model-chains.html"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "news-a40721cff07a",
+      "kind": "news",
+      "cve_id": null,
+      "title": "Apple backports CoreGraphics zero-day patches to older iPhones",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-27T06:36:12-04:00",
+      "description": "​Apple has backported security patches released last month to older iPhones and iPads, addressing a zero-day bug exploited in \"extremely sophisticated\" targeted attacks on iOS devices. [...]",
+      "source": "BleepingComputer",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 0.0,
+        "urgency": 10.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Does not mention the small-business software list: 0 of 10.",
+        "Uses the urgency term 'zero-day': 10.0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from BleepingComputer: Apple backports CoreGraphics zero-day patches to older iPhones. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/apple/apple-backports-coregraphics-zero-day-patches-to-older-iphones/"
         }
       ],
       "version_ranges": [],
@@ -2934,88 +3170,6 @@
         {
           "label": "The Hacker News",
           "url": "https://thehackernews.com/2026/10/exposed-infrastructure-reveals-how.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "news-1af654b0c99f",
-      "kind": "news",
-      "cve_id": null,
-      "title": "HMS Networks PEAK-System PCAN Windows drivers",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-20T12:00:00+00:00",
-      "description": "View CSAF Summary Successful exploitation of these vulnerabilities could crash the Windows kernel. The following versions of HMS Networks PEAK-System PCAN Windows drivers are affected: PEAK-System Device Driver Setup <=5.1.2.1151 (CVE-2026-109576, CVE-2026-101103, CVE-2026-94188, CVE-2026-103672, CVE-2026-110322, CVE-2026-105960) PCAN Windows CAN device drivers <=5.1.2 (CVE-2026-109576, CVE-2026-101103, CVE-2026-94188, CVE-2026-103672, CVE-2026-110322, CVE-2026-105960) CVSS Vendor Equipment v3 7.1 HMS Networks PEAK-System Device Driver Setup 5 Vulnerabilities Out-of-bounds Write, Buffer Copy without Checking Size of Input ('Classic Buffer Overflow'), Improper Validation of Array Index, Untrusted Pointer Dereference, Improper Handling of Length Parameter Inconsistency Background Critical Infrastructure Sectors: Transportation Systems, Healthcare and Public Health, Energy, Critical Manufacturing Countries/Areas Deployed: Worldwide Company Headquarters Location: Sweden Vulnerabilities Expand All + CVE-2026-109576 The parser in PEAK-System PCAN driver correctly detected the malformed record, but the loop iterating the record list advanced its processed-bytes counter even when a record had been rejected as invalid. Read More 2 Affected Products HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. Additional Metrics Relevant CWE: CWE-787 Out-of-bounds Write CVSS Version Base Score Base Severity Vector String 3.1 5.5 MEDIUM CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H 4.0 6.8 MEDIUM CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N View CVE Details CVE-2026-101103 The PEAK-System PCAN diagnostic call did not validate that the caller-supplied output buffer was large enough to hold the output record. Read More 4 Affected Products HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. Additional Metrics Relevant CWE: CWE-120 Buffer Copy without Checking Size of Input ('Classic Buffer Overflow') CVSS Version Base Score Base Severity Vector String 3.1 5.5 MEDIUM CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H 4.0 6.8 MEDIUM CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N View CVE Details CVE-2026-94188 The copied source field in PEAK-System PCAN is attacker-influenced through the related file-device write path, and the caller can combine a small output allocation with controlled source bytes. Read More 6 Affected Products HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. Additional Metrics Relevant CWE: CWE-120 Buffer Copy without Checking Size of Input ('Classic Buffer Overflow') CVSS Version Base Score Base Severity Vector String 3.1 5.5 MEDIUM CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H 4.0 6.8 MEDIUM CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N View CVE Details CVE-2026-103672 The PEAK-System PCAN parser indexes a length table using attacker-controlled DLC without enforcing DLC <= 0x0f, then copies attacker payload from record+0x1c into a fixed-size stack destination. Read More 8 Affected Products HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. Additional Metrics Relevant CWE: CWE-129 Improper Validation of Array Index CVSS Version Base Score Base Severity Vector String 3.1 7.1 HIGH CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H 4.0 6.9 MEDIUM CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:N/VI:H/VA:H/SC:N/SI:N/SA:N View CVE Details CVE-2026-110322 The PEAK-System PCAN type 0x4030 processing path fails to validate a selected/returned object pointer before dereferencing fixed fields during post-processing. Read More 10 Affected Products HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. Additional Metrics Relevant CWE: CWE-822 Untrusted Pointer Dereference CVSS Version Base Score Base Severity Vector String 3.1 5.5 MEDIUM CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H 4.0 6.8 MEDIUM CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N View CVE Details CVE-2026-105960 PEAK-System PCAN contains a vulnerable operation involving a variable-length receive-record copy. The driver uses a requested or queued record count without sufficiently capping the copy to the actual caller-supplied output length. Read More 12 Affected Products HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PEAK-System Device Driver Setup: <=5.1.2.1151 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. HMS Networks PCAN Windows CAN device drivers: <=5.1.2 Product Status: known_affected Remediations Mitigation HMS Networks AB has addressed the issue in version 5.1.4 and recommends that users upgrade to the newest available version. Users can find software updates for PEAK-System PCAN on the software download page. Mitigation For more information see the associated HMS security advisory. Additional Metrics Relevant CWE: CWE-130 Improper Handling of Length Parameter Inconsistency CVSS Version Base Score Base Severity Vector String 3.1 5.5 MEDIUM CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H 4.0 6.8 MEDIUM CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N View CVE Details Acknowledgments Seyeon Bang reported these vulnerabilities to CISA. Recommended Practices CISA recommends users take defensive measures to minimize the risk of exploitation of these vulnerabilities. Minimize network exposure for all control system devices and/or systems, ensuring they are not accessible from the internet. Locate control system networks and remote devices behind firewalls and isolating them from business networks. When remote access is required, use more secure methods, such as virtual private networks (VPNs), recognizing VPNs may have vulnerabilities and should be updated to the most current version available. Also recognize VPN is only as secure as the connected devices. CISA reminds organizations to perform proper impact analysis and risk assessment prior to deploying defensive measures. CISA also provides a section for control systems security recommended practices on the ICS webpage on cisa.gov/ics. Several CISA products detailing cyber defense best practices are available for reading and download, including Improving Industrial Control Systems Cybersecurity with Defense-in-Depth Strategies. CISA encourages organizations to implement recommended cybersecurity strategies for proactive defense of ICS assets. Additional mitigation guidance and recommended practices are publicly available on the ICS webpage at cisa.gov/ics in the technical information paper, ICS-TIP-12-146-01B--Targeted Cyber Intrusion Detection and Mitigation Strategies. Organizations observing suspected malicious activity should follow established internal procedures and report findings to CISA for tracking and correlation against other incidents. CISA also recommends users take the following measures to protect themselves from social engineering attacks: Do not click web links or open attachments in unsolicited email messages. Refer to Recognizing and Avoiding Email Scams for more information on avoiding email scams. Refer to Avoiding Social Engineering and Phishing Attacks for more information on social engineering attacks. No known public exploitation specifically targeting these vulnerabilities has been reported to CISA at this time. These vulnerabilities are not exploitable remotely. Revision History Initial Release Date: 2026-10-20 Date Revision Summary 2026-10-20 1 Initial Publication Legal Notice and Terms of Use",
-      "source": "CISA advisories",
-      "cvss": null,
-      "severity": null,
-      "in_kev": false,
-      "epss": null,
-      "smb_matches": [
-        "Windows"
-      ],
-      "formula_id": "news-relevance-v1",
-      "score": 10.0,
-      "score_components": {
-        "smb": 10.0,
-        "urgency": 0.0
-      },
-      "reasons": [
-        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Mentions software on the small-business list (Windows): 10.0 of 10.",
-        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
-        "Total 10.0 out of 20 on the news scale."
-      ],
-      "summary": "Headline from CISA advisories: HMS Networks PEAK-System PCAN Windows drivers. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "If you use Windows, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "CISA advisories",
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-293-01"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "news-64b0ac9d140d",
-      "kind": "news",
-      "cve_id": null,
-      "title": "Hackers Breach Enterprise Firewalls and VPNs, Exposing Over 70,000 Credentials",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-23T19:20:56+05:30",
-      "description": "Cybersecurity researchers have disclosed details of a large-scale campaign that has targeted exposed network edge devices such as Fortinet FortiGate and Palo Alto Networks GlobalProtect firewalls. \"Artifacts from this investigation also indicate that operators in this campaign have obtained access to numerous organizations worldwide, and have attempted to further compromise some victims,",
-      "source": "The Hacker News",
-      "cvss": null,
-      "severity": null,
-      "in_kev": false,
-      "epss": null,
-      "smb_matches": [
-        "Fortinet"
-      ],
-      "formula_id": "news-relevance-v1",
-      "score": 10.0,
-      "score_components": {
-        "smb": 10.0,
-        "urgency": 0.0
-      },
-      "reasons": [
-        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Mentions software on the small-business list (Fortinet): 10.0 of 10.",
-        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
-        "Total 10.0 out of 20 on the news scale."
-      ],
-      "summary": "Headline from The Hacker News: Hackers Breach Enterprise Firewalls and VPNs, Exposing Over 70,000 Credentials. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "If you use Fortinet, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "The Hacker News",
-          "url": "https://thehackernews.com/2026/10/hackers-breach-enterprise-firewalls-and.html"
         }
       ],
       "version_ranges": [],
