@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-28T10:36:54.415334+00:00",
+  "generated_at": "2026-10-29T10:55:37.690665+00:00",
   "mode": "live",
   "formula": {
     "id": "smb-sa-v1",
@@ -18,13 +18,13 @@
     }
   },
   "counts": {
-    "catalog_cves": 1957,
+    "catalog_cves": 1947,
     "brief_items": 48,
     "brief_cves": 40,
     "brief_news": 8,
-    "kev": 1760,
-    "nvd": 199,
-    "epss": 150
+    "kev": 1762,
+    "nvd": 186,
+    "epss": 165
   },
   "warnings": [],
   "sources": [
@@ -60,107 +60,323 @@
   },
   "items": [
     {
-      "id": "CVE-2026-109618",
+      "id": "CVE-2026-111497",
       "kind": "cve",
-      "cve_id": "CVE-2026-109618",
-      "title": "PHP Memory Corruption Vulnerability",
-      "vendor": "PHP Group",
-      "product": "PHP",
-      "published": "2026-10-21T14:17:09.357",
-      "kev_date_added": "2026-10-26",
-      "description": "PHP contains an out-of-memory corruption vulnerability that allows for unauthenticated remote code execution.",
+      "cve_id": "CVE-2026-111497",
+      "title": "Google Brotli Unchecked Return Value Vulnerability",
+      "vendor": "Google",
+      "product": "Brotli",
+      "published": "2026-10-22T14:17:37.190",
+      "kev_date_added": "2026-10-27",
+      "description": "Google Brotli contains an unchecked return value vulnerability that allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially execute arbitrary code using a crafted Brotli-compressed stream.",
       "cvss": 9.2,
       "cvss_version": "4.0",
       "severity": "CRITICAL",
       "in_kev": true,
       "ransomware": "Unknown",
-      "epss": 0.99999,
-      "epss_percentile": 0.99998,
+      "epss": 0.87988,
+      "epss_percentile": 0.99763,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 81.8,
+      "score": 79.4,
       "score_components": {
         "cvss": 36.8,
         "kev": 25.0,
-        "epss": 20.0,
+        "epss": 17.6,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
-        "Listed in the CISA Known Exploited Vulnerabilities catalog (added 2026-10-26), so that part contributes 25.0 of 25.",
-        "EPSS 1.00 means FIRST estimates about a 100% probability of exploitation activity in the next 30 days, percentile 1.00. That contributes 20.0 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Listed in the CISA Known Exploited Vulnerabilities catalog (added 2026-10-27), so that part contributes 25.0 of 25.",
+        "EPSS 0.88 means FIRST estimates about a 88% probability of exploitation activity in the next 30 days, percentile 1.00. That contributes 17.6 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 81.8 out of 100."
+        "Total 79.4 out of 100."
       ],
-      "summary": "CVE-2026-109618 is a critical vulnerability in PHP Group PHP. PHP contains an out-of-memory corruption vulnerability that allows for unauthenticated remote code execution. The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "If you use PHP Group PHP, apply the vendor update. CISA lists this as already exploited. If you do not use it, you can skip this item.",
+      "summary": "CVE-2026-111497 is a critical vulnerability in Google Brotli. Google Brotli contains an unchecked return value vulnerability that allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially execute arbitrary code using a crafted Brotli-comp… The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "If you use Google Brotli, apply the vendor update. CISA lists this as already exploited. If you do not use it, you can skip this item.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "security@php.net",
-          "url": "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
+          "label": "cve-coordination@google.com",
+          "url": "https://github.com/andybalholm/brotli/releases/tag/v1.2.7"
+        },
+        {
+          "label": "cve-coordination@google.com",
+          "url": "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases#nodejs-brotli-decoder-out-of-bounds-write-permits-remote-code-execution-cve-2026-111497---high"
         },
         {
           "label": "af854a3a-2127-422b-91ae-364da2661108",
-          "url": "http://www.openwall.com/lists/oss-security/2026/10/21/6"
+          "url": "http://www.openwall.com/lists/oss-security/2026/10/23/25"
         },
         {
           "label": "af854a3a-2127-422b-91ae-364da2661108",
-          "url": "http://www.openwall.com/lists/oss-security/2026/10/23/5"
+          "url": "http://www.openwall.com/lists/oss-security/2026/10/24/6"
         },
         {
-          "label": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
-          "url": "https://arcticwolf.com/resources/blog/php2shell-critical-php-vulnerabilities-enable-unauthenticated-remote-code-execution/"
-        },
-        {
-          "label": "0b142b55-0307-4c5a-b3c9-f314f3fb7c5e",
-          "url": "https://cert-portal.siemens.com/productcert/html/ssa-566512.html"
+          "label": "af854a3a-2127-422b-91ae-364da2661108",
+          "url": "http://www.openwall.com/lists/oss-security/2026/10/26/12"
         },
         {
           "label": "CISA advisories",
-          "url": "https://www.cisa.gov/news-events/alerts/2026/10/26/cisa-adds-two-known-exploited-vulnerabilities-catalog"
+          "url": "https://www.cisa.gov/news-events/alerts/2026/10/27/cisa-adds-two-known-exploited-vulnerabilities-catalog"
         }
       ],
       "version_ranges": [
         {
-          "vendor": "php",
-          "product": "php",
+          "vendor": "google",
+          "product": "brotli",
           "version": "*",
-          "start_including": "7.3.0",
+          "start_including": "1.0.3",
           "start_excluding": null,
           "end_including": null,
-          "end_excluding": "8.2.35"
+          "end_excluding": "1.0.10"
         },
         {
-          "vendor": "php",
-          "product": "php",
+          "vendor": "google",
+          "product": "brotli",
           "version": "*",
-          "start_including": "8.3.0",
+          "start_including": "1.1.0",
           "start_excluding": null,
           "end_including": null,
-          "end_excluding": "8.3.36"
+          "end_excluding": "1.1.1"
         },
         {
-          "vendor": "php",
-          "product": "php",
+          "vendor": "google",
+          "product": "brotli",
           "version": "*",
-          "start_including": "8.4.0",
+          "start_including": "1.2.0",
           "start_excluding": null,
           "end_including": null,
-          "end_excluding": "8.4.27"
+          "end_excluding": "1.2.1"
         },
         {
-          "vendor": "php",
-          "product": "php",
+          "vendor": "nodejs",
+          "product": "node.js",
           "version": "*",
-          "start_including": "8.5.0",
+          "start_including": null,
           "start_excluding": null,
           "end_including": null,
-          "end_excluding": "8.5.12"
+          "end_excluding": "22.23.4"
         },
         {
-          "vendor": "siemens",
-          "product": "ruggedcom_ape1808_firmware",
+          "vendor": "nodejs",
+          "product": "node.js",
+          "version": "*",
+          "start_including": "23.0.0",
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": "24.22.1"
+        },
+        {
+          "vendor": "nodejs",
+          "product": "node.js",
+          "version": "*",
+          "start_including": "25.0.0",
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": "26.12.1"
+        },
+        {
+          "vendor": "python-hyper",
+          "product": "brotlicffi",
+          "version": "*",
+          "start_including": null,
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": "1.2.1.0"
+        },
+        {
+          "vendor": "microsoft",
+          "product": ".net",
+          "version": "*",
+          "start_including": "8.0.0",
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": "8.0.33"
+        },
+        {
+          "vendor": "microsoft",
+          "product": ".net",
+          "version": "*",
+          "start_including": "9.0.0",
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": "9.0.22"
+        },
+        {
+          "vendor": "microsoft",
+          "product": ".net",
+          "version": "*",
+          "start_including": "10.0.0",
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": "10.0.14"
+        },
+        {
+          "vendor": "microsoft",
+          "product": ".net",
+          "version": "11.0.0",
+          "start_including": null,
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": null
+        },
+        {
+          "vendor": "microsoft",
+          "product": ".net",
+          "version": "11.0.0",
+          "start_including": null,
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": null
+        },
+        {
+          "vendor": "microsoft",
+          "product": ".net",
+          "version": "11.0.0",
+          "start_including": null,
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": null
+        },
+        {
+          "vendor": "microsoft",
+          "product": ".net",
+          "version": "11.0.0",
+          "start_including": null,
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": null
+        },
+        {
+          "vendor": "microsoft",
+          "product": ".net",
+          "version": "11.0.0",
+          "start_including": null,
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": null
+        },
+        {
+          "vendor": "microsoft",
+          "product": ".net",
+          "version": "11.0.0",
+          "start_including": null,
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": null
+        },
+        {
+          "vendor": "microsoft",
+          "product": ".net",
+          "version": "11.0.0",
+          "start_including": null,
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": null
+        },
+        {
+          "vendor": "microsoft",
+          "product": ".net",
+          "version": "11.0.0",
+          "start_including": null,
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": null
+        },
+        {
+          "vendor": "microsoft",
+          "product": ".net",
+          "version": "11.0.0",
+          "start_including": null,
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": null
+        },
+        {
+          "vendor": "debian",
+          "product": "debian_linux",
+          "version": "12.0",
+          "start_including": null,
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": null
+        },
+        {
+          "vendor": "istio",
+          "product": "istio",
+          "version": "*",
+          "start_including": null,
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": "1.29.9"
+        },
+        {
+          "vendor": "istio",
+          "product": "istio",
+          "version": "*",
+          "start_including": "1.30.0",
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": "1.30.6"
+        },
+        {
+          "vendor": "istio",
+          "product": "istio",
+          "version": "*",
+          "start_including": "1.31.0",
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": "1.31.2"
+        },
+        {
+          "vendor": "anthropic",
+          "product": "bun",
+          "version": "*",
+          "start_including": null,
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": "1.4.4"
+        },
+        {
+          "vendor": "envoyproxy",
+          "product": "envoy",
+          "version": "*",
+          "start_including": null,
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": "1.37.8"
+        },
+        {
+          "vendor": "envoyproxy",
+          "product": "envoy",
+          "version": "*",
+          "start_including": "1.38.0",
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": "1.38.6"
+        },
+        {
+          "vendor": "envoyproxy",
+          "product": "envoy",
+          "version": "*",
+          "start_including": "1.39.0",
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": "1.39.3"
+        },
+        {
+          "vendor": "tianocore",
+          "product": "edk2",
+          "version": "*",
+          "start_including": null,
+          "start_excluding": null,
+          "end_including": "202608",
+          "end_excluding": null
+        },
+        {
+          "vendor": "google",
+          "product": "woff2",
           "version": "-",
           "start_including": null,
           "start_excluding": null,
@@ -168,339 +384,184 @@
           "end_excluding": null
         },
         {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
+          "vendor": "duckdb",
+          "product": "duckdb",
           "version": "*",
-          "start_including": "10.2.0",
+          "start_including": null,
           "start_excluding": null,
-          "end_including": null,
-          "end_excluding": "10.2.7"
+          "end_including": "2.0.0",
+          "end_excluding": null
         },
         {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
+          "vendor": "clickhouse",
+          "product": "clickhouse",
+          "version": "*",
+          "start_including": null,
+          "start_excluding": null,
+          "end_including": "26.10.2.103",
+          "end_excluding": null
+        },
+        {
+          "vendor": "apache",
+          "product": "arrow",
+          "version": "*",
+          "start_including": null,
+          "start_excluding": null,
+          "end_including": "26.0.0",
+          "end_excluding": null
+        },
+        {
+          "vendor": "apache",
+          "product": "arrow",
+          "version": "27.0.0",
           "start_including": null,
           "start_excluding": null,
           "end_including": null,
           "end_excluding": null
         },
         {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
+          "vendor": "mcmilk",
+          "product": "7-zip-zstd",
+          "version": "*",
           "start_including": null,
           "start_excluding": null,
-          "end_including": null,
+          "end_including": "26.02-1.5.7-r2",
           "end_excluding": null
         },
         {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
+          "vendor": "7-zip",
+          "product": "p7zip",
+          "version": "*",
           "start_including": null,
           "start_excluding": null,
-          "end_including": null,
+          "end_including": "16.02",
           "end_excluding": null
         },
         {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
+          "vendor": "andybalholm",
+          "product": "brotli",
+          "version": "*",
           "start_including": null,
           "start_excluding": null,
           "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.8",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.9",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.10",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
+          "end_excluding": "1.2.7"
         }
       ],
       "aliases": [
         {
-          "vendor": "php",
-          "product": "php"
+          "vendor": "google",
+          "product": "brotli"
         },
         {
-          "vendor": "siemens",
-          "product": "ruggedcom_ape1808_firmware"
+          "vendor": "nodejs",
+          "product": "node.js"
         },
         {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os"
+          "vendor": "python-hyper",
+          "product": "brotlicffi"
         },
         {
-          "vendor": "paloaltonetworks",
-          "product": "panorama_virtual_appliance"
+          "vendor": "microsoft",
+          "product": ".net"
+        },
+        {
+          "vendor": "debian",
+          "product": "debian_linux"
+        },
+        {
+          "vendor": "istio",
+          "product": "istio"
+        },
+        {
+          "vendor": "anthropic",
+          "product": "bun"
+        },
+        {
+          "vendor": "envoyproxy",
+          "product": "envoy"
+        },
+        {
+          "vendor": "tianocore",
+          "product": "edk2"
+        },
+        {
+          "vendor": "google",
+          "product": "woff2"
+        },
+        {
+          "vendor": "duckdb",
+          "product": "duckdb"
+        },
+        {
+          "vendor": "clickhouse",
+          "product": "clickhouse"
+        },
+        {
+          "vendor": "apache",
+          "product": "arrow"
+        },
+        {
+          "vendor": "mcmilk",
+          "product": "7-zip-zstd"
+        },
+        {
+          "vendor": "7-zip",
+          "product": "p7zip"
+        },
+        {
+          "vendor": "andybalholm",
+          "product": "brotli"
         }
       ]
+    },
+    {
+      "id": "CVE-2026-109618",
+      "kind": "cve",
+      "cve_id": "CVE-2026-109618",
+      "title": "PHP Memory Corruption Vulnerability",
+      "vendor": "PHP Group",
+      "product": "PHP",
+      "published": "2026-10-26",
+      "kev_date_added": "2026-10-26",
+      "description": "PHP contains an out-of-memory corruption vulnerability that allows for unauthenticated remote code execution.",
+      "cvss": null,
+      "cvss_version": null,
+      "severity": null,
+      "in_kev": true,
+      "ransomware": "Unknown",
+      "epss": 0.99999,
+      "epss_percentile": 0.99998,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 45.0,
+      "score_components": {
+        "cvss": 0.0,
+        "kev": 25.0,
+        "epss": 20.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "No CVSS score was published, so that part contributes 0 of 40.",
+        "Listed in the CISA Known Exploited Vulnerabilities catalog (added 2026-10-26), so that part contributes 25.0 of 25.",
+        "EPSS 1.00 means FIRST estimates about a 100% probability of exploitation activity in the next 30 days, percentile 1.00. That contributes 20.0 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 45.0 out of 100."
+      ],
+      "summary": "CVE-2026-109618 is a unspecified vulnerability in PHP Group PHP. PHP contains an out-of-memory corruption vulnerability that allows for unauthenticated remote code execution. The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "If you use PHP Group PHP, apply the vendor update. CISA lists this as already exploited. If you do not use it, you can skip this item.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "CISA advisories",
+          "url": "https://www.cisa.gov/news-events/alerts/2026/10/26/cisa-adds-two-known-exploited-vulnerabilities-catalog"
+        },
+        {
+          "label": "The Hacker News",
+          "url": "https://thehackernews.com/2026/10/cisa-confirms-active-exploitation-of.html"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
     },
     {
       "id": "CVE-2026-109619",
@@ -509,441 +570,43 @@
       "title": "PHP Stale Internal Request-State Vulnerability",
       "vendor": "PHP Group",
       "product": "PHP",
-      "published": "2026-10-21T14:17:09.823",
+      "published": "2026-10-26",
       "kev_date_added": "2026-10-26",
       "description": "PHP contains a stale internal request-state vulnerability that allows for unauthenticated remote code execution.",
-      "cvss": 9.2,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
+      "cvss": null,
+      "cvss_version": null,
+      "severity": null,
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.99999,
       "epss_percentile": 0.99999,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 81.8,
+      "score": 45.0,
       "score_components": {
-        "cvss": 36.8,
+        "cvss": 0.0,
         "kev": 25.0,
         "epss": 20.0,
         "smb": 0.0
       },
       "reasons": [
-        "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
+        "No CVSS score was published, so that part contributes 0 of 40.",
         "Listed in the CISA Known Exploited Vulnerabilities catalog (added 2026-10-26), so that part contributes 25.0 of 25.",
         "EPSS 1.00 means FIRST estimates about a 100% probability of exploitation activity in the next 30 days, percentile 1.00. That contributes 20.0 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 81.8 out of 100."
+        "Total 45.0 out of 100."
       ],
-      "summary": "CVE-2026-109619 is a critical vulnerability in PHP Group PHP. PHP contains a stale internal request-state vulnerability that allows for unauthenticated remote code execution. The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-109619 is a unspecified vulnerability in PHP Group PHP. PHP contains a stale internal request-state vulnerability that allows for unauthenticated remote code execution. The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "If you use PHP Group PHP, apply the vendor update. CISA lists this as already exploited. If you do not use it, you can skip this item.",
       "summary_engine": "rules-v1",
       "references": [
-        {
-          "label": "security@php.net",
-          "url": "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
-        },
-        {
-          "label": "af854a3a-2127-422b-91ae-364da2661108",
-          "url": "http://www.openwall.com/lists/oss-security/2026/10/21/16"
-        },
-        {
-          "label": "af854a3a-2127-422b-91ae-364da2661108",
-          "url": "http://www.openwall.com/lists/oss-security/2026/10/21/17"
-        },
-        {
-          "label": "af854a3a-2127-422b-91ae-364da2661108",
-          "url": "http://www.openwall.com/lists/oss-security/2026/10/21/23"
-        },
-        {
-          "label": "af854a3a-2127-422b-91ae-364da2661108",
-          "url": "http://www.openwall.com/lists/oss-security/2026/10/21/7"
-        },
         {
           "label": "CISA advisories",
           "url": "https://www.cisa.gov/news-events/alerts/2026/10/26/cisa-adds-two-known-exploited-vulnerabilities-catalog"
         }
       ],
-      "version_ranges": [
-        {
-          "vendor": "php",
-          "product": "php",
-          "version": "*",
-          "start_including": "5.4.0",
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": "8.2.35"
-        },
-        {
-          "vendor": "php",
-          "product": "php",
-          "version": "*",
-          "start_including": "8.3.0",
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": "8.3.36"
-        },
-        {
-          "vendor": "php",
-          "product": "php",
-          "version": "*",
-          "start_including": "8.4.0",
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": "8.4.27"
-        },
-        {
-          "vendor": "php",
-          "product": "php",
-          "version": "*",
-          "start_including": "8.5.0",
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": "8.5.12"
-        },
-        {
-          "vendor": "siemens",
-          "product": "ruggedcom_ape1808_firmware",
-          "version": "-",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "*",
-          "start_including": "10.2.0",
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": "10.2.7"
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.7",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.8",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.9",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os",
-          "version": "10.2.10",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": null
-        }
-      ],
-      "aliases": [
-        {
-          "vendor": "php",
-          "product": "php"
-        },
-        {
-          "vendor": "siemens",
-          "product": "ruggedcom_ape1808_firmware"
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "pan-os"
-        },
-        {
-          "vendor": "paloaltonetworks",
-          "product": "panorama_virtual_appliance"
-        }
-      ]
+      "version_ranges": [],
+      "aliases": []
     },
     {
       "id": "CVE-2015-3306",
@@ -1081,7 +744,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.96525,
-      "epss_percentile": 0.99881,
+      "epss_percentile": 0.99882,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 44.3,
@@ -1161,7 +824,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.09813,
-      "epss_percentile": 0.95524,
+      "epss_percentile": 0.95532,
       "smb_matches": [
         "Windows"
       ],
@@ -1203,7 +866,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.81763,
-      "epss_percentile": 0.99643,
+      "epss_percentile": 0.99644,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 41.4,
@@ -1243,7 +906,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.04573,
-      "epss_percentile": 0.91572,
+      "epss_percentile": 0.91586,
       "smb_matches": [
         "Fortinet"
       ],
@@ -1325,7 +988,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.01343,
-      "epss_percentile": 0.71211,
+      "epss_percentile": 0.71257,
       "smb_matches": [
         "Fortinet"
       ],
@@ -1366,70 +1029,25 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00518,
+      "epss_percentile": 0.43917,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 40.0,
+      "score": 40.1,
       "score_components": {
         "cvss": 40.0,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 10.0 (3.1, CRITICAL) contributes 40.0 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.44. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 40.0 out of 100."
+        "Total 40.1 out of 100."
       ],
       "summary": "CVE-2026-105781 is a critical vulnerability in the affected software. Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability that could result in arbitrary code execution in the context of the current user. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@adobe.com",
-          "url": "https://www.adobe.com/trust/security/products/campaign/apsb26-162.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-104351",
-      "kind": "cve",
-      "cve_id": "CVE-2026-104351",
-      "title": "Adobe Campaign Classic (ACC) is affected by an Improper Control of Generation of Code ('Code Injection') vulnerability that could result in…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-27T17:16:55.593",
-      "kev_date_added": "",
-      "description": "Adobe Campaign Classic (ACC) is affected by an Improper Control of Generation of Code ('Code Injection') vulnerability that could result in arbitrary code execution in the context of the current user. A low-privileged attacker could exploit this vulnerability to execute arbitrary code. Exploitation of this issue does not require user interaction. Scope is changed.",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.6,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.6 out of 100."
-      ],
-      "summary": "CVE-2026-104351 is a critical vulnerability in the affected software. Adobe Campaign Classic (ACC) is affected by an Improper Control of Generation of Code ('Code Injection') vulnerability that could result in arbitrary code execution in the context of the current user. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
@@ -1456,23 +1074,23 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.013,
+      "epss_percentile": 0.70339,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 39.6,
+      "score": 39.9,
       "score_components": {
         "cvss": 39.6,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.3,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.70. That contributes 0.3 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.6 out of 100."
+        "Total 39.9 out of 100."
       ],
       "summary": "CVE-2026-104353 is a critical vulnerability in the affected software. Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability that could result in arbitrary code execution in the context of the current user. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -1487,45 +1105,49 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-105489",
+      "id": "CVE-2026-104351",
       "kind": "cve",
-      "cve_id": "CVE-2026-105489",
-      "title": "Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnera…",
+      "cve_id": "CVE-2026-104351",
+      "title": "Adobe Campaign Classic (ACC) is affected by an Improper Control of Generation of Code ('Code Injection') vulnerability that could result in…",
       "vendor": "",
       "product": "",
-      "published": "2026-10-27T17:16:56.080",
+      "published": "2026-10-27T17:16:55.593",
       "kev_date_added": "",
-      "description": "Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability that could result in arbitrary code execution in the context of the current user. A low-privileged attacker could exploit this vulnerability to execute arbitrary code. Exploitation of this issue does not require user interaction. Scope is changed.",
+      "description": "Adobe Campaign Classic (ACC) is affected by an Improper Control of Generation of Code ('Code Injection') vulnerability that could result in arbitrary code execution in the context of the current user. A low-privileged attacker could exploit this vulnerability to execute arbitrary code. Exploitation of this issue does not require user interaction. Scope is changed.",
       "cvss": 9.9,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00573,
+      "epss_percentile": 0.47219,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 39.6,
+      "score": 39.7,
       "score_components": {
         "cvss": 39.6,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.47. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.6 out of 100."
+        "Total 39.7 out of 100."
       ],
-      "summary": "CVE-2026-105489 is a critical vulnerability in the affected software. Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability that could result in arbitrary code execution in the context of the current user. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-104351 is a critical vulnerability in the affected software. Adobe Campaign Classic (ACC) is affected by an Improper Control of Generation of Code ('Code Injection') vulnerability that could result in arbitrary code execution in the context of the current user. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
           "label": "psirt@adobe.com",
           "url": "https://www.adobe.com/trust/security/products/campaign/apsb26-162.html"
+        },
+        {
+          "label": "The Hacker News",
+          "url": "https://thehackernews.com/2026/10/adobe-fixes-8-critical-campaign-classic.html"
         }
       ],
       "version_ranges": [],
@@ -1546,23 +1168,23 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.0049,
+      "epss_percentile": 0.41983,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 39.6,
+      "score": 39.7,
       "score_components": {
         "cvss": 39.6,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.42. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.6 out of 100."
+        "Total 39.7 out of 100."
       ],
       "summary": "CVE-2026-105780 is a critical vulnerability in the affected software. Adobe Campaign Classic (ACC) is affected by an Incorrect Authorization vulnerability that could result in arbitrary code execution in the context of the current user. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -1577,22 +1199,22 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-115806",
+      "id": "CVE-2026-115915",
       "kind": "cve",
-      "cve_id": "CVE-2026-115806",
-      "title": "The Prime Mover – Backup and Migration plugin for WordPress is vulnerable to PHP Object Injection in all versions up to, and including, 2.2…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-24T05:17:04.900",
+      "cve_id": "CVE-2026-115915",
+      "title": "vLLM is an inference and serving engine for large language models. Prior to 0.32.0, ImageMediaIO passes attacker-controlled image bytes to…",
+      "vendor": "vllm",
+      "product": "vllm",
+      "published": "2026-10-26T18:17:38.883",
       "kev_date_added": "",
-      "description": "The Prime Mover – Backup and Migration plugin for WordPress is vulnerable to PHP Object Injection in all versions up to, and including, 2.2.1 via deserialization of untrusted input in the migration search-and-replace routine (recursiveUnserializeReplace()). An unauthenticated attacker can store a crafted, base64-encoded serialized object in wp_comments.comment_content through the standard comment-submission endpoint (wp-comments-post.php). When an administrator subsequently performs a routine P…",
+      "description": "vLLM is an inference and serving engine for large language models. Prior to 0.32.0, ImageMediaIO passes attacker-controlled image bytes to Pillow through Image.open(BytesIO(data)) without restricting decoder selection, and the MIME label does not constrain the selected format. Image-capable request paths through parse_image() and fetch_image() can therefore dispatch an EPS payload to host components. A host with Ghostscript affected by CVE-2024-29510 can execute commands with the vLLM process's…",
       "cvss": 9.8,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.00549,
-      "epss_percentile": 0.45769,
+      "epss": 0.00631,
+      "epss_percentile": 0.5012,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.3,
@@ -1605,48 +1227,59 @@
       "reasons": [
         "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.46. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.50. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 39.3 out of 100."
       ],
-      "summary": "CVE-2026-115806 is a critical vulnerability in the affected software. The Prime Mover – Backup and Migration plugin for WordPress is vulnerable to PHP Object Injection in all versions up to, and including, 2.2.1 via deserialization of untrusted input in the migration search-and-replace routine (recursiveUnserializeReplace()). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary": "CVE-2026-115915 is a critical vulnerability in vllm. vLLM is an inference and serving engine for large language models. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use vllm. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/prime-mover/tags/2.2.1/utilities/PrimeMoverSearchReplace.php#L1281"
+          "label": "security-advisories@github.com",
+          "url": "https://github.com/vllm-project/vllm/commit/710ac56e691d4713feca50a43e6c440f07d373fd"
         },
         {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/prime-mover/tags/2.2.1/utilities/PrimeMoverSearchReplace.php#L391"
+          "label": "security-advisories@github.com",
+          "url": "https://github.com/vllm-project/vllm/pull/60022"
         },
         {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/prime-mover/tags/2.2.1/utilities/PrimeMoverSearchReplace.php#L422"
+          "label": "security-advisories@github.com",
+          "url": "https://github.com/vllm-project/vllm/releases/tag/v0.32.0"
         },
         {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/prime-mover/tags/2.2.1/utilities/PrimeMoverSearchReplace.php#L899"
-        },
-        {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/prime-mover/tags/2.2.1/vendor/freemius/includes/managers/class-fs-clone-manager.php#L1636"
+          "label": "security-advisories@github.com",
+          "url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-h3rc-j82p-2c3h"
         }
       ],
-      "version_ranges": [],
-      "aliases": []
+      "version_ranges": [
+        {
+          "vendor": "vllm",
+          "product": "vllm",
+          "version": "*",
+          "start_including": "0.30.0",
+          "start_excluding": null,
+          "end_including": null,
+          "end_excluding": "0.32.0"
+        }
+      ],
+      "aliases": [
+        {
+          "vendor": "vllm",
+          "product": "vllm"
+        }
+      ]
     },
     {
-      "id": "CVE-2026-106013",
+      "id": "CVE-2026-103406",
       "kind": "cve",
-      "cve_id": "CVE-2026-106013",
-      "title": "The Jupiter X Core plugin for WordPress is vulnerable to Authentication Bypass via the Twitter/X Social Login handler in all versions up to…",
+      "cve_id": "CVE-2026-103406",
+      "title": "An Improper Neutralization of Special Elements used in an OS Command vulnerability in the AutomatedProvisioner in Juniper Networks Session…",
       "vendor": "",
       "product": "",
-      "published": "2026-10-28T02:17:01.303",
+      "published": "2026-10-28T17:17:25.830",
       "kev_date_added": "",
-      "description": "The Jupiter X Core plugin for WordPress is vulnerable to Authentication Bypass via the Twitter/X Social Login handler in all versions up to and including 4.61.0. The vulnerability exists within the verify_twitter_callback function because after exchanging the visitor's oauth_verifier for their access token, the handler never calls setOauthToken() to reassign the returned credentials to the TwitterOAuth client, causing the subsequent account/verify_credentials API call to remain signed with the…",
+      "description": "An Improper Neutralization of Special Elements used in an OS Command vulnerability in the AutomatedProvisioner in Juniper Networks Session Smart Conductor allows a remote attacker to execute arbitrary commands as root via a specially crafted salt minion ID.",
       "cvss": 9.8,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
@@ -1670,32 +1303,28 @@
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 39.2 out of 100."
       ],
-      "summary": "CVE-2026-106013 is a critical vulnerability in the affected software. The Jupiter X Core plugin for WordPress is vulnerable to Authentication Bypass via the Twitter/X Social Login handler in all versions up to and including 4.61.0. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-103406 is a critical vulnerability in the affected software. An Improper Neutralization of Special Elements used in an OS Command vulnerability in the AutomatedProvisioner in Juniper Networks Session Smart Conductor allows a remote attacker to execute arbitrary commands as root via a specially crafted salt minion ID. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/changeset/3759312/jupiterx-core/trunk/includes/extensions/raven/includes/modules/forms/classes/social-login-handler/twitter.php"
-        },
-        {
-          "label": "security@wordfence.com",
-          "url": "https://www.wordfence.com/threat-intel/vulnerabilities/id/1ad42de2-9ed1-4cf6-a031-22789be4cbe2?source=cve"
+          "label": "sirt@juniper.net",
+          "url": "https://supportportal.juniper.net/JSA112183"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-109218",
+      "id": "CVE-2026-103409",
       "kind": "cve",
-      "cve_id": "CVE-2026-109218",
-      "title": "The Contact Manager plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 9.1.2 via the add_mes…",
+      "cve_id": "CVE-2026-103409",
+      "title": "A Missing authentication for critical function vulnerability in Juniper Networks Session Smart Router allows an unauthenticated network-bas…",
       "vendor": "",
       "product": "",
-      "published": "2026-10-28T07:16:44.120",
+      "published": "2026-10-28T17:17:27.840",
       "kev_date_added": "",
-      "description": "The Contact Manager plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 9.1.2 via the add_message function. This is due to an incomplete extension blacklist that fails to detect dangerous extensions when a trailing dot causes the extension-derivation routine to return an empty string, which sanitize_file_name() then silently removes before the file is written to disk. This makes it possible for unauthenticated attackers to upload files that may be e…",
+      "description": "A Missing authentication for critical function vulnerability in Juniper Networks Session Smart Router allows an unauthenticated network-based attacker to obtain administrative privileges by passing crafted URL parameters to an insecure endpoint running as root.\n\nNote that this vulnerability can only be exploited prior to the device being onboarded to Mist/Conductor. The issue can no longer be exploited once a device is onboarded to Mist/Conductor.",
       "cvss": 9.8,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
@@ -1719,44 +1348,28 @@
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 39.2 out of 100."
       ],
-      "summary": "CVE-2026-109218 is a critical vulnerability in the affected software. The Contact Manager plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 9.1.2 via the add_message function. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-103409 is a critical vulnerability in the affected software. A Missing authentication for critical function vulnerability in Juniper Networks Session Smart Router allows an unauthenticated network-based attacker to obtain administrative privileges by passing crafted URL parameters to an insecure endpoint running as root. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "security@wordfence.com",
-          "url": "https://fr.wordpress.org/plugins/contact-manager/"
-        },
-        {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/contact-manager/tags/9.1.2/contact-manager.php#L42"
-        },
-        {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/contact-manager/tags/9.1.2/includes/add-message.php#L254"
-        },
-        {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/contact-manager/tags/9.1.2/includes/add-message.php#L256"
-        },
-        {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/contact-manager/tags/9.1.2/includes/forms/processing.php#L102"
+          "label": "sirt@juniper.net",
+          "url": "https://supportportal.juniper.net/JSA112183"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-84999",
+      "id": "CVE-2026-109516",
       "kind": "cve",
-      "cve_id": "CVE-2026-84999",
-      "title": "The Pie Register Premium plugin for WordPress is vulnerable to Unrestricted File Type Upload in all versions up to, and including, 3.8.4.0…",
+      "cve_id": "CVE-2026-109516",
+      "title": "The Bot for Telegram on WooCommerce plugin for WordPress is vulnerable to Authentication Bypass leading to Account Takeover in all versions…",
       "vendor": "",
       "product": "",
-      "published": "2026-10-28T03:17:16.157",
+      "published": "2026-10-29T04:18:22.763",
       "kev_date_added": "",
-      "description": "The Pie Register Premium plugin for WordPress is vulnerable to Unrestricted File Type Upload in all versions up to, and including, 3.8.4.0 via the piereg_file_upload function. This is due to the plugin performing file type validation via wp_check_filetype and wp_check_filetype_and_ext but never checking whether those validation calls produced errors before move_uploaded_file() is called, combined with no nonce or capability check on the AJAX handler. This makes it possible for unauthenticated a…",
+      "description": "The Bot for Telegram on WooCommerce plugin for WordPress is vulnerable to Authentication Bypass leading to Account Takeover in all versions up to, and including, 1.3.0. The `/wp-json/woo-telegram/v1/main/` REST endpoint is registered with `permission_callback => '__return_true'` and performs no Telegram webhook signature verification, allowing an unauthenticated attacker to POST a forged bot update with a `message.chat.id` set to any WordPress login name; `bftow_get_user_system_id()` resolves t…",
       "cvss": 9.8,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
@@ -1780,33 +1393,45 @@
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 39.2 out of 100."
       ],
-      "summary": "CVE-2026-84999 is a critical vulnerability in the affected software. The Pie Register Premium plugin for WordPress is vulnerable to Unrestricted File Type Upload in all versions up to, and including, 3.8.4.0 via the piereg_file_upload function. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-109516 is a critical vulnerability in the affected software. The Bot for Telegram on WooCommerce plugin for WordPress is vulnerable to Authentication Bypass leading to Account Takeover in all versions up to, and including, 1.3.0. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
           "label": "security@wordfence.com",
-          "url": "https://pieregister.com/"
+          "url": "https://plugins.trac.wordpress.org/browser/bot-for-telegram-on-woocommerce/tags/1.3.0/includes/BFTOW_Telegram.php#L91"
         },
         {
           "label": "security@wordfence.com",
-          "url": "https://www.wordfence.com/threat-intel/vulnerabilities/id/8385dd30-28e5-4572-8504-2f3e7029bad6?source=cve"
+          "url": "https://plugins.trac.wordpress.org/browser/bot-for-telegram-on-woocommerce/tags/1.3.0/includes/BFTOW_Telegram.php#L98"
+        },
+        {
+          "label": "security@wordfence.com",
+          "url": "https://plugins.trac.wordpress.org/browser/bot-for-telegram-on-woocommerce/tags/1.3.0/includes/BFTOW_User.php#L149"
+        },
+        {
+          "label": "security@wordfence.com",
+          "url": "https://plugins.trac.wordpress.org/browser/bot-for-telegram-on-woocommerce/tags/1.3.0/includes/BFTOW_User.php#L44"
+        },
+        {
+          "label": "security@wordfence.com",
+          "url": "https://plugins.trac.wordpress.org/browser/bot-for-telegram-on-woocommerce/tags/1.3.0/includes/BFTOW_User.php#L62"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-48360",
+      "id": "CVE-2026-42922",
       "kind": "cve",
-      "cve_id": "CVE-2026-48360",
-      "title": "Adobe Connect is affected by an Improper Control of Generation of Code ('Code Injection') vulnerability that could result in arbitrary code…",
+      "cve_id": "CVE-2026-42922",
+      "title": "A authorization bypass vulnerability exists in the /nodered functionality of FUXA (version(s): 1.3.2-2809). A specially crafted HTTP reques…",
       "vendor": "",
       "product": "",
-      "published": "2026-10-27T17:17:00.740",
+      "published": "2026-10-29T04:18:36.777",
       "kev_date_added": "",
-      "description": "Adobe Connect is affected by an Improper Control of Generation of Code ('Code Injection') vulnerability that could result in arbitrary code execution in the context of the current user. An attacker could exploit this vulnerability to execute arbitrary code. Exploitation of this issue requires user interaction in that a victim must visit a maliciously crafted URL or interact with a compromised web page. Scope is changed.",
-      "cvss": 9.6,
+      "description": "A authorization bypass vulnerability exists in the /nodered functionality of FUXA (version(s): 1.3.2-2809). A specially crafted HTTP request can lead to a arbitrary code execution. An attacker can make an unauthenticated HTTP request to trigger this vulnerability.",
+      "cvss": 9.8,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
@@ -1815,27 +1440,27 @@
       "epss_percentile": null,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 38.4,
+      "score": 39.2,
       "score_components": {
-        "cvss": 38.4,
+        "cvss": 39.2,
         "kev": 0.0,
         "epss": 0.0,
         "smb": 0.0
       },
       "reasons": [
-        "CVSS 9.6 (3.1, CRITICAL) contributes 38.4 of 40.",
+        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
         "No EPSS score was available for this entry, so that part contributes 0 of 20.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 38.4 out of 100."
+        "Total 39.2 out of 100."
       ],
-      "summary": "CVE-2026-48360 is a critical vulnerability in the affected software. Adobe Connect is affected by an Improper Control of Generation of Code ('Code Injection') vulnerability that could result in arbitrary code execution in the context of the current user. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-42922 is a critical vulnerability in the affected software. A authorization bypass vulnerability exists in the /nodered functionality of FUXA (version(s): 1.3.2-2809). It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "psirt@adobe.com",
-          "url": "https://www.adobe.com/trust/security/products/connect/apsb26-182.html"
+          "label": "talos-cna@cisco.com",
+          "url": "https://talosintelligence.com/vulnerability_reports/TALOS-2026-2419"
         }
       ],
       "version_ranges": [],
@@ -1857,7 +1482,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.01377,
-      "epss_percentile": 0.7192,
+      "epss_percentile": 0.71963,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.9,
@@ -1918,7 +1543,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00405,
-      "epss_percentile": 0.34597,
+      "epss_percentile": 0.34656,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.7,
@@ -1967,7 +1592,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00405,
-      "epss_percentile": 0.34598,
+      "epss_percentile": 0.34657,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.7,
@@ -2001,110 +1626,61 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-115384",
+      "id": "CVE-2026-116485",
       "kind": "cve",
-      "cve_id": "CVE-2026-115384",
-      "title": "Wasmtime 39.0.0 before 48.0.4 and 49.0.0 before 49.0.2 contains a stack buffer overflow vulnerability that allows malicious guests to write…",
+      "cve_id": "CVE-2026-116485",
+      "title": "danmu_api before 1.21.7 contains an authentication bypass vulnerability that allows unauthenticated attackers to modify server environment…",
       "vendor": "",
       "product": "",
-      "published": "2026-10-22T19:17:45.543",
+      "published": "2026-10-26T14:16:37.040",
       "kev_date_added": "",
-      "description": "Wasmtime 39.0.0 before 48.0.4 and 49.0.0 before 49.0.2 contains a stack buffer overflow vulnerability that allows malicious guests to write ~16KB to the native stack via unvalidated async callback result types. Attackers can supply components with mistyped component-model-async callback functions to overwrite return addresses, crashing the host or escaping the sandbox.",
-      "cvss": 9.4,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00312,
-      "epss_percentile": 0.23905,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.7,
-      "score_components": {
-        "cvss": 37.6,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.4 (4.0, CRITICAL) contributes 37.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.24. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.7 out of 100."
-      ],
-      "summary": "CVE-2026-115384 is a critical vulnerability in the affected software. Wasmtime 39.0.0 before 48.0.4 and 49.0.0 before 49.0.2 contains a stack buffer overflow vulnerability that allows malicious guests to write ~16KB to the native stack via unvalidated async callback result types. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/bytecodealliance/wasmtime/security/advisories/GHSA-32h6-97mm-8q3c"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/wasmtime-39.0.0-before-48.0.4-and-49.0.0-before-49.0.2-stack-buffer-overflow"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-114575",
-      "kind": "cve",
-      "cve_id": "CVE-2026-114575",
-      "title": "A flaw has been found in TOTOLINK A950RG 4.1.2cu.5268_B20221104. Affected by this issue is the function UploadCustomModule of the file lib/…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-22T01:16:58.533",
-      "kev_date_added": "",
-      "description": "A flaw has been found in TOTOLINK A950RG 4.1.2cu.5268_B20221104. Affected by this issue is the function UploadCustomModule of the file lib/cste_modules/product.so. Executing a manipulation of the argument FileMd5 can lead to command injection. The attack can be launched remotely. The exploit has been published and may be used.",
+      "description": "danmu_api before 1.21.7 contains an authentication bypass vulnerability that allows unauthenticated attackers to modify server environment configuration when the default TOKEN is used and ADMIN_TOKEN is unset. Attackers can send POST requests to /api/env/set, /api/env/add, or /api/env/del to set ADMIN_TOKEN, lock out operators, redirect OTHER_SERVER or PROXY_URL for SSRF, and trigger redeployment.",
       "cvss": 9.3,
       "cvss_version": "4.0",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.0221,
-      "epss_percentile": 0.82502,
+      "epss": 0.02349,
+      "epss_percentile": 0.83626,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 37.6,
+      "score": 37.7,
       "score_components": {
         "cvss": 37.2,
         "kev": 0.0,
-        "epss": 0.4,
+        "epss": 0.5,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.02 means FIRST estimates about a 2% probability of exploitation activity in the next 30 days, percentile 0.83. That contributes 0.4 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.02 means FIRST estimates about a 2% probability of exploitation activity in the next 30 days, percentile 0.84. That contributes 0.5 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.6 out of 100."
+        "Total 37.7 out of 100."
       ],
-      "summary": "CVE-2026-114575 is a critical vulnerability in the affected software. A flaw has been found in TOTOLINK A950RG 4.1.2cu.5268_B20221104. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-116485 is a critical vulnerability in the affected software. danmu_api before 1.21.7 contains an authentication bypass vulnerability that allows unauthenticated attackers to modify server environment configuration when the default TOKEN is used and ADMIN_TOKEN is unset. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "cna@vuldb.com",
-          "url": "https://gist.github.com/H3rmesk1t/3a629799af33425e07571182e539a794"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/huangxd-/danmu_api"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/cve/CVE-2026-114575"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/huangxd-/danmu_api/blob/5ef63a01bae7c4bad4dcd7bafbbcdcf33aa82564/danmu_api/worker.js#L223-L244"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/submit/1021292"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/huangxd-/danmu_api/commit/6e93478064a0ce4e7ed3bc2eae88adaad1b7ab02"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/424943"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/huangxd-/danmu_api/issues/531"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/424943/cti"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/danmu-api-before-1.21.7-authentication-bypass-via-default-token-in-env-endpoints"
         }
       ],
       "version_ranges": [],
@@ -2126,7 +1702,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.01014,
-      "epss_percentile": 0.63074,
+      "epss_percentile": 0.63132,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.4,
@@ -2168,22 +1744,22 @@
       "aliases": []
     },
     {
-      "id": "CVE-2021-48016",
+      "id": "CVE-2026-104350",
       "kind": "cve",
-      "cve_id": "CVE-2021-48016",
-      "title": "DedeCMS through 5.8.1-beta contains a PHP code injection vulnerability in ShowMsg() where the HTTP Referer header is written into a DedeTem…",
+      "cve_id": "CVE-2026-104350",
+      "title": "Adobe Campaign Classic (ACC) is affected by a reflected Cross-Site Scripting (XSS) vulnerability. An attacker could exploit this vulnerabil…",
       "vendor": "",
       "product": "",
-      "published": "2026-10-22T11:17:04.690",
+      "published": "2026-10-27T17:16:55.457",
       "kev_date_added": "",
-      "description": "DedeCMS through 5.8.1-beta contains a PHP code injection vulnerability in ShowMsg() where the HTTP Referer header is written into a DedeTemplate string and included. Unauthenticated attackers can send a crafted Referer to /plus/flink.php?dopost=save with an empty validate code to execute arbitrary PHP and system commands. Exploitation evidence was first observed by the Shadowserver Foundation on 2023-10-14.",
+      "description": "Adobe Campaign Classic (ACC) is affected by a reflected Cross-Site Scripting (XSS) vulnerability. An attacker could exploit this vulnerability to inject malicious scripts into a web page, potentially gaining elevated access or control over the victim's account or session. Exploitation of this issue requires user interaction in that a victim must visit a maliciously crafted URL or interact with a compromised web page. Scope is changed.",
       "cvss": 9.3,
-      "cvss_version": "4.0",
+      "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.00441,
-      "epss_percentile": 0.38092,
+      "epss": 0.00605,
+      "epss_percentile": 0.48814,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.3,
@@ -2194,153 +1770,19 @@
         "smb": 0.0
       },
       "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.38. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.3 out of 100."
-      ],
-      "summary": "CVE-2021-48016 is a critical vulnerability in the affected software. DedeCMS through 5.8.1-beta contains a PHP code injection vulnerability in ShowMsg() where the HTTP Referer header is written into a DedeTemplate string and included. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/dedecms/DedeCMS/blob/v5.8.1/include/common.func.php"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/projectdiscovery/nuclei-templates/blob/main/http/vulnerabilities/dedecms/dedecms-rce.yaml"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://srcincite.io/blog/2021/09/30/chasing-a-dream-pwning-the-biggest-cms-in-china.html"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/dedecms-5.8.1-beta-unauthenticated-rce-via-plus-flink-php"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2022-51026",
-      "kind": "cve",
-      "cve_id": "CVE-2022-51026",
-      "title": "Bytebase 0.12.0 before 1.0.1 contains an authentication bypass vulnerability that allows unauthenticated attackers to log in as any user. T…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-22T19:17:30.883",
-      "kev_date_added": "",
-      "description": "Bytebase 0.12.0 before 1.0.1 contains an authentication bypass vulnerability that allows unauthenticated attackers to log in as any user. The flaw stems from trusting client-supplied GitLab provider configuration in the POST /api/auth/login/GITLAB_SELF_HOST endpoint. Attackers can set instanceUrl to a server they control that returns an active user with a chosen email. Bytebase then issues session tokens for that principal, letting attackers impersonate existing users including the Owner or cre…",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00613,
-      "epss_percentile": 0.49137,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.3,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "CVSS 9.3 (3.1, CRITICAL) contributes 37.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
         "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.49. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 37.3 out of 100."
       ],
-      "summary": "CVE-2022-51026 is a critical vulnerability in the affected software. Bytebase 0.12.0 before 1.0.1 contains an authentication bypass vulnerability that allows unauthenticated attackers to log in as any user. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-104350 is a critical vulnerability in the affected software. Adobe Campaign Classic (ACC) is affected by a reflected Cross-Site Scripting (XSS) vulnerability. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/bytebase/bytebase"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/bytebase/bytebase/blob/1.0.0/server/auth.go#L79-L93"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/bytebase/bytebase/commit/d69e682243b25b51dd52912a26e2f259b5f3db2d"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/bytebase/bytebase/pull/834"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/bytebase/bytebase/releases/tag/1.0.1"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-114383",
-      "kind": "cve",
-      "cve_id": "CVE-2026-114383",
-      "title": "A weakness has been identified in TOTOLINK EX200 5.2.3c.7200. This impacts the function setWiFiAclAddConfig of the file /cgi-bin/cstecgi.cg…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-21T22:16:49.077",
-      "kev_date_added": "",
-      "description": "A weakness has been identified in TOTOLINK EX200 5.2.3c.7200. This impacts the function setWiFiAclAddConfig of the file /cgi-bin/cstecgi.cgi of the component wireless.so. This manipulation of the argument macAddress causes stack-based buffer overflow. The attack can be initiated remotely. The exploit has been made available to the public and could be used for attacks.",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00653,
-      "epss_percentile": 0.5109,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.3,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.51. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.3 out of 100."
-      ],
-      "summary": "CVE-2026-114383 is a critical vulnerability in the affected software. A weakness has been identified in TOTOLINK EX200 5.2.3c.7200. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://github.com/qwq-nm/CVE/blob/f5d61361eb7d846479f6d76c0aa4273e9af46d27/CVE2/report.md"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/cve/CVE-2026-114383"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/submit/1019883"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/424742"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/424742/cti"
+          "label": "psirt@adobe.com",
+          "url": "https://www.adobe.com/trust/security/products/campaign/apsb26-162.html"
         }
       ],
       "version_ranges": [],
@@ -2362,7 +1804,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00458,
-      "epss_percentile": 0.39554,
+      "epss_percentile": 0.39631,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.3,
@@ -2408,67 +1850,6 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-116485",
-      "kind": "cve",
-      "cve_id": "CVE-2026-116485",
-      "title": "danmu_api before 1.21.7 contains an authentication bypass vulnerability that allows unauthenticated attackers to modify server environment…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-26T14:16:37.040",
-      "kev_date_added": "",
-      "description": "danmu_api before 1.21.7 contains an authentication bypass vulnerability that allows unauthenticated attackers to modify server environment configuration when the default TOKEN is used and ADMIN_TOKEN is unset. Attackers can send POST requests to /api/env/set, /api/env/add, or /api/env/del to set ADMIN_TOKEN, lock out operators, redirect OTHER_SERVER or PROXY_URL for SSRF, and trigger redeployment.",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00668,
-      "epss_percentile": 0.51694,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.3,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.52. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.3 out of 100."
-      ],
-      "summary": "CVE-2026-116485 is a critical vulnerability in the affected software. danmu_api before 1.21.7 contains an authentication bypass vulnerability that allows unauthenticated attackers to modify server environment configuration when the default TOKEN is used and ADMIN_TOKEN is unset. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/huangxd-/danmu_api"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/huangxd-/danmu_api/blob/5ef63a01bae7c4bad4dcd7bafbbcdcf33aa82564/danmu_api/worker.js#L223-L244"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/huangxd-/danmu_api/commit/6e93478064a0ce4e7ed3bc2eae88adaad1b7ab02"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/huangxd-/danmu_api/issues/531"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/danmu-api-before-1.21.7-authentication-bypass-via-default-token-in-env-endpoints"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
       "id": "CVE-2026-116508",
       "kind": "cve",
       "cve_id": "CVE-2026-116508",
@@ -2484,7 +1865,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00609,
-      "epss_percentile": 0.48926,
+      "epss_percentile": 0.48991,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.3,
@@ -2530,51 +1911,6 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-104350",
-      "kind": "cve",
-      "cve_id": "CVE-2026-104350",
-      "title": "Adobe Campaign Classic (ACC) is affected by a reflected Cross-Site Scripting (XSS) vulnerability. An attacker could exploit this vulnerabil…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-27T17:16:55.457",
-      "kev_date_added": "",
-      "description": "Adobe Campaign Classic (ACC) is affected by a reflected Cross-Site Scripting (XSS) vulnerability. An attacker could exploit this vulnerability to inject malicious scripts into a web page, potentially gaining elevated access or control over the victim's account or session. Exploitation of this issue requires user interaction in that a victim must visit a maliciously crafted URL or interact with a compromised web page. Scope is changed.",
-      "cvss": 9.3,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.2,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (3.1, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
-      ],
-      "summary": "CVE-2026-104350 is a critical vulnerability in the affected software. Adobe Campaign Classic (ACC) is affected by a reflected Cross-Site Scripting (XSS) vulnerability. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@adobe.com",
-          "url": "https://www.adobe.com/trust/security/products/campaign/apsb26-162.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
       "id": "CVE-2026-117532",
       "kind": "cve",
       "cve_id": "CVE-2026-117532",
@@ -2589,23 +1925,23 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00679,
+      "epss_percentile": 0.52238,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 37.2,
+      "score": 37.3,
       "score_components": {
         "cvss": 37.2,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.52. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
+        "Total 37.3 out of 100."
       ],
       "summary": "CVE-2026-117532 is a critical vulnerability in the affected software. REDAXO core from 5.3.0 before 5.21.4 contains an authentication bypass vulnerability in the structure/history plugin that allows unauthenticated attackers to forge temporary login tokens. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -2624,15 +1960,15 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-117564",
+      "id": "CVE-2026-118690",
       "kind": "cve",
-      "cve_id": "CVE-2026-117564",
-      "title": "nest-admin before 1.0.1 contains an authentication bypass vulnerability that allows unauthenticated attackers to forge administrator tokens…",
+      "cve_id": "CVE-2026-118690",
+      "title": "Signal K Server before 2.33.0 contains a missing authentication vulnerability that allows unauthenticated remote attackers to download log…",
       "vendor": "",
       "product": "",
-      "published": "2026-10-27T14:16:38.720",
+      "published": "2026-10-28T22:17:13.070",
       "kev_date_added": "",
-      "description": "nest-admin before 1.0.1 contains an authentication bypass vulnerability that allows unauthenticated attackers to forge administrator tokens by using a hardcoded JWT_SECRET committed in .env.production. Attackers can sign tokens with the known secret that JwtStrategy and RbacGuard trust, impersonating any user ID or claiming the admin role for full administrative access.",
+      "description": "Signal K Server before 2.33.0 contains a missing authentication vulnerability that allows unauthenticated remote attackers to download log archives via the /skServer/ziplogs endpoint. Attackers can extract the JWT secretKey from security.json in the ZIP, forge administrator tokens, and create persistent admin accounts for full server control.",
       "cvss": 9.3,
       "cvss_version": "4.0",
       "severity": "CRITICAL",
@@ -2656,143 +1992,29 @@
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 37.2 out of 100."
       ],
-      "summary": "CVE-2026-117564 is a critical vulnerability in the affected software. nest-admin before 1.0.1 contains an authentication bypass vulnerability that allows unauthenticated attackers to forge administrator tokens by using a hardcoded JWT_SECRET committed in .env.production. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-118690 is a critical vulnerability in the affected software. Signal K Server before 2.33.0 contains a missing authentication vulnerability that allows unauthenticated remote attackers to download log archives via the /skServer/ziplogs endpoint. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
           "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/buqiyuan/nest-admin"
+          "url": "https://github.com/SignalK/signalk-server"
         },
         {
           "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/buqiyuan/nest-admin/blob/2eeccc4cb699d1aedbe04b4437a9d095cde02c74/.env.production#L5"
+          "url": "https://github.com/SignalK/signalk-server/blob/v2.32.0/src/interfaces/logfiles.js#L30-L91"
         },
         {
           "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/buqiyuan/nest-admin/commit/f2cec8cb776cbf113115b33164dac69a46d24097"
+          "url": "https://github.com/SignalK/signalk-server/commit/728bab82742d16c54e50525b95dc9b6e32396107"
         },
         {
           "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/buqiyuan/nest-admin/issues/92"
+          "url": "https://github.com/SignalK/signalk-server/releases/tag/v2.33.0"
         },
         {
           "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/buqiyuan/nest-admin/issues/93"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-117601",
-      "kind": "cve",
-      "cve_id": "CVE-2026-117601",
-      "title": "Electrum before 4.8.3 fails to verify signatures of wallet-owned inputs in unconfirmed mempool transactions, allowing malicious servers to…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-27T14:16:39.947",
-      "kev_date_added": "",
-      "description": "Electrum before 4.8.3 fails to verify signatures of wallet-owned inputs in unconfirmed mempool transactions, allowing malicious servers to replace a just-broadcast transaction with a conflicting one. Attackers can swallow the user's transaction and display an invalid zero-fee copy paying an attacker address, tricking users into RBF fee-bumping and signing it.",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.2,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
-      ],
-      "summary": "CVE-2026-117601 is a critical vulnerability in the affected software. Electrum before 4.8.3 fails to verify signatures of wallet-owned inputs in unconfirmed mempool transactions, allowing malicious servers to replace a just-broadcast transaction with a conflicting one. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/spesmilo/electrum/commit/90fe30822561e515a9d2d6e5a352cc07780999eb"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/spesmilo/electrum/security/advisories/GHSA-6jp4-8v48-cc5v"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/electrum-before-4.8.3-missing-signature-verification-of-mempool-transactions"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-114403",
-      "kind": "cve",
-      "cve_id": "CVE-2026-114403",
-      "title": "PHPOffice PHPPresentation through 1.2.0 contains an insecure deserialization vulnerability that allows attackers to instantiate arbitrary P…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-21T13:18:31.753",
-      "kev_date_added": "",
-      "description": "PHPOffice PHPPresentation through 1.2.0 contains an insecure deserialization vulnerability that allows attackers to instantiate arbitrary PHP objects by supplying a crafted presentation file. Attackers can upload a ZIP containing PhpPresentation.xml that IOFactory::load passes to unserialize(), enabling gadget-chain code execution, file writes, or denial of service.",
-      "cvss": 9.2,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00477,
-      "epss_percentile": 0.41017,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 36.9,
-      "score_components": {
-        "cvss": 36.8,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.41. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 36.9 out of 100."
-      ],
-      "summary": "CVE-2026-114403 is a critical vulnerability in the affected software. PHPOffice PHPPresentation through 1.2.0 contains an insecure deserialization vulnerability that allows attackers to instantiate arbitrary PHP objects by supplying a crafted presentation file. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/PHPOffice/PHPPresentation"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/PHPOffice/PHPPresentation/blob/1.2.0/src/PhpPresentation/IOFactory.php#L39"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/PHPOffice/PHPPresentation/blob/1.2.0/src/PhpPresentation/Reader/Serialized.php#L77-L109"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://hackmd.io/@leediay/multiple_vulnerable_phppresentation"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/phpoffice-phppresentation-through-1.2.0-deserialization-via-reader-serialized-load"
+          "url": "https://github.com/SignalK/signalk-server/security/advisories/GHSA-4w32-qx5g-cpwv"
         }
       ],
       "version_ranges": [],
@@ -2814,7 +2036,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00322,
-      "epss_percentile": 0.25062,
+      "epss_percentile": 0.25131,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 36.9,
@@ -2860,6 +2082,416 @@
       "aliases": []
     },
     {
+      "id": "CVE-2026-115353",
+      "kind": "cve",
+      "cve_id": "CVE-2026-115353",
+      "title": "Mistune before 3.3.0 contains a path traversal vulnerability in the RST include directive that allows attackers to read arbitrary files by…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-22T19:17:41.227",
+      "kev_date_added": "",
+      "description": "Mistune before 3.3.0 contains a path traversal vulnerability in the RST include directive that allows attackers to read arbitrary files by supplying relative or absolute paths. Attackers can submit markdown containing include directives referencing ../ sequences or absolute paths to embed sensitive files like credentials or environment data in rendered HTML.",
+      "cvss": 9.2,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00388,
+      "epss_percentile": 0.32784,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 36.9,
+      "score_components": {
+        "cvss": 36.8,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.33. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 36.9 out of 100."
+      ],
+      "summary": "CVE-2026-115353 is a critical vulnerability in the affected software. Mistune before 3.3.0 contains a path traversal vulnerability in the RST include directive that allows attackers to read arbitrary files by supplying relative or absolute paths. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/lepture/mistune/security/advisories/GHSA-9jjx-3hq3-hx4j"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/mistune-before-3.3.0-path-traversal-via-include-directive"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-116014",
+      "kind": "cve",
+      "cve_id": "CVE-2026-116014",
+      "title": "open62541 1.5.0 before 1.5.7 contains an integer overflow in UA_DataType_fromStructureDescription() that wraps the 16-bit memSize field for…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-24T12:16:57.607",
+      "kev_date_added": "",
+      "description": "open62541 1.5.0 before 1.5.7 contains an integer overflow in UA_DataType_fromStructureDescription() that wraps the 16-bit memSize field for large custom structure definitions. A malicious OPC UA server can supply DataType definitions via UA_Client_getRemoteDataTypes(), causing decodeBinaryStructure() to overflow the heap, crashing clients or enabling code execution.",
+      "cvss": 9.2,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00432,
+      "epss_percentile": 0.37309,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 36.9,
+      "score_components": {
+        "cvss": 36.8,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.37. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 36.9 out of 100."
+      ],
+      "summary": "CVE-2026-116014 is a critical vulnerability in the affected software. open62541 1.5.0 before 1.5.7 contains an integer overflow in UA_DataType_fromStructureDescription() that wraps the 16-bit memSize field for large custom structure definitions. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/open62541/open62541/blob/v1.5.6/src/ua_types_definition.c#L274"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/open62541/open62541/commit/0cf4806768c493bc6ccffcd4419da24153b970ec"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/open62541/open62541/pull/8298"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/open62541/open62541/pull/8302"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/open62541/open62541/releases/tag/v1.5.7"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-116747",
+      "kind": "cve",
+      "cve_id": "CVE-2026-116747",
+      "title": "Kener 3.0.0 before 4.1.10 contains an authentication bypass vulnerability that allows unauthenticated attackers to forge session tokens by…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-26T22:16:59.463",
+      "kev_date_added": "",
+      "description": "Kener 3.0.0 before 4.1.10 contains an authentication bypass vulnerability that allows unauthenticated attackers to forge session tokens by using the hardcoded DUMMY_SECRET fallback key. When KENER_SECRET_KEY is empty or unset, attackers knowing an administrator email can sign a kener-user cookie to access /manage/api with full administrative privileges or forge password-reset tokens.",
+      "cvss": 9.2,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00623,
+      "epss_percentile": 0.49715,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 36.9,
+      "score_components": {
+        "cvss": 36.8,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.50. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 36.9 out of 100."
+      ],
+      "summary": "CVE-2026-116747 is a critical vulnerability in the affected software. Kener 3.0.0 before 4.1.10 contains an authentication bypass vulnerability that allows unauthenticated attackers to forge session tokens by using the hardcoded DUMMY_SECRET fallback key. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/rajnandan1/kener"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/rajnandan1/kener/blob/v4.1.9/src/lib/server/controllers/commonController.ts#L44-L55"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/rajnandan1/kener/commit/ff636483544c926eab5b5e3e26b811c0f52bcaf8"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/rajnandan1/kener/issues/871"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/rajnandan1/kener/releases/tag/v4.1.10"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-118375",
+      "kind": "cve",
+      "cve_id": "CVE-2026-118375",
+      "title": "llama.cpp b8841 before b11865 contains an out-of-bounds write vulnerability in the ggml-rpc RDMA transport rdma_recv() function that allows…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-28T03:17:14.077",
+      "kev_date_added": "",
+      "description": "llama.cpp b8841 before b11865 contains an out-of-bounds write vulnerability in the ggml-rpc RDMA transport rdma_recv() function that allows unauthenticated peers to overflow the rpc-server stack. Attackers advertising RDMA capabilities in the HELLO message can send up to 256 KiB into a 1-byte stack variable in rpc_serve_client(), crashing the server or potentially executing code.",
+      "cvss": 9.2,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00368,
+      "epss_percentile": 0.30546,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 36.9,
+      "score_components": {
+        "cvss": 36.8,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.31. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 36.9 out of 100."
+      ],
+      "summary": "CVE-2026-118375 is a critical vulnerability in the affected software. llama.cpp b8841 before b11865 contains an out-of-bounds write vulnerability in the ggml-rpc RDMA transport rdma_recv() function that allows unauthenticated peers to overflow the rpc-server stack. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/ggml-org/llama.cpp"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/ggml-org/llama.cpp/blob/620d2225cc436ab0b001e3200e590e3b286ef9ab/ggml/src/ggml-rpc/transport.cpp#L510-L528"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/ggml-org/llama.cpp/commit/9a0fde9967fa1a35b6e5dd1f47e1a3648b6fecc1"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/ggml-org/llama.cpp/pull/30399"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11865"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-48356",
+      "kind": "cve",
+      "cve_id": "CVE-2026-48356",
+      "title": "Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability",
+      "vendor": "Adobe",
+      "product": "Commerce and Magento",
+      "published": "2026-10-27",
+      "kev_date_added": "2026-10-27",
+      "description": "Adobe Commerce and Magento contain an unrestricted upload of file with dangerous type vulnerability that could result in arbitrary code execution in the context of the current user, potentially gaining elevated access or control over the victim's account or session.",
+      "cvss": null,
+      "cvss_version": null,
+      "severity": null,
+      "in_kev": true,
+      "ransomware": "Unknown",
+      "epss": 0.59078,
+      "epss_percentile": 0.9911,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 36.8,
+      "score_components": {
+        "cvss": 0.0,
+        "kev": 25.0,
+        "epss": 11.8,
+        "smb": 0.0
+      },
+      "reasons": [
+        "No CVSS score was published, so that part contributes 0 of 40.",
+        "Listed in the CISA Known Exploited Vulnerabilities catalog (added 2026-10-27), so that part contributes 25.0 of 25.",
+        "EPSS 0.59 means FIRST estimates about a 59% probability of exploitation activity in the next 30 days, percentile 0.99. That contributes 11.8 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 36.8 out of 100."
+      ],
+      "summary": "CVE-2026-48356 is a unspecified vulnerability in Adobe Commerce and Magento. Adobe Commerce and Magento contain an unrestricted upload of file with dangerous type vulnerability that could result in arbitrary code execution in the context of the current user, potentially gaining elevated access or control over the victim's account or session. The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "If you use Adobe Commerce and Magento, apply the vendor update. CISA lists this as already exploited. If you do not use it, you can skip this item.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "CISA advisories",
+          "url": "https://www.cisa.gov/news-events/alerts/2026/10/27/cisa-adds-two-known-exploited-vulnerabilities-catalog"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-105779",
+      "kind": "cve",
+      "cve_id": "CVE-2026-105779",
+      "title": "Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnera…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-27T17:16:56.193",
+      "kev_date_added": "",
+      "description": "Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability that could result in a Security feature bypass. A low-privileged attacker could leverage this vulnerability to bypass security measures and gain unauthorized read and limited write access. Exploitation of this issue does not require user interaction. Scope is changed.",
+      "cvss": 9.1,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00295,
+      "epss_percentile": 0.22086,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 36.5,
+      "score_components": {
+        "cvss": 36.4,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.1 (3.1, CRITICAL) contributes 36.4 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.22. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 36.5 out of 100."
+      ],
+      "summary": "CVE-2026-105779 is a critical vulnerability in the affected software. Adobe Campaign Classic (ACC) is affected by an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability that could result in a Security feature bypass. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "psirt@adobe.com",
+          "url": "https://www.adobe.com/trust/security/products/campaign/apsb26-162.html"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-117574",
+      "kind": "cve",
+      "cve_id": "CVE-2026-117574",
+      "title": "A flaw was found in ai-gateway-payload-processing. An authenticated remote attacker can exploit this vulnerability by submitting a request…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-28T20:17:21.417",
+      "kev_date_added": "",
+      "description": "A flaw was found in ai-gateway-payload-processing. An authenticated remote attacker can exploit this vulnerability by submitting a request specifying another tenant's model identifier in the request body or header. Because the service does not verify authorization before retrieving credentials from the shared store, it injects the target tenant's application programming interface (API) keys into the request. This flaw allows an attacker to perform unauthorized requests and consume another tenan…",
+      "cvss": 9.1,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 36.4,
+      "score_components": {
+        "cvss": 36.4,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.1 (3.1, CRITICAL) contributes 36.4 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 36.4 out of 100."
+      ],
+      "summary": "CVE-2026-117574 is a critical vulnerability in the affected software. A flaw was found in ai-gateway-payload-processing. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "secalert@redhat.com",
+          "url": "https://access.redhat.com/security/cve/CVE-2026-117574"
+        },
+        {
+          "label": "secalert@redhat.com",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2494861"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "news-2e5063d5ddc4",
+      "kind": "news",
+      "cve_id": null,
+      "title": "American Organizations Under Attack: Skyw4lker Device Code Phishing Campaign Exposed",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-28T16:00:00+05:30",
+      "description": "Modern phishing campaigns can compromise American businesses without relying on traditional credential theft. Attackers can abuse legitimate cloud services, authentication mechanisms, and trusted business workflows to gain access to corporate accounts while leaving fewer obvious signs behind. ANY.RUN's analysis of Skyw4lker, a device code phishing campaign primarily targeting U.S. organizations",
+      "source": "The Hacker News",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 0.0,
+        "urgency": 10.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Does not mention the small-business software list: 0 of 10.",
+        "Uses the urgency term 'under attack': 10.0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from The Hacker News: American Organizations Under Attack: Skyw4lker Device Code Phishing Campaign Exposed. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "The Hacker News",
+          "url": "https://thehackernews.com/2026/10/american-organizations-under-attack.html"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "news-dd9aab4f2b42",
       "kind": "news",
       "cve_id": null,
@@ -2895,84 +2527,6 @@
         {
           "label": "The Hacker News",
           "url": "https://thehackernews.com/2026/10/anthropics-unreleased-ai-model-chains.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "news-a40721cff07a",
-      "kind": "news",
-      "cve_id": null,
-      "title": "Apple backports CoreGraphics zero-day patches to older iPhones",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-27T06:36:12-04:00",
-      "description": "​Apple has backported security patches released last month to older iPhones and iPads, addressing a zero-day bug exploited in \"extremely sophisticated\" targeted attacks on iOS devices. [...]",
-      "source": "BleepingComputer",
-      "cvss": null,
-      "severity": null,
-      "in_kev": false,
-      "epss": null,
-      "smb_matches": [],
-      "formula_id": "news-relevance-v1",
-      "score": 10.0,
-      "score_components": {
-        "smb": 0.0,
-        "urgency": 10.0
-      },
-      "reasons": [
-        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Does not mention the small-business software list: 0 of 10.",
-        "Uses the urgency term 'zero-day': 10.0 of 10.",
-        "Total 10.0 out of 20 on the news scale."
-      ],
-      "summary": "Headline from BleepingComputer: Apple backports CoreGraphics zero-day patches to older iPhones. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "BleepingComputer",
-          "url": "https://www.bleepingcomputer.com/news/apple/apple-backports-coregraphics-zero-day-patches-to-older-iphones/"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "news-5a3446099074",
-      "kind": "news",
-      "cve_id": null,
-      "title": "Arista Warns of Critical VeloCloud SQL Injection Zero-Day Exploited in Attacks",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-23T00:35:17+05:30",
-      "description": "Attackers are exploiting a zero-day SQL injection flaw in Arista's VeloCloud Orchestrator (VCO), the central management system for VeloCloud SD-WAN networks, the company said in an advisory on October 22. The flaw lets anyone who can log in to the orchestrator, even with a read-only customer account, gain operator privileges, the top level of control over it. For",
-      "source": "The Hacker News",
-      "cvss": null,
-      "severity": null,
-      "in_kev": false,
-      "epss": null,
-      "smb_matches": [],
-      "formula_id": "news-relevance-v1",
-      "score": 10.0,
-      "score_components": {
-        "smb": 0.0,
-        "urgency": 10.0
-      },
-      "reasons": [
-        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Does not mention the small-business software list: 0 of 10.",
-        "Uses the urgency term 'zero-day': 10.0 of 10.",
-        "Total 10.0 out of 20 on the news scale."
-      ],
-      "summary": "Headline from The Hacker News: Arista Warns of Critical VeloCloud SQL Injection Zero-Day Exploited in Attacks. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "The Hacker News",
-          "url": "https://thehackernews.com/2026/10/arista-warns-of-critical-velocloud-sql.html"
         }
       ],
       "version_ranges": [],
@@ -3059,84 +2613,6 @@
       "aliases": []
     },
     {
-      "id": "news-c79b9055e5fe",
-      "kind": "news",
-      "cve_id": null,
-      "title": "CISA confirms PHP2Shell vulnerabilities now exploited in attacks",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-27T04:20:54-04:00",
-      "description": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) has added the PHP2Shell vulnerabilities to its catalog of actively exploited security flaws and ordered federal agencies to patch their systems by Thursday. [...]",
-      "source": "BleepingComputer",
-      "cvss": null,
-      "severity": null,
-      "in_kev": false,
-      "epss": null,
-      "smb_matches": [],
-      "formula_id": "news-relevance-v1",
-      "score": 10.0,
-      "score_components": {
-        "smb": 0.0,
-        "urgency": 10.0
-      },
-      "reasons": [
-        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Does not mention the small-business software list: 0 of 10.",
-        "Uses the urgency term 'actively exploited': 10.0 of 10.",
-        "Total 10.0 out of 20 on the news scale."
-      ],
-      "summary": "Headline from BleepingComputer: CISA confirms PHP2Shell vulnerabilities now exploited in attacks. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "BleepingComputer",
-          "url": "https://www.bleepingcomputer.com/news/security/cisa-confirms-php2shell-vulnerabilities-now-exploited-in-attacks/"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "news-92e4740105c8",
-      "kind": "news",
-      "cve_id": null,
-      "title": "Energy giant ENGIE discloses data breach affecting customers",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-27T05:25:50-04:00",
-      "description": "French energy giant ENGIE, one of the world's largest power and natural gas providers, confirmed that attackers stole customer data after breaching a marketing platform used by business partners. [...]",
-      "source": "BleepingComputer",
-      "cvss": null,
-      "severity": null,
-      "in_kev": false,
-      "epss": null,
-      "smb_matches": [],
-      "formula_id": "news-relevance-v1",
-      "score": 10.0,
-      "score_components": {
-        "smb": 0.0,
-        "urgency": 10.0
-      },
-      "reasons": [
-        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Does not mention the small-business software list: 0 of 10.",
-        "Uses the urgency term 'data breach': 10.0 of 10.",
-        "Total 10.0 out of 20 on the news scale."
-      ],
-      "summary": "Headline from BleepingComputer: Energy giant ENGIE discloses data breach affecting customers. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "BleepingComputer",
-          "url": "https://www.bleepingcomputer.com/news/security/energy-giant-engie-discloses-data-breach-affecting-customers/"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
       "id": "news-6fb95eceef2a",
       "kind": "news",
       "cve_id": null,
@@ -3170,6 +2646,127 @@
         {
           "label": "The Hacker News",
           "url": "https://thehackernews.com/2026/10/exposed-infrastructure-reveals-how.html"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "news-54629371f074",
+      "kind": "news",
+      "cve_id": null,
+      "title": "Japan's GMO Offers $1 Million Bounty to Catch Hackers Behind FX Trading Cloud Breach",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-28T12:43:21+05:30",
+      "description": "Japan's GMO Internet Group is offering up to $1 million in total for tips that help catch the attackers who breached its Onamae.com Desktop Cloud service, after refusing to pay an extortion demand. The reward program opened on October 28 and pays only if a tip helps lead to an arrest or an international wanted notice. The service hosts Windows desktops used for FX trading,",
+      "source": "The Hacker News",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [
+        "Windows"
+      ],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 10.0,
+        "urgency": 0.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Mentions software on the small-business list (Windows): 10.0 of 10.",
+        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from The Hacker News: Japan's GMO Offers $1 Million Bounty to Catch Hackers Behind FX Trading Cloud Breach. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "If you use Windows, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "The Hacker News",
+          "url": "https://thehackernews.com/2026/10/japans-gmo-offers-1-million-bounty-to.html"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "news-ebe6130a3b49",
+      "kind": "news",
+      "cve_id": null,
+      "title": "Japan's GMO urges customers to shut down PCs amid ransomware threat",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-27T19:35:51-04:00",
+      "description": "The GMO Group has urged customers to disconnect their systems from the internet and shut down computers after a threat actor who breached the company's Onamae Desktop Cloud threatened to launch a ransomware attack today. [...]",
+      "source": "BleepingComputer",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 0.0,
+        "urgency": 10.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Does not mention the small-business software list: 0 of 10.",
+        "Uses the urgency term 'ransomware': 10.0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from BleepingComputer: Japan's GMO urges customers to shut down PCs amid ransomware threat. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/japans-gmo-urges-customers-to-shut-down-pcs-amid-ransomware-threat/"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "news-399172439712",
+      "kind": "news",
+      "cve_id": null,
+      "title": "Microsoft 365 Token-Replay Attacks Compromise 97 Accounts at 79 Organizations",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-26T14:05:51+05:30",
+      "description": "Cybersecurity researchers have disclosed a Microsoft 365 campaign that has been observed leveraging an adversary-in-the-middle (AitM) relay to capture sign-in sessions and then replay the stolen tokens to break into email accounts at 79 organizations. Huntress, which observed the activity between July 14 and September 22, 2026, said it detected 497 successful Microsoft 365 sign-in events across",
+      "source": "The Hacker News",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [
+        "Microsoft 365 / Exchange"
+      ],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 10.0,
+        "urgency": 0.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Mentions software on the small-business list (Microsoft 365 / Exchange): 10.0 of 10.",
+        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from The Hacker News: Microsoft 365 Token-Replay Attacks Compromise 97 Accounts at 79 Organizations. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "If you use Microsoft 365 / Exchange, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "The Hacker News",
+          "url": "https://thehackernews.com/2026/10/microsoft-365-token-replay-attacks.html"
         }
       ],
       "version_ranges": [],
