@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-01T11:18:00.330385+00:00",
+  "generated_at": "2026-11-02T12:28:30.936456+00:00",
   "mode": "live",
   "formula": {
     "id": "smb-sa-v1",
@@ -18,13 +18,13 @@
     }
   },
   "counts": {
-    "catalog_cves": 1968,
+    "catalog_cves": 1967,
     "brief_items": 48,
     "brief_cves": 40,
     "brief_news": 8,
     "kev": 1766,
-    "nvd": 202,
-    "epss": 220
+    "nvd": 201,
+    "epss": 198
   },
   "warnings": [],
   "sources": [
@@ -95,12 +95,7 @@
       "summary": "CVE-2026-109618 is a unspecified vulnerability in PHP Group PHP. PHP contains an out-of-memory corruption vulnerability that allows for unauthenticated remote code execution. The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "If you use PHP Group PHP, apply the vendor update. CISA lists this as already exploited. If you do not use it, you can skip this item.",
       "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "CISA advisories",
-          "url": "https://www.cisa.gov/news-events/alerts/2026/10/26/cisa-adds-two-known-exploited-vulnerabilities-catalog"
-        }
-      ],
+      "references": [],
       "version_ranges": [],
       "aliases": []
     },
@@ -140,12 +135,7 @@
       "summary": "CVE-2026-109619 is a unspecified vulnerability in PHP Group PHP. PHP contains a stale internal request-state vulnerability that allows for unauthenticated remote code execution. The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "If you use PHP Group PHP, apply the vendor update. CISA lists this as already exploited. If you do not use it, you can skip this item.",
       "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "CISA advisories",
-          "url": "https://www.cisa.gov/news-events/alerts/2026/10/26/cisa-adds-two-known-exploited-vulnerabilities-catalog"
-        }
-      ],
+      "references": [],
       "version_ranges": [],
       "aliases": []
     },
@@ -310,69 +300,6 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-107759",
-      "kind": "cve",
-      "cve_id": "CVE-2026-107759",
-      "title": "The WPO365 | MICROSOFT 365 GRAPH MAILER plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'Subject (via wp_mail/PHP…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-31T08:16:48.033",
-      "kev_date_added": "",
-      "description": "The WPO365 | MICROSOFT 365 GRAPH MAILER plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'Subject (via wp_mail/PHPMailer, e.g. CF7 your-subject)' parameter in all versions up to, and including, 6.2 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The payload is stored without authentication via any mail-sen…",
-      "cvss": 7.2,
-      "cvss_version": "3.1",
-      "severity": "HIGH",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00272,
-      "epss_percentile": 0.19562,
-      "smb_matches": [
-        "Microsoft 365 / Exchange"
-      ],
-      "formula_id": "smb-sa-v1",
-      "score": 43.9,
-      "score_components": {
-        "cvss": 28.8,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 15.0
-      },
-      "reasons": [
-        "CVSS 7.2 (3.1, HIGH) contributes 28.8 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.20. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Matches the small-business software list: Microsoft 365 / Exchange. That contributes 15.0 of 15.",
-        "Total 43.9 out of 100."
-      ],
-      "summary": "CVE-2026-107759 is a high vulnerability in the affected software. The WPO365 | MICROSOFT 365 GRAPH MAILER plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'Subject (via wp_mail/PHPMailer, e.g. It matches software this briefing watches for small businesses: Microsoft 365 / Exchange.",
-      "what_to_do": "Check whether you run the affected software. If you do, install the vendor update and confirm the version. If you do not run it, no action is needed for this item.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/wpo365-msgraphmailer/tags/6.1/Core/Script_Helpers.php#L142"
-        },
-        {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/wpo365-msgraphmailer/tags/6.1/Mail/Mailer.php#L71"
-        },
-        {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/wpo365-msgraphmailer/tags/6.1/Services/Ajax_Service.php#L284"
-        },
-        {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/wpo365-msgraphmailer/tags/6.1/Services/Log_Service.php#L80"
-        },
-        {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/wpo365-msgraphmailer/tags/6.1/apps/dist/wizard-chunk-G9IB6WhS.js#L154"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
       "id": "CVE-2026-104935",
       "kind": "cve",
       "cve_id": "CVE-2026-104935",
@@ -428,7 +355,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.09813,
-      "epss_percentile": 0.9555,
+      "epss_percentile": 0.95551,
       "smb_matches": [
         "Windows"
       ],
@@ -641,7 +568,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00518,
-      "epss_percentile": 0.44069,
+      "epss_percentile": 0.44064,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 40.1,
@@ -686,7 +613,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.013,
-      "epss_percentile": 0.70452,
+      "epss_percentile": 0.70449,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.9,
@@ -731,7 +658,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00573,
-      "epss_percentile": 0.47361,
+      "epss_percentile": 0.47355,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -780,7 +707,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.0049,
-      "epss_percentile": 0.42135,
+      "epss_percentile": 0.42127,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -865,7 +792,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00516,
-      "epss_percentile": 0.4393,
+      "epss_percentile": 0.43927,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.3,
@@ -910,7 +837,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00347,
-      "epss_percentile": 0.28362,
+      "epss_percentile": 0.28359,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.3,
@@ -955,7 +882,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00592,
-      "epss_percentile": 0.48296,
+      "epss_percentile": 0.48289,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.3,
@@ -1015,7 +942,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.0052,
-      "epss_percentile": 0.44208,
+      "epss_percentile": 0.44203,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.3,
@@ -1076,7 +1003,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.0066,
-      "epss_percentile": 0.51572,
+      "epss_percentile": 0.51569,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.3,
@@ -1148,7 +1075,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00584,
-      "epss_percentile": 0.47952,
+      "epss_percentile": 0.47945,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.3,
@@ -1209,7 +1136,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.0074,
-      "epss_percentile": 0.54613,
+      "epss_percentile": 0.54612,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.3,
@@ -1270,7 +1197,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00463,
-      "epss_percentile": 0.40109,
+      "epss_percentile": 0.40101,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.3,
@@ -1330,8 +1257,8 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.00488,
-      "epss_percentile": 0.4204,
+      "epss": 0.00523,
+      "epss_percentile": 0.44351,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.3,
@@ -1344,7 +1271,7 @@
       "reasons": [
         "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.42. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.44. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 39.3 out of 100."
       ],
@@ -1437,6 +1364,189 @@
       "aliases": []
     },
     {
+      "id": "CVE-2026-120195",
+      "kind": "cve",
+      "cve_id": "CVE-2026-120195",
+      "title": "A security vulnerability has been detected in WAVLINK WL-WN579A3-A 2026-03-10-94f93d4. The impacted element is the function set_wzdgwMesh o…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-01T04:18:46.687",
+      "kev_date_added": "",
+      "description": "A security vulnerability has been detected in WAVLINK WL-WN579A3-A 2026-03-10-94f93d4. The impacted element is the function set_wzdgwMesh of the file /cgi-bin/adm.cgi of the component Initial Setup Wizard. The manipulation of the argument wlan_ssid leads to os command injection. The attack is possible to be carried out remotely. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.0207,
+      "epss_percentile": 0.8143,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.6,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.4,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.02 means FIRST estimates about a 2% probability of exploitation activity in the next 30 days, percentile 0.81. That contributes 0.4 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.6 out of 100."
+      ],
+      "summary": "CVE-2026-120195 is a critical vulnerability in the affected software. A security vulnerability has been detected in WAVLINK WL-WN579A3-A 2026-03-10-94f93d4. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://github.com/pipiyyb/cve/blob/main/WAVLINK_WN579A3_CVE_wzdgwMesh_wlan_ssid.md"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/cve/CVE-2026-120195"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/submit/914922"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/429558"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/429558/cti"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-120198",
+      "kind": "cve",
+      "cve_id": "CVE-2026-120198",
+      "title": "A vulnerability has been found in WAVLINK WL-WN530BE1-A V251117. Affected is the function con_check_read_finish of the file /protocol.csp.…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-01T05:18:57.620",
+      "kev_date_added": "",
+      "description": "A vulnerability has been found in WAVLINK WL-WN530BE1-A V251117. Affected is the function con_check_read_finish of the file /protocol.csp. Such manipulation of the argument group_name/IP-FROM leads to command injection. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.0207,
+      "epss_percentile": 0.8143,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.6,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.4,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.02 means FIRST estimates about a 2% probability of exploitation activity in the next 30 days, percentile 0.81. That contributes 0.4 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.6 out of 100."
+      ],
+      "summary": "CVE-2026-120198 is a critical vulnerability in the affected software. A vulnerability has been found in WAVLINK WL-WN530BE1-A V251117. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://github.com/pipiyyb/cve/blob/main/WN530BE1.md"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/cve/CVE-2026-120198"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/submit/918551"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/429561"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/429561/cti"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-120189",
+      "kind": "cve",
+      "cve_id": "CVE-2026-120189",
+      "title": "A vulnerability was identified in D-Link DIR-505 1.10B02. Affected is the function save_upload_file/mp_upload_file of the file /usr/bin/tft…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-01T01:17:16.877",
+      "kev_date_added": "",
+      "description": "A vulnerability was identified in D-Link DIR-505 1.10B02. Affected is the function save_upload_file/mp_upload_file of the file /usr/bin/tftpd of the component TFTP Upload Filename Handler. The manipulation leads to stack-based buffer overflow. The attack is possible to be carried out remotely. The exploit is publicly available and might be used.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.01346,
+      "epss_percentile": 0.71439,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.5,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.3,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.71. That contributes 0.3 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.5 out of 100."
+      ],
+      "summary": "CVE-2026-120189 is a critical vulnerability in the affected software. A vulnerability was identified in D-Link DIR-505 1.10B02. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://github.com/Walnut1337/DIR-505_filename_rce/tree/main/poc"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/cve/CVE-2026-120189"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/submit/1027185"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/429528"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/429528/cti"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "CVE-2026-112346",
       "kind": "cve",
       "cve_id": "CVE-2026-112346",
@@ -1452,7 +1562,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.01014,
-      "epss_percentile": 0.63259,
+      "epss_percentile": 0.6326,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.4,
@@ -1509,7 +1619,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.0103,
-      "epss_percentile": 0.63716,
+      "epss_percentile": 0.63714,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.4,
@@ -1570,7 +1680,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00605,
-      "epss_percentile": 0.48974,
+      "epss_percentile": 0.48969,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.3,
@@ -1615,7 +1725,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00458,
-      "epss_percentile": 0.39742,
+      "epss_percentile": 0.39735,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.3,
@@ -1676,7 +1786,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00679,
-      "epss_percentile": 0.52389,
+      "epss_percentile": 0.52381,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.3,
@@ -1725,7 +1835,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00371,
-      "epss_percentile": 0.31046,
+      "epss_percentile": 0.31042,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.3,
@@ -1786,7 +1896,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.0052,
-      "epss_percentile": 0.44179,
+      "epss_percentile": 0.44175,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.3,
@@ -1832,6 +1942,120 @@
       "aliases": []
     },
     {
+      "id": "CVE-2026-120201",
+      "kind": "cve",
+      "cve_id": "CVE-2026-120201",
+      "title": "Jpom 2.10.0 through 2.11.12 contains an authentication bypass vulnerability that allows unauthenticated attackers to gain super-administrat…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-31T18:17:07.890",
+      "kev_date_added": "",
+      "description": "Jpom 2.10.0 through 2.11.12 contains an authentication bypass vulnerability that allows unauthenticated attackers to gain super-administrator access by injecting query conditions into the JPOM-USER-TOKEN header. Attackers can send a value like 'is not null', which Hutool's Condition parser treats as an operator, then execute commands through Jpom's script features.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00603,
+      "epss_percentile": 0.48861,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.3,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.49. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.3 out of 100."
+      ],
+      "summary": "CVE-2026-120201 is a critical vulnerability in the affected software. Jpom 2.10.0 through 2.11.12 contains an authentication bypass vulnerability that allows unauthenticated attackers to gain super-administrator access by injecting query conditions into the JPOM-USER-TOKEN header. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/dromara/Jpom"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/dromara/Jpom/blob/v2.11.12/modules/server/src/main/java/org/dromara/jpom/common/interceptor/LoginInterceptor.java#L146"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/dromara/Jpom/issues/121"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/jpom-2.10.0-through-2.11.12-authentication-bypass-via-jpom-user-token-header"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-120209",
+      "kind": "cve",
+      "cve_id": "CVE-2026-120209",
+      "title": "AJ-Report through 1.7.1 signs share tokens with a hard-coded JWT secret, allowing attackers to forge valid Share-Tokens offline. Attackers…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-10-31T18:17:09.263",
+      "kev_date_added": "",
+      "description": "AJ-Report through 1.7.1 signs share tokens with a hard-coded JWT secret, allowing attackers to forge valid Share-Tokens offline. Attackers can mint a token with reportCode 'dataSet' to access the testTransform endpoint, which passes scripts to GroovyClassLoader for unauthenticated remote code execution.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00544,
+      "epss_percentile": 0.4567,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.3,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.46. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.3 out of 100."
+      ],
+      "summary": "CVE-2026-120209 is a critical vulnerability in the affected software. AJ-Report through 1.7.1 signs share tokens with a hard-coded JWT secret, allowing attackers to forge valid Share-Tokens offline. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://gitee.com/belief-team/report"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://gitee.com/belief-team/report/blob/V1.7.1/report-core/src/main/java/com/anjiplus/template/gaea/business/util/JwtUtil.java"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://gitee.com/belief-team/report/issues/IKRV6T"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/aj-report-through-1.7.1-authentication-bypass-leading-to-rce-via-share-token"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "CVE-2026-118333",
       "kind": "cve",
       "cve_id": "CVE-2026-118333",
@@ -1847,7 +2071,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00201,
-      "epss_percentile": 0.10065,
+      "epss_percentile": 0.10061,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.2,
@@ -1894,253 +2118,6 @@
           "product": "chrome"
         }
       ]
-    },
-    {
-      "id": "CVE-2026-118337",
-      "kind": "cve",
-      "cve_id": "CVE-2026-118337",
-      "title": "Improper access control in Forms in Google Chrome prior to 156.0.8078.73 allowed a remote attacker to bypass web origin policy via a crafte…",
-      "vendor": "google",
-      "product": "chrome",
-      "published": "2026-10-27T23:17:02.067",
-      "kev_date_added": "",
-      "description": "Improper access control in Forms in Google Chrome prior to 156.0.8078.73 allowed a remote attacker to bypass web origin policy via a crafted HTML page. (Chromium security severity: High)",
-      "cvss": 9.3,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00201,
-      "epss_percentile": 0.10065,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.2,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (3.1, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.10. That contributes 0.0 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
-      ],
-      "summary": "CVE-2026-118337 is a critical vulnerability in google chrome. Improper access control in Forms in Google Chrome prior to 156.0.8078.73 allowed a remote attacker to bypass web origin policy via a crafted HTML page. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use google chrome. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "chrome-cve-admin@google.com",
-          "url": "https://chromereleases.googleblog.com/2026/10/stable-channel-update-for-desktop_0562499947.html"
-        },
-        {
-          "label": "chrome-cve-admin@google.com",
-          "url": "https://issues.chromium.org/issues/569286605"
-        }
-      ],
-      "version_ranges": [
-        {
-          "vendor": "google",
-          "product": "chrome",
-          "version": "*",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": "156.0.8078.73"
-        }
-      ],
-      "aliases": [
-        {
-          "vendor": "google",
-          "product": "chrome"
-        }
-      ]
-    },
-    {
-      "id": "CVE-2026-120189",
-      "kind": "cve",
-      "cve_id": "CVE-2026-120189",
-      "title": "A vulnerability was identified in D-Link DIR-505 1.10B02. Affected is the function save_upload_file/mp_upload_file of the file /usr/bin/tft…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-01T01:17:16.877",
-      "kev_date_added": "",
-      "description": "A vulnerability was identified in D-Link DIR-505 1.10B02. Affected is the function save_upload_file/mp_upload_file of the file /usr/bin/tftpd of the component TFTP Upload Filename Handler. The manipulation leads to stack-based buffer overflow. The attack is possible to be carried out remotely. The exploit is publicly available and might be used.",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.2,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
-      ],
-      "summary": "CVE-2026-120189 is a critical vulnerability in the affected software. A vulnerability was identified in D-Link DIR-505 1.10B02. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://github.com/Walnut1337/DIR-505_filename_rce/tree/main/poc"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/cve/CVE-2026-120189"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/submit/1027185"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/429528"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/429528/cti"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-120195",
-      "kind": "cve",
-      "cve_id": "CVE-2026-120195",
-      "title": "A security vulnerability has been detected in WAVLINK WL-WN579A3-A 2026-03-10-94f93d4. The impacted element is the function set_wzdgwMesh o…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-01T04:18:46.687",
-      "kev_date_added": "",
-      "description": "A security vulnerability has been detected in WAVLINK WL-WN579A3-A 2026-03-10-94f93d4. The impacted element is the function set_wzdgwMesh of the file /cgi-bin/adm.cgi of the component Initial Setup Wizard. The manipulation of the argument wlan_ssid leads to os command injection. The attack is possible to be carried out remotely. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure.",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.2,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
-      ],
-      "summary": "CVE-2026-120195 is a critical vulnerability in the affected software. A security vulnerability has been detected in WAVLINK WL-WN579A3-A 2026-03-10-94f93d4. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://github.com/pipiyyb/cve/blob/main/WAVLINK_WN579A3_CVE_wzdgwMesh_wlan_ssid.md"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/cve/CVE-2026-120195"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/submit/914922"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/429558"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/429558/cti"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-120198",
-      "kind": "cve",
-      "cve_id": "CVE-2026-120198",
-      "title": "A vulnerability has been found in WAVLINK WL-WN530BE1-A V251117. Affected is the function con_check_read_finish of the file /protocol.csp.…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-01T05:18:57.620",
-      "kev_date_added": "",
-      "description": "A vulnerability has been found in WAVLINK WL-WN530BE1-A V251117. Affected is the function con_check_read_finish of the file /protocol.csp. Such manipulation of the argument group_name/IP-FROM leads to command injection. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure.",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.2,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
-      ],
-      "summary": "CVE-2026-120198 is a critical vulnerability in the affected software. A vulnerability has been found in WAVLINK WL-WN530BE1-A V251117. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://github.com/pipiyyb/cve/blob/main/WN530BE1.md"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/cve/CVE-2026-120198"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/submit/918551"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/429561"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/429561/cti"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
     },
     {
       "id": "news-2e5063d5ddc4",
@@ -2262,6 +2239,45 @@
       "aliases": []
     },
     {
+      "id": "news-5ff3e4930a95",
+      "kind": "news",
+      "cve_id": null,
+      "title": "Ivanti patches two more Connect Secure zero-days chained in attacks",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-02T04:33:26-05:00",
+      "description": "Ivanti released security updates to patch two more Connect Secure (ICS) remote access gateway flaws that have been chained in zero-day attacks since at least October 1. [...]",
+      "source": "BleepingComputer",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 0.0,
+        "urgency": 10.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Does not mention the small-business software list: 0 of 10.",
+        "Uses the urgency term 'zero-day': 10.0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from BleepingComputer: Ivanti patches two more Connect Secure zero-days chained in attacks. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/ivanti-patches-two-more-connect-secure-zero-days-chained-in-attacks/"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "news-54629371f074",
       "kind": "news",
       "cve_id": null,
@@ -2297,47 +2313,6 @@
         {
           "label": "The Hacker News",
           "url": "https://thehackernews.com/2026/10/japans-gmo-offers-1-million-bounty-to.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "news-aef9e5e4ac67",
-      "kind": "news",
-      "cve_id": null,
-      "title": "Microsoft finally fixes VPN issues caused by September updates",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-30T07:20:26-04:00",
-      "description": "Microsoft has resolved Always On VPN connection failures triggered after installing the September 2026 Windows 11 security updates. [...]",
-      "source": "BleepingComputer",
-      "cvss": null,
-      "severity": null,
-      "in_kev": false,
-      "epss": null,
-      "smb_matches": [
-        "Windows"
-      ],
-      "formula_id": "news-relevance-v1",
-      "score": 10.0,
-      "score_components": {
-        "smb": 10.0,
-        "urgency": 0.0
-      },
-      "reasons": [
-        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Mentions software on the small-business list (Windows): 10.0 of 10.",
-        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
-        "Total 10.0 out of 20 on the news scale."
-      ],
-      "summary": "Headline from BleepingComputer: Microsoft finally fixes VPN issues caused by September updates. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "If you use Windows, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "BleepingComputer",
-          "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-finally-fixes-vpn-issues-caused-by-september-updates/"
         }
       ],
       "version_ranges": [],
@@ -2385,6 +2360,48 @@
       "aliases": []
     },
     {
+      "id": "news-b1c1d30dd8ee",
+      "kind": "news",
+      "cve_id": null,
+      "title": "New VOLTA Infostealer Uses Claude, Gemini, and Kimi AI to Rank Victims by Financial Value",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-02T11:21:07+05:30",
+      "description": "Cybersecurity researchers have discovered a new Windows infostealer malware called VOLTA-AUTODOXER (aka VOLTA) that makes use of a large language model (LLM) to rank a victim's stolen data by their monetization value. Like other typical stealer families, VOLTA is equipped to harvest passwords and cookies from Chromium-based web browsers; data from Outlook profiles and Slack workspaces;",
+      "source": "The Hacker News",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [
+        "Microsoft 365 / Exchange",
+        "Windows"
+      ],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 10.0,
+        "urgency": 0.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Mentions software on the small-business list (Microsoft 365 / Exchange, Windows): 10.0 of 10.",
+        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from The Hacker News: New VOLTA Infostealer Uses Claude, Gemini, and Kimi AI to Rank Victims by Financial Value. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "If you use Microsoft 365 / Exchange, Windows, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "The Hacker News",
+          "url": "https://thehackernews.com/2026/11/new-volta-infostealer-uses-claude.html"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "news-4abc2dcf4334",
       "kind": "news",
       "cve_id": null,
@@ -2420,45 +2437,6 @@
         {
           "label": "The Hacker News",
           "url": "https://thehackernews.com/2026/10/researcher-reveals-how-logic-bugs-alone.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "news-3402ef3be45e",
-      "kind": "news",
-      "cve_id": null,
-      "title": "Volt Typhoon Used Covert Silent Train Network in Four Zero-Day Exploitation Campaigns",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-28T23:38:33+05:30",
-      "description": "The China-nexus cyber espionage group known as Volt Typhoon has been attributed to a now-disrupted covert access network dubbed Silent Train that has been put to use for zero-day exploitation and strategic access. \"First identified in late 2023, Silent Train uses rotating chains of compromised SOHO, IoT, and enterprise infrastructure,\" Lumen Technologies Black Lotus Labs said in a report shared",
-      "source": "The Hacker News",
-      "cvss": null,
-      "severity": null,
-      "in_kev": false,
-      "epss": null,
-      "smb_matches": [],
-      "formula_id": "news-relevance-v1",
-      "score": 10.0,
-      "score_components": {
-        "smb": 0.0,
-        "urgency": 10.0
-      },
-      "reasons": [
-        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Does not mention the small-business software list: 0 of 10.",
-        "Uses the urgency term 'zero-day': 10.0 of 10.",
-        "Total 10.0 out of 20 on the news scale."
-      ],
-      "summary": "Headline from The Hacker News: Volt Typhoon Used Covert Silent Train Network in Four Zero-Day Exploitation Campaigns. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "The Hacker News",
-          "url": "https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html"
         }
       ],
       "version_ranges": [],
