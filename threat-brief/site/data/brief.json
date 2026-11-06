@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-05T12:24:39.984569+00:00",
+  "generated_at": "2026-11-06T12:08:55.773411+00:00",
   "mode": "live",
   "formula": {
     "id": "smb-sa-v1",
@@ -18,13 +18,13 @@
     }
   },
   "counts": {
-    "catalog_cves": 1964,
+    "catalog_cves": 1920,
     "brief_items": 48,
     "brief_cves": 40,
     "brief_news": 8,
     "kev": 1768,
-    "nvd": 196,
-    "epss": 160
+    "nvd": 152,
+    "epss": 171
   },
   "warnings": [],
   "sources": [
@@ -355,7 +355,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.09813,
-      "epss_percentile": 0.95565,
+      "epss_percentile": 0.95569,
       "smb_matches": [
         "Windows"
       ],
@@ -437,7 +437,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.81763,
-      "epss_percentile": 0.99646,
+      "epss_percentile": 0.99647,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 41.4,
@@ -477,7 +477,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.7947,
-      "epss_percentile": 0.99604,
+      "epss_percentile": 0.99605,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 40.9,
@@ -517,7 +517,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.77994,
-      "epss_percentile": 0.99574,
+      "epss_percentile": 0.99575,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 40.6,
@@ -557,7 +557,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.01343,
-      "epss_percentile": 0.7144,
+      "epss_percentile": 0.7146,
       "smb_matches": [
         "Fortinet"
       ],
@@ -598,8 +598,8 @@
       "severity": null,
       "in_kev": true,
       "ransomware": "Unknown",
-      "epss": 0.0102,
-      "epss_percentile": 0.63514,
+      "epss": 0.01157,
+      "epss_percentile": 0.67184,
       "smb_matches": [
         "WordPress"
       ],
@@ -614,7 +614,7 @@
       "reasons": [
         "No CVSS score was published, so that part contributes 0 of 40.",
         "Listed in the CISA Known Exploited Vulnerabilities catalog (added 2026-11-03), so that part contributes 25.0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.64. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.67. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
         "Matches the small-business software list: WordPress. That contributes 15.0 of 15.",
         "Total 40.2 out of 100."
       ],
@@ -690,7 +690,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.01487,
-      "epss_percentile": 0.74119,
+      "epss_percentile": 0.74139,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.5,
@@ -736,194 +736,6 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-104317",
-      "kind": "cve",
-      "cve_id": "CVE-2026-104317",
-      "title": "IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote attacker who could reach the message broker to execute arbitrary code on the sys…",
-      "vendor": "langflow",
-      "product": "langflow",
-      "published": "2026-10-29T16:17:43.907",
-      "kev_date_added": "",
-      "description": "IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote attacker who could reach the message broker to execute arbitrary code on the system due to the deserialization of untrusted data.",
-      "cvss": 9.8,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00592,
-      "epss_percentile": 0.48398,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.3,
-      "score_components": {
-        "cvss": 39.2,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.48. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.3 out of 100."
-      ],
-      "summary": "CVE-2026-104317 is a critical vulnerability in langflow. IBM Langflow OSS 1.0.0 through 1.12.3 could allow a remote attacker who could reach the message broker to execute arbitrary code on the system due to the deserialization of untrusted data. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use langflow. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7293015"
-        }
-      ],
-      "version_ranges": [
-        {
-          "vendor": "langflow",
-          "product": "langflow",
-          "version": "*",
-          "start_including": "1.0.0",
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": "1.12.4"
-        }
-      ],
-      "aliases": [
-        {
-          "vendor": "langflow",
-          "product": "langflow"
-        }
-      ]
-    },
-    {
-      "id": "CVE-2026-18894",
-      "kind": "cve",
-      "cve_id": "CVE-2026-18894",
-      "title": "IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote attacker to trigger pre-existing stored Python component code in a public workfl…",
-      "vendor": "langflow",
-      "product": "langflow",
-      "published": "2026-10-29T16:18:08.427",
-      "kev_date_added": "",
-      "description": "IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote attacker to trigger pre-existing stored Python component code in a public workflow, executing it under the flow owner's runtime context within the server process. This bypasses the intended trust boundary where public execution paths are restricted to server-trusted component code.",
-      "cvss": 9.8,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00523,
-      "epss_percentile": 0.44465,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.3,
-      "score_components": {
-        "cvss": 39.2,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.44. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.3 out of 100."
-      ],
-      "summary": "CVE-2026-18894 is a critical vulnerability in langflow. IBM Langflow OSS 1.0.0 through 1.12.4 could allow a remote attacker to trigger pre-existing stored Python component code in a public workflow, executing it under the flow owner's runtime context within the server process. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use langflow. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7293016"
-        }
-      ],
-      "version_ranges": [
-        {
-          "vendor": "langflow",
-          "product": "langflow",
-          "version": "*",
-          "start_including": "1.0.0",
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": "1.12.5"
-        }
-      ],
-      "aliases": [
-        {
-          "vendor": "langflow",
-          "product": "langflow"
-        }
-      ]
-    },
-    {
-      "id": "CVE-2026-64618",
-      "kind": "cve",
-      "cve_id": "CVE-2026-64618",
-      "title": "Improper Neutralization of Special Elements used in an SQL Command (\"SQL Injection\") vulnerability exists in Apache Fineract (through versi…",
-      "vendor": "apache",
-      "product": "fineract",
-      "published": "2026-10-30T09:17:15.337",
-      "kev_date_added": "",
-      "description": "Improper Neutralization of Special Elements used in an SQL Command (\"SQL Injection\") vulnerability exists in Apache Fineract (through version 1.15.0). The vulnerability affects the outStandingAmountPercentageCondition parameter of the /fineract-provider/api/v1/search/advance HTTP API endpoint, allowing SQL injection due to insufficient input neutralization. Users are recommended to upgrade to version 1.16.1, which will fix the issue.",
-      "cvss": 9.8,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00624,
-      "epss_percentile": 0.50037,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.3,
-      "score_components": {
-        "cvss": 39.2,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.50. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.3 out of 100."
-      ],
-      "summary": "CVE-2026-64618 is a critical vulnerability in apache fineract. Improper Neutralization of Special Elements used in an SQL Command (\"SQL Injection\") vulnerability exists in Apache Fineract (through version 1.15.0). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use apache fineract. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "security@apache.org",
-          "url": "https://github.com/apache/fineract/pull/6153"
-        },
-        {
-          "label": "security@apache.org",
-          "url": "https://lists.apache.org/thread/s8orckszcd9x4d1qsloc046ppf5q9oc7"
-        },
-        {
-          "label": "af854a3a-2127-422b-91ae-364da2661108",
-          "url": "http://www.openwall.com/lists/oss-security/2026/10/30/4"
-        }
-      ],
-      "version_ranges": [
-        {
-          "vendor": "apache",
-          "product": "fineract",
-          "version": "*",
-          "start_including": null,
-          "start_excluding": null,
-          "end_including": null,
-          "end_excluding": "1.16.0"
-        }
-      ],
-      "aliases": [
-        {
-          "vendor": "apache",
-          "product": "fineract"
-        }
-      ]
-    },
-    {
       "id": "CVE-2026-82418",
       "kind": "cve",
       "cve_id": "CVE-2026-82418",
@@ -938,23 +750,23 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00442,
+      "epss_percentile": 0.38563,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 39.2,
+      "score": 39.3,
       "score_components": {
         "cvss": 39.2,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.39. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.2 out of 100."
+        "Total 39.3 out of 100."
       ],
       "summary": "CVE-2026-82418 is a critical vulnerability in the affected software. IBM Watson Speech Services Cartridge 4.0.0 through 5.4.0 could allow a remote attacker to execute arbitrary code due to a use-after-free vulnerability. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -984,7 +796,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.6522,
-      "epss_percentile": 0.99256,
+      "epss_percentile": 0.99257,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 38.0,
@@ -1009,67 +821,6 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-120276",
-      "kind": "cve",
-      "cve_id": "CVE-2026-120276",
-      "title": "A weakness has been identified in WAVLINK WN536AX6-A V260507_2.0.0. This vulnerability affects the function sub_416760 of the file /bin/ioo…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-02T00:18:09.897",
-      "kev_date_added": "",
-      "description": "A weakness has been identified in WAVLINK WN536AX6-A V260507_2.0.0. This vulnerability affects the function sub_416760 of the file /bin/ioos of the component Web Management Interface. This manipulation of the argument group_name causes os command injection. It is possible to initiate the attack remotely. The exploit has been made available to the public and could be used for attacks. The vendor was contacted early about this disclosure.",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.03211,
-      "epss_percentile": 0.88215,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.8,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.6,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.03 means FIRST estimates about a 3% probability of exploitation activity in the next 30 days, percentile 0.88. That contributes 0.6 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.8 out of 100."
-      ],
-      "summary": "CVE-2026-120276 is a critical vulnerability in the affected software. A weakness has been identified in WAVLINK WN536AX6-A V260507_2.0.0. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://github.com/senxitoyshuyi-ui/HACKALL/blob/main/WAVLINK_WN536AX6-A%20Router/WAVLINK_WN536AX6-A_openvpn_cli_group_command_injection.md"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/cve/CVE-2026-120276"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/submit/919502"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/429620"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/429620/cti"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
       "id": "CVE-2026-116241",
       "kind": "cve",
       "cve_id": "CVE-2026-116241",
@@ -1084,8 +835,8 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.00324,
-      "epss_percentile": 0.25562,
+      "epss": 0.0031,
+      "epss_percentile": 0.23981,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.7,
@@ -1098,7 +849,7 @@
       "reasons": [
         "CVSS 9.4 (4.0, CRITICAL) contributes 37.6 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.26. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.24. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 37.7 out of 100."
       ],
@@ -1149,7 +900,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.02451,
-      "epss_percentile": 0.84432,
+      "epss_percentile": 0.84445,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.7,
@@ -1195,183 +946,310 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-120195",
+      "id": "CVE-2026-121932",
       "kind": "cve",
-      "cve_id": "CVE-2026-120195",
-      "title": "A security vulnerability has been detected in WAVLINK WL-WN579A3-A 2026-03-10-94f93d4. The impacted element is the function set_wzdgwMesh o…",
+      "cve_id": "CVE-2026-121932",
+      "title": "A vulnerability was detected in Linksys E5350 1.0.00.037. This affects the function system of the file /wizard/apply.cgi. Performing a mani…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-01T04:18:46.687",
+      "published": "2026-11-04T19:17:33.440",
       "kev_date_added": "",
-      "description": "A security vulnerability has been detected in WAVLINK WL-WN579A3-A 2026-03-10-94f93d4. The impacted element is the function set_wzdgwMesh of the file /cgi-bin/adm.cgi of the component Initial Setup Wizard. The manipulation of the argument wlan_ssid leads to os command injection. The attack is possible to be carried out remotely. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure.",
+      "description": "A vulnerability was detected in Linksys E5350 1.0.00.037. This affects the function system of the file /wizard/apply.cgi. Performing a manipulation of the argument ping_ip/traceroute_ip results in os command injection. The attack may be initiated remotely. The exploit is now public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
       "cvss": 9.3,
       "cvss_version": "4.0",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.0207,
-      "epss_percentile": 0.81484,
+      "epss": 0.02381,
+      "epss_percentile": 0.83956,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 37.6,
+      "score": 37.7,
       "score_components": {
         "cvss": 37.2,
         "kev": 0.0,
-        "epss": 0.4,
+        "epss": 0.5,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.02 means FIRST estimates about a 2% probability of exploitation activity in the next 30 days, percentile 0.81. That contributes 0.4 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.02 means FIRST estimates about a 2% probability of exploitation activity in the next 30 days, percentile 0.84. That contributes 0.5 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.6 out of 100."
+        "Total 37.7 out of 100."
       ],
-      "summary": "CVE-2026-120195 is a critical vulnerability in the affected software. A security vulnerability has been detected in WAVLINK WL-WN579A3-A 2026-03-10-94f93d4. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-121932 is a critical vulnerability in the affected software. A vulnerability was detected in Linksys E5350 1.0.00.037. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
           "label": "cna@vuldb.com",
-          "url": "https://github.com/pipiyyb/cve/blob/main/WAVLINK_WN579A3_CVE_wzdgwMesh_wlan_ssid.md"
+          "url": "https://github.com/Zimo-666/E5350-cves/tree/main/01-wizard-preauth-command-injection"
         },
         {
           "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/cve/CVE-2026-120195"
+          "url": "https://vuldb.com/cve/CVE-2026-121932"
         },
         {
           "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/submit/914922"
+          "url": "https://vuldb.com/submit/1024275"
         },
         {
           "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/429558"
+          "url": "https://vuldb.com/submit/1024277"
         },
         {
           "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/429558/cti"
+          "url": "https://vuldb.com/vuln/431044"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-120280",
+      "id": "CVE-2026-122303",
       "kind": "cve",
-      "cve_id": "CVE-2026-120280",
-      "title": "A vulnerability has been found in WAVLINK WN536AX6-A V260507. The impacted element is the function wireguard_cli_group handler of the file…",
+      "cve_id": "CVE-2026-122303",
+      "title": "Kyverno from 1.17.0 before 1.19.2 contains an authorization bypass vulnerability that allows namespace tenants to overwrite resources in ot…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-02T01:17:26.873",
+      "published": "2026-11-05T03:17:22.197",
       "kev_date_added": "",
-      "description": "A vulnerability has been found in WAVLINK WN536AX6-A V260507. The impacted element is the function wireguard_cli_group handler of the file /protocol.csp of the component WireGuard. The manipulation of the argument group_id/group_name leads to os command injection. The attack may be initiated remotely. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure.",
-      "cvss": 9.3,
+      "description": "Kyverno from 1.17.0 before 1.19.2 contains an authorization bypass vulnerability that allows namespace tenants to overwrite resources in other namespaces via NamespacedMutatingPolicy mutate-existing targetMatchConstraints.expression. Attackers can return a CEL map literal fabricating a target with an attacker-chosen metadata.namespace, causing the privileged background controller to overwrite Secrets, Deployments, or policies cluster-wide.",
+      "cvss": 9.4,
       "cvss_version": "4.0",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.01989,
-      "epss_percentile": 0.80695,
+      "epss": 0.0033,
+      "epss_percentile": 0.26275,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 37.6,
+      "score": 37.7,
       "score_components": {
-        "cvss": 37.2,
+        "cvss": 37.6,
         "kev": 0.0,
-        "epss": 0.4,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "CVSS 9.4 (4.0, CRITICAL) contributes 37.6 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.02 means FIRST estimates about a 2% probability of exploitation activity in the next 30 days, percentile 0.81. That contributes 0.4 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.26. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.6 out of 100."
+        "Total 37.7 out of 100."
       ],
-      "summary": "CVE-2026-120280 is a critical vulnerability in the affected software. A vulnerability has been found in WAVLINK WN536AX6-A V260507. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-122303 is a critical vulnerability in the affected software. Kyverno from 1.17.0 before 1.19.2 contains an authorization bypass vulnerability that allows namespace tenants to overwrite resources in other namespaces via NamespacedMutatingPolicy mutate-existing targetMatchConstraints.expression. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "cna@vuldb.com",
-          "url": "https://github.com/pipiyyb/cve/blob/main/WAVLINK%20WN536AX6-A/WN536AX6-A_group_id.md"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/kyverno/kyverno/security/advisories/GHSA-jcw5-3wcg-fqx5"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/cve/CVE-2026-120280"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/submit/919789"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/429624"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/429624/cti"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/kyverno-1.17.0-before-1.19.2-cross-namespace-resource-overwrite-via-namespacedmutatingpolicy"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-120345",
+      "id": "CVE-2026-122304",
       "kind": "cve",
-      "cve_id": "CVE-2026-120345",
-      "title": "A vulnerability was found in WAVLINK WN551X3-A M51X3_V251020-WO-182e965. This impacts the function sub_41a430 of the file /bin/ioos of the…",
+      "cve_id": "CVE-2026-122304",
+      "title": "Kyverno from 1.17.0 before 1.19.2 contains an authorization bypass vulnerability that allows namespace admins to escape namespace confineme…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-02T06:17:43.410",
+      "published": "2026-11-05T03:17:22.353",
       "kev_date_added": "",
-      "description": "A vulnerability was found in WAVLINK WN551X3-A M51X3_V251020-WO-182e965. This impacts the function sub_41a430 of the file /bin/ioos of the component DNS Resolution Handler. Performing a manipulation of the argument data results in os command injection. It is possible to initiate the attack remotely. The exploit has been made public and could be used. The vendor was contacted early about this disclosure.",
-      "cvss": 9.3,
+      "description": "Kyverno from 1.17.0 before 1.19.2 contains an authorization bypass vulnerability that allows namespace admins to escape namespace confinement because the cleanup controller builds its context loader with a nil policy. Attackers can create a namespaced CleanupPolicy with apiCall or globalReference context entries to read cross-namespace Secrets and modify validatingwebhookconfigurations using the cleanup controller's ServiceAccount.",
+      "cvss": 9.4,
       "cvss_version": "4.0",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.01989,
-      "epss_percentile": 0.80696,
+      "epss": 0.00392,
+      "epss_percentile": 0.33522,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 37.6,
+      "score": 37.7,
       "score_components": {
-        "cvss": 37.2,
+        "cvss": 37.6,
         "kev": 0.0,
-        "epss": 0.4,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "CVSS 9.4 (4.0, CRITICAL) contributes 37.6 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.02 means FIRST estimates about a 2% probability of exploitation activity in the next 30 days, percentile 0.81. That contributes 0.4 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.34. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.6 out of 100."
+        "Total 37.7 out of 100."
       ],
-      "summary": "CVE-2026-120345 is a critical vulnerability in the affected software. A vulnerability was found in WAVLINK WN551X3-A M51X3_V251020-WO-182e965. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-122304 is a critical vulnerability in the affected software. Kyverno from 1.17.0 before 1.19.2 contains an authorization bypass vulnerability that allows namespace admins to escape namespace confinement because the cleanup controller builds its context loader with a nil policy. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "cna@vuldb.com",
-          "url": "https://github.com/senxitoyshuyi-ui/HACKALL/blob/main/WAVLINK_WN551X3-A%20Router/WAVLINK_WN551X3-A_dns_resolution_command_injection.md"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/kyverno/kyverno/security/advisories/GHSA-p58h-r4j3-h5vx"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/cve/CVE-2026-120345"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/kyverno/kyverno/security/advisories/GHSA-rcxg-3f92-3mgr"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/submit/919579"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/kyverno-1.17.0-before-1.19.2-privilege-escalation-via-cleanuppolicy-context-loader"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-122310",
+      "kind": "cve",
+      "cve_id": "CVE-2026-122310",
+      "title": "Kyverno from 1.19.1 before 1.19.2 validates a Policy's context.apiCall urlPath after cleaning it but executes the raw path, whose fragment…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-05T03:17:23.337",
+      "kev_date_added": "",
+      "description": "Kyverno from 1.19.1 before 1.19.2 validates a Policy's context.apiCall urlPath after cleaning it but executes the raw path, whose fragment or query the Kubernetes client discards. A namespace-scoped user who can create a Policy can hide ../ segments behind # or ? to reach cluster-scoped endpoints with Kyverno's ServiceAccount, gaining cluster admin.",
+      "cvss": 9.4,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00357,
+      "epss_percentile": 0.29567,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.7,
+      "score_components": {
+        "cvss": 37.6,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.4 (4.0, CRITICAL) contributes 37.6 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.30. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.7 out of 100."
+      ],
+      "summary": "CVE-2026-122310 is a critical vulnerability in the affected software. Kyverno from 1.19.1 before 1.19.2 validates a Policy's context.apiCall urlPath after cleaning it but executes the raw path, whose fragment or query the Kubernetes client discards. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/kyverno/kyverno/security/advisories/GHSA-3xfv-vq8x-qhg4"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/429670"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/kyverno-1.19.1-before-1.19.2-privilege-escalation-via-policy-apicall-urlpath"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-122311",
+      "kind": "cve",
+      "cve_id": "CVE-2026-122311",
+      "title": "Kyverno from 1.16.0 before 1.19.2 fails to validate path segments in the resource argument of resource.get() and resource.post(), allowing…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-05T03:17:23.497",
+      "kev_date_added": "",
+      "description": "Kyverno from 1.16.0 before 1.19.2 fails to validate path segments in the resource argument of resource.get() and resource.post(), allowing namespaced CEL policies to escape their namespace. Tenants who can create a NamespacedValidatingPolicy can insert .. segments to read and write arbitrary cluster objects using the admission controller's ServiceAccount, leading to cluster takeover.",
+      "cvss": 9.4,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00448,
+      "epss_percentile": 0.3908,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.7,
+      "score_components": {
+        "cvss": 37.6,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.4 (4.0, CRITICAL) contributes 37.6 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.39. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.7 out of 100."
+      ],
+      "summary": "CVE-2026-122311 is a critical vulnerability in the affected software. Kyverno from 1.16.0 before 1.19.2 fails to validate path segments in the resource argument of resource.get() and resource.post(), allowing namespaced CEL policies to escape their namespace. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/kyverno/kyverno/security/advisories/GHSA-4pqm-wqq6-h9q2"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/429670/cti"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/kyverno-1.16.0-before-1.19.2-path-traversal-in-namespaced-cel-policies-via-resource-argument"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-122313",
+      "kind": "cve",
+      "cve_id": "CVE-2026-122313",
+      "title": "Kyverno from 1.17.0 before 1.19.2 contains a privilege escalation vulnerability that allows namespace-scoped tenants to modify resources in…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-05T03:17:23.853",
+      "kev_date_added": "",
+      "description": "Kyverno from 1.17.0 before 1.19.2 contains a privilege escalation vulnerability that allows namespace-scoped tenants to modify resources in other namespaces through NamespacedMutatingPolicy targetMatchConstraints.expression CEL output lacking namespace checks. Attackers can emit a literal target such as another tenant's RoleBinding, which the cluster-wide background controller then mutates to add attacker subjects or alter Roles, NetworkPolicies, and ConfigMaps.",
+      "cvss": 9.4,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00311,
+      "epss_percentile": 0.24079,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.7,
+      "score_components": {
+        "cvss": 37.6,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.4 (4.0, CRITICAL) contributes 37.6 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.24. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.7 out of 100."
+      ],
+      "summary": "CVE-2026-122313 is a critical vulnerability in the affected software. Kyverno from 1.17.0 before 1.19.2 contains a privilege escalation vulnerability that allows namespace-scoped tenants to modify resources in other namespaces through NamespacedMutatingPolicy targetMatchConstraints.expression CEL output lacking namespace checks. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/kyverno/kyverno/security/advisories/GHSA-f96w-622v-rqpq"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/kyverno-1.17.0-before-1.19.2-cross-namespace-privilege-escalation-via-namespacedmutatingpolicy"
         }
       ],
       "version_ranges": [],
@@ -1393,7 +1271,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.01989,
-      "epss_percentile": 0.80695,
+      "epss_percentile": 0.8071,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.6,
@@ -1439,316 +1317,6 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-122303",
-      "kind": "cve",
-      "cve_id": "CVE-2026-122303",
-      "title": "Kyverno from 1.17.0 before 1.19.2 contains an authorization bypass vulnerability that allows namespace tenants to overwrite resources in ot…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-05T03:17:22.197",
-      "kev_date_added": "",
-      "description": "Kyverno from 1.17.0 before 1.19.2 contains an authorization bypass vulnerability that allows namespace tenants to overwrite resources in other namespaces via NamespacedMutatingPolicy mutate-existing targetMatchConstraints.expression. Attackers can return a CEL map literal fabricating a target with an attacker-chosen metadata.namespace, causing the privileged background controller to overwrite Secrets, Deployments, or policies cluster-wide.",
-      "cvss": 9.4,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.6,
-      "score_components": {
-        "cvss": 37.6,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.4 (4.0, CRITICAL) contributes 37.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.6 out of 100."
-      ],
-      "summary": "CVE-2026-122303 is a critical vulnerability in the affected software. Kyverno from 1.17.0 before 1.19.2 contains an authorization bypass vulnerability that allows namespace tenants to overwrite resources in other namespaces via NamespacedMutatingPolicy mutate-existing targetMatchConstraints.expression. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/kyverno/kyverno/security/advisories/GHSA-jcw5-3wcg-fqx5"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/kyverno-1.17.0-before-1.19.2-cross-namespace-resource-overwrite-via-namespacedmutatingpolicy"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-122304",
-      "kind": "cve",
-      "cve_id": "CVE-2026-122304",
-      "title": "Kyverno from 1.17.0 before 1.19.2 contains an authorization bypass vulnerability that allows namespace admins to escape namespace confineme…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-05T03:17:22.353",
-      "kev_date_added": "",
-      "description": "Kyverno from 1.17.0 before 1.19.2 contains an authorization bypass vulnerability that allows namespace admins to escape namespace confinement because the cleanup controller builds its context loader with a nil policy. Attackers can create a namespaced CleanupPolicy with apiCall or globalReference context entries to read cross-namespace Secrets and modify validatingwebhookconfigurations using the cleanup controller's ServiceAccount.",
-      "cvss": 9.4,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.6,
-      "score_components": {
-        "cvss": 37.6,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.4 (4.0, CRITICAL) contributes 37.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.6 out of 100."
-      ],
-      "summary": "CVE-2026-122304 is a critical vulnerability in the affected software. Kyverno from 1.17.0 before 1.19.2 contains an authorization bypass vulnerability that allows namespace admins to escape namespace confinement because the cleanup controller builds its context loader with a nil policy. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/kyverno/kyverno/security/advisories/GHSA-p58h-r4j3-h5vx"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/kyverno/kyverno/security/advisories/GHSA-rcxg-3f92-3mgr"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/kyverno-1.17.0-before-1.19.2-privilege-escalation-via-cleanuppolicy-context-loader"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-122310",
-      "kind": "cve",
-      "cve_id": "CVE-2026-122310",
-      "title": "Kyverno from 1.19.1 before 1.19.2 validates a Policy's context.apiCall urlPath after cleaning it but executes the raw path, whose fragment…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-05T03:17:23.337",
-      "kev_date_added": "",
-      "description": "Kyverno from 1.19.1 before 1.19.2 validates a Policy's context.apiCall urlPath after cleaning it but executes the raw path, whose fragment or query the Kubernetes client discards. A namespace-scoped user who can create a Policy can hide ../ segments behind # or ? to reach cluster-scoped endpoints with Kyverno's ServiceAccount, gaining cluster admin.",
-      "cvss": 9.4,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.6,
-      "score_components": {
-        "cvss": 37.6,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.4 (4.0, CRITICAL) contributes 37.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.6 out of 100."
-      ],
-      "summary": "CVE-2026-122310 is a critical vulnerability in the affected software. Kyverno from 1.19.1 before 1.19.2 validates a Policy's context.apiCall urlPath after cleaning it but executes the raw path, whose fragment or query the Kubernetes client discards. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/kyverno/kyverno/security/advisories/GHSA-3xfv-vq8x-qhg4"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/kyverno-1.19.1-before-1.19.2-privilege-escalation-via-policy-apicall-urlpath"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-122311",
-      "kind": "cve",
-      "cve_id": "CVE-2026-122311",
-      "title": "Kyverno from 1.16.0 before 1.19.2 fails to validate path segments in the resource argument of resource.get() and resource.post(), allowing…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-05T03:17:23.497",
-      "kev_date_added": "",
-      "description": "Kyverno from 1.16.0 before 1.19.2 fails to validate path segments in the resource argument of resource.get() and resource.post(), allowing namespaced CEL policies to escape their namespace. Tenants who can create a NamespacedValidatingPolicy can insert .. segments to read and write arbitrary cluster objects using the admission controller's ServiceAccount, leading to cluster takeover.",
-      "cvss": 9.4,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.6,
-      "score_components": {
-        "cvss": 37.6,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.4 (4.0, CRITICAL) contributes 37.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.6 out of 100."
-      ],
-      "summary": "CVE-2026-122311 is a critical vulnerability in the affected software. Kyverno from 1.16.0 before 1.19.2 fails to validate path segments in the resource argument of resource.get() and resource.post(), allowing namespaced CEL policies to escape their namespace. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/kyverno/kyverno/security/advisories/GHSA-4pqm-wqq6-h9q2"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/kyverno-1.16.0-before-1.19.2-path-traversal-in-namespaced-cel-policies-via-resource-argument"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-122313",
-      "kind": "cve",
-      "cve_id": "CVE-2026-122313",
-      "title": "Kyverno from 1.17.0 before 1.19.2 contains a privilege escalation vulnerability that allows namespace-scoped tenants to modify resources in…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-05T03:17:23.853",
-      "kev_date_added": "",
-      "description": "Kyverno from 1.17.0 before 1.19.2 contains a privilege escalation vulnerability that allows namespace-scoped tenants to modify resources in other namespaces through NamespacedMutatingPolicy targetMatchConstraints.expression CEL output lacking namespace checks. Attackers can emit a literal target such as another tenant's RoleBinding, which the cluster-wide background controller then mutates to add attacker subjects or alter Roles, NetworkPolicies, and ConfigMaps.",
-      "cvss": 9.4,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.6,
-      "score_components": {
-        "cvss": 37.6,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.4 (4.0, CRITICAL) contributes 37.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.6 out of 100."
-      ],
-      "summary": "CVE-2026-122313 is a critical vulnerability in the affected software. Kyverno from 1.17.0 before 1.19.2 contains a privilege escalation vulnerability that allows namespace-scoped tenants to modify resources in other namespaces through NamespacedMutatingPolicy targetMatchConstraints.expression CEL output lacking namespace checks. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/kyverno/kyverno/security/advisories/GHSA-f96w-622v-rqpq"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/kyverno-1.17.0-before-1.19.2-cross-namespace-privilege-escalation-via-namespacedmutatingpolicy"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-120189",
-      "kind": "cve",
-      "cve_id": "CVE-2026-120189",
-      "title": "A vulnerability was identified in D-Link DIR-505 1.10B02. Affected is the function save_upload_file/mp_upload_file of the file /usr/bin/tft…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-01T01:17:16.877",
-      "kev_date_added": "",
-      "description": "A vulnerability was identified in D-Link DIR-505 1.10B02. Affected is the function save_upload_file/mp_upload_file of the file /usr/bin/tftpd of the component TFTP Upload Filename Handler. The manipulation leads to stack-based buffer overflow. The attack is possible to be carried out remotely. The exploit is publicly available and might be used.",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.01346,
-      "epss_percentile": 0.7151,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.5,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.3,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.72. That contributes 0.3 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.5 out of 100."
-      ],
-      "summary": "CVE-2026-120189 is a critical vulnerability in the affected software. A vulnerability was identified in D-Link DIR-505 1.10B02. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://github.com/Walnut1337/DIR-505_filename_rce/tree/main/poc"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/cve/CVE-2026-120189"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/submit/1027185"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/429528"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/429528/cti"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
       "id": "CVE-2026-119706",
       "kind": "cve",
       "cve_id": "CVE-2026-119706",
@@ -1764,7 +1332,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.0103,
-      "epss_percentile": 0.63806,
+      "epss_percentile": 0.63831,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.4,
@@ -1825,7 +1393,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00754,
-      "epss_percentile": 0.5522,
+      "epss_percentile": 0.55249,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.4,
@@ -1871,6 +1439,128 @@
       "aliases": []
     },
     {
+      "id": "CVE-2026-121933",
+      "kind": "cve",
+      "cve_id": "CVE-2026-121933",
+      "title": "A flaw has been found in Linksys E5350 1.0.00.037. This impacts the function save_settings of the file /wizard/apply.cgi of the component S…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-04T20:19:11.607",
+      "kev_date_added": "",
+      "description": "A flaw has been found in Linksys E5350 1.0.00.037. This impacts the function save_settings of the file /wizard/apply.cgi of the component Setup Wizard. Executing a manipulation of the argument wizard_router_pwd can lead to missing authentication. The attack may be launched remotely. The exploit has been published and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00977,
+      "epss_percentile": 0.62279,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.4,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.2,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.62. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.4 out of 100."
+      ],
+      "summary": "CVE-2026-121933 is a critical vulnerability in the affected software. A flaw has been found in Linksys E5350 1.0.00.037. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://github.com/Zimo-666/E5350-cves/tree/main/02-empty-admin-password-auth-bypass"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/cve/CVE-2026-121933"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/submit/1024276"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/431045"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/431045/cti"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-122013",
+      "kind": "cve",
+      "cve_id": "CVE-2026-122013",
+      "title": "A vulnerability was detected in Comfast CF-WR632AX 2.6.0.1. Affected by this vulnerability is an unknown functionality of the file /usr/bin…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-04T21:18:07.540",
+      "kev_date_added": "",
+      "description": "A vulnerability was detected in Comfast CF-WR632AX 2.6.0.1. Affected by this vulnerability is an unknown functionality of the file /usr/bin/webmgnt of the component Multipart Parser. Performing a manipulation of the argument filename results in path traversal. It is possible to initiate the attack remotely. The exploit is now public and may be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00822,
+      "epss_percentile": 0.57449,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.4,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.2,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.57. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.4 out of 100."
+      ],
+      "summary": "CVE-2026-122013 is a critical vulnerability in the affected software. A vulnerability was detected in Comfast CF-WR632AX 2.6.0.1. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://github.com/FoundTL/COMFAST-CF-WR632AX-Wi-Fi-6-Router"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/cve/CVE-2026-122013"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/submit/1023251"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/431080"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/431080/cti"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "CVE-2026-112354",
       "kind": "cve",
       "cve_id": "CVE-2026-112354",
@@ -1886,7 +1576,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.0054,
-      "epss_percentile": 0.45548,
+      "epss_percentile": 0.45574,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.3,
@@ -1924,128 +1614,6 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-119597",
-      "kind": "cve",
-      "cve_id": "CVE-2026-119597",
-      "title": "OpenDeepWiki through 2.0.6 contains a hard-coded JWT signing key vulnerability that allows unauthenticated attackers to forge administrator…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-30T14:16:47.770",
-      "kev_date_added": "",
-      "description": "OpenDeepWiki through 2.0.6 contains a hard-coded JWT signing key vulnerability that allows unauthenticated attackers to forge administrator tokens using the publicly known Jwt:SecretKey in appsettings.json. Attackers can mint HS256 bearer tokens with an Admin role claim to access /api/admin endpoints and control users, roles, repositories, settings, and API keys.",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00371,
-      "epss_percentile": 0.31198,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.3,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.31. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.3 out of 100."
-      ],
-      "summary": "CVE-2026-119597 is a critical vulnerability in the affected software. OpenDeepWiki through 2.0.6 contains a hard-coded JWT signing key vulnerability that allows unauthenticated attackers to forge administrator tokens using the publicly known Jwt:SecretKey in appsettings.json. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/AIDotNet/OpenDeepWiki"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/AIDotNet/OpenDeepWiki/blob/v2.0.6/src/OpenDeepWiki/Program.cs#L92"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/AIDotNet/OpenDeepWiki/blob/v2.0.6/src/OpenDeepWiki/appsettings.json#L27"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/AIDotNet/OpenDeepWiki/commit/1bf0f4b5ef8d972ca640e5df145b5813a9492544"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/AIDotNet/OpenDeepWiki/issues/403"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-119660",
-      "kind": "cve",
-      "cve_id": "CVE-2026-119660",
-      "title": "MuseBot before 2.0.0 contains an authentication bypass vulnerability that allows unauthenticated attackers to forge admin sessions by using…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-10-30T15:16:50.197",
-      "kev_date_added": "",
-      "description": "MuseBot before 2.0.0 contains an authentication bypass vulnerability that allows unauthenticated attackers to forge admin sessions by using the hard-coded default session_key 'muse_bot_session_key'. Attackers can sign a MuseBot-session cookie carrying a user_id to gain full administrative access, reading password hashes, chat records, and bot configuration, and stopping bots.",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.0052,
-      "epss_percentile": 0.44289,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.3,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.44. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.3 out of 100."
-      ],
-      "summary": "CVE-2026-119660 is a critical vulnerability in the affected software. MuseBot before 2.0.0 contains an authentication bypass vulnerability that allows unauthenticated attackers to forge admin sessions by using the hard-coded default session_key 'muse_bot_session_key'. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/yincongcyincong/MuseBot"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/yincongcyincong/MuseBot/blob/v1.0.42/admin/conf/conf.go#L28"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/yincongcyincong/MuseBot/blob/v1.0.42/admin/controller/login.go#L19-L88"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/yincongcyincong/MuseBot/commit/139f6158b50283b983d76976f593a3a09a064681"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/yincongcyincong/MuseBot/commit/3e64518948fe7037058f07ef987d35216c3f0cae"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
       "id": "CVE-2026-119716",
       "kind": "cve",
       "cve_id": "CVE-2026-119716",
@@ -2061,7 +1629,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00458,
-      "epss_percentile": 0.39815,
+      "epss_percentile": 0.39836,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.3,
@@ -2107,41 +1675,391 @@
       "aliases": []
     },
     {
-      "id": "news-c401bb54ceff",
-      "kind": "news",
-      "cve_id": null,
-      "title": "CISA flags WordPress RCE flaw as actively exploited in attacks",
+      "id": "CVE-2026-120281",
+      "kind": "cve",
+      "cve_id": "CVE-2026-120281",
+      "title": "A vulnerability was found in WAVLINK WN536AX6-A V260507. This affects the function strcpy of the file /protocol.csp of the component OpenVP…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-04T07:11:05-05:00",
-      "description": "The US Cybersecurity and Infrastructure Security Agency (CISA) warned federal agencies that attackers have started exploiting a recently patched high-severity WordPress vulnerability in the wild. [...]",
-      "source": "BleepingComputer",
-      "cvss": null,
-      "severity": null,
+      "published": "2026-11-02T01:17:27.070",
+      "kev_date_added": "",
+      "description": "A vulnerability was found in WAVLINK WN536AX6-A V260507. This affects the function strcpy of the file /protocol.csp of the component OpenVPN Handler. The manipulation of the argument openvpn_ip results in stack-based buffer overflow. The attack may be launched remotely. The exploit has been made public and could be used. The vendor was contacted early about this disclosure.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
       "in_kev": false,
-      "epss": null,
-      "smb_matches": [
-        "WordPress"
-      ],
-      "formula_id": "news-relevance-v1",
-      "score": 20.0,
+      "ransomware": "Unknown",
+      "epss": 0.00584,
+      "epss_percentile": 0.4804,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.3,
       "score_components": {
-        "smb": 10.0,
-        "urgency": 10.0
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
       },
       "reasons": [
-        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Mentions software on the small-business list (WordPress): 10.0 of 10.",
-        "Uses the urgency term 'actively exploited': 10.0 of 10.",
-        "Total 20.0 out of 20 on the news scale."
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.48. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.3 out of 100."
       ],
-      "summary": "Headline from BleepingComputer: CISA flags WordPress RCE flaw as actively exploited in attacks. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "If you use WordPress, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
+      "summary": "CVE-2026-120281 is a critical vulnerability in the affected software. A vulnerability was found in WAVLINK WN536AX6-A V260507. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "BleepingComputer",
-          "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-wordpress-rce-flaw-as-actively-exploited-in-attacks/"
+          "label": "cna@vuldb.com",
+          "url": "https://github.com/F-yyjy/cve/blob/main/WN536AX6-A_openvpn_ip.md"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/cve/CVE-2026-120281"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/submit/919790"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/429625"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/429625/cti"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-121609",
+      "kind": "cve",
+      "cve_id": "CVE-2026-121609",
+      "title": "A vulnerability was identified in Qihoo 360 Whole Home Router M5 4.0.17.1566. This issue affects the function Home of the file /etc/init.d/…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-04T02:17:20.243",
+      "kev_date_added": "",
+      "description": "A vulnerability was identified in Qihoo 360 Whole Home Router M5 4.0.17.1566. This issue affects the function Home of the file /etc/init.d/mpt of the component Boot Script. The manipulation leads to hard-coded credentials. Remote exploitation of the attack is possible. The exploit is publicly available and might be used. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00501,
+      "epss_percentile": 0.43065,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.3,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.43. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.3 out of 100."
+      ],
+      "summary": "CVE-2026-121609 is a critical vulnerability in the affected software. A vulnerability was identified in Qihoo 360 Whole Home Router M5 4.0.17.1566. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://gist.github.com/gajgdm6-cpu/c8c3bbdeb51c076317834b41c3a919f2"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/cve/CVE-2026-121609"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/submit/1023264"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/430446"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/430446/cti"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-122302",
+      "kind": "cve",
+      "cve_id": "CVE-2026-122302",
+      "title": "Kyverno before 1.19.2 contains a privilege escalation vulnerability that allows namespace admins to create resources beyond their RBAC beca…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-05T03:17:22.030",
+      "kev_date_added": "",
+      "description": "Kyverno before 1.19.2 contains a privilege escalation vulnerability that allows namespace admins to create resources beyond their RBAC because generate-rule admission checks verify the controller's permissions, not the author's. Attackers can create a namespaced Policy with generate rules targeting other namespaces or cluster-scoped kinds, making the background controller create or clone resources cluster-wide.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00284,
+      "epss_percentile": 0.21078,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.3,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.21. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.3 out of 100."
+      ],
+      "summary": "CVE-2026-122302 is a critical vulnerability in the affected software. Kyverno before 1.19.2 contains a privilege escalation vulnerability that allows namespace admins to create resources beyond their RBAC because generate-rule admission checks verify the controller's permissions, not the author's. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/kyverno/kyverno/security/advisories/GHSA-q62c-r9v2-cf64"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/kyverno-before-1.19.2-privilege-escalation-via-generate-rule-permission-check"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-54384",
+      "kind": "cve",
+      "cve_id": "CVE-2026-54384",
+      "title": "VitaFit cloud API before 2026-10-30 contained an authentication bypass vulnerability that allows remote attackers to obtain a full session…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-04T23:17:48.523",
+      "kev_date_added": "",
+      "description": "VitaFit cloud API before 2026-10-30 contained an authentication bypass vulnerability that allows remote attackers to obtain a full session for a victim's account by submitting a linked Google or Facebook account identifier to the POST /front/login/sns/ endpoint without providing proof of ownership from the identity provider. Attackers can forge a login using an identifier exposed through account enumeration to read and modify the victim's profile and delete the account's authentication record,…",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00661,
+      "epss_percentile": 0.51778,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.3,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.52. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.3 out of 100."
+      ],
+      "summary": "CVE-2026-54384 is a critical vulnerability in the affected software. VitaFit cloud API before 2026-10-30 contained an authentication bypass vulnerability that allows remote attackers to obtain a full session for a victim's account by submitting a linked Google or Facebook account identifier to the POST /front/login/sns/ endpoint without providing… It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/je-lv/vitafit-security-research"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://play.google.com/store/apps/details?id=com.vt.vitafit"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/vitafit-cloud-api-authentication-bypass-via-post-front-login-sns"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-119757",
+      "kind": "cve",
+      "cve_id": "CVE-2026-119757",
+      "title": "BTCPay Server before 2.4.2, including 2.4.2 release candidates, contains an information disclosure vulnerability that allows unauthenticate…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-05T22:17:53.203",
+      "kev_date_added": "",
+      "description": "BTCPay Server before 2.4.2, including 2.4.2 release candidates, contains an information disclosure vulnerability that allows unauthenticated remote attackers to retrieve .macaroon credential files for an LND (Lightning Network Daemon) node. Attackers can use the exposed macaroon to gain full control of the LND node, including moving funds, resulting in theft of funds from affected deployments.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.2,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.2 out of 100."
+      ],
+      "summary": "CVE-2026-119757 is a critical vulnerability in the affected software. BTCPay Server before 2.4.2, including 2.4.2 release candidates, contains an information disclosure vulnerability that allows unauthenticated remote attackers to retrieve .macaroon credential files for an LND (Lightning Network Daemon) node. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://blog.btcpayserver.org/security-advisory-btcpay-server-2-4-2/"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.binance.com/en/square/post/384812445203404"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/btcpay-server-lnd-macaroon-credential-file-disclosure"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-121606",
+      "kind": "cve",
+      "cve_id": "CVE-2026-121606",
+      "title": "A vulnerability has been found in Qihoo 360 D621-2, D603-2, D600-2, D619, D606-6 and D706 up to 6.4.9. Affected by this issue is the functi…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-04T01:17:23.880",
+      "kev_date_added": "",
+      "description": "A vulnerability has been found in Qihoo 360 D621-2, D603-2, D600-2, D619, D606-6 and D706 up to 6.4.9. Affected by this issue is the function verify_sign of the file fs2/bin/iscm of the component Firmware Signature Verification. Such manipulation of the argument sign leads to improper verification of cryptographic signature. The attack can be launched remotely. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond…",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.0024,
+      "epss_percentile": 0.15145,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.2,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.15. That contributes 0.0 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.2 out of 100."
+      ],
+      "summary": "CVE-2026-121606 is a critical vulnerability in the affected software. A vulnerability has been found in Qihoo 360 D621-2, D603-2, D600-2, D619, D606-6 and D706 up to 6.4.9. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://gist.github.com/gajgdm6-cpu/cf98af20ddb77f27a7c112214a6280f7"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/cve/CVE-2026-121606"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/submit/1023261"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/430443"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/430443/cti"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-54378",
+      "kind": "cve",
+      "cve_id": "CVE-2026-54378",
+      "title": "VitaFit cloud API before 2026-10-30 contained a broken access control vulnerability that allows any authenticated user to obtain temporary…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-04T22:18:05.777",
+      "kev_date_added": "",
+      "description": "VitaFit cloud API before 2026-10-30 contained a broken access control vulnerability that allows any authenticated user to obtain temporary AWS credentials by calling the POST /front/user/s3/token/ endpoint. Attackers can use these improperly scoped credentials to list the shared storage bucket and read or overwrite other users' stored files, enabling unauthorized cross-user data access and manipulation.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00231,
+      "epss_percentile": 0.13999,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.2,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.14. That contributes 0.0 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.2 out of 100."
+      ],
+      "summary": "CVE-2026-54378 is a critical vulnerability in the affected software. VitaFit cloud API before 2026-10-30 contained a broken access control vulnerability that allows any authenticated user to obtain temporary AWS credentials by calling the POST /front/user/s3/token/ endpoint. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/je-lv/vitafit-security-research"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://play.google.com/store/apps/details?id=com.vt.vitafit"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/vitafit-cloud-api-broken-access-control-via-s3-token-endpoint"
         }
       ],
       "version_ranges": [],
@@ -2230,6 +2148,45 @@
       "aliases": []
     },
     {
+      "id": "news-83e08e4c6c08",
+      "kind": "news",
+      "cve_id": null,
+      "title": "DigiCert data breach exposes customer information, identity documents",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-05T11:12:46-05:00",
+      "description": "DigiCert warns it suffered a data breach after a server migration mistakenly exposed an internal business system to the internet, allowing unauthorized access to customer information and identity documents. [...]",
+      "source": "BleepingComputer",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 0.0,
+        "urgency": 10.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Does not mention the small-business software list: 0 of 10.",
+        "Uses the urgency term 'data breach': 10.0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from BleepingComputer: DigiCert data breach exposes customer information, identity documents. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/digicert-data-breach-exposes-customer-information-identity-documents/"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "news-622646b53531",
       "kind": "news",
       "cve_id": null,
@@ -2263,47 +2220,6 @@
         {
           "label": "BleepingComputer",
           "url": "https://www.bleepingcomputer.com/news/security/dreamhost-confirms-data-breach-exposed-ftp-logins-and-webmail-sessions/"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "news-4432f1dbea0c",
-      "kind": "news",
-      "cve_id": null,
-      "title": "NetamLoader Malware Targets Government Windows 10 Systems in Asia via .NET Injection",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-01T12:32:58+05:30",
-      "description": "Cybersecurity researchers have disclosed details of what has been described as a \"highly sophisticated infection chain\" targeting government organizations in Asia. The activity, detailed by Kaspersky this week, targeted a custom Windows 10 build used exclusively by government entities in Asia and involves the deployment of a previously undocumented .NET assembly-loading framework codenamed",
-      "source": "The Hacker News",
-      "cvss": null,
-      "severity": null,
-      "in_kev": false,
-      "epss": null,
-      "smb_matches": [
-        "Windows"
-      ],
-      "formula_id": "news-relevance-v1",
-      "score": 10.0,
-      "score_components": {
-        "smb": 10.0,
-        "urgency": 0.0
-      },
-      "reasons": [
-        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Mentions software on the small-business list (Windows): 10.0 of 10.",
-        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
-        "Total 10.0 out of 20 on the news scale."
-      ],
-      "summary": "Headline from The Hacker News: NetamLoader Malware Targets Government Windows 10 Systems in Asia via .NET Injection. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "If you use Windows, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "The Hacker News",
-          "url": "https://thehackernews.com/2026/11/netamloader-malware-targets-government.html"
         }
       ],
       "version_ranges": [],
@@ -2391,41 +2307,78 @@
       "aliases": []
     },
     {
-      "id": "news-8fc971e55b17",
+      "id": "news-d2b8633e1a6f",
       "kind": "news",
       "cve_id": null,
-      "title": "WordPress RCE Flaw Draws Nearly 63,000 Attack Attempts in Just 24 Hours",
+      "title": "Zyxel GS1900 Patch Fails to Block Zero-Day Exploit Allowing Root Command Execution",
       "vendor": "",
       "product": "",
-      "published": "2026-10-30T19:38:14+05:30",
-      "description": "Threat actors have been observed attempting to exploit a high-severity security flaw in WordPress Core shortly after patches were released. The vulnerability, which does not have a CVE identifier, relates to a case of remote code execution impacting WordPress Core versions 4.7 through 7.1.3. It carries a CVSS score of 8.1 on the CVSS scoring system. Patches for the flaw were released on October",
+      "published": "2026-11-05T12:36:33+05:30",
+      "description": "Zyxel GS1900 network switches that received the vendor's earlier fix for an actively exploited flaw are still open to the exploit attackers used, researchers at Binarly found. The exploit lets anyone who can reach a switch's web management interface run commands on it without logging in. Zyxel has released new firmware for 10 GS1900 models that closes the hole. The earlier fix is the 2.90",
       "source": "The Hacker News",
       "cvss": null,
       "severity": null,
       "in_kev": false,
       "epss": null,
-      "smb_matches": [
-        "WordPress"
-      ],
+      "smb_matches": [],
       "formula_id": "news-relevance-v1",
       "score": 10.0,
       "score_components": {
-        "smb": 10.0,
-        "urgency": 0.0
+        "smb": 0.0,
+        "urgency": 10.0
       },
       "reasons": [
         "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Mentions software on the small-business list (WordPress): 10.0 of 10.",
-        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
+        "Does not mention the small-business software list: 0 of 10.",
+        "Uses the urgency term 'actively exploited': 10.0 of 10.",
         "Total 10.0 out of 20 on the news scale."
       ],
-      "summary": "Headline from The Hacker News: WordPress RCE Flaw Draws Nearly 63,000 Attack Attempts in Just 24 Hours. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "If you use WordPress, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
+      "summary": "Headline from The Hacker News: Zyxel GS1900 Patch Fails to Block Zero-Day Exploit Allowing Root Command Execution. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
       "summary_engine": "rules-v1",
       "references": [
         {
           "label": "The Hacker News",
-          "url": "https://thehackernews.com/2026/10/wordpress-rce-flaw-draws-nearly-63000.html"
+          "url": "https://thehackernews.com/2026/11/zyxel-gs1900-patch-fails-to-block-zero.html"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "news-b8bdafeefd72",
+      "kind": "news",
+      "cve_id": null,
+      "title": "Zyxel fixes zero-day exploited to hack nearly 1,000 network switches",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-04T15:58:19-05:00",
+      "description": "Zyxel has patched a zero-day vulnerability in its GS1900 series network switches that hackers exploited to compromise nearly 1,000 devices worldwide and steal configuration files and credentials. [...]",
+      "source": "BleepingComputer",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 0.0,
+        "urgency": 10.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Does not mention the small-business software list: 0 of 10.",
+        "Uses the urgency term 'zero-day': 10.0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from BleepingComputer: Zyxel fixes zero-day exploited to hack nearly 1,000 network switches. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/zyxel-fixes-zero-day-exploited-to-hack-nearly-1-000-network-switches/"
         }
       ],
       "version_ranges": [],
