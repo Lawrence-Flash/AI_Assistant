@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-08T11:18:33.219216+00:00",
+  "generated_at": "2026-11-09T12:55:31.274023+00:00",
   "mode": "live",
   "formula": {
     "id": "smb-sa-v1",
@@ -18,13 +18,13 @@
     }
   },
   "counts": {
-    "catalog_cves": 2062,
-    "brief_items": 46,
+    "catalog_cves": 2108,
+    "brief_items": 45,
     "brief_cves": 40,
-    "brief_news": 6,
+    "brief_news": 5,
     "kev": 1769,
-    "nvd": 293,
-    "epss": 268
+    "nvd": 339,
+    "epss": 288
   },
   "warnings": [],
   "sources": [
@@ -235,7 +235,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.09813,
-      "epss_percentile": 0.95579,
+      "epss_percentile": 0.95582,
       "smb_matches": [
         "Windows"
       ],
@@ -277,7 +277,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.84478,
-      "epss_percentile": 0.99702,
+      "epss_percentile": 0.99703,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 41.9,
@@ -437,7 +437,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.01343,
-      "epss_percentile": 0.71529,
+      "epss_percentile": 0.7155,
       "smb_matches": [
         "Fortinet"
       ],
@@ -479,7 +479,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.01157,
-      "epss_percentile": 0.67258,
+      "epss_percentile": 0.67278,
       "smb_matches": [
         "WordPress"
       ],
@@ -530,7 +530,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00668,
-      "epss_percentile": 0.52159,
+      "epss_percentile": 0.5218,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 40.1,
@@ -574,23 +574,23 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00428,
+      "epss_percentile": 0.3726,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 40.0,
+      "score": 40.1,
       "score_components": {
         "cvss": 40.0,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 10.0 (4.0, CRITICAL) contributes 40.0 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.37. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 40.0 out of 100."
+        "Total 40.1 out of 100."
       ],
       "summary": "CVE-2026-123551 is a critical vulnerability in the affected software. OpenAM from 14.0.0 before 16.1.4 contains an information disclosure vulnerability that allows unauthenticated attackers to read live session tokens from the notification WebSocket. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -624,7 +624,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.01908,
-      "epss_percentile": 0.79889,
+      "epss_percentile": 0.79905,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 40.0,
@@ -642,345 +642,6 @@
         "Total 40.0 out of 100."
       ],
       "summary": "CVE-2026-17402 is a critical vulnerability in the affected software. IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary commands due to OS command injection. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295635"
-        },
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295637"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-17117",
-      "kind": "cve",
-      "cve_id": "CVE-2026-17117",
-      "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary c…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-07T05:18:25.647",
-      "kev_date_added": "",
-      "description": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary code due to improperly controlled modification of object attributes. A user could set a field that should only be controlled by the system, which could lead to code execution.",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00803,
-      "epss_percentile": 0.56945,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.8,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.2,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.57. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.8 out of 100."
-      ],
-      "summary": "CVE-2026-17117 is a critical vulnerability in the affected software. IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary code due to improperly controlled modification of object attributes. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295635"
-        },
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295637"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-17147",
-      "kind": "cve",
-      "cve_id": "CVE-2026-17147",
-      "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary c…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-07T05:18:28.037",
-      "kev_date_added": "",
-      "description": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary code and perform unauthorized administrative actions due to a path traversal vulnerability.",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00899,
-      "epss_percentile": 0.59857,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.8,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.2,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.60. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.8 out of 100."
-      ],
-      "summary": "CVE-2026-17147 is a critical vulnerability in the affected software. IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary code and perform unauthorized administrative actions due to a path traversal vulnerability. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295635"
-        },
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295637"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-17150",
-      "kind": "cve",
-      "cve_id": "CVE-2026-17150",
-      "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary c…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-07T05:18:28.230",
-      "kev_date_added": "",
-      "description": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary code and access sensitive information from other tenants due to insufficient input validation. Uploaded custom module content is not sufficiently validated before it is processed, which could allow code to run with access beyond the user's own tenant.",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00786,
-      "epss_percentile": 0.56372,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.8,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.2,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.56. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.8 out of 100."
-      ],
-      "summary": "CVE-2026-17150 is a critical vulnerability in the affected software. IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary code and access sensitive information from other tenants due to insufficient input validation. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295635"
-        },
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295637"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-17239",
-      "kind": "cve",
-      "cve_id": "CVE-2026-17239",
-      "title": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary code due to a path traversal vul…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-07T05:18:32.657",
-      "kev_date_added": "",
-      "description": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary code due to a path traversal vulnerability.",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00835,
-      "epss_percentile": 0.57921,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.8,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.2,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.58. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.8 out of 100."
-      ],
-      "summary": "CVE-2026-17239 is a critical vulnerability in the affected software. IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary code due to a path traversal vulnerability. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295635"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-17342",
-      "kind": "cve",
-      "cve_id": "CVE-2026-17342",
-      "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary c…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-07T05:18:45.943",
-      "kev_date_added": "",
-      "description": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary code due to improper control of generation of code.",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.0085,
-      "epss_percentile": 0.58405,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.8,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.2,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.58. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.8 out of 100."
-      ],
-      "summary": "CVE-2026-17342 is a critical vulnerability in the affected software. IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary code due to improper control of generation of code. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295635"
-        },
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295637"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-17359",
-      "kind": "cve",
-      "cve_id": "CVE-2026-17359",
-      "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary c…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-07T05:18:48.017",
-      "kev_date_added": "",
-      "description": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary code due to improper control of generation of code. A user-supplied value can influence code that the product generates, which could lead to code execution.",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.0085,
-      "epss_percentile": 0.58405,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.8,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.2,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.58. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.8 out of 100."
-      ],
-      "summary": "CVE-2026-17359 is a critical vulnerability in the affected software. IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary code due to improper control of generation of code. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295635"
-        },
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295637"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-17399",
-      "kind": "cve",
-      "cve_id": "CVE-2026-17399",
-      "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary c…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-07T05:18:55.790",
-      "kev_date_added": "",
-      "description": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary code due to insufficient validation of uploaded content. Content uploaded to the product is not sufficiently checked before it is processed, which could allow code to run on the server.",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00786,
-      "epss_percentile": 0.56372,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.8,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.2,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.56. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.8 out of 100."
-      ],
-      "summary": "CVE-2026-17399 is a critical vulnerability in the affected software. IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary code due to insufficient validation of uploaded content. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
@@ -1052,7 +713,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00497,
-      "epss_percentile": 0.42847,
+      "epss_percentile": 0.42868,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -1097,7 +758,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00528,
-      "epss_percentile": 0.44953,
+      "epss_percentile": 0.44976,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -1142,7 +803,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00537,
-      "epss_percentile": 0.45499,
+      "epss_percentile": 0.45526,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -1155,7 +816,7 @@
       "reasons": [
         "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.45. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.46. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 39.7 out of 100."
       ],
@@ -1187,7 +848,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00618,
-      "epss_percentile": 0.49859,
+      "epss_percentile": 0.49878,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -1232,7 +893,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.0046,
-      "epss_percentile": 0.40054,
+      "epss_percentile": 0.4008,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -1277,7 +938,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00666,
-      "epss_percentile": 0.52083,
+      "epss_percentile": 0.52104,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -1326,7 +987,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00662,
-      "epss_percentile": 0.51909,
+      "epss_percentile": 0.5193,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -1375,7 +1036,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00537,
-      "epss_percentile": 0.45461,
+      "epss_percentile": 0.45488,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -1424,7 +1085,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00618,
-      "epss_percentile": 0.49859,
+      "epss_percentile": 0.49879,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -1469,7 +1130,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00664,
-      "epss_percentile": 0.52,
+      "epss_percentile": 0.52021,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -1514,7 +1175,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00655,
-      "epss_percentile": 0.51619,
+      "epss_percentile": 0.51638,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -1563,7 +1224,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00655,
-      "epss_percentile": 0.51619,
+      "epss_percentile": 0.51638,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -1597,61 +1258,45 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-86596",
+      "id": "CVE-2026-107331",
       "kind": "cve",
-      "cve_id": "CVE-2026-86596",
-      "title": "The s2Member plugin for WordPress is vulnerable to Remote Code Execution in all versions up to, and including, <= 260927 via the 'item_name…",
+      "cve_id": "CVE-2026-107331",
+      "title": "IBM DataStage on Cloud Pak for Data 5.4.0.0 could allow a remote authenticated attacker to obtain sensitive information due to an absolute-…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-02T22:17:23.490",
+      "published": "2026-11-08T17:16:35.550",
       "kev_date_added": "",
-      "description": "The s2Member plugin for WordPress is vulnerable to Remote Code Execution in all versions up to, and including, <= 260927 via the 'item_name' parameter parameter. This is due to insufficient sanitization in strip_php_tags_deep(), which only strips literal '<?' sequences, combined with a post-interpolation placeholder cleanup that reassembles a valid '<?php' opener after the attacker-controlled value has already been embedded in the email template. This makes it possible for authenticated attacke…",
-      "cvss": 9.8,
+      "description": "IBM DataStage on Cloud Pak for Data 5.4.0.0 could allow a remote authenticated attacker to obtain sensitive information due to an absolute-path traversal vulnerability.",
+      "cvss": 9.9,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.01487,
-      "epss_percentile": 0.74201,
+      "epss": null,
+      "epss_percentile": null,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 39.5,
+      "score": 39.6,
       "score_components": {
-        "cvss": 39.2,
+        "cvss": 39.6,
         "kev": 0.0,
-        "epss": 0.3,
+        "epss": 0.0,
         "smb": 0.0
       },
       "reasons": [
-        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
+        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.74. That contributes 0.3 of 20. It is a forecast, not a statement that you will be attacked.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.5 out of 100."
+        "Total 39.6 out of 100."
       ],
-      "summary": "CVE-2026-86596 is a critical vulnerability in the affected software. The s2Member plugin for WordPress is vulnerable to Remote Code Execution in all versions up to, and including, <= 260927 via the 'item_name' parameter parameter. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-107331 is a critical vulnerability in the affected software. IBM DataStage on Cloud Pak for Data 5.4.0.0 could allow a remote authenticated attacker to obtain sensitive information due to an absolute-path traversal vulnerability. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/s2member/tags/260829/src/includes/classes/paypal-notify-in-subscr-or-wa-w-level.inc.php#L514"
-        },
-        {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/s2member/tags/260829/src/includes/classes/paypal-notify-in-web-accept-sp.inc.php#L104"
-        },
-        {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/s2member/tags/260829/src/includes/classes/paypal-notify-in-web-accept-sp.inc.php#L131"
-        },
-        {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/s2member/tags/260829/src/includes/classes/paypal-notify-in-web-accept-sp.inc.php#L138"
-        },
-        {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/s2member/tags/260829/src/includes/classes/paypal-notify-in.inc.php#L49"
+          "label": "psirt@us.ibm.com",
+          "url": "https://www.ibm.com/support/pages/node/7294270"
         }
       ],
       "version_ranges": [],
@@ -1673,7 +1318,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00766,
-      "epss_percentile": 0.55709,
+      "epss_percentile": 0.55727,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.4,
@@ -1722,7 +1367,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.0078,
-      "epss_percentile": 0.56157,
+      "epss_percentile": 0.56175,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.4,
@@ -1752,39 +1397,84 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-17340",
+      "id": "CVE-2026-123218",
       "kind": "cve",
-      "cve_id": "CVE-2026-17340",
-      "title": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote attacker to execute arbitrary code due to a path traversal vulnerability.",
+      "cve_id": "CVE-2026-123218",
+      "title": "IBM Aspera Faspex 5.0.0 through 5.0.19 could allow an authorized user to craft a specific message to bypass user authorization and gain ful…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-07T05:18:45.510",
+      "published": "2026-11-07T04:17:28.900",
       "kev_date_added": "",
-      "description": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote attacker to execute arbitrary code due to a path traversal vulnerability.",
+      "description": "IBM Aspera Faspex 5.0.0 through 5.0.19 could allow an authorized user to craft a specific message to bypass user authorization and gain full administrative privileges.",
       "cvss": 9.8,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.00922,
-      "epss_percentile": 0.6055,
+      "epss": 0.00396,
+      "epss_percentile": 0.34109,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 39.4,
+      "score": 39.3,
       "score_components": {
         "cvss": 39.2,
         "kev": 0.0,
-        "epss": 0.2,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.61. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.34. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.4 out of 100."
+        "Total 39.3 out of 100."
       ],
-      "summary": "CVE-2026-17340 is a critical vulnerability in the affected software. IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote attacker to execute arbitrary code due to a path traversal vulnerability. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-123218 is a critical vulnerability in the affected software. IBM Aspera Faspex 5.0.0 through 5.0.19 could allow an authorized user to craft a specific message to bypass user authorization and gain full administrative privileges. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "psirt@us.ibm.com",
+          "url": "https://www.ibm.com/support/pages/node/7295921"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-17278",
+      "kind": "cve",
+      "cve_id": "CVE-2026-17278",
+      "title": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote attacker to gain unauthorized access to sensitive API catalog and runtime co…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-07T05:18:33.440",
+      "kev_date_added": "",
+      "description": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote attacker to gain unauthorized access to sensitive API catalog and runtime configuration data due to improper authentication. Information supplied by the client is not sufficiently verified, which could allow a caller to appear as a trusted party.",
+      "cvss": 9.8,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00722,
+      "epss_percentile": 0.54265,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 39.3,
+      "score_components": {
+        "cvss": 39.2,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.54. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 39.3 out of 100."
+      ],
+      "summary": "CVE-2026-17278 is a critical vulnerability in the affected software. IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote attacker to gain unauthorized access to sensitive API catalog and runtime configuration data due to improper authentication. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
@@ -1797,39 +1487,39 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-17408",
+      "id": "CVE-2026-17301",
       "kind": "cve",
-      "cve_id": "CVE-2026-17408",
-      "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote attacker to execute arbitrary code due to imp…",
+      "cve_id": "CVE-2026-17301",
+      "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow an unauthenticated attacker to bypass authentication d…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-07T05:18:57.917",
+      "published": "2026-11-07T05:18:37.913",
       "kev_date_added": "",
-      "description": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote attacker to execute arbitrary code due to improper neutralization of special elements in an OS command.",
+      "description": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow an unauthenticated attacker to bypass authentication due to improper verification of a cryptographic signature.",
       "cvss": 9.8,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.00926,
-      "epss_percentile": 0.60691,
+      "epss": 0.00435,
+      "epss_percentile": 0.38005,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 39.4,
+      "score": 39.3,
       "score_components": {
         "cvss": 39.2,
         "kev": 0.0,
-        "epss": 0.2,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.61. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.38. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.4 out of 100."
+        "Total 39.3 out of 100."
       ],
-      "summary": "CVE-2026-17408 is a critical vulnerability in the affected software. IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote attacker to execute arbitrary code due to improper neutralization of special elements in an OS command. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-17301 is a critical vulnerability in the affected software. IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow an unauthenticated attacker to bypass authentication due to improper verification of a cryptographic signature. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
@@ -1846,61 +1536,327 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-19803",
+      "id": "CVE-2026-17360",
       "kind": "cve",
-      "cve_id": "CVE-2026-19803",
-      "title": "The Printcart Store – Web to Print Product Designer for WooCommerce plugin for WordPress is vulnerable to Arbitrary File Upload in all vers…",
+      "cve_id": "CVE-2026-17360",
+      "title": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote attacker to gain full administrative control due to the use of hard-coded cr…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-07T04:17:29.233",
+      "published": "2026-11-07T05:18:48.197",
       "kev_date_added": "",
-      "description": "The Printcart Store – Web to Print Product Designer for WooCommerce plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 2.13.2. This is due to the `nbu_crop_image` AJAX handler accepting a user-supplied `url` parameter that `Nbdesigner_IO::convert_url_to_path()` concatenates onto the uploads base directory without normalizing or stripping `../` sequences, and then deriving both the output directory and output file extension via `pathinfo()` from the…",
+      "description": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote attacker to gain full administrative control due to the use of hard-coded credentials.",
       "cvss": 9.8,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.00962,
-      "epss_percentile": 0.61819,
+      "epss": 0.00576,
+      "epss_percentile": 0.47755,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 39.4,
+      "score": 39.3,
       "score_components": {
         "cvss": 39.2,
         "kev": 0.0,
-        "epss": 0.2,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.62. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.48. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.4 out of 100."
+        "Total 39.3 out of 100."
       ],
-      "summary": "CVE-2026-19803 is a critical vulnerability in the affected software. The Printcart Store – Web to Print Product Designer for WooCommerce plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 2.13.2. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-17360 is a critical vulnerability in the affected software. IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote attacker to gain full administrative control due to the use of hard-coded credentials. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/printcart-integration/tags/2.8.4/includes/class-util.php#L165"
+          "label": "psirt@us.ibm.com",
+          "url": "https://www.ibm.com/support/pages/node/7295635"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-15266",
+      "kind": "cve",
+      "cve_id": "CVE-2026-15266",
+      "title": "IBM Concert 1.0 through 3.0.1.1 contains components that allow potentially unsafe command execution, which could be exploited to run arbitr…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-08T18:17:02.450",
+      "kev_date_added": "",
+      "description": "IBM Concert 1.0 through 3.0.1.1 contains components that allow potentially unsafe command execution, which could be exploited to run arbitrary system commands on the host.",
+      "cvss": 9.8,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 39.2,
+      "score_components": {
+        "cvss": 39.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 39.2 out of 100."
+      ],
+      "summary": "CVE-2026-15266 is a critical vulnerability in the affected software. IBM Concert 1.0 through 3.0.1.1 contains components that allow potentially unsafe command execution, which could be exploited to run arbitrary system commands on the host. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "psirt@us.ibm.com",
+          "url": "https://www.ibm.com/support/pages/node/7294607"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-6715",
+      "kind": "cve",
+      "cve_id": "CVE-2026-6715",
+      "title": "IBM Concert 1.0 through 3.0.1.1 allows an attacker can supply crafted input that is incorporated into an operating system command without a…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-08T19:17:39.980",
+      "kev_date_added": "",
+      "description": "IBM Concert 1.0 through 3.0.1.1 allows an attacker can supply crafted input that is incorporated into an operating system command without adequate validation or sanitization. Successful exploitation allows remote attackers to execute arbitrary commands on the underlying operating system with the privileges of the affected service.",
+      "cvss": 9.8,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 39.2,
+      "score_components": {
+        "cvss": 39.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 39.2 out of 100."
+      ],
+      "summary": "CVE-2026-6715 is a critical vulnerability in the affected software. IBM Concert 1.0 through 3.0.1.1 allows an attacker can supply crafted input that is incorporated into an operating system command without adequate validation or sanitization. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "psirt@us.ibm.com",
+          "url": "https://www.ibm.com/support/pages/node/7294607"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-17296",
+      "kind": "cve",
+      "cve_id": "CVE-2026-17296",
+      "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to obtain sensitive in…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-07T05:18:37.140",
+      "kev_date_added": "",
+      "description": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to obtain sensitive information due to server-side request forgery.",
+      "cvss": 9.6,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.0045,
+      "epss_percentile": 0.39376,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 38.5,
+      "score_components": {
+        "cvss": 38.4,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.6 (3.1, CRITICAL) contributes 38.4 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.39. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 38.5 out of 100."
+      ],
+      "summary": "CVE-2026-17296 is a critical vulnerability in the affected software. IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to obtain sensitive information due to server-side request forgery. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "psirt@us.ibm.com",
+          "url": "https://www.ibm.com/support/pages/node/7295635"
         },
         {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/printcart-integration/tags/2.8.4/includes/class-util.php#L586"
+          "label": "psirt@us.ibm.com",
+          "url": "https://www.ibm.com/support/pages/node/7295637"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-17297",
+      "kind": "cve",
+      "cve_id": "CVE-2026-17297",
+      "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote attacker to perform an account takeover due t…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-07T05:18:37.333",
+      "kev_date_added": "",
+      "description": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote attacker to perform an account takeover due to an open redirect vulnerability. The redirect address used during sign-in is not sufficiently validated, which could allow authentication results to be sent to an attacker-controlled location.",
+      "cvss": 9.6,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00612,
+      "epss_percentile": 0.4959,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 38.5,
+      "score_components": {
+        "cvss": 38.4,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.6 (3.1, CRITICAL) contributes 38.4 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.50. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 38.5 out of 100."
+      ],
+      "summary": "CVE-2026-17297 is a critical vulnerability in the affected software. IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote attacker to perform an account takeover due to an open redirect vulnerability. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "psirt@us.ibm.com",
+          "url": "https://www.ibm.com/support/pages/node/7295635"
         },
         {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/printcart-integration/tags/2.8.4/includes/class.advanced.upload.php#L272"
+          "label": "psirt@us.ibm.com",
+          "url": "https://www.ibm.com/support/pages/node/7295637"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-17299",
+      "kind": "cve",
+      "cve_id": "CVE-2026-17299",
+      "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to perform arbitrary f…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-07T05:18:37.700",
+      "kev_date_added": "",
+      "description": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to perform arbitrary file reads and server-side request forgery due to unrestricted resolution of external references. Externally referenced content in submitted definitions is not sufficiently restricted when processed, and the retrieved content could be returned to the attacker.",
+      "cvss": 9.6,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00443,
+      "epss_percentile": 0.38731,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 38.5,
+      "score_components": {
+        "cvss": 38.4,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.6 (3.1, CRITICAL) contributes 38.4 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.39. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 38.5 out of 100."
+      ],
+      "summary": "CVE-2026-17299 is a critical vulnerability in the affected software. IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to perform arbitrary file reads and server-side request forgery due to unrestricted resolution of external references. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "psirt@us.ibm.com",
+          "url": "https://www.ibm.com/support/pages/node/7295635"
         },
         {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/printcart-integration/tags/2.8.4/includes/class.advanced.upload.php#L284"
-        },
+          "label": "psirt@us.ibm.com",
+          "url": "https://www.ibm.com/support/pages/node/7295637"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-17353",
+      "kind": "cve",
+      "cve_id": "CVE-2026-17353",
+      "title": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to obtain sensitive information and bypass security r…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-07T05:18:46.880",
+      "kev_date_added": "",
+      "description": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to obtain sensitive information and bypass security restrictions due to server-side request forgery.",
+      "cvss": 9.6,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.0046,
+      "epss_percentile": 0.40099,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 38.5,
+      "score_components": {
+        "cvss": 38.4,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.6 (3.1, CRITICAL) contributes 38.4 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.40. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 38.5 out of 100."
+      ],
+      "summary": "CVE-2026-17353 is a critical vulnerability in the affected software. IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to obtain sensitive information and bypass security restrictions due to server-side request forgery. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
         {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/browser/printcart-integration/tags/2.8.4/includes/class.advanced.upload.php#L56"
+          "label": "psirt@us.ibm.com",
+          "url": "https://www.ibm.com/support/pages/node/7295635"
         }
       ],
       "version_ranges": [],
@@ -1942,47 +1898,6 @@
         {
           "label": "The Hacker News",
           "url": "https://thehackernews.com/2026/11/installing-fix-for-exploited-wordpress.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "news-d80473442c7a",
-      "kind": "news",
-      "cve_id": null,
-      "title": "Attackers Target Unpatched CryptoPayment Gateway Flaw That Can Expose Wallet Credentials",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-03T11:04:37+05:30",
-      "description": "Threat actors are attempting to exploit an unpatched maximum-severity security vulnerability in the CryptoPayment Gateway WordPress plugin, according to findings from Defused Cyber. The vulnerability in question is CVE-2026-81648, which carries a CVSS score of 10.0. Successful exploitation of the flaw could permit unauthenticated users to delete arbitrary files on the server and extract",
-      "source": "The Hacker News",
-      "cvss": null,
-      "severity": null,
-      "in_kev": false,
-      "epss": null,
-      "smb_matches": [
-        "WordPress"
-      ],
-      "formula_id": "news-relevance-v1",
-      "score": 10.0,
-      "score_components": {
-        "smb": 10.0,
-        "urgency": 0.0
-      },
-      "reasons": [
-        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Mentions software on the small-business list (WordPress): 10.0 of 10.",
-        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
-        "Total 10.0 out of 20 on the news scale."
-      ],
-      "summary": "Headline from The Hacker News: Attackers Target Unpatched CryptoPayment Gateway Flaw That Can Expose Wallet Credentials. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "If you use WordPress, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "The Hacker News",
-          "url": "https://thehackernews.com/2026/11/attackers-target-unpatched.html"
         }
       ],
       "version_ranges": [],
