@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-09T12:55:31.274023+00:00",
+  "generated_at": "2026-11-10T12:41:10.325203+00:00",
   "mode": "live",
   "formula": {
     "id": "smb-sa-v1",
@@ -18,13 +18,13 @@
     }
   },
   "counts": {
-    "catalog_cves": 2108,
-    "brief_items": 45,
+    "catalog_cves": 2068,
+    "brief_items": 48,
     "brief_cves": 40,
-    "brief_news": 5,
-    "kev": 1769,
-    "nvd": 339,
-    "epss": 288
+    "brief_news": 8,
+    "kev": 1773,
+    "nvd": 295,
+    "epss": 203
   },
   "warnings": [],
   "sources": [
@@ -235,7 +235,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.09813,
-      "epss_percentile": 0.95582,
+      "epss_percentile": 0.95583,
       "smb_matches": [
         "Windows"
       ],
@@ -277,7 +277,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.84478,
-      "epss_percentile": 0.99703,
+      "epss_percentile": 0.99704,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 41.9,
@@ -357,7 +357,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.81763,
-      "epss_percentile": 0.99647,
+      "epss_percentile": 0.99648,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 41.4,
@@ -437,7 +437,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.01343,
-      "epss_percentile": 0.7155,
+      "epss_percentile": 0.71564,
       "smb_matches": [
         "Fortinet"
       ],
@@ -478,8 +478,8 @@
       "severity": null,
       "in_kev": true,
       "ransomware": "Unknown",
-      "epss": 0.01157,
-      "epss_percentile": 0.67278,
+      "epss": 0.01199,
+      "epss_percentile": 0.68385,
       "smb_matches": [
         "WordPress"
       ],
@@ -494,23 +494,14 @@
       "reasons": [
         "No CVSS score was published, so that part contributes 0 of 40.",
         "Listed in the CISA Known Exploited Vulnerabilities catalog (added 2026-11-03), so that part contributes 25.0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.67. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.68. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
         "Matches the small-business software list: WordPress. That contributes 15.0 of 15.",
         "Total 40.2 out of 100."
       ],
       "summary": "CVE-2026-119977 is a unspecified vulnerability in WordPress Core. WordPress WordPress Core contains a time-of-check time-of-use (TOCTOU) race condition vulnerability that could allow unauthenticated attackers to execute code on the server during the upgrade window. The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It matches software this briefing watches for small businesses: WordPress.",
       "what_to_do": "If you use WordPress Core, install the vendor update this week. Until it is patched, keep it off the public internet if you can. Ask your IT person to confirm the version afterwards. If you do not use it, you can skip this item.",
       "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "CISA advisories",
-          "url": "https://www.cisa.gov/news-events/alerts/2026/11/03/cisa-adds-one-known-exploited-vulnerability-catalog"
-        },
-        {
-          "label": "The Hacker News",
-          "url": "https://thehackernews.com/2026/11/cisa-confirms-hackers-exploiting.html"
-        }
-      ],
+      "references": [],
       "version_ranges": [],
       "aliases": []
     },
@@ -530,7 +521,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00668,
-      "epss_percentile": 0.5218,
+      "epss_percentile": 0.52195,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 40.1,
@@ -575,7 +566,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00428,
-      "epss_percentile": 0.3726,
+      "epss_percentile": 0.37276,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 40.1,
@@ -609,49 +600,241 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-17402",
+      "id": "CVE-2026-120017",
       "kind": "cve",
-      "cve_id": "CVE-2026-17402",
-      "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary c…",
+      "cve_id": "CVE-2026-120017",
+      "title": "SAP NetWeaver AS ABAP and ABAP Platform does not perform sufficient verification of incoming authentication assertions under certain config…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-07T05:18:56.460",
+      "published": "2026-11-10T01:17:16.803",
       "kev_date_added": "",
-      "description": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary commands due to OS command injection. User-supplied input is not properly neutralized before it is passed to the operating system, which could allow commands to run on the underlying host.",
+      "description": "SAP NetWeaver AS ABAP and ABAP Platform does not perform sufficient verification of incoming authentication assertions under certain configurations. An unauthenticated attacker could submit specially crafted data to bypass authentication and impersonate arbitrary users, including privileged accounts. Successful exploitation could cause a full system compromise, with the impact potentially extending to connected components and systems beyond the affected system. This results in a high impact on…",
+      "cvss": 10.0,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 40.0,
+      "score_components": {
+        "cvss": 40.0,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 10.0 (3.1, CRITICAL) contributes 40.0 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 40.0 out of 100."
+      ],
+      "summary": "CVE-2026-120017 is a critical vulnerability in the affected software. SAP NetWeaver AS ABAP and ABAP Platform does not perform sufficient verification of incoming authentication assertions under certain configurations. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@sap.com",
+          "url": "https://me.sap.com/notes/3849308"
+        },
+        {
+          "label": "cna@sap.com",
+          "url": "https://url.sap/sapsecuritypatchday"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-76964",
+      "kind": "cve",
+      "cve_id": "CVE-2026-76964",
+      "title": "SAP NetWeaver Application Server ABAP does not sufficiently validate certain network input processed by an internal component. An unauthent…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-10T01:17:20.240",
+      "kev_date_added": "",
+      "description": "SAP NetWeaver Application Server ABAP does not sufficiently validate certain network input processed by an internal component. An unauthenticated attacker could send specially crafted network traffic to trigger a memory corruption condition in the affected functionality. Successful exploitation could allow the attacker to execute arbitrary code and fully compromise the system, resulting in a high impact on confidentiality, integrity and availability of the system.",
+      "cvss": 10.0,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 40.0,
+      "score_components": {
+        "cvss": 40.0,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 10.0 (3.1, CRITICAL) contributes 40.0 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 40.0 out of 100."
+      ],
+      "summary": "CVE-2026-76964 is a critical vulnerability in the affected software. SAP NetWeaver Application Server ABAP does not sufficiently validate certain network input processed by an internal component. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@sap.com",
+          "url": "https://me.sap.com/notes/3778530"
+        },
+        {
+          "label": "cna@sap.com",
+          "url": "https://url.sap/sapsecuritypatchday"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-89103",
+      "kind": "cve",
+      "cve_id": "CVE-2026-89103",
+      "title": "SAP Gateway activates the default Access Control List with high privileges allowing categorization of external attacker as internal applica…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-10T01:17:21.013",
+      "kev_date_added": "",
+      "description": "SAP Gateway activates the default Access Control List with high privileges allowing categorization of external attacker as internal application server. As a result an unauthenticated attacker with network access to the SAP Gateway could exploit this weakness to potentially perform unauthorized actions within the application environment, resulting in a high impact on the confidentiality, integrity, and availability of the affected system.",
+      "cvss": 10.0,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 40.0,
+      "score_components": {
+        "cvss": 40.0,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 10.0 (3.1, CRITICAL) contributes 40.0 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 40.0 out of 100."
+      ],
+      "summary": "CVE-2026-89103 is a critical vulnerability in the affected software. SAP Gateway activates the default Access Control List with high privileges allowing categorization of external attacker as internal application server. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@sap.com",
+          "url": "https://me.sap.com/notes/3798345"
+        },
+        {
+          "label": "cna@sap.com",
+          "url": "https://url.sap/sapsecuritypatchday"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-89126",
+      "kind": "cve",
+      "cve_id": "CVE-2026-89126",
+      "title": "SAP Web Dispatcher does not sufficiently validate certain network input processed by an internal component. An unauthenticated attacker cou…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-10T01:17:22.420",
+      "kev_date_added": "",
+      "description": "SAP Web Dispatcher does not sufficiently validate certain network input processed by an internal component. An unauthenticated attacker could send specially crafted network traffic to trigger a memory corruption condition in the affected functionality. Successful exploitation could allow the attacker to execute arbitrary code and fully compromise the system, resulting in a high impact on confidentiality, integrity and availability of the system.",
+      "cvss": 10.0,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 40.0,
+      "score_components": {
+        "cvss": 40.0,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 10.0 (3.1, CRITICAL) contributes 40.0 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 40.0 out of 100."
+      ],
+      "summary": "CVE-2026-89126 is a critical vulnerability in the affected software. SAP Web Dispatcher does not sufficiently validate certain network input processed by an internal component. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@sap.com",
+          "url": "https://me.sap.com/notes/3778556"
+        },
+        {
+          "label": "cna@sap.com",
+          "url": "https://url.sap/sapsecuritypatchday"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-107331",
+      "kind": "cve",
+      "cve_id": "CVE-2026-107331",
+      "title": "IBM DataStage on Cloud Pak for Data 5.4.0.0 could allow a remote authenticated attacker to obtain sensitive information due to an absolute-…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-08T17:16:35.550",
+      "kev_date_added": "",
+      "description": "IBM DataStage on Cloud Pak for Data 5.4.0.0 could allow a remote authenticated attacker to obtain sensitive information due to an absolute-path traversal vulnerability.",
       "cvss": 9.9,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.01908,
-      "epss_percentile": 0.79905,
+      "epss": 0.00498,
+      "epss_percentile": 0.42973,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 40.0,
+      "score": 39.7,
       "score_components": {
         "cvss": 39.6,
         "kev": 0.0,
-        "epss": 0.4,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.02 means FIRST estimates about a 2% probability of exploitation activity in the next 30 days, percentile 0.80. That contributes 0.4 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.43. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 40.0 out of 100."
+        "Total 39.7 out of 100."
       ],
-      "summary": "CVE-2026-17402 is a critical vulnerability in the affected software. IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to execute arbitrary commands due to OS command injection. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-107331 is a critical vulnerability in the affected software. IBM DataStage on Cloud Pak for Data 5.4.0.0 could allow a remote authenticated attacker to obtain sensitive information due to an absolute-path traversal vulnerability. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
           "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295635"
-        },
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295637"
+          "url": "https://www.ibm.com/support/pages/node/7294270"
         }
       ],
       "version_ranges": [],
@@ -713,7 +896,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00497,
-      "epss_percentile": 0.42868,
+      "epss_percentile": 0.42885,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -758,7 +941,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00528,
-      "epss_percentile": 0.44976,
+      "epss_percentile": 0.44994,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -803,7 +986,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00537,
-      "epss_percentile": 0.45526,
+      "epss_percentile": 0.45541,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -848,7 +1031,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00618,
-      "epss_percentile": 0.49878,
+      "epss_percentile": 0.49896,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -893,7 +1076,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.0046,
-      "epss_percentile": 0.4008,
+      "epss_percentile": 0.4009,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -938,7 +1121,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00666,
-      "epss_percentile": 0.52104,
+      "epss_percentile": 0.5212,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -972,55 +1155,6 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-17158",
-      "kind": "cve",
-      "cve_id": "CVE-2026-17158",
-      "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to gain elevated privi…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-07T05:18:28.853",
-      "kev_date_added": "",
-      "description": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to gain elevated privileges due to improper authentication.",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00662,
-      "epss_percentile": 0.5193,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.7,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.52. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.7 out of 100."
-      ],
-      "summary": "CVE-2026-17158 is a critical vulnerability in the affected software. IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to gain elevated privileges due to improper authentication. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295635"
-        },
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295637"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
       "id": "CVE-2026-17298",
       "kind": "cve",
       "cve_id": "CVE-2026-17298",
@@ -1036,7 +1170,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00537,
-      "epss_percentile": 0.45488,
+      "epss_percentile": 0.45502,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -1049,7 +1183,7 @@
       "reasons": [
         "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.45. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.46. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 39.7 out of 100."
       ],
@@ -1085,7 +1219,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00618,
-      "epss_percentile": 0.49879,
+      "epss_percentile": 0.49896,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -1115,100 +1249,6 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-17354",
-      "kind": "cve",
-      "cve_id": "CVE-2026-17354",
-      "title": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to perform arbitrary file writes due to path traversa…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-07T05:18:47.057",
-      "kev_date_added": "",
-      "description": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to perform arbitrary file writes due to path traversal.",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00664,
-      "epss_percentile": 0.52021,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.7,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.52. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.7 out of 100."
-      ],
-      "summary": "CVE-2026-17354 is a critical vulnerability in the affected software. IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to perform arbitrary file writes due to path traversal. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295635"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-17392",
-      "kind": "cve",
-      "cve_id": "CVE-2026-17392",
-      "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to gain unauthorized a…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-07T05:18:54.113",
-      "kev_date_added": "",
-      "description": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to gain unauthorized administrative access to other tenants due to LDAP injection. User-supplied input is not properly neutralized in directory queries, which could change the query and grant access beyond the user's own tenant.",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00655,
-      "epss_percentile": 0.51638,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.7,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.52. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.7 out of 100."
-      ],
-      "summary": "CVE-2026-17392 is a critical vulnerability in the affected software. IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to gain unauthorized administrative access to other tenants due to LDAP injection. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295635"
-        },
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295637"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
       "id": "CVE-2026-17410",
       "kind": "cve",
       "cve_id": "CVE-2026-17410",
@@ -1224,7 +1264,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00655,
-      "epss_percentile": 0.51638,
+      "epss_percentile": 0.51654,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -1258,15 +1298,15 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-107331",
+      "id": "CVE-2026-109795",
       "kind": "cve",
-      "cve_id": "CVE-2026-107331",
-      "title": "IBM DataStage on Cloud Pak for Data 5.4.0.0 could allow a remote authenticated attacker to obtain sensitive information due to an absolute-…",
+      "cve_id": "CVE-2026-109795",
+      "title": "SAP NetWeaver does not perform necessary authorization checks and lacks sufficient input validation in certain remote-enabled functionality…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-08T17:16:35.550",
+      "published": "2026-11-10T01:17:13.330",
       "kev_date_added": "",
-      "description": "IBM DataStage on Cloud Pak for Data 5.4.0.0 could allow a remote authenticated attacker to obtain sensitive information due to an absolute-path traversal vulnerability.",
+      "description": "SAP NetWeaver does not perform necessary authorization checks and lacks sufficient input validation in certain remote-enabled functionality. An attacker with low privileges could send specially crafted input through a remote interface to inject and execute arbitrary code within the affected system. Successful exploitation could extend the attacker's reach beyond the vulnerable component, resulting in a high impact on confidentiality, integrity and availability.",
       "cvss": 9.9,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
@@ -1290,13 +1330,115 @@
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 39.6 out of 100."
       ],
-      "summary": "CVE-2026-107331 is a critical vulnerability in the affected software. IBM DataStage on Cloud Pak for Data 5.4.0.0 could allow a remote authenticated attacker to obtain sensitive information due to an absolute-path traversal vulnerability. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-109795 is a critical vulnerability in the affected software. SAP NetWeaver does not perform necessary authorization checks and lacks sufficient input validation in certain remote-enabled functionality. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7294270"
+          "label": "cna@sap.com",
+          "url": "https://me.sap.com/notes/3834842"
+        },
+        {
+          "label": "cna@sap.com",
+          "url": "https://url.sap/sapsecuritypatchday"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-109803",
+      "kind": "cve",
+      "cve_id": "CVE-2026-109803",
+      "title": "SAP NetWeaver Knowledge Management (XML Forms) does not sufficiently restrict the selection of XSL transformations processed by the affecte…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-10T01:17:14.477",
+      "kev_date_added": "",
+      "description": "SAP NetWeaver Knowledge Management (XML Forms) does not sufficiently restrict the selection of XSL transformations processed by the affected functionality. Under certain conditions, an authenticated user with access to the affected functionality could cause an unauthorized XSL transformation to be processed, potentially leading to arbitrary code execution in the application context. Successful exploitation could impact the confidentiality, integrity, and availability of the application.",
+      "cvss": 9.9,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 39.6,
+      "score_components": {
+        "cvss": 39.6,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 39.6 out of 100."
+      ],
+      "summary": "CVE-2026-109803 is a critical vulnerability in the affected software. SAP NetWeaver Knowledge Management (XML Forms) does not sufficiently restrict the selection of XSL transformations processed by the affected functionality. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@sap.com",
+          "url": "https://me.sap.com/notes/3809153"
+        },
+        {
+          "label": "cna@sap.com",
+          "url": "https://url.sap/sapsecuritypatchday"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-76965",
+      "kind": "cve",
+      "cve_id": "CVE-2026-76965",
+      "title": "SAP NetWeaver Application Server ABAP and ABAP Platform does not perform necessary authorization checks for certain internal functionality.…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-10T01:17:20.387",
+      "kev_date_added": "",
+      "description": "SAP NetWeaver Application Server ABAP and ABAP Platform does not perform necessary authorization checks for certain internal functionality. An attacker with low privileges could invoke affected functionality to execute arbitrary operating system commands on the underlying host. Successful exploitation could impact resources beyond the vulnerable component, resulting in a high impact on confidentiality, integrity and availability of the system.",
+      "cvss": 9.9,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 39.6,
+      "score_components": {
+        "cvss": 39.6,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 39.6 out of 100."
+      ],
+      "summary": "CVE-2026-76965 is a critical vulnerability in the affected software. SAP NetWeaver Application Server ABAP and ABAP Platform does not perform necessary authorization checks for certain internal functionality. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@sap.com",
+          "url": "https://me.sap.com/notes/3792735"
+        },
+        {
+          "label": "cna@sap.com",
+          "url": "https://url.sap/sapsecuritypatchday"
         }
       ],
       "version_ranges": [],
@@ -1318,7 +1460,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00766,
-      "epss_percentile": 0.55727,
+      "epss_percentile": 0.55741,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.4,
@@ -1352,96 +1494,6 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-17313",
-      "kind": "cve",
-      "cve_id": "CVE-2026-17313",
-      "title": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote attacker to obtain sensitive information and take control of gateway configu…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-07T05:18:40.163",
-      "kev_date_added": "",
-      "description": "IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote attacker to obtain sensitive information and take control of gateway configuration due to authentication bypass via an alternate path.",
-      "cvss": 9.8,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.0078,
-      "epss_percentile": 0.56175,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.4,
-      "score_components": {
-        "cvss": 39.2,
-        "kev": 0.0,
-        "epss": 0.2,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.56. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.4 out of 100."
-      ],
-      "summary": "CVE-2026-17313 is a critical vulnerability in the affected software. IBM API Connect 12.1.0.0 through 12.1.1.2 could allow a remote attacker to obtain sensitive information and take control of gateway configuration due to authentication bypass via an alternate path. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295635"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-123218",
-      "kind": "cve",
-      "cve_id": "CVE-2026-123218",
-      "title": "IBM Aspera Faspex 5.0.0 through 5.0.19 could allow an authorized user to craft a specific message to bypass user authorization and gain ful…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-07T04:17:28.900",
-      "kev_date_added": "",
-      "description": "IBM Aspera Faspex 5.0.0 through 5.0.19 could allow an authorized user to craft a specific message to bypass user authorization and gain full administrative privileges.",
-      "cvss": 9.8,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00396,
-      "epss_percentile": 0.34109,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.3,
-      "score_components": {
-        "cvss": 39.2,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.34. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.3 out of 100."
-      ],
-      "summary": "CVE-2026-123218 is a critical vulnerability in the affected software. IBM Aspera Faspex 5.0.0 through 5.0.19 could allow an authorized user to craft a specific message to bypass user authorization and gain full administrative privileges. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295921"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
       "id": "CVE-2026-17278",
       "kind": "cve",
       "cve_id": "CVE-2026-17278",
@@ -1457,7 +1509,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00722,
-      "epss_percentile": 0.54265,
+      "epss_percentile": 0.54279,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.3,
@@ -1502,7 +1554,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00435,
-      "epss_percentile": 0.38005,
+      "epss_percentile": 0.38023,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.3,
@@ -1551,7 +1603,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00576,
-      "epss_percentile": 0.47755,
+      "epss_percentile": 0.47772,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.3,
@@ -1581,96 +1633,6 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-15266",
-      "kind": "cve",
-      "cve_id": "CVE-2026-15266",
-      "title": "IBM Concert 1.0 through 3.0.1.1 contains components that allow potentially unsafe command execution, which could be exploited to run arbitr…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-08T18:17:02.450",
-      "kev_date_added": "",
-      "description": "IBM Concert 1.0 through 3.0.1.1 contains components that allow potentially unsafe command execution, which could be exploited to run arbitrary system commands on the host.",
-      "cvss": 9.8,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.2,
-      "score_components": {
-        "cvss": 39.2,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.2 out of 100."
-      ],
-      "summary": "CVE-2026-15266 is a critical vulnerability in the affected software. IBM Concert 1.0 through 3.0.1.1 contains components that allow potentially unsafe command execution, which could be exploited to run arbitrary system commands on the host. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7294607"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-6715",
-      "kind": "cve",
-      "cve_id": "CVE-2026-6715",
-      "title": "IBM Concert 1.0 through 3.0.1.1 allows an attacker can supply crafted input that is incorporated into an operating system command without a…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-08T19:17:39.980",
-      "kev_date_added": "",
-      "description": "IBM Concert 1.0 through 3.0.1.1 allows an attacker can supply crafted input that is incorporated into an operating system command without adequate validation or sanitization. Successful exploitation allows remote attackers to execute arbitrary commands on the underlying operating system with the privileges of the affected service.",
-      "cvss": 9.8,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.2,
-      "score_components": {
-        "cvss": 39.2,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.2 out of 100."
-      ],
-      "summary": "CVE-2026-6715 is a critical vulnerability in the affected software. IBM Concert 1.0 through 3.0.1.1 allows an attacker can supply crafted input that is incorporated into an operating system command without adequate validation or sanitization. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7294607"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
       "id": "CVE-2026-17296",
       "kind": "cve",
       "cve_id": "CVE-2026-17296",
@@ -1686,7 +1648,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.0045,
-      "epss_percentile": 0.39376,
+      "epss_percentile": 0.39387,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 38.5,
@@ -1720,55 +1682,6 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-17297",
-      "kind": "cve",
-      "cve_id": "CVE-2026-17297",
-      "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote attacker to perform an account takeover due t…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-07T05:18:37.333",
-      "kev_date_added": "",
-      "description": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote attacker to perform an account takeover due to an open redirect vulnerability. The redirect address used during sign-in is not sufficiently validated, which could allow authentication results to be sent to an attacker-controlled location.",
-      "cvss": 9.6,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00612,
-      "epss_percentile": 0.4959,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 38.5,
-      "score_components": {
-        "cvss": 38.4,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.6 (3.1, CRITICAL) contributes 38.4 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.50. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 38.5 out of 100."
-      ],
-      "summary": "CVE-2026-17297 is a critical vulnerability in the affected software. IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote attacker to perform an account takeover due to an open redirect vulnerability. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295635"
-        },
-        {
-          "label": "psirt@us.ibm.com",
-          "url": "https://www.ibm.com/support/pages/node/7295637"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
       "id": "CVE-2026-17299",
       "kind": "cve",
       "cve_id": "CVE-2026-17299",
@@ -1784,7 +1697,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00443,
-      "epss_percentile": 0.38731,
+      "epss_percentile": 0.38748,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 38.5,
@@ -1833,7 +1746,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.0046,
-      "epss_percentile": 0.40099,
+      "epss_percentile": 0.4011,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 38.5,
@@ -1857,6 +1770,104 @@
         {
           "label": "psirt@us.ibm.com",
           "url": "https://www.ibm.com/support/pages/node/7295635"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-17396",
+      "kind": "cve",
+      "cve_id": "CVE-2026-17396",
+      "title": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to obtain sensitive in…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-07T05:18:55.103",
+      "kev_date_added": "",
+      "description": "IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to obtain sensitive information due to SQL injection.",
+      "cvss": 9.6,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00496,
+      "epss_percentile": 0.42872,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 38.5,
+      "score_components": {
+        "cvss": 38.4,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.6 (3.1, CRITICAL) contributes 38.4 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.43. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 38.5 out of 100."
+      ],
+      "summary": "CVE-2026-17396 is a critical vulnerability in the affected software. IBM API Connect 10.0.8.0 through 10.0.8.12 and 12.1.0.0 through 12.1.1.2 could allow a remote authenticated attacker to obtain sensitive information due to SQL injection. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "psirt@us.ibm.com",
+          "url": "https://www.ibm.com/support/pages/node/7295635"
+        },
+        {
+          "label": "psirt@us.ibm.com",
+          "url": "https://www.ibm.com/support/pages/node/7295637"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-89119",
+      "kind": "cve",
+      "cve_id": "CVE-2026-89119",
+      "title": "SAP Web Dispatcher and SAP NetWeaver Application Server ABAP (Internet Communication Manager) do not perform sufficient request validation…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-10T01:17:22.103",
+      "kev_date_added": "",
+      "description": "SAP Web Dispatcher and SAP NetWeaver Application Server ABAP (Internet Communication Manager) do not perform sufficient request validation in certain administrative functionality. In the context of Application Server ABAP and SAP Web Dispatcher, an unauthenticated attacker could trick a logged-on administrator into visiting a malicious link. Visiting the link could cause unintended actions in the administrator's session. Successful exploitation could lead to a full compromise of the underlying…",
+      "cvss": 9.6,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 38.4,
+      "score_components": {
+        "cvss": 38.4,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.6 (3.1, CRITICAL) contributes 38.4 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 38.4 out of 100."
+      ],
+      "summary": "CVE-2026-89119 is a critical vulnerability in the affected software. SAP Web Dispatcher and SAP NetWeaver Application Server ABAP (Internet Communication Manager) do not perform sufficient request validation in certain administrative functionality. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@sap.com",
+          "url": "https://me.sap.com/notes/3804858"
+        },
+        {
+          "label": "cna@sap.com",
+          "url": "https://url.sap/sapsecuritypatchday"
         }
       ],
       "version_ranges": [],
@@ -1904,6 +1915,86 @@
       "aliases": []
     },
     {
+      "id": "news-e58a25e722f0",
+      "kind": "news",
+      "cve_id": null,
+      "title": "Binance denies data breach after alleged ShinyHunters claims",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-09T11:12:39-05:00",
+      "description": "Binance, the world's largest crypto exchange, has denied claims of a new security breach made by a threat actor using the 'ShinyHunters' handle on a newly emerged underground cybercrime forum. [...]",
+      "source": "BleepingComputer",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 0.0,
+        "urgency": 10.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Does not mention the small-business software list: 0 of 10.",
+        "Uses the urgency term 'data breach': 10.0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from BleepingComputer: Binance denies data breach after alleged ShinyHunters claims. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/binance-denies-data-breach-after-alleged-shinyhunters-claims/"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "news-99ca2ce9ce5f",
+      "kind": "news",
+      "cve_id": null,
+      "title": "Bitter Hackers Deploy New PapRAT Backdoor in Cyberespionage Campaign Targeting South Asia",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-09T20:01:29+05:30",
+      "description": "The South Asian cyber espionage group known as Bitter (aka APT-C-08, APT-Q-37, Hazy Tiger, Orange Yali, T-APT-17, and TA397) has been observed targeting South Asian organizations with a previously unreported remote access trojan called PapRAT. \"PapRAT has both C++ and Rust implementations,\" Fortinet FortiGuard Labs researcher Cara Lin said. \"Its capabilities include command execution, file",
+      "source": "The Hacker News",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [
+        "Fortinet"
+      ],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 10.0,
+        "urgency": 0.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Mentions software on the small-business list (Fortinet): 10.0 of 10.",
+        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from The Hacker News: Bitter Hackers Deploy New PapRAT Backdoor in Cyberespionage Campaign Targeting South Asia. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "If you use Fortinet, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "The Hacker News",
+          "url": "https://thehackernews.com/2026/11/bitter-hackers-deploy-new-paprat.html"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "news-73251ea6fbbb",
       "kind": "news",
       "cve_id": null,
@@ -1939,6 +2030,84 @@
         {
           "label": "The Hacker News",
           "url": "https://thehackernews.com/2026/11/china-aligned-hackers-hijack-sogou.html"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "news-749cd79bf9b6",
+      "kind": "news",
+      "cve_id": null,
+      "title": "Google Issues Chrome Security Update for Eighth Actively Exploited Zero-Day of 2026",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-10T12:22:54+05:30",
+      "description": "Google on Monday released updates to patch nine security vulnerabilities, including one that has come under active exploitation in the wild. The high-severity vulnerability, assigned the CVE identifier CVE-2026-125350 (CVSS score: N/A), has been described as a use-after-free bug in the XML component. Use-after-free bugs typically occur when a program attempts to access a memory location after",
+      "source": "The Hacker News",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 0.0,
+        "urgency": 10.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Does not mention the small-business software list: 0 of 10.",
+        "Uses the urgency term 'actively exploited': 10.0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from The Hacker News: Google Issues Chrome Security Update for Eighth Actively Exploited Zero-Day of 2026. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "The Hacker News",
+          "url": "https://thehackernews.com/2026/11/google-issues-chrome-security-update.html"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "news-cf90f68ee6be",
+      "kind": "news",
+      "cve_id": null,
+      "title": "Google patches eighth Chrome zero-day exploited in attacks this year",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-10T03:51:25-05:00",
+      "description": "Google has released emergency security updates to patch a new Chrome vulnerability exploited in zero-day attacks, the eighth such flaw since the start of the year. [...]",
+      "source": "BleepingComputer",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 0.0,
+        "urgency": 10.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Does not mention the small-business software list: 0 of 10.",
+        "Uses the urgency term 'zero-day': 10.0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from BleepingComputer: Google patches eighth Chrome zero-day exploited in attacks this year. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/google-patches-eighth-chrome-zero-day-exploited-in-attacks-this-year/"
         }
       ],
       "version_ranges": [],
@@ -1986,15 +2155,15 @@
       "aliases": []
     },
     {
-      "id": "news-9c59a38943c4",
+      "id": "news-e87452b09e8a",
       "kind": "news",
       "cve_id": null,
-      "title": "Synology NAS Devices Targeted in Ransomware Attacks Exploiting Patched DSM Flaw",
+      "title": "N-able takes cloud platform offline after 30+ \"zero-days\" published",
       "vendor": "",
       "product": "",
-      "published": "2026-11-03T13:13:07+05:30",
-      "description": "Synology is urging customers to update the DiskStation Manager (DSM) software powering its Network Attached Storage (NAS) devices following ransomware attacks. The Taiwanese vendor said it observed threat actors exploiting a vulnerability patched in December 2024 to target devices running outdated versions of DSM. \"These attacks aim to encrypt data and extort ransom,\" it said in a statement",
-      "source": "The Hacker News",
+      "published": "2026-11-09T16:26:25-05:00",
+      "description": "N-able has taken its hosted N-central environments offline and urged on-premises customers to shut down their servers after a security researcher publicly disclosed more than 30 alleged zero-day vulnerabilities, including exploits that could let attackers take over vulnerable systems. [...]",
+      "source": "BleepingComputer",
       "cvss": null,
       "severity": null,
       "in_kev": false,
@@ -2009,55 +2178,16 @@
       "reasons": [
         "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
         "Does not mention the small-business software list: 0 of 10.",
-        "Uses the urgency term 'ransomware': 10.0 of 10.",
+        "Uses the urgency term 'zero-day': 10.0 of 10.",
         "Total 10.0 out of 20 on the news scale."
       ],
-      "summary": "Headline from The Hacker News: Synology NAS Devices Targeted in Ransomware Attacks Exploiting Patched DSM Flaw. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "summary": "Headline from BleepingComputer: N-able takes cloud platform offline after 30+ \"zero-days\" published. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
       "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "The Hacker News",
-          "url": "https://thehackernews.com/2026/11/synology-nas-devices-targeted-in.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "news-d2b8633e1a6f",
-      "kind": "news",
-      "cve_id": null,
-      "title": "Zyxel GS1900 Patch Fails to Block Zero-Day Exploit Allowing Root Command Execution",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-05T12:36:33+05:30",
-      "description": "Zyxel GS1900 network switches that received the vendor's earlier fix for an actively exploited flaw are still open to the exploit attackers used, researchers at Binarly found. The exploit lets anyone who can reach a switch's web management interface run commands on it without logging in. Zyxel has released new firmware for 10 GS1900 models that closes the hole. The earlier fix is the 2.90",
-      "source": "The Hacker News",
-      "cvss": null,
-      "severity": null,
-      "in_kev": false,
-      "epss": null,
-      "smb_matches": [],
-      "formula_id": "news-relevance-v1",
-      "score": 10.0,
-      "score_components": {
-        "smb": 0.0,
-        "urgency": 10.0
-      },
-      "reasons": [
-        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Does not mention the small-business software list: 0 of 10.",
-        "Uses the urgency term 'actively exploited': 10.0 of 10.",
-        "Total 10.0 out of 20 on the news scale."
-      ],
-      "summary": "Headline from The Hacker News: Zyxel GS1900 Patch Fails to Block Zero-Day Exploit Allowing Root Command Execution. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "The Hacker News",
-          "url": "https://thehackernews.com/2026/11/zyxel-gs1900-patch-fails-to-block-zero.html"
+          "label": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/n-able-takes-cloud-platform-offline-after-30-plus-zero-days-published/"
         }
       ],
       "version_ranges": [],
