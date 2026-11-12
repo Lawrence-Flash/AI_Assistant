@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-11T11:54:00.572586+00:00",
+  "generated_at": "2026-11-12T12:46:05.570029+00:00",
   "mode": "live",
   "formula": {
     "id": "smb-sa-v1",
@@ -18,13 +18,13 @@
     }
   },
   "counts": {
-    "catalog_cves": 2068,
+    "catalog_cves": 2091,
     "brief_items": 48,
     "brief_cves": 40,
     "brief_news": 8,
     "kev": 1779,
-    "nvd": 289,
-    "epss": 208
+    "nvd": 312,
+    "epss": 198
   },
   "warnings": [],
   "sources": [
@@ -281,53 +281,6 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-80094",
-      "kind": "cve",
-      "cve_id": "CVE-2026-80094",
-      "title": "Use after free in Remote Desktop Gateway Service allows an authorized attacker to elevate privileges over a network.",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-10T19:21:22.593",
-      "kev_date_added": "",
-      "description": "Use after free in Remote Desktop Gateway Service allows an authorized attacker to elevate privileges over a network.",
-      "cvss": 7.5,
-      "cvss_version": "3.1",
-      "severity": "HIGH",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [
-        "Windows"
-      ],
-      "formula_id": "smb-sa-v1",
-      "score": 45.0,
-      "score_components": {
-        "cvss": 30.0,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 15.0
-      },
-      "reasons": [
-        "CVSS 7.5 (3.1, HIGH) contributes 30.0 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Matches the small-business software list: Windows. That contributes 15.0 of 15.",
-        "Total 45.0 out of 100."
-      ],
-      "summary": "CVE-2026-80094 is a high vulnerability in the affected software. Use after free in Remote Desktop Gateway Service allows an authorized attacker to elevate privileges over a network. It matches software this briefing watches for small businesses: Windows.",
-      "what_to_do": "Check whether you run the affected software. If you do, install the vendor update and confirm the version. If you do not run it, no action is needed for this item.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secure@microsoft.com",
-          "url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-80094"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
       "id": "CVE-2026-21589",
       "kind": "cve",
       "cve_id": "CVE-2026-21589",
@@ -362,88 +315,6 @@
       ],
       "summary": "CVE-2026-21589 is a unspecified vulnerability in Atlassian Multiple Products. Multiple Atlassian products (Bitbucket Data Center ,Confluence Data Center, Jira Service Management Data Center, Jira Software Data Center, Bamboo Data Center, Crowd Data Center, Crucible and Fisheye) contain a files or directories accessible to external parties vulnerability wh… The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "If you use Atlassian Multiple Products, apply the vendor update. CISA lists this as already exploited. If you do not use it, you can skip this item.",
-      "summary_engine": "rules-v1",
-      "references": [],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-104935",
-      "kind": "cve",
-      "cve_id": "CVE-2026-104935",
-      "title": "Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability",
-      "vendor": "Ivanti",
-      "product": "Connect Secure",
-      "published": "2026-10-13",
-      "kev_date_added": "2026-10-13",
-      "description": "Ivanti Connect Secure contains an authentication bypass by spoofing vulnerability that allows a remote unauthenticated attacker to execute arbitrary commands.",
-      "cvss": null,
-      "cvss_version": null,
-      "severity": null,
-      "in_kev": true,
-      "ransomware": "Unknown",
-      "epss": 0.88936,
-      "epss_percentile": 0.9978,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 42.8,
-      "score_components": {
-        "cvss": 0.0,
-        "kev": 25.0,
-        "epss": 17.8,
-        "smb": 0.0
-      },
-      "reasons": [
-        "No CVSS score was published, so that part contributes 0 of 40.",
-        "Listed in the CISA Known Exploited Vulnerabilities catalog (added 2026-10-13), so that part contributes 25.0 of 25.",
-        "EPSS 0.89 means FIRST estimates about a 89% probability of exploitation activity in the next 30 days, percentile 1.00. That contributes 17.8 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 42.8 out of 100."
-      ],
-      "summary": "CVE-2026-104935 is a unspecified vulnerability in Ivanti Connect Secure. Ivanti Connect Secure contains an authentication bypass by spoofing vulnerability that allows a remote unauthenticated attacker to execute arbitrary commands. The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "If you use Ivanti Connect Secure, apply the vendor update. CISA lists this as already exploited. If you do not use it, you can skip this item.",
-      "summary_engine": "rules-v1",
-      "references": [],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-96951",
-      "kind": "cve",
-      "cve_id": "CVE-2026-96951",
-      "title": "Microsoft Windows Command Injection Vulnerability",
-      "vendor": "Microsoft",
-      "product": "Windows",
-      "published": "2026-10-13",
-      "kev_date_added": "2026-10-13",
-      "description": "Microsoft Windows Shell contains a command injection vulnerability that allows an unauthorized attacker to bypass a security feature over a network.",
-      "cvss": null,
-      "cvss_version": null,
-      "severity": null,
-      "in_kev": true,
-      "ransomware": "Unknown",
-      "epss": 0.09813,
-      "epss_percentile": 0.95588,
-      "smb_matches": [
-        "Windows"
-      ],
-      "formula_id": "smb-sa-v1",
-      "score": 42.0,
-      "score_components": {
-        "cvss": 0.0,
-        "kev": 25.0,
-        "epss": 2.0,
-        "smb": 15.0
-      },
-      "reasons": [
-        "No CVSS score was published, so that part contributes 0 of 40.",
-        "Listed in the CISA Known Exploited Vulnerabilities catalog (added 2026-10-13), so that part contributes 25.0 of 25.",
-        "EPSS 0.10 means FIRST estimates about a 10% probability of exploitation activity in the next 30 days, percentile 0.96. That contributes 2.0 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Matches the small-business software list: Windows. That contributes 15.0 of 15.",
-        "Total 42.0 out of 100."
-      ],
-      "summary": "CVE-2026-96951 is a unspecified vulnerability in Microsoft Windows. Microsoft Windows Shell contains a command injection vulnerability that allows an unauthorized attacker to bypass a security feature over a network. The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It matches software this briefing watches for small businesses: Windows.",
-      "what_to_do": "If you use Microsoft Windows, install the vendor update this week. Until it is patched, keep it off the public internet if you can. Ask your IT person to confirm the version afterwards. If you do not use it, you can skip this item.",
       "summary_engine": "rules-v1",
       "references": [],
       "version_ranges": [],
@@ -887,6 +758,55 @@
       "aliases": []
     },
     {
+      "id": "CVE-2026-110697",
+      "kind": "cve",
+      "cve_id": "CVE-2026-110697",
+      "title": "A flaw was found in Quay where the robot account listing function constructs a SQL LIKE pattern from user-controlled namespace names withou…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-11T17:17:14.897",
+      "kev_date_added": "",
+      "description": "A flaw was found in Quay where the robot account listing function constructs a SQL LIKE pattern from user-controlled namespace names without escaping wildcard metacharacters. An attacker who creates a namespace containing an underscore character can match and retrieve robot accounts and their decrypted authentication tokens from other tenants' namespaces, leading to cross-tenant credential theft and unauthorized image operations.",
+      "cvss": 9.9,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 39.6,
+      "score_components": {
+        "cvss": 39.6,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 39.6 out of 100."
+      ],
+      "summary": "CVE-2026-110697 is a critical vulnerability in the affected software. A flaw was found in Quay where the robot account listing function constructs a SQL LIKE pattern from user-controlled namespace names without escaping wildcard metacharacters. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "secalert@redhat.com",
+          "url": "https://access.redhat.com/security/cve/CVE-2026-110697"
+        },
+        {
+          "label": "secalert@redhat.com",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2552237"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "CVE-2026-120002",
       "kind": "cve",
       "cve_id": "CVE-2026-120002",
@@ -1117,6 +1037,100 @@
         {
           "label": "psirt@us.ibm.com",
           "url": "https://www.ibm.com/support/pages/node/7295635"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-123710",
+      "kind": "cve",
+      "cve_id": "CVE-2026-123710",
+      "title": "A flaw was found in Red Hat Quay. An unauthenticated client can obtain an anonymous registry token with an audience it controls, present th…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-11T15:17:18.340",
+      "kev_date_added": "",
+      "description": "A flaw was found in Red Hat Quay. An unauthenticated client can obtain an anonymous registry token with an audience it controls, present that token to the service key rotation endpoint, and install its own approved signing key with no expiry. Registry tokens signed with that key are accepted for any repository, allowing read and write access to private images and replacement of repository tags.",
+      "cvss": 9.8,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 39.2,
+      "score_components": {
+        "cvss": 39.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 39.2 out of 100."
+      ],
+      "summary": "CVE-2026-123710 is a critical vulnerability in the affected software. A flaw was found in Red Hat Quay. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "secalert@redhat.com",
+          "url": "https://access.redhat.com/security/cve/CVE-2026-123710"
+        },
+        {
+          "label": "secalert@redhat.com",
+          "url": "https://bugzilla.redhat.com/show_bug.cgi?id=2568072"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-76954",
+      "kind": "cve",
+      "cve_id": "CVE-2026-76954",
+      "title": "An improper neutralization of special elements used in an SQL command vulnerability in the Auth API in Synology DiskStation Manager (DSM) b…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-12T04:17:20.407",
+      "kev_date_added": "",
+      "description": "An improper neutralization of special elements used in an SQL command vulnerability in the Auth API in Synology DiskStation Manager (DSM) before 7.2.1-69057-13, 7.2.2-72806-10, 7.3.2-86009-5, and 7.4.1-90080-1 allows remote attackers to read or write arbitrary files and conduct denial-of-service attacks.",
+      "cvss": 9.8,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 39.2,
+      "score_components": {
+        "cvss": 39.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 39.2 out of 100."
+      ],
+      "summary": "CVE-2026-76954 is a critical vulnerability in the affected software. An improper neutralization of special elements used in an SQL command vulnerability in the Auth API in Synology DiskStation Manager (DSM) before 7.2.1-69057-13, 7.2.2-72806-10, 7.3.2-86009-5, and 7.4.1-90080-1 allows remote attackers to read or write arbitrary files and conduct… It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "security@synology.com",
+          "url": "https://www.synology.com/en-global/security/advisory/Synology_SA_26_19"
         }
       ],
       "version_ranges": [],
@@ -2056,41 +2070,39 @@
       "aliases": []
     },
     {
-      "id": "news-70a133457da5",
+      "id": "news-2fa347656b16",
       "kind": "news",
       "cve_id": null,
-      "title": "Microsoft November 2026 Patch Tuesday fixes 1,235 flaws, Outlook zero-day",
+      "title": "Baker Tilly notifies clients of data breach at third-party provider",
       "vendor": "",
       "product": "",
-      "published": "2026-11-10T14:07:36-05:00",
-      "description": "Today is Microsoft's November 2026 Patch Tuesday, with security updates addressing a record-breaking 1,235 flaws, including one actively exploited Microsoft Outlook zero-day vulnerability. [...]",
+      "published": "2026-11-11T18:01:31-05:00",
+      "description": "The Baker Tilly Advisory Group is notifying clients that a data breach has compromised certain personal information about them and their dependents. [...]",
       "source": "BleepingComputer",
       "cvss": null,
       "severity": null,
       "in_kev": false,
       "epss": null,
-      "smb_matches": [
-        "Microsoft 365 / Exchange"
-      ],
+      "smb_matches": [],
       "formula_id": "news-relevance-v1",
-      "score": 20.0,
+      "score": 10.0,
       "score_components": {
-        "smb": 10.0,
+        "smb": 0.0,
         "urgency": 10.0
       },
       "reasons": [
         "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Mentions software on the small-business list (Microsoft 365 / Exchange): 10.0 of 10.",
-        "Uses the urgency term 'actively exploited': 10.0 of 10.",
-        "Total 20.0 out of 20 on the news scale."
+        "Does not mention the small-business software list: 0 of 10.",
+        "Uses the urgency term 'data breach': 10.0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
       ],
-      "summary": "Headline from BleepingComputer: Microsoft November 2026 Patch Tuesday fixes 1,235 flaws, Outlook zero-day. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "If you use Microsoft 365 / Exchange, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
+      "summary": "Headline from BleepingComputer: Baker Tilly notifies clients of data breach at third-party provider. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
       "summary_engine": "rules-v1",
       "references": [
         {
           "label": "BleepingComputer",
-          "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-november-2026-patch-tuesday-fixes-1-235-flaws-outlook-zero-day/"
+          "url": "https://www.bleepingcomputer.com/news/security/baker-tilly-notifies-clients-of-data-breach-at-third-party-provider/"
         }
       ],
       "version_ranges": [],
@@ -2177,39 +2189,41 @@
       "aliases": []
     },
     {
-      "id": "news-f71a910c08b1",
+      "id": "news-95bc7c63c876",
       "kind": "news",
       "cve_id": null,
-      "title": "Critical Xen Orchestra auth bypass flaw exploited to hijack VM servers",
+      "title": "Critical Zoom Workplace Flaw Could Allow Unauthenticated Remote Privilege Escalation",
       "vendor": "",
       "product": "",
-      "published": "2026-11-10T11:17:16-05:00",
-      "description": "A critical authentication bypass vulnerability in Xen Orchestra is being actively exploited in attacks that could grant administrator privileges and allow takeover of XCP-ng virtualization hosts. [...]",
-      "source": "BleepingComputer",
+      "published": "2026-11-11T21:42:46+05:30",
+      "description": "Zoom has released software updates to address two security flaws impacting Zoom Workplace for Windows, including a critical bug that could result in privilege escalation on affected systems. The vulnerabilities are listed below - CVE-2026-108186 (CVSS score: 9.6) - An improper input validation vulnerability that could allow an unauthenticated user to conduct an escalation of privilege via",
+      "source": "The Hacker News",
       "cvss": null,
       "severity": null,
       "in_kev": false,
       "epss": null,
-      "smb_matches": [],
+      "smb_matches": [
+        "Windows"
+      ],
       "formula_id": "news-relevance-v1",
       "score": 10.0,
       "score_components": {
-        "smb": 0.0,
-        "urgency": 10.0
+        "smb": 10.0,
+        "urgency": 0.0
       },
       "reasons": [
         "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Does not mention the small-business software list: 0 of 10.",
-        "Uses the urgency term 'actively exploited': 10.0 of 10.",
+        "Mentions software on the small-business list (Windows): 10.0 of 10.",
+        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
         "Total 10.0 out of 20 on the news scale."
       ],
-      "summary": "Headline from BleepingComputer: Critical Xen Orchestra auth bypass flaw exploited to hijack VM servers. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
+      "summary": "Headline from The Hacker News: Critical Zoom Workplace Flaw Could Allow Unauthenticated Remote Privilege Escalation. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "If you use Windows, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "BleepingComputer",
-          "url": "https://www.bleepingcomputer.com/news/security/critical-xen-orchestra-auth-bypass-flaw-exploited-to-hijack-vm-servers/"
+          "label": "The Hacker News",
+          "url": "https://thehackernews.com/2026/11/critical-zoom-workplace-flaw-could.html"
         }
       ],
       "version_ranges": [],
@@ -2255,41 +2269,39 @@
       "aliases": []
     },
     {
-      "id": "news-0b7161df55d9",
+      "id": "news-9d0e65808ab5",
       "kind": "news",
       "cve_id": null,
-      "title": "Microsoft Paint RCE Fix Now Available, but Windows Update Won't Deliver It",
+      "title": "Maersk confirms data breach as WhiteArmor ransomware demands $5 million",
       "vendor": "",
       "product": "",
-      "published": "2026-11-06T17:36:43+05:30",
-      "description": "A fix for CVE-2026-83844, a remote code execution flaw in Windows Paint, is now in the Microsoft Store. Paint gets this fix only through a Store update, not through Windows updates. The fixed build, 11.2609.401.0, was the newest Paint build in all ten countries The Hacker News checked today. The flaw is an out-of-bounds read that could let an attacker run code over a network. Microsoft rates",
-      "source": "The Hacker News",
+      "published": "2026-11-11T11:24:18-05:00",
+      "description": "Maersk announced that a threat actor gained unauthorized access to a local legacy system inherited through an earlier acquisition and extracted data from it. [...]",
+      "source": "BleepingComputer",
       "cvss": null,
       "severity": null,
       "in_kev": false,
       "epss": null,
-      "smb_matches": [
-        "Windows"
-      ],
+      "smb_matches": [],
       "formula_id": "news-relevance-v1",
       "score": 10.0,
       "score_components": {
-        "smb": 10.0,
-        "urgency": 0.0
+        "smb": 0.0,
+        "urgency": 10.0
       },
       "reasons": [
         "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Mentions software on the small-business list (Windows): 10.0 of 10.",
-        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
+        "Does not mention the small-business software list: 0 of 10.",
+        "Uses the urgency term 'ransomware': 10.0 of 10.",
         "Total 10.0 out of 20 on the news scale."
       ],
-      "summary": "Headline from The Hacker News: Microsoft Paint RCE Fix Now Available, but Windows Update Won't Deliver It. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "If you use Windows, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
+      "summary": "Headline from BleepingComputer: Maersk confirms data breach as WhiteArmor ransomware demands $5 million. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "The Hacker News",
-          "url": "https://thehackernews.com/2026/11/microsoft-paint-rce-fix-now-available.html"
+          "label": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/maersk-confirms-data-breach-as-whitearmor-ransomware-demands-5-million/"
         }
       ],
       "version_ranges": [],
