@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-15T11:58:10.008654+00:00",
+  "generated_at": "2026-11-16T12:47:47.966901+00:00",
   "mode": "live",
   "formula": {
     "id": "smb-sa-v1",
@@ -18,13 +18,13 @@
     }
   },
   "counts": {
-    "catalog_cves": 2021,
+    "catalog_cves": 2031,
     "brief_items": 48,
     "brief_cves": 40,
     "brief_news": 8,
     "kev": 1781,
-    "nvd": 240,
-    "epss": 248
+    "nvd": 250,
+    "epss": 269
   },
   "warnings": [],
   "sources": [
@@ -75,7 +75,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00785,
-      "epss_percentile": 0.56678,
+      "epss_percentile": 0.56671,
       "smb_matches": [
         "Windows"
       ],
@@ -122,7 +122,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.0027,
-      "epss_percentile": 0.1943,
+      "epss_percentile": 0.19402,
       "smb_matches": [
         "Windows"
       ],
@@ -367,7 +367,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.01199,
-      "epss_percentile": 0.68666,
+      "epss_percentile": 0.68665,
       "smb_matches": [
         "WordPress"
       ],
@@ -409,7 +409,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00862,
-      "epss_percentile": 0.59112,
+      "epss_percentile": 0.59108,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.8,
@@ -479,6 +479,55 @@
       "aliases": []
     },
     {
+      "id": "CVE-2026-120522",
+      "kind": "cve",
+      "cve_id": "CVE-2026-120522",
+      "title": "The Cloud Storage Manager for Fluent Forms – Google Drive, Dropbox, OneDrive, S3 Uploads plugin for WordPress is vulnerable to Arbitrary Fi…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-14T13:17:20.403",
+      "kev_date_added": "",
+      "description": "The Cloud Storage Manager for Fluent Forms – Google Drive, Dropbox, OneDrive, S3 Uploads plugin for WordPress is vulnerable to Arbitrary File Write in all versions up to, and including, 1.2.0. This is due to missing authorization checks on the `connection/{driver}/save` and `/download/single-file` REST endpoints, combined with insufficient path validation in the Google Drive `downloadFile()` function, where the Google Drive metadata `name` value is concatenated into a local path without `basena…",
+      "cvss": 9.8,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00788,
+      "epss_percentile": 0.56774,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 39.4,
+      "score_components": {
+        "cvss": 39.2,
+        "kev": 0.0,
+        "epss": 0.2,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.57. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 39.4 out of 100."
+      ],
+      "summary": "CVE-2026-120522 is a critical vulnerability in the affected software. The Cloud Storage Manager for Fluent Forms – Google Drive, Dropbox, OneDrive, S3 Uploads plugin for WordPress is vulnerable to Arbitrary File Write in all versions up to, and including, 1.2.0. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "security@wordfence.com",
+          "url": "https://plugins.trac.wordpress.org/changeset/3656663/cloud-storage-manager"
+        },
+        {
+          "label": "security@wordfence.com",
+          "url": "https://www.wordfence.com/threat-intel/vulnerabilities/id/58fd04ae-fff2-42b1-ae98-168195d84290?source=cve"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "CVE-2026-126173",
       "kind": "cve",
       "cve_id": "CVE-2026-126173",
@@ -494,7 +543,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00537,
-      "epss_percentile": 0.45817,
+      "epss_percentile": 0.45801,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.3,
@@ -528,6 +577,55 @@
       "aliases": []
     },
     {
+      "id": "CVE-2026-19907",
+      "kind": "cve",
+      "cve_id": "CVE-2026-19907",
+      "title": "The Shipo plugin for WordPress is vulnerable to Authentication Bypass in versions 1.6 through 1.8.0. This is due to the `authenticate_rest_…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-14T13:17:23.137",
+      "kev_date_added": "",
+      "description": "The Shipo plugin for WordPress is vulnerable to Authentication Bypass in versions 1.6 through 1.8.0. This is due to the `authenticate_rest_user()` function parsing the `LOGGED_IN_COOKIE` value and authenticating the named user without verifying the cookie's cryptographic signature. The function's intended `/wp-json/shipo/` route restriction can also be bypassed by placing that substring in the query string of an unrelated REST endpoint. This makes it possible for unauthenticated attackers who k…",
+      "cvss": 9.8,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00467,
+      "epss_percentile": 0.41002,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 39.3,
+      "score_components": {
+        "cvss": 39.2,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.41. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 39.3 out of 100."
+      ],
+      "summary": "CVE-2026-19907 is a critical vulnerability in the affected software. The Shipo plugin for WordPress is vulnerable to Authentication Bypass in versions 1.6 through 1.8.0. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "security@wordfence.com",
+          "url": "https://plugins.trac.wordpress.org/changeset/3701532/shipo"
+        },
+        {
+          "label": "security@wordfence.com",
+          "url": "https://www.wordfence.com/threat-intel/vulnerabilities/id/ce5ea515-5ae1-4771-9bfb-5a0f4b3fce22?source=cve"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "CVE-2026-76954",
       "kind": "cve",
       "cve_id": "CVE-2026-76954",
@@ -543,7 +641,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00634,
-      "epss_percentile": 0.50997,
+      "epss_percentile": 0.50984,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.3,
@@ -567,104 +665,6 @@
         {
           "label": "security@synology.com",
           "url": "https://www.synology.com/en-global/security/advisory/Synology_SA_26_19"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-120522",
-      "kind": "cve",
-      "cve_id": "CVE-2026-120522",
-      "title": "The Cloud Storage Manager for Fluent Forms – Google Drive, Dropbox, OneDrive, S3 Uploads plugin for WordPress is vulnerable to Arbitrary Fi…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-14T13:17:20.403",
-      "kev_date_added": "",
-      "description": "The Cloud Storage Manager for Fluent Forms – Google Drive, Dropbox, OneDrive, S3 Uploads plugin for WordPress is vulnerable to Arbitrary File Write in all versions up to, and including, 1.2.0. This is due to missing authorization checks on the `connection/{driver}/save` and `/download/single-file` REST endpoints, combined with insufficient path validation in the Google Drive `downloadFile()` function, where the Google Drive metadata `name` value is concatenated into a local path without `basena…",
-      "cvss": 9.8,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.2,
-      "score_components": {
-        "cvss": 39.2,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.2 out of 100."
-      ],
-      "summary": "CVE-2026-120522 is a critical vulnerability in the affected software. The Cloud Storage Manager for Fluent Forms – Google Drive, Dropbox, OneDrive, S3 Uploads plugin for WordPress is vulnerable to Arbitrary File Write in all versions up to, and including, 1.2.0. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/changeset/3656663/cloud-storage-manager"
-        },
-        {
-          "label": "security@wordfence.com",
-          "url": "https://www.wordfence.com/threat-intel/vulnerabilities/id/58fd04ae-fff2-42b1-ae98-168195d84290?source=cve"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-19907",
-      "kind": "cve",
-      "cve_id": "CVE-2026-19907",
-      "title": "The Shipo plugin for WordPress is vulnerable to Authentication Bypass in versions 1.6 through 1.8.0. This is due to the `authenticate_rest_…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-14T13:17:23.137",
-      "kev_date_added": "",
-      "description": "The Shipo plugin for WordPress is vulnerable to Authentication Bypass in versions 1.6 through 1.8.0. This is due to the `authenticate_rest_user()` function parsing the `LOGGED_IN_COOKIE` value and authenticating the named user without verifying the cookie's cryptographic signature. The function's intended `/wp-json/shipo/` route restriction can also be bypassed by placing that substring in the query string of an unrelated REST endpoint. This makes it possible for unauthenticated attackers who k…",
-      "cvss": 9.8,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.2,
-      "score_components": {
-        "cvss": 39.2,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.2 out of 100."
-      ],
-      "summary": "CVE-2026-19907 is a critical vulnerability in the affected software. The Shipo plugin for WordPress is vulnerable to Authentication Bypass in versions 1.6 through 1.8.0. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "security@wordfence.com",
-          "url": "https://plugins.trac.wordpress.org/changeset/3701532/shipo"
-        },
-        {
-          "label": "security@wordfence.com",
-          "url": "https://www.wordfence.com/threat-intel/vulnerabilities/id/ce5ea515-5ae1-4771-9bfb-5a0f4b3fce22?source=cve"
         }
       ],
       "version_ranges": [],
@@ -726,7 +726,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.0064,
-      "epss_percentile": 0.51256,
+      "epss_percentile": 0.51243,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 38.5,
@@ -771,7 +771,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00737,
-      "epss_percentile": 0.551,
+      "epss_percentile": 0.55091,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 38.1,
@@ -878,6 +878,67 @@
       ]
     },
     {
+      "id": "CVE-2026-129433",
+      "kind": "cve",
+      "cve_id": "CVE-2026-129433",
+      "title": "Dokploy before 0.31.1 contains an OS command injection vulnerability in getComposeContainerCommand() that allows authenticated organization…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-14T13:17:22.820",
+      "kev_date_added": "",
+      "description": "Dokploy before 0.31.1 contains an OS command injection vulnerability in getComposeContainerCommand() that allows authenticated organization members to execute shell commands via the serviceName parameter. Attackers can store serviceName values with shell metacharacters through backup.create or backup.update tRPC procedures, executing commands as root when scheduled backups run and taking over the host via the mounted Docker socket.",
+      "cvss": 9.4,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.02399,
+      "epss_percentile": 0.8429,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 38.1,
+      "score_components": {
+        "cvss": 37.6,
+        "kev": 0.0,
+        "epss": 0.5,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.4 (4.0, CRITICAL) contributes 37.6 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.02 means FIRST estimates about a 2% probability of exploitation activity in the next 30 days, percentile 0.84. That contributes 0.5 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 38.1 out of 100."
+      ],
+      "summary": "CVE-2026-129433 is a critical vulnerability in the affected software. Dokploy before 0.31.1 contains an OS command injection vulnerability in getComposeContainerCommand() that allows authenticated organization members to execute shell commands via the serviceName parameter. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/Dokploy/dokploy"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/Dokploy/dokploy/blob/v0.31.0/packages/server/src/utils/backups/utils.ts#L152"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/Dokploy/dokploy/commit/b24006e16e95a10ce3daf739d06ac783e5c70ba0"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/Dokploy/dokploy/pull/5908"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/Dokploy/dokploy/releases/tag/v0.31.1"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "CVE-2026-126378",
       "kind": "cve",
       "cve_id": "CVE-2026-126378",
@@ -893,7 +954,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00635,
-      "epss_percentile": 0.51011,
+      "epss_percentile": 0.50998,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.7,
@@ -942,7 +1003,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00162,
-      "epss_percentile": 0.05442,
+      "epss_percentile": 0.05413,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.6,
@@ -980,61 +1041,61 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-129433",
+      "id": "CVE-2026-129353",
       "kind": "cve",
-      "cve_id": "CVE-2026-129433",
-      "title": "Dokploy before 0.31.1 contains an OS command injection vulnerability in getComposeContainerCommand() that allows authenticated organization…",
+      "cve_id": "CVE-2026-129353",
+      "title": "A vulnerability was detected in D-Link DIR-600L 2.17/2.17b02. Affected by this vulnerability is the function authenticationcgi_main of the…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-14T13:17:22.820",
+      "published": "2026-11-15T00:16:51.120",
       "kev_date_added": "",
-      "description": "Dokploy before 0.31.1 contains an OS command injection vulnerability in getComposeContainerCommand() that allows authenticated organization members to execute shell commands via the serviceName parameter. Attackers can store serviceName values with shell metacharacters through backup.create or backup.update tRPC procedures, executing commands as root when scheduled backups run and taking over the host via the mounted Docker socket.",
-      "cvss": 9.4,
+      "description": "A vulnerability was detected in D-Link DIR-600L 2.17/2.17b02. Affected by this vulnerability is the function authenticationcgi_main of the file authentication.cgi. Performing a manipulation of the argument id/password results in stack-based buffer overflow. Remote exploitation of the attack is possible. The exploit is now public and may be used.",
+      "cvss": 9.3,
       "cvss_version": "4.0",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.01788,
+      "epss_percentile": 0.78702,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.6,
       "score_components": {
-        "cvss": 37.6,
+        "cvss": 37.2,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.4,
         "smb": 0.0
       },
       "reasons": [
-        "CVSS 9.4 (4.0, CRITICAL) contributes 37.6 of 40.",
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.02 means FIRST estimates about a 2% probability of exploitation activity in the next 30 days, percentile 0.79. That contributes 0.4 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 37.6 out of 100."
       ],
-      "summary": "CVE-2026-129433 is a critical vulnerability in the affected software. Dokploy before 0.31.1 contains an OS command injection vulnerability in getComposeContainerCommand() that allows authenticated organization members to execute shell commands via the serviceName parameter. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-129353 is a critical vulnerability in the affected software. A vulnerability was detected in D-Link DIR-600L 2.17/2.17b02. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/Dokploy/dokploy"
+          "label": "cna@vuldb.com",
+          "url": "https://github.com/ruanyi101/router-firmware-security-advisories/blob/main/router-firmware-GitHub-advisories/advisories/D-Link-DIR-600L-authentication-cgi.md"
         },
         {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/Dokploy/dokploy/blob/v0.31.0/packages/server/src/utils/backups/utils.ts#L152"
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/cve/CVE-2026-129353"
         },
         {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/Dokploy/dokploy/commit/b24006e16e95a10ce3daf739d06ac783e5c70ba0"
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/submit/1043523"
         },
         {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/Dokploy/dokploy/pull/5908"
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/437416"
         },
         {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/Dokploy/dokploy/releases/tag/v0.31.1"
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/437416/cti"
         }
       ],
       "version_ranges": [],
@@ -1056,7 +1117,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00775,
-      "epss_percentile": 0.56349,
+      "epss_percentile": 0.56342,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.4,
@@ -1105,7 +1166,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00795,
-      "epss_percentile": 0.57,
+      "epss_percentile": 0.56997,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.4,
@@ -1151,6 +1212,128 @@
       "aliases": []
     },
     {
+      "id": "CVE-2026-129351",
+      "kind": "cve",
+      "cve_id": "CVE-2026-129351",
+      "title": "A security vulnerability has been detected in TRENDnet TEW-657BRM 1.00.1. This vulnerability affects the function sprintf of the file /setu…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-14T23:16:47.753",
+      "kev_date_added": "",
+      "description": "A security vulnerability has been detected in TRENDnet TEW-657BRM 1.00.1. This vulnerability affects the function sprintf of the file /setup.cgi of the component mini_httpd. Such manipulation leads to out-of-bounds write. The attack can be executed remotely. The exploit has been disclosed publicly and may be used. The vendor explains: \"\"I am not able to confirm if such vulnerability exists as the product has been EOL for more than 15 years. We will send out an announcement letting customers kno…",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00879,
+      "epss_percentile": 0.59644,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.4,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.2,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.60. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.4 out of 100."
+      ],
+      "summary": "CVE-2026-129351 is a critical vulnerability in the affected software. A security vulnerability has been detected in TRENDnet TEW-657BRM 1.00.1. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://github.com/ruanyi101/router-firmware-security-advisories/blob/main/router-firmware-GitHub-advisories/advisories/TRENDnet-TEW-657BRM-mini_httpd.md"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/cve/CVE-2026-129351"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/submit/1043518"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/437397"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/437397/cti"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-129354",
+      "kind": "cve",
+      "cve_id": "CVE-2026-129354",
+      "title": "A flaw has been found in D-Link DIR-600L 2.17b02. Affected by this issue is the function hnap_main of the file htdocs/cgibin of the compone…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-15T01:18:03.043",
+      "kev_date_added": "",
+      "description": "A flaw has been found in D-Link DIR-600L 2.17b02. Affected by this issue is the function hnap_main of the file htdocs/cgibin of the component HNAP Handler. Executing a manipulation can lead to stack-based buffer overflow. The attack can be executed remotely. The exploit has been published and may be used.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00869,
+      "epss_percentile": 0.59343,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.4,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.2,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.59. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.4 out of 100."
+      ],
+      "summary": "CVE-2026-129354 is a critical vulnerability in the affected software. A flaw has been found in D-Link DIR-600L 2.17b02. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://github.com/ruanyi101/router-firmware-security-advisories/blob/main/router-firmware-GitHub-advisories/advisories/D-Link-DIR-600L-HNAP-SOAPAction.md"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/cve/CVE-2026-129354"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/submit/1043526"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/437417"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/437417/cti"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "CVE-2026-82504",
       "kind": "cve",
       "cve_id": "CVE-2026-82504",
@@ -1166,7 +1349,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00808,
-      "epss_percentile": 0.57433,
+      "epss_percentile": 0.57429,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.4,
@@ -1215,7 +1398,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00431,
-      "epss_percentile": 0.37816,
+      "epss_percentile": 0.37796,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.3,
@@ -1264,7 +1447,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00281,
-      "epss_percentile": 0.20816,
+      "epss_percentile": 0.20793,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.3,
@@ -1313,7 +1496,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00615,
-      "epss_percentile": 0.50062,
+      "epss_percentile": 0.50048,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.3,
@@ -1374,7 +1557,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00561,
-      "epss_percentile": 0.47233,
+      "epss_percentile": 0.47222,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.3,
@@ -1435,7 +1618,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00414,
-      "epss_percentile": 0.36283,
+      "epss_percentile": 0.36261,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.3,
@@ -1481,6 +1664,67 @@
       "aliases": []
     },
     {
+      "id": "CVE-2026-129444",
+      "kind": "cve",
+      "cve_id": "CVE-2026-129444",
+      "title": "A vulnerability was identified in D-Link DSL-6740C 20131126. This affects an unknown function of the file /etc/templates/ftpd/ftpd_conf.php…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-15T09:16:44.570",
+      "kev_date_added": "",
+      "description": "A vulnerability was identified in D-Link DSL-6740C 20131126. This affects an unknown function of the file /etc/templates/ftpd/ftpd_conf.php of the component FTP Daemon. Such manipulation leads to hard-coded credentials. The attack can be executed remotely. The exploit is publicly available and might be used.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00606,
+      "epss_percentile": 0.49583,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.3,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.50. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.3 out of 100."
+      ],
+      "summary": "CVE-2026-129444 is a critical vulnerability in the affected software. A vulnerability was identified in D-Link DSL-6740C 20131126. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://github.com/XueDugu/dlink-dsl6740c-ftp-default-evidence"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/cve/CVE-2026-129444"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/submit/1044943"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/437457"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/437457/cti"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "CVE-2026-63079",
       "kind": "cve",
       "cve_id": "CVE-2026-63079",
@@ -1496,7 +1740,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00685,
-      "epss_percentile": 0.5319,
+      "epss_percentile": 0.53177,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.3,
@@ -1548,8 +1792,8 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00151,
+      "epss_percentile": 0.04333,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.2,
@@ -1562,7 +1806,7 @@
       "reasons": [
         "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.04. That contributes 0.0 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 37.2 out of 100."
       ],
@@ -1605,8 +1849,8 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00132,
+      "epss_percentile": 0.02844,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.2,
@@ -1619,7 +1863,7 @@
       "reasons": [
         "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.03. That contributes 0.0 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 37.2 out of 100."
       ],
@@ -1648,15 +1892,15 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-129351",
+      "id": "CVE-2026-129483",
       "kind": "cve",
-      "cve_id": "CVE-2026-129351",
-      "title": "A security vulnerability has been detected in TRENDnet TEW-657BRM 1.00.1. This vulnerability affects the function sprintf of the file /setu…",
+      "cve_id": "CVE-2026-129483",
+      "title": "Cyrus SASL through 2.1.28 contains an authentication bypass vulnerability in the SRP server mechanism because srp_server_mech_step2 does no…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-14T23:16:47.753",
+      "published": "2026-11-15T14:17:27.530",
       "kev_date_added": "",
-      "description": "A security vulnerability has been detected in TRENDnet TEW-657BRM 1.00.1. This vulnerability affects the function sprintf of the file /setup.cgi of the component mini_httpd. Such manipulation leads to out-of-bounds write. The attack can be executed remotely. The exploit has been disclosed publicly and may be used. The vendor explains: \"\"I am not able to confirm if such vulnerability exists as the product has been EOL for more than 15 years. We will send out an announcement letting customers kno…",
+      "description": "Cyrus SASL through 2.1.28 contains an authentication bypass vulnerability in the SRP server mechanism because srp_server_mech_step2 does not reject client public values A that are multiples of N. Unauthenticated network clients can send A equal to N to force a zero shared secret, authenticating as any existing user without the password and learning session keys.",
       "cvss": 9.3,
       "cvss_version": "4.0",
       "severity": "CRITICAL",
@@ -1680,44 +1924,44 @@
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 37.2 out of 100."
       ],
-      "summary": "CVE-2026-129351 is a critical vulnerability in the affected software. A security vulnerability has been detected in TRENDnet TEW-657BRM 1.00.1. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-129483 is a critical vulnerability in the affected software. Cyrus SASL through 2.1.28 contains an authentication bypass vulnerability in the SRP server mechanism because srp_server_mech_step2 does not reject client public values A that are multiples of N. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "cna@vuldb.com",
-          "url": "https://github.com/ruanyi101/router-firmware-security-advisories/blob/main/router-firmware-GitHub-advisories/advisories/TRENDnet-TEW-657BRM-mini_httpd.md"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://gist.github.com/afldl/18d15d3f5a1df99411e35000c7de80db"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/cve/CVE-2026-129351"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/cyrusimap/cyrus-sasl/blob/cyrus-sasl-2.1.28/plugins/srp.c#L2046-L2050"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/submit/1043518"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/cyrusimap/cyrus-sasl/commit/fb3724f43dc50247ff2bf02135457d6d77031654"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/437397"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/cyrusimap/cyrus-sasl/issues/896"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/437397/cti"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://seclists.org/oss-sec/2026/q4/122"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-129353",
+      "id": "CVE-2026-129550",
       "kind": "cve",
-      "cve_id": "CVE-2026-129353",
-      "title": "A vulnerability was detected in D-Link DIR-600L 2.17/2.17b02. Affected by this vulnerability is the function authenticationcgi_main of the…",
+      "cve_id": "CVE-2026-129550",
+      "title": "Tensei through 0.11.5 contains a privilege escalation vulnerability in @tensei/auth that allows unauthenticated or authenticated users to a…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-15T00:16:51.120",
+      "published": "2026-11-16T12:17:53.033",
       "kev_date_added": "",
-      "description": "A vulnerability was detected in D-Link DIR-600L 2.17/2.17b02. Affected by this vulnerability is the function authenticationcgi_main of the file authentication.cgi. Performing a manipulation of the argument id/password results in stack-based buffer overflow. Remote exploitation of the attack is possible. The exploit is now public and may be used.",
+      "description": "Tensei through 0.11.5 contains a privilege escalation vulnerability in @tensei/auth that allows unauthenticated or authenticated users to assign themselves arbitrary roles via the exposed User Roles field. Attackers can supply a roles array during registration, a POST to the users route, or a PATCH to their own record to gain administrator permissions.",
       "cvss": 9.3,
       "cvss_version": "4.0",
       "severity": "CRITICAL",
@@ -1741,44 +1985,40 @@
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 37.2 out of 100."
       ],
-      "summary": "CVE-2026-129353 is a critical vulnerability in the affected software. A vulnerability was detected in D-Link DIR-600L 2.17/2.17b02. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-129550 is a critical vulnerability in the affected software. Tensei through 0.11.5 contains a privilege escalation vulnerability in @tensei/auth that allows unauthenticated or authenticated users to assign themselves arbitrary roles via the exposed User Roles field. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "cna@vuldb.com",
-          "url": "https://github.com/ruanyi101/router-firmware-security-advisories/blob/main/router-firmware-GitHub-advisories/advisories/D-Link-DIR-600L-authentication-cgi.md"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/tenseijs/tensei"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/cve/CVE-2026-129353"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/tenseijs/tensei/blob/630f39038c7751178465f990fb358b0c2d5b1914/packages/auth/src/index.ts#L311-L333"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/submit/1043523"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/tenseijs/tensei/issues/398"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/437416"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/437416/cti"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/tensei-through-0.11.5-privilege-escalation-via-self-assigned-roles-in-tensei-auth"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-129354",
+      "id": "CVE-2026-129552",
       "kind": "cve",
-      "cve_id": "CVE-2026-129354",
-      "title": "A flaw has been found in D-Link DIR-600L 2.17b02. Affected by this issue is the function hnap_main of the file htdocs/cgibin of the compone…",
+      "cve_id": "CVE-2026-129552",
+      "title": "Tensei through 0.11.5 contains an authentication bypass vulnerability in @tensei/auth that falls back to the hard-coded JWT signing key 'au…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-15T01:18:03.043",
+      "published": "2026-11-16T12:17:53.337",
       "kev_date_added": "",
-      "description": "A flaw has been found in D-Link DIR-600L 2.17b02. Affected by this issue is the function hnap_main of the file htdocs/cgibin of the component HNAP Handler. Executing a manipulation can lead to stack-based buffer overflow. The attack can be executed remotely. The exploit has been published and may be used.",
+      "description": "Tensei through 0.11.5 contains an authentication bypass vulnerability in @tensei/auth that falls back to the hard-coded JWT signing key 'auth-secret-key' when JWT_SECRET is unset. Unauthenticated attackers can sign tokens with arbitrary user ids accepted by populateContextFromToken to impersonate any user, including administrators.",
       "cvss": 9.3,
       "cvss_version": "4.0",
       "severity": "CRITICAL",
@@ -1802,90 +2042,25 @@
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 37.2 out of 100."
       ],
-      "summary": "CVE-2026-129354 is a critical vulnerability in the affected software. A flaw has been found in D-Link DIR-600L 2.17b02. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-129552 is a critical vulnerability in the affected software. Tensei through 0.11.5 contains an authentication bypass vulnerability in @tensei/auth that falls back to the hard-coded JWT signing key 'auth-secret-key' when JWT_SECRET is unset. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "cna@vuldb.com",
-          "url": "https://github.com/ruanyi101/router-firmware-security-advisories/blob/main/router-firmware-GitHub-advisories/advisories/D-Link-DIR-600L-HNAP-SOAPAction.md"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/tenseijs/tensei"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/cve/CVE-2026-129354"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/tenseijs/tensei/blob/630f39038c7751178465f990fb358b0c2d5b1914/packages/auth/src/index.ts#L94-L98"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/submit/1043526"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/tenseijs/tensei/issues/398"
         },
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/437417"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/437417/cti"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-129444",
-      "kind": "cve",
-      "cve_id": "CVE-2026-129444",
-      "title": "A vulnerability was identified in D-Link DSL-6740C 20131126. This affects an unknown function of the file /etc/templates/ftpd/ftpd_conf.php…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-15T09:16:44.570",
-      "kev_date_added": "",
-      "description": "A vulnerability was identified in D-Link DSL-6740C 20131126. This affects an unknown function of the file /etc/templates/ftpd/ftpd_conf.php of the component FTP Daemon. Such manipulation leads to hard-coded credentials. The attack can be executed remotely. The exploit is publicly available and might be used.",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.2,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
-      ],
-      "summary": "CVE-2026-129444 is a critical vulnerability in the affected software. A vulnerability was identified in D-Link DSL-6740C 20131126. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://github.com/XueDugu/dlink-dsl6740c-ftp-default-evidence"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/cve/CVE-2026-129444"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/submit/1044943"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/437457"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/437457/cti"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/tensei-through-0.11.5-authentication-bypass-via-hard-coded-jwt-secret-in-tensei-auth"
         }
       ],
       "version_ranges": [],
@@ -1907,7 +2082,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.01568,
-      "epss_percentile": 0.75751,
+      "epss_percentile": 0.7575,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.1,
@@ -1960,7 +2135,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.01316,
-      "epss_percentile": 0.71249,
+      "epss_percentile": 0.7125,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.1,
@@ -2021,7 +2196,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.0138,
-      "epss_percentile": 0.72567,
+      "epss_percentile": 0.72572,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.1,
@@ -2053,153 +2228,6 @@
         {
           "label": "disclosure@vulncheck.com",
           "url": "https://www.vulncheck.com/advisories/cudy-tr3000-before-2.5.42-os-command-injection-via-tr-098-user-password-parameter"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-124020",
-      "kind": "cve",
-      "cve_id": "CVE-2026-124020",
-      "title": "Control Web Panel (CWP) before webpanel_version 1.30.6 contains a host header injection vulnerability that allows unauthenticated attackers…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-13T22:17:22.070",
-      "kev_date_added": "",
-      "description": "Control Web Panel (CWP) before webpanel_version 1.30.6 contains a host header injection vulnerability that allows unauthenticated attackers to manipulate the password-recovery reset URL by injecting the HTTP Host header into the /v1/lostpass/ route's token generation process. Attackers can lure an automated mail-security scanner into visiting the poisoned reset link to exfiltrate the live recovery token, replay it at /login/index.php?acc=newpass to set a new password, and subsequently abuse the…",
-      "cvss": 9.2,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00652,
-      "epss_percentile": 0.51816,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 36.9,
-      "score_components": {
-        "cvss": 36.8,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.52. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 36.9 out of 100."
-      ],
-      "summary": "CVE-2026-124020 is a critical vulnerability in the affected software. Control Web Panel (CWP) before webpanel_version 1.30.6 contains a host header injection vulnerability that allows unauthenticated attackers to manipulate the password-recovery reset URL by injecting the HTTP Host header into the /v1/lostpass/ route's token generation process. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://control-webpanel.com/changelog"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/control-web-panel-host-header-password-reset-poisoning"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-124021",
-      "kind": "cve",
-      "cve_id": "CVE-2026-124021",
-      "title": "Control Web Panel (CWP) before webpanel_version 1.30.6 contains an authorization bypass vulnerability in the validate() function of api/v1/…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-13T22:17:22.217",
-      "kev_date_added": "",
-      "description": "Control Web Panel (CWP) before webpanel_version 1.30.6 contains an authorization bypass vulnerability in the validate() function of api/v1/index.php that allows attackers holding a password-recovery token and a predictable legacy signature to obtain valid remote-API authorization without a proper API key. Attackers can exploit this flaw via the POST /cronjobsusers/ endpoint to add arbitrary cron commands and achieve command execution as the affected hosting account, and can also abuse the same…",
-      "cvss": 9.2,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00667,
-      "epss_percentile": 0.52467,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 36.9,
-      "score_components": {
-        "cvss": 36.8,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.52. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 36.9 out of 100."
-      ],
-      "summary": "CVE-2026-124021 is a critical vulnerability in the affected software. Control Web Panel (CWP) before webpanel_version 1.30.6 contains an authorization bypass vulnerability in the validate() function of api/v1/index.php that allows attackers holding a password-recovery token and a predictable legacy signature to obtain valid remote-API authorizatio… It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://control-webpanel.com/changelog"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/control-web-panel-authorization-bypass-via-oauth-authorization-codes"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-126273",
-      "kind": "cve",
-      "cve_id": "CVE-2026-126273",
-      "title": "NocoDB before 2026.09.0 contains a privilege escalation vulnerability in initAdminFromEnv.ts that silently skips super-admin bootstrap when…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-13T10:17:30.290",
-      "kev_date_added": "",
-      "description": "NocoDB before 2026.09.0 contains a privilege escalation vulnerability in initAdminFromEnv.ts that silently skips super-admin bootstrap when the admin password environment variable is empty. Unauthenticated attackers can call the public signup endpoint first on a fresh instance to receive Creator and Super Admin roles, gaining full administrative control.",
-      "cvss": 9.2,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00364,
-      "epss_percentile": 0.30757,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 36.9,
-      "score_components": {
-        "cvss": 36.8,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.31. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 36.9 out of 100."
-      ],
-      "summary": "CVE-2026-126273 is a critical vulnerability in the affected software. NocoDB before 2026.09.0 contains a privilege escalation vulnerability in initAdminFromEnv.ts that silently skips super-admin bootstrap when the admin password environment variable is empty. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/nocodb/nocodb/security/advisories/GHSA-mjxv-r6j7-m8gv"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/nocodb-before-2026.09.0-privilege-escalation-via-incomplete-admin-bootstrap"
         }
       ],
       "version_ranges": [],
@@ -2327,6 +2355,47 @@
       "aliases": []
     },
     {
+      "id": "news-ddd80cd3bed8",
+      "kind": "news",
+      "cve_id": null,
+      "title": "FBI warns ARTEX AI hacking tool is powering global cyberattacks",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-15T13:29:53-05:00",
+      "description": "The FBI is warning that hackers are using an AI-powered penetration testing framework called ARTEX to automate cyberattacks against organizations worldwide, including a recent ConnectWise supply-chain breach that compromised Microsoft 365 customer environments. [...]",
+      "source": "BleepingComputer",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [
+        "Microsoft 365 / Exchange"
+      ],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 10.0,
+        "urgency": 0.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Mentions software on the small-business list (Microsoft 365 / Exchange): 10.0 of 10.",
+        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from BleepingComputer: FBI warns ARTEX AI hacking tool is powering global cyberattacks. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "If you use Microsoft 365 / Exchange, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/fbi-warns-artex-ai-hacking-tool-is-powering-global-cyberattacks/"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "news-452012a5ab46",
       "kind": "news",
       "cve_id": null,
@@ -2360,47 +2429,6 @@
         {
           "label": "The Hacker News",
           "url": "https://thehackernews.com/2026/11/hackers-exploit-critical-xen-orchestra.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "news-be3a38dc184a",
-      "kind": "news",
-      "cve_id": null,
-      "title": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-12T15:15:16-05:00",
-      "description": "Microsoft is investigating a widespread outage affecting multiple Microsoft 365 services, including Outlook, Microsoft Teams, and Copilot, as users report connectivity problems worldwide. [...]",
-      "source": "BleepingComputer",
-      "cvss": null,
-      "severity": null,
-      "in_kev": false,
-      "epss": null,
-      "smb_matches": [
-        "Microsoft 365 / Exchange"
-      ],
-      "formula_id": "news-relevance-v1",
-      "score": 10.0,
-      "score_components": {
-        "smb": 10.0,
-        "urgency": 0.0
-      },
-      "reasons": [
-        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Mentions software on the small-business list (Microsoft 365 / Exchange): 10.0 of 10.",
-        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
-        "Total 10.0 out of 20 on the news scale."
-      ],
-      "summary": "Headline from BleepingComputer: Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "If you use Microsoft 365 / Exchange, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "BleepingComputer",
-          "url": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/"
         }
       ],
       "version_ranges": [],
@@ -2490,39 +2518,41 @@
       "aliases": []
     },
     {
-      "id": "news-7f23aad252df",
+      "id": "news-dfdbf97fc7fe",
       "kind": "news",
       "cve_id": null,
-      "title": "New N-able \"4EverAble2Shell\" zero-day exploited hours after PoC released",
+      "title": "Microsoft pushes Windows emergency updates to fix activation failures",
       "vendor": "",
       "product": "",
-      "published": "2026-11-12T14:51:16-05:00",
-      "description": "Hackers are actively exploiting a newly disclosed N-able N-central zero-day vulnerability dubbed \"4EverAble2Shell\" to compromise servers and deploy cryptocurrency miners, with researchers reporting at least 21 affected systems, including 19 running the company's latest security update. [...]",
+      "published": "2026-11-16T03:26:52-05:00",
+      "description": "Microsoft has released emergency out-of-band updates to fix Windows activation and licensing failures caused by this month's security updates. [...]",
       "source": "BleepingComputer",
       "cvss": null,
       "severity": null,
       "in_kev": false,
       "epss": null,
-      "smb_matches": [],
+      "smb_matches": [
+        "Windows"
+      ],
       "formula_id": "news-relevance-v1",
       "score": 10.0,
       "score_components": {
-        "smb": 0.0,
-        "urgency": 10.0
+        "smb": 10.0,
+        "urgency": 0.0
       },
       "reasons": [
         "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Does not mention the small-business software list: 0 of 10.",
-        "Uses the urgency term 'zero-day': 10.0 of 10.",
+        "Mentions software on the small-business list (Windows): 10.0 of 10.",
+        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
         "Total 10.0 out of 20 on the news scale."
       ],
-      "summary": "Headline from BleepingComputer: New N-able \"4EverAble2Shell\" zero-day exploited hours after PoC released. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
+      "summary": "Headline from BleepingComputer: Microsoft pushes Windows emergency updates to fix activation failures. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "If you use Windows, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
       "summary_engine": "rules-v1",
       "references": [
         {
           "label": "BleepingComputer",
-          "url": "https://www.bleepingcomputer.com/news/security/new-n-able-4everable2shell-zero-day-exploited-hours-after-poc-released/"
+          "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-new-windows-emergency-updates-fix-activation-licensing-failures/"
         }
       ],
       "version_ranges": [],
