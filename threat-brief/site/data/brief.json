@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-18T13:05:53.052169+00:00",
+  "generated_at": "2026-11-19T13:14:04.172773+00:00",
   "mode": "live",
   "formula": {
     "id": "smb-sa-v1",
@@ -18,13 +18,13 @@
     }
   },
   "counts": {
-    "catalog_cves": 2149,
+    "catalog_cves": 2005,
     "brief_items": 48,
     "brief_cves": 40,
     "brief_news": 8,
-    "kev": 1782,
-    "nvd": 367,
-    "epss": 82
+    "kev": 1786,
+    "nvd": 219,
+    "epss": 162
   },
   "warnings": [],
   "sources": [
@@ -97,12 +97,8 @@
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "CISA advisories",
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-05"
-        },
-        {
-          "label": "CISA advisories",
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-01"
+          "label": "The Hacker News",
+          "url": "https://thehackernews.com/2026/11/everything-is-web-application-including.html"
         }
       ],
       "version_ranges": [],
@@ -146,12 +142,8 @@
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "CISA advisories",
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-05"
-        },
-        {
-          "label": "CISA advisories",
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-01"
+          "label": "The Hacker News",
+          "url": "https://thehackernews.com/2026/11/everything-is-web-application-including.html"
         }
       ],
       "version_ranges": [],
@@ -173,7 +165,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.82641,
-      "epss_percentile": 0.99673,
+      "epss_percentile": 0.99674,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 41.5,
@@ -201,18 +193,6 @@
         {
           "label": "CISA advisories",
           "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-03"
-        },
-        {
-          "label": "CISA advisories",
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-02"
-        },
-        {
-          "label": "CISA advisories",
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-04"
-        },
-        {
-          "label": "CISA advisories",
-          "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-316-03"
         }
       ],
       "version_ranges": [],
@@ -234,7 +214,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.01586,
-      "epss_percentile": 0.76024,
+      "epss_percentile": 0.76089,
       "smb_matches": [
         "WordPress"
       ],
@@ -261,17 +241,17 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-114784",
+      "id": "CVE-2026-130778",
       "kind": "cve",
-      "cve_id": "CVE-2026-114784",
-      "title": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: Platform Security).  Supported…",
+      "cve_id": "CVE-2026-130778",
+      "title": "Incus before 7.6.0 contains an authentication bypass vulnerability that allows remote attackers to authenticate as any trusted certificate…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-17T22:18:05.783",
+      "published": "2026-11-18T19:17:53.607",
       "kev_date_added": "",
-      "description": "Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: Platform Security).  Supported versions that are affected are 8.2.0.0.0 and  26.01.0.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Business Intelligence Enterprise Edition.  While the vulnerability is in Oracle Business Intelligence Enterprise Edition, attacks may significantly impact additional products (scope cha…",
+      "description": "Incus before 7.6.0 contains an authentication bypass vulnerability that allows remote attackers to authenticate as any trusted certificate by appending its public certificate to their presented TLS client chain. Attackers can append the server's or a cluster member's certificate to gain cluster-level access, bypass authorization, modify trust store entries, and influence scriptlet-based authorization decisions.",
       "cvss": 10.0,
-      "cvss_version": "3.1",
+      "cvss_version": "4.0",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
@@ -287,244 +267,19 @@
         "smb": 0.0
       },
       "reasons": [
-        "CVSS 10.0 (3.1, CRITICAL) contributes 40.0 of 40.",
+        "CVSS 10.0 (4.0, CRITICAL) contributes 40.0 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
         "No EPSS score was available for this entry, so that part contributes 0 of 20.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 40.0 out of 100."
       ],
-      "summary": "CVE-2026-114784 is a critical vulnerability in the affected software. Vulnerability in the Oracle Business Intelligence Enterprise Edition product of Oracle Analytics (component: Platform Security). It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-130778 is a critical vulnerability in the affected software. Incus before 7.6.0 contains an authentication bypass vulnerability that allows remote attackers to authenticate as any trusted certificate by appending its public certificate to their presented TLS client chain. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-114824",
-      "kind": "cve",
-      "cve_id": "CVE-2026-114824",
-      "title": "Vulnerability in the Oracle Platform Security for Java product of Oracle Fusion Middleware (component: Centralized Thirdparty Jars).  Suppo…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-17T22:18:10.373",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle Platform Security for Java product of Oracle Fusion Middleware (component: Centralized Thirdparty Jars).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Platform Security for Java.  While the vulnerability is in Oracle Platform Security for Java, attacks may significantly impact additional products (scope change).  Successful attack…",
-      "cvss": 10.0,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 40.0,
-      "score_components": {
-        "cvss": 40.0,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 10.0 (3.1, CRITICAL) contributes 40.0 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 40.0 out of 100."
-      ],
-      "summary": "CVE-2026-114824 is a critical vulnerability in the affected software. Vulnerability in the Oracle Platform Security for Java product of Oracle Fusion Middleware (component: Centralized Thirdparty Jars). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-114835",
-      "kind": "cve",
-      "cve_id": "CVE-2026-114835",
-      "title": "Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Admin Console).  Supported versions that are aff…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-17T22:18:11.710",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Admin Console).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Access Manager.  While the vulnerability is in Oracle Access Manager, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of…",
-      "cvss": 10.0,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 40.0,
-      "score_components": {
-        "cvss": 40.0,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 10.0 (3.1, CRITICAL) contributes 40.0 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 40.0 out of 100."
-      ],
-      "summary": "CVE-2026-114835 is a critical vulnerability in the affected software. Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Admin Console). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-91500",
-      "kind": "cve",
-      "cve_id": "CVE-2026-91500",
-      "title": "Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Authentication Engine).  Supported versions that…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-17T22:19:22.467",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Authentication Engine).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Access Manager.  While the vulnerability is in Oracle Access Manager, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  una…",
-      "cvss": 10.0,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 40.0,
-      "score_components": {
-        "cvss": 40.0,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 10.0 (3.1, CRITICAL) contributes 40.0 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 40.0 out of 100."
-      ],
-      "summary": "CVE-2026-91500 is a critical vulnerability in the affected software. Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Authentication Engine). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-91510",
-      "kind": "cve",
-      "cve_id": "CVE-2026-91510",
-      "title": "Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Authentication Engine).  Supported versions that…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-17T22:19:22.823",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Authentication Engine).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Access Manager.  While the vulnerability is in Oracle Access Manager, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  una…",
-      "cvss": 10.0,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 40.0,
-      "score_components": {
-        "cvss": 40.0,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 10.0 (3.1, CRITICAL) contributes 40.0 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 40.0 out of 100."
-      ],
-      "summary": "CVE-2026-91510 is a critical vulnerability in the affected software. Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Authentication Engine). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-91569",
-      "kind": "cve",
-      "cve_id": "CVE-2026-91569",
-      "title": "Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware (component: TopLink Integration).  Supported versions that…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-17T22:19:24.980",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware (component: TopLink Integration).  Supported versions that are affected are 12.2.1.4.0, 14.1.1.0.0, 14.1.2.0.0 and  15.1.1.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle WebLogic Server.  While the vulnerability is in Oracle WebLogic Server, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnera…",
-      "cvss": 10.0,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 40.0,
-      "score_components": {
-        "cvss": 40.0,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 10.0 (3.1, CRITICAL) contributes 40.0 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 40.0 out of 100."
-      ],
-      "summary": "CVE-2026-91569 is a critical vulnerability in the affected software. Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware (component: TopLink Integration). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/lxc/incus/security/advisories/GHSA-xg75-xf37-cph9"
         }
       ],
       "version_ranges": [],
@@ -546,7 +301,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.73307,
-      "epss_percentile": 0.99469,
+      "epss_percentile": 0.99471,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.7,
@@ -571,16 +326,16 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-114819",
+      "id": "CVE-2026-14492",
       "kind": "cve",
-      "cve_id": "CVE-2026-114819",
-      "title": "Vulnerability in the Oracle Text component of Oracle Database Server.  Supported versions that are affected are 19.3-19.32, 21.3-21.24 and…",
+      "cve_id": "CVE-2026-14492",
+      "title": "The WP Duplicate – WordPress Migration Plugin plugin for WordPress is vulnerable to Remote Code Execution in all versions up to, and includ…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-17T22:18:09.980",
+      "published": "2026-11-19T10:17:28.927",
       "kev_date_added": "",
-      "description": "Vulnerability in the Oracle Text component of Oracle Database Server.  Supported versions that are affected are 19.3-19.32, 21.3-21.24 and  23.4.0-23.26.3. Easily exploitable vulnerability allows low privileged attacker having Create Session privilege with network access via Oracle Net to compromise Oracle Text.  While the vulnerability is in Oracle Text, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Orac…",
-      "cvss": 9.9,
+      "description": "The WP Duplicate – WordPress Migration Plugin plugin for WordPress is vulnerable to Remote Code Execution in all versions up to, and including, 1.1.11 via the save_single_batch_file function. This is due to a PHP type-juggling authentication bypass via loose != comparison with no is_string() guard, combined with unsanitized base64-decoded path construction in save_single_batch_file() lacking any directory traversal containment. This makes it possible for authenticated attackers, with custom-lev…",
+      "cvss": 9.8,
       "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
@@ -589,207 +344,43 @@
       "epss_percentile": null,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 39.6,
+      "score": 39.2,
       "score_components": {
-        "cvss": 39.6,
+        "cvss": 39.2,
         "kev": 0.0,
         "epss": 0.0,
         "smb": 0.0
       },
       "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
+        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
         "No EPSS score was available for this entry, so that part contributes 0 of 20.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.6 out of 100."
+        "Total 39.2 out of 100."
       ],
-      "summary": "CVE-2026-114819 is a critical vulnerability in the affected software. Vulnerability in the Oracle Text component of Oracle Database Server. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-14492 is a critical vulnerability in the affected software. The WP Duplicate – WordPress Migration Plugin plugin for WordPress is vulnerable to Remote Code Execution in all versions up to, and including, 1.1.11 via the save_single_batch_file function. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-114822",
-      "kind": "cve",
-      "cve_id": "CVE-2026-114822",
-      "title": "Vulnerability in the RDBMS component of Oracle Database Server.  Supported versions that are affected are 23.4.0-23.26.4. Easily exploitabl…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-17T22:18:10.103",
-      "kev_date_added": "",
-      "description": "Vulnerability in the RDBMS component of Oracle Database Server.  Supported versions that are affected are 23.4.0-23.26.4. Easily exploitable vulnerability allows low privileged attacker having Create Session privilege with network access via Oracle Net to compromise RDBMS.  While the vulnerability is in RDBMS, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of RDBMS. CVSS 3.1 Base Score 9.9 (Confidentiality, I…",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.6,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.6 out of 100."
-      ],
-      "summary": "CVE-2026-114822 is a critical vulnerability in the affected software. Vulnerability in the RDBMS component of Oracle Database Server. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
+          "label": "security@wordfence.com",
+          "url": "https://plugins.trac.wordpress.org/browser/local-sync/tags/1.1.11/admin/class-local-sync-files-op.php#L777"
+        },
         {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-114848",
-      "kind": "cve",
-      "cve_id": "CVE-2026-114848",
-      "title": "Vulnerability in the Oracle Text component of Oracle Database Server.  Supported versions that are affected are 19.3-19.33, 21.3-21.24 and…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-17T22:18:13.277",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle Text component of Oracle Database Server.  Supported versions that are affected are 19.3-19.33, 21.3-21.24 and  23.4.0-23.26.3. Easily exploitable vulnerability allows low privileged attacker having Create Session privilege with network access via Oracle Net to compromise Oracle Text.  While the vulnerability is in Oracle Text, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Orac…",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.6,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.6 out of 100."
-      ],
-      "summary": "CVE-2026-114848 is a critical vulnerability in the affected software. Vulnerability in the Oracle Text component of Oracle Database Server. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
+          "label": "security@wordfence.com",
+          "url": "https://plugins.trac.wordpress.org/browser/local-sync/tags/1.1.11/admin/class-local-sync-files-op.php#L800"
+        },
         {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-114978",
-      "kind": "cve",
-      "cve_id": "CVE-2026-114978",
-      "title": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-17T22:18:28.660",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.26.0.000. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Hyperion Financial Management.  While the vulnerability is in Oracle Hyperion Financial Management, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can res…",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.6,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.6 out of 100."
-      ],
-      "summary": "CVE-2026-114978 is a critical vulnerability in the affected software. Vulnerability in the Oracle Hyperion Financial Management product of Oracle Hyperion (component: Security). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
+          "label": "security@wordfence.com",
+          "url": "https://plugins.trac.wordpress.org/browser/local-sync/tags/1.1.11/includes/class-local-sync-handle-server-requests.php#L131"
+        },
         {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-114980",
-      "kind": "cve",
-      "cve_id": "CVE-2026-114980",
-      "title": "Vulnerability in the Oracle AutoVue product of Oracle Supply Chain (component: Security Related Issues).   The supported version that is af…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-17T22:18:28.903",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle AutoVue product of Oracle Supply Chain (component: Security Related Issues).   The supported version that is affected is 21.1.0. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle AutoVue.  While the vulnerability is in Oracle AutoVue, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in takeover of Oracle AutoVue. CVSS 3.1 Base Score…",
-      "cvss": 9.9,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 39.6,
-      "score_components": {
-        "cvss": 39.6,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.9 (3.1, CRITICAL) contributes 39.6 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.6 out of 100."
-      ],
-      "summary": "CVE-2026-114980 is a critical vulnerability in the affected software. Vulnerability in the Oracle AutoVue product of Oracle Supply Chain (component: Security Related Issues). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
+          "label": "security@wordfence.com",
+          "url": "https://plugins.trac.wordpress.org/browser/local-sync/tags/1.1.11/includes/class-local-sync-handle-server-requests.php#L36"
+        },
         {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
+          "label": "security@wordfence.com",
+          "url": "https://plugins.trac.wordpress.org/browser/local-sync/tags/1.1.11/includes/class-local-sync-handle-server-requests.php#L400"
         }
       ],
       "version_ranges": [],
@@ -811,7 +402,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.69289,
-      "epss_percentile": 0.99369,
+      "epss_percentile": 0.9937,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 38.9,
@@ -836,184 +427,85 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-114785",
+      "id": "CVE-2026-48356",
       "kind": "cve",
-      "cve_id": "CVE-2026-114785",
-      "title": "Vulnerability in the Oracle Hyperion Planning product of Oracle Hyperion (component: Security).   The supported version that is affected is…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-17T22:18:05.907",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle Hyperion Planning product of Oracle Hyperion (component: Security).   The supported version that is affected is 11.2.26.0.000. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Hyperion Planning.  Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in Oracle Hyperion Planning, attacks may significantly impact additional products (scope change…",
-      "cvss": 9.6,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
+      "cve_id": "CVE-2026-48356",
+      "title": "Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability",
+      "vendor": "Adobe",
+      "product": "Commerce and Magento",
+      "published": "2026-10-27",
+      "kev_date_added": "2026-10-27",
+      "description": "Adobe Commerce and Magento contain an unrestricted upload of file with dangerous type vulnerability that could result in arbitrary code execution in the context of the current user, potentially gaining elevated access or control over the victim's account or session.",
+      "cvss": null,
+      "cvss_version": null,
+      "severity": null,
+      "in_kev": true,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.6639,
+      "epss_percentile": 0.99297,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 38.4,
+      "score": 38.3,
       "score_components": {
-        "cvss": 38.4,
-        "kev": 0.0,
-        "epss": 0.0,
+        "cvss": 0.0,
+        "kev": 25.0,
+        "epss": 13.3,
         "smb": 0.0
       },
       "reasons": [
-        "CVSS 9.6 (3.1, CRITICAL) contributes 38.4 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "No CVSS score was published, so that part contributes 0 of 40.",
+        "Listed in the CISA Known Exploited Vulnerabilities catalog (added 2026-10-27), so that part contributes 25.0 of 25.",
+        "EPSS 0.66 means FIRST estimates about a 66% probability of exploitation activity in the next 30 days, percentile 0.99. That contributes 13.3 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 38.4 out of 100."
+        "Total 38.3 out of 100."
       ],
-      "summary": "CVE-2026-114785 is a critical vulnerability in the affected software. Vulnerability in the Oracle Hyperion Planning product of Oracle Hyperion (component: Security). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary": "CVE-2026-48356 is a unspecified vulnerability in Adobe Commerce and Magento. Adobe Commerce and Magento contain an unrestricted upload of file with dangerous type vulnerability that could result in arbitrary code execution in the context of the current user, potentially gaining elevated access or control over the victim's account or session. The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "If you use Adobe Commerce and Magento, apply the vendor update. CISA lists this as already exploited. If you do not use it, you can skip this item.",
       "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
-        }
-      ],
+      "references": [],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-114856",
+      "id": "CVE-2026-91469",
       "kind": "cve",
-      "cve_id": "CVE-2026-114856",
-      "title": "Vulnerability in Oracle REST Data Services (component: General).  Supported versions that are affected are 24.2.0-26.3.0. Easily exploitabl…",
+      "cve_id": "CVE-2026-91469",
+      "title": "Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected ar…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-17T22:18:14.213",
+      "published": "2026-11-17T22:19:22.107",
       "kev_date_added": "",
-      "description": "Vulnerability in Oracle REST Data Services (component: General).  Supported versions that are affected are 24.2.0-26.3.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTPS to compromise Oracle REST Data Services.  Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in Oracle REST Data Services, attacks may significantly impact additional products (scope change). Successful attacks of this…",
-      "cvss": 9.6,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 38.4,
-      "score_components": {
-        "cvss": 38.4,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.6 (3.1, CRITICAL) contributes 38.4 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 38.4 out of 100."
-      ],
-      "summary": "CVE-2026-114856 is a critical vulnerability in the affected software. Vulnerability in Oracle REST Data Services (component: General). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-91561",
-      "kind": "cve",
-      "cve_id": "CVE-2026-91561",
-      "title": "Vulnerability in the Oracle Service Bus product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected are 12…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-17T22:19:24.533",
-      "kev_date_added": "",
-      "description": "Vulnerability in the Oracle Service Bus product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.0.0. Easily exploitable vulnerability allows low privileged attacker with network access via RMI to compromise Oracle Service Bus.  While the vulnerability is in Oracle Service Bus, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized creation, deletion…",
-      "cvss": 9.6,
-      "cvss_version": "3.1",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 38.4,
-      "score_components": {
-        "cvss": 38.4,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.6 (3.1, CRITICAL) contributes 38.4 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 38.4 out of 100."
-      ],
-      "summary": "CVE-2026-91561 is a critical vulnerability in the affected software. Vulnerability in the Oracle Service Bus product of Oracle Fusion Middleware (component: Core). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-130678",
-      "kind": "cve",
-      "cve_id": "CVE-2026-130678",
-      "title": "SiYuan before 3.8.10 contains a stored cross-site scripting vulnerability that allows attackers to execute script by storing malicious Attr…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-18T12:17:11.277",
-      "kev_date_added": "",
-      "description": "SiYuan before 3.8.10 contains a stored cross-site scripting vulnerability that allows attackers to execute script by storing malicious Attribute View column names rendered unescaped in col.ts. Attackers can inject HTML via addAttributeViewKey, .sy.zip import, or sync, and when a victim adds or duplicates the column, insertAdjacentHTML runs JavaScript with Node.js privileges for desktop code execution.",
+      "description": "Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected are 12.2.1.4.0, 14.1.1.0.0, 14.1.2.0.0 and  15.1.1.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle WebLogic Server.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle WebLogic Server accessible data…",
       "cvss": 9.4,
-      "cvss_version": "4.0",
+      "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00438,
+      "epss_percentile": 0.38735,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 37.6,
+      "score": 37.7,
       "score_components": {
         "cvss": 37.6,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
-        "CVSS 9.4 (4.0, CRITICAL) contributes 37.6 of 40.",
+        "CVSS 9.4 (3.1, CRITICAL) contributes 37.6 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.39. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.6 out of 100."
+        "Total 37.7 out of 100."
       ],
-      "summary": "CVE-2026-130678 is a critical vulnerability in the affected software. SiYuan before 3.8.10 contains a stored cross-site scripting vulnerability that allows attackers to execute script by storing malicious Attribute View column names rendered unescaped in col.ts. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-91469 is a critical vulnerability in the affected software. Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware (component: Core). It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/siyuan-note/siyuan/commit/9c24c3ddd8ded505bdeb66d3f318820a77f932b3"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-vvqj-4crq-p53p"
+          "label": "secalert_us@oracle.com",
+          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
         }
       ],
       "version_ranges": [],
@@ -1069,15 +561,15 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-130680",
+      "id": "CVE-2026-130759",
       "kind": "cve",
-      "cve_id": "CVE-2026-130680",
-      "title": "SiYuan from 3.3.0 before 3.8.10 contains a stored cross-site scripting vulnerability that allows attackers to inject HTML via unescaped che…",
+      "cve_id": "CVE-2026-130759",
+      "title": "Fleet from 4.71.0 before 4.88.2 contains an authentication bypass vulnerability in the SAML SSO callback that looks up sessions using unval…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-18T12:17:11.630",
+      "published": "2026-11-18T19:17:46.750",
       "kev_date_added": "",
-      "description": "SiYuan from 3.3.0 before 3.8.10 contains a stored cross-site scripting vulnerability that allows attackers to inject HTML via unescaped checkbox column names in Gallery and Kanban AttributeView renderers. Attackers can share a crafted .sy.zip document whose rendering in the Electron desktop client with nodeIntegration enabled executes Node.js and host OS commands.",
+      "description": "Fleet from 4.71.0 before 4.88.2 contains an authentication bypass vulnerability in the SAML SSO callback that looks up sessions using unvalidated client-supplied identifiers. Users able to run live queries or enroll secret holders can plant attacker-controlled identity provider metadata in the session store, then present a self-signed SAML response to log in as a global admin.",
       "cvss": 9.4,
       "cvss_version": "4.0",
       "severity": "CRITICAL",
@@ -1101,28 +593,28 @@
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 37.6 out of 100."
       ],
-      "summary": "CVE-2026-130680 is a critical vulnerability in the affected software. SiYuan from 3.3.0 before 3.8.10 contains a stored cross-site scripting vulnerability that allows attackers to inject HTML via unescaped checkbox column names in Gallery and Kanban AttributeView renderers. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-130759 is a critical vulnerability in the affected software. Fleet from 4.71.0 before 4.88.2 contains an authentication bypass vulnerability in the SAML SSO callback that looks up sessions using unvalidated client-supplied identifiers. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
           "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-g275-mf26-qx9r"
+          "url": "https://github.com/fleetdm/fleet/security/advisories/GHSA-94f5-6j6w-r3rh"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-130681",
+      "id": "CVE-2026-130780",
       "kind": "cve",
-      "cve_id": "CVE-2026-130681",
-      "title": "SiYuan before 3.8.10 contains a stored cross-site scripting vulnerability, an incomplete fix for CVE-2026-44670, because renderAVAttribute(…",
+      "cve_id": "CVE-2026-130780",
+      "title": "Incus before 7.6.0 contains a path traversal vulnerability that allows malicious migration peers to write outside intended directories by s…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-18T12:17:11.817",
+      "published": "2026-11-18T19:17:54.067",
       "kev_date_added": "",
-      "description": "SiYuan before 3.8.10 contains a stored cross-site scripting vulnerability, an incomplete fix for CVE-2026-44670, because renderAVAttribute() inserts an Attribute View name unescaped into the database row attribute panel header. Attackers who can persist the name, such as via the setAttrViewName action, can inject an onerror handler that runs OS commands through Node.js when a desktop user opens the panel.",
+      "description": "Incus before 7.6.0 contains a path traversal vulnerability that allows malicious migration peers to write outside intended directories by supplying unvalidated dependent volume and snapshot names in the migration offer header. Attackers controlling a migration source can create root-owned volumes with attacker content at arbitrary host paths, compromising hosts using dir storage pools, bypassing restricted.storage-pools.access, or crashing the daemon.",
       "cvss": 9.4,
       "cvss_version": "4.0",
       "severity": "CRITICAL",
@@ -1146,32 +638,28 @@
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 37.6 out of 100."
       ],
-      "summary": "CVE-2026-130681 is a critical vulnerability in the affected software. SiYuan before 3.8.10 contains a stored cross-site scripting vulnerability, an incomplete fix for CVE-2026-44670, because renderAVAttribute() inserts an Attribute View name unescaped into the database row attribute panel header. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-130780 is a critical vulnerability in the affected software. Incus before 7.6.0 contains a path traversal vulnerability that allows malicious migration peers to write outside intended directories by supplying unvalidated dependent volume and snapshot names in the migration offer header. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
           "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/siyuan-note/siyuan/commit/d3af9d5782082b379d45a69eedf4ebcfe8ba6889"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-7gj8-xf7w-hfjf"
+          "url": "https://github.com/lxc/incus/security/advisories/GHSA-q9fc-p923-6vp7"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-130682",
+      "id": "CVE-2026-130784",
       "kind": "cve",
-      "cve_id": "CVE-2026-130682",
-      "title": "SiYuan before 3.8.10 persists a table block's caption attribute into IAL properties without HTML sanitization, causing stored cross-site sc…",
+      "cve_id": "CVE-2026-130784",
+      "title": "Incus before 7.6.0 contains an authorization bypass vulnerability that allows restricted clients to create and access default project resou…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-18T12:17:11.990",
+      "published": "2026-11-18T19:17:54.837",
       "kev_date_added": "",
-      "description": "SiYuan before 3.8.10 persists a table block's caption attribute into IAL properties without HTML sanitization, causing stored cross-site scripting upon import or sync. Attackers can inject an entity-encoded caption with an onerror handler that executes in the Electron client's nodeIntegration context to achieve remote code execution.",
+      "description": "Incus before 7.6.0 contains an authorization bypass vulnerability that allows restricted clients to create and access default project resources by exploiting entitlement checks against the requested project. Attackers can create bridge networks with raw.dnsmasq directives to execute code as root on the host, or manipulate inherited resources via the ?project= parameter.",
       "cvss": 9.4,
       "cvss_version": "4.0",
       "severity": "CRITICAL",
@@ -1195,28 +683,28 @@
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 37.6 out of 100."
       ],
-      "summary": "CVE-2026-130682 is a critical vulnerability in the affected software. SiYuan before 3.8.10 persists a table block's caption attribute into IAL properties without HTML sanitization, causing stored cross-site scripting upon import or sync. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-130784 is a critical vulnerability in the affected software. Incus before 7.6.0 contains an authorization bypass vulnerability that allows restricted clients to create and access default project resources by exploiting entitlement checks against the requested project. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
           "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-v92g-4rrc-c6wv"
+          "url": "https://github.com/lxc/incus/security/advisories/GHSA-5c64-j5m6-8433"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-130706",
+      "id": "CVE-2026-130786",
       "kind": "cve",
-      "cve_id": "CVE-2026-130706",
-      "title": "NocoDB before 2026.09.0 contains an sql injection vulnerability that allows authenticated Creator or Owner users to inject raw SQL by persi…",
+      "cve_id": "CVE-2026-130786",
+      "title": "Incus before 7.6.0 contains a configuration injection vulnerability that allows users who can launch instances from controlled images to in…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-18T12:17:15.490",
+      "published": "2026-11-18T19:17:55.157",
       "kev_date_added": "",
-      "description": "NocoDB before 2026.09.0 contains an sql injection vulnerability that allows authenticated Creator or Owner users to inject raw SQL by persisting a crafted formula parsed_tree reused without revalidation. Attackers can bypass the SQLite metadata path guard with an alias to plant the tree, escalating to super administrator or executing OS commands on external PostgreSQL hosts.",
+      "description": "Incus before 7.6.0 contains a configuration injection vulnerability that allows users who can launch instances from controlled images to inject LXC directives by embedding line breaks in OCI config.json values or oci.entrypoint and oci.cwd keys. Attackers can add liblxc hooks or crafted tmpfs lxc.mount.entry fields to run commands as root on the host or bind-mount host paths, even from restricted projects.",
       "cvss": 9.4,
       "cvss_version": "4.0",
       "severity": "CRITICAL",
@@ -1240,30 +728,30 @@
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 37.6 out of 100."
       ],
-      "summary": "CVE-2026-130706 is a critical vulnerability in the affected software. NocoDB before 2026.09.0 contains an sql injection vulnerability that allows authenticated Creator or Owner users to inject raw SQL by persisting a crafted formula parsed_tree reused without revalidation. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-130786 is a critical vulnerability in the affected software. Incus before 7.6.0 contains a configuration injection vulnerability that allows users who can launch instances from controlled images to inject LXC directives by embedding line breaks in OCI config.json values or oci.entrypoint and oci.cwd keys. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
           "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/nocodb/nocodb/security/advisories/GHSA-frqc-xh5h-rrcw"
+          "url": "https://github.com/lxc/incus/security/advisories/GHSA-3wxw-5gh2-j2x2"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-91469",
+      "id": "CVE-2026-132622",
       "kind": "cve",
-      "cve_id": "CVE-2026-91469",
-      "title": "Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected ar…",
+      "cve_id": "CVE-2026-132622",
+      "title": "A vulnerability was found in GearUP Hyperev up to 20261020. This impacts the function get_wlan_sitesurvey of the file ld/utils.lua of the c…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-17T22:19:22.107",
+      "published": "2026-11-19T04:17:27.700",
       "kev_date_added": "",
-      "description": "Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware (component: Core).  Supported versions that are affected are 12.2.1.4.0, 14.1.1.0.0, 14.1.2.0.0 and  15.1.1.0.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle WebLogic Server.  Successful attacks of this vulnerability can result in  unauthorized creation, deletion or modification access to critical data or all Oracle WebLogic Server accessible data…",
+      "description": "A vulnerability was found in GearUP Hyperev up to 20261020. This impacts the function get_wlan_sitesurvey of the file ld/utils.lua of the component WLAN Site Survey. Performing a manipulation of the argument line results in os command injection. The attack is possible to be carried out remotely. The vendor was contacted early about this disclosure but did not respond in any way.",
       "cvss": 9.4,
-      "cvss_version": "3.1",
+      "cvss_version": "4.0",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
@@ -1279,365 +767,31 @@
         "smb": 0.0
       },
       "reasons": [
-        "CVSS 9.4 (3.1, CRITICAL) contributes 37.6 of 40.",
+        "CVSS 9.4 (4.0, CRITICAL) contributes 37.6 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
         "No EPSS score was available for this entry, so that part contributes 0 of 20.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 37.6 out of 100."
       ],
-      "summary": "CVE-2026-91469 is a critical vulnerability in the affected software. Vulnerability in the Oracle WebLogic Server product of Oracle Fusion Middleware (component: Core). It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "secalert_us@oracle.com",
-          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-129351",
-      "kind": "cve",
-      "cve_id": "CVE-2026-129351",
-      "title": "A security vulnerability has been detected in TRENDnet TEW-657BRM 1.00.1. This vulnerability affects the function sprintf of the file /setu…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-14T23:16:47.753",
-      "kev_date_added": "",
-      "description": "A security vulnerability has been detected in TRENDnet TEW-657BRM 1.00.1. This vulnerability affects the function sprintf of the file /setup.cgi of the component mini_httpd. Such manipulation leads to out-of-bounds write. The attack can be executed remotely. The exploit has been disclosed publicly and may be used. The vendor explains: \"\"I am not able to confirm if such vulnerability exists as the product has been EOL for more than 15 years. We will send out an announcement letting customers kno…",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00879,
-      "epss_percentile": 0.59683,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.4,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.2,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.60. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.4 out of 100."
-      ],
-      "summary": "CVE-2026-129351 is a critical vulnerability in the affected software. A security vulnerability has been detected in TRENDnet TEW-657BRM 1.00.1. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-132622 is a critical vulnerability in the affected software. A vulnerability was found in GearUP Hyperev up to 20261020. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
           "label": "cna@vuldb.com",
-          "url": "https://github.com/ruanyi101/router-firmware-security-advisories/blob/main/router-firmware-GitHub-advisories/advisories/TRENDnet-TEW-657BRM-mini_httpd.md"
+          "url": "https://vuldb.com/cve/CVE-2026-132622"
         },
         {
           "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/cve/CVE-2026-129351"
+          "url": "https://vuldb.com/submit/1045343"
         },
         {
           "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/submit/1043518"
+          "url": "https://vuldb.com/vuln/439768"
         },
         {
           "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/437397"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/437397/cti"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-109445",
-      "kind": "cve",
-      "cve_id": "CVE-2026-109445",
-      "title": "PLANET GS-5220-8P2T2S (hardware version 3.0) firmware versions before 3.2412b261008 contains a stack-based buffer overflow vulnerability th…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-13T15:17:30.290",
-      "kev_date_added": "",
-      "description": "PLANET GS-5220-8P2T2S (hardware version 3.0) firmware versions before 3.2412b261008 contains a stack-based buffer overflow vulnerability that allows unauthenticated attackers to corrupt stack memory by submitting an oversized webstax_auth HTTP Cookie value that is copied into a fixed-size stack buffer without length validation. Attackers can send a crafted unauthenticated HTTP request with an oversized cookie to overwrite the saved return address and corrupt stack memory, leading to memory corr…",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00431,
-      "epss_percentile": 0.37819,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.3,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.38. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.3 out of 100."
-      ],
-      "summary": "CVE-2026-109445 is a critical vulnerability in the affected software. PLANET GS-5220-8P2T2S (hardware version 3.0) firmware versions before 3.2412b261008 contains a stack-based buffer overflow vulnerability that allows unauthenticated attackers to corrupt stack memory by submitting an oversized webstax_auth HTTP Cookie value that is copied into a… It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.planet.com.tw/en/support/security-advisory/12"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/planet-gs-5220-8p2t2s-stack-buffer-overflow-via-webstax-auth-cookie"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-129171",
-      "kind": "cve",
-      "cve_id": "CVE-2026-129171",
-      "title": "NginxPulse 1.5.0 before 1.6.26 contains an unauthenticated sql injection vulnerability that allows remote attackers to append SQL via the i…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-13T18:17:42.530",
-      "kev_date_added": "",
-      "description": "NginxPulse 1.5.0 before 1.6.26 contains an unauthenticated sql injection vulnerability that allows remote attackers to append SQL via the id and locationType parameters of /api/stats/:type. Attackers can close the quoted table-name identifier and use error-based output to read database contents, and read or write server files via PostgreSQL superuser functions.",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00414,
-      "epss_percentile": 0.3629,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.3,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.36. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.3 out of 100."
-      ],
-      "summary": "CVE-2026-129171 is a critical vulnerability in the affected software. NginxPulse 1.5.0 before 1.6.26 contains an unauthenticated sql injection vulnerability that allows remote attackers to append SQL via the id and locationType parameters of /api/stats/:type. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/likaia/nginxpulse/blob/0d41264ae441ddfcb595551f2e2f374f707dae22/internal/analytics/overall_stats.go#L219-L224"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/likaia/nginxpulse/blob/0d41264ae441ddfcb595551f2e2f374f707dae22/internal/analytics/stats.go#L217-L221"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/likaia/nginxpulse/commit/f9416bea3be892a394cd24a6d4a2afbd8397e926"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/likaia/nginxpulse/issues/103"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://vul.yulun.ac.cn/20261030/nginxpulse/"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-129483",
-      "kind": "cve",
-      "cve_id": "CVE-2026-129483",
-      "title": "Cyrus SASL through 2.1.28 contains an authentication bypass vulnerability in the SRP server mechanism because srp_server_mech_step2 does no…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-15T14:17:27.530",
-      "kev_date_added": "",
-      "description": "Cyrus SASL through 2.1.28 contains an authentication bypass vulnerability in the SRP server mechanism because srp_server_mech_step2 does not reject client public values A that are multiples of N. Unauthenticated network clients can send A equal to N to force a zero shared secret, authenticating as any existing user without the password and learning session keys.",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.0038,
-      "epss_percentile": 0.32528,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.3,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.33. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.3 out of 100."
-      ],
-      "summary": "CVE-2026-129483 is a critical vulnerability in the affected software. Cyrus SASL through 2.1.28 contains an authentication bypass vulnerability in the SRP server mechanism because srp_server_mech_step2 does not reject client public values A that are multiples of N. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://gist.github.com/afldl/18d15d3f5a1df99411e35000c7de80db"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/cyrusimap/cyrus-sasl/blob/cyrus-sasl-2.1.28/plugins/srp.c#L2046-L2050"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/cyrusimap/cyrus-sasl/commit/fb3724f43dc50247ff2bf02135457d6d77031654"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/cyrusimap/cyrus-sasl/issues/896"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://seclists.org/oss-sec/2026/q4/122"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-129955",
-      "kind": "cve",
-      "cve_id": "CVE-2026-129955",
-      "title": "NodePress through 8.5.1 contains an authentication bypass vulnerability that allows unauthenticated attackers to gain administrator access…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-16T15:17:31.030",
-      "kev_date_added": "",
-      "description": "NodePress through 8.5.1 contains an authentication bypass vulnerability that allows unauthenticated attackers to gain administrator access by using the hardcoded default password 'root'. Attackers can send base64-encoded 'root' to POST /admin/login when NP_ADMIN_DEFAULT_PASSWORD is unset to obtain admin tokens and fully control the site.",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00443,
-      "epss_percentile": 0.39039,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.3,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.39. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.3 out of 100."
-      ],
-      "summary": "CVE-2026-129955 is a critical vulnerability in the affected software. NodePress through 8.5.1 contains an authentication bypass vulnerability that allows unauthenticated attackers to gain administrator access by using the hardcoded default password 'root'. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/surmon-china/nodepress/blob/v8.5.1/src/app.config.ts#L62-L64"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/surmon-china/nodepress/blob/v8.5.1/src/modules/admin/admin.service.auth.ts#L45-L58"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/surmon-china/nodepress/blob/v8.5.1/src/modules/admin/admin.service.profile.ts#L48-L64"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/surmon-china/nodepress/issues/143"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/nodepress-through-8.5.1-authentication-bypass-via-default-administrator-password"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-130071",
-      "kind": "cve",
-      "cve_id": "CVE-2026-130071",
-      "title": "TridotsTech go1cms master branch through commit 7f68d05 and version-3 branch before commit ead8da3 contains a missing authentication vulner…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-16T22:18:22.373",
-      "kev_date_added": "",
-      "description": "TridotsTech go1cms master branch through commit 7f68d05 and version-3 branch before commit ead8da3 contains a missing authentication vulnerability in the guest-whitelisted update_doc method that allows unauthenticated attackers to modify any document. Attackers can supply a doctype, name and arbitrary fields that are saved with ignore_permissions=True, altering User records to escalate privileges, take over accounts or tamper with business data.",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00408,
-      "epss_percentile": 0.35645,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.3,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.36. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.3 out of 100."
-      ],
-      "summary": "CVE-2026-130071 is a critical vulnerability in the affected software. TridotsTech go1cms master branch through commit 7f68d05 and version-3 branch before commit ead8da3 contains a missing authentication vulnerability in the guest-whitelisted update_doc method that allows unauthenticated attackers to modify any document. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/TridotsTech/go1cms/blob/7f68d05502ef88f6ea7190ddf4e1a46314ed75b0/go1_cms/go1_cms/doctype/web_page_builder/web_page_builder.py#L2358-L2378"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/TridotsTech/go1cms/commit/ead8da36a9452b961cc5361d6fd853ca68a58b08"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/tridotstech-go1cms-unauthenticated-arbitrary-document-modification-via-update-doc"
+          "url": "https://vuldb.com/vuln/439768/cti"
         }
       ],
       "version_ranges": [],
@@ -1658,23 +812,23 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00354,
+      "epss_percentile": 0.29641,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 37.2,
+      "score": 37.3,
       "score_components": {
         "cvss": 37.2,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.3 (3.1, CRITICAL) contributes 37.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.30. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
+        "Total 37.3 out of 100."
       ],
       "summary": "CVE-2026-101691 is a critical vulnerability in the affected software. Vulnerability in the Oracle Mobile Field Service product of Oracle E-Business Suite (component: Admin UI). It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -1703,23 +857,23 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00354,
+      "epss_percentile": 0.29643,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 37.2,
+      "score": 37.3,
       "score_components": {
         "cvss": 37.2,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.3 (3.1, CRITICAL) contributes 37.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.30. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
+        "Total 37.3 out of 100."
       ],
       "summary": "CVE-2026-114934 is a critical vulnerability in the affected software. Vulnerability in the PeopleSoft Enterprise PeopleTools product of Oracle PeopleSoft (component: Integration Broker). It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -1748,23 +902,23 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00384,
+      "epss_percentile": 0.33123,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 37.2,
+      "score": 37.3,
       "score_components": {
         "cvss": 37.2,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.3 (3.1, CRITICAL) contributes 37.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.33. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
+        "Total 37.3 out of 100."
       ],
       "summary": "CVE-2026-114956 is a critical vulnerability in the affected software. Vulnerability in the Oracle Hyperion Planning product of Oracle Hyperion (component: Security). It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -1793,23 +947,23 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00384,
+      "epss_percentile": 0.33123,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 37.2,
+      "score": 37.3,
       "score_components": {
         "cvss": 37.2,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.3 (3.1, CRITICAL) contributes 37.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.33. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
+        "Total 37.3 out of 100."
       ],
       "summary": "CVE-2026-115139 is a critical vulnerability in the affected software. Vulnerability in the Oracle Hyperion Infrastructure Technology product of Oracle Hyperion (component: Installation and Configuration). It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -1824,129 +978,60 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-129255",
+      "id": "CVE-2026-91507",
       "kind": "cve",
-      "cve_id": "CVE-2026-129255",
-      "title": "A vulnerability was identified in CoolerMaster MASTERPLUS+ 1.9.6. This affects the function sub_11504 in the library WinRing0x64.sys of the…",
+      "cve_id": "CVE-2026-91507",
+      "title": "Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Authentication Engine).  Supported versions that…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-14T13:17:21.910",
+      "published": "2026-11-17T22:19:22.587",
       "kev_date_added": "",
-      "description": "A vulnerability was identified in CoolerMaster MASTERPLUS+ 1.9.6. This affects the function sub_11504 in the library WinRing0x64.sys of the component Device Driver. The manipulation of the argument PhysicalAddress leads to incorrect default permissions. The attack can only be performed from a local environment. The vendor was contacted early about this disclosure but did not respond in any way.",
+      "description": "Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Authentication Engine).  Supported versions that are affected are 12.2.1.4.0 and  14.1.2.1.0. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Oracle Access Manager.  While the vulnerability is in Oracle Access Manager, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  una…",
       "cvss": 9.3,
-      "cvss_version": "4.0",
+      "cvss_version": "3.1",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.00151,
-      "epss_percentile": 0.04323,
+      "epss": 0.00339,
+      "epss_percentile": 0.27785,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 37.2,
+      "score": 37.3,
       "score_components": {
         "cvss": 37.2,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "CVSS 9.3 (3.1, CRITICAL) contributes 37.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.04. That contributes 0.0 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.28. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
+        "Total 37.3 out of 100."
       ],
-      "summary": "CVE-2026-129255 is a critical vulnerability in the affected software. A vulnerability was identified in CoolerMaster MASTERPLUS+ 1.9.6. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-91507 is a critical vulnerability in the affected software. Vulnerability in the Oracle Access Manager product of Oracle Fusion Middleware (component: Authentication Engine). It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/cve/CVE-2026-129255"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/submit/1042970"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/437286"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/437286/cti"
+          "label": "secalert_us@oracle.com",
+          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "CVE-2026-129261",
+      "id": "CVE-2012-20007",
       "kind": "cve",
-      "cve_id": "CVE-2026-129261",
-      "title": "A vulnerability was found in Kingston FURY CTRL RGB Control Software up to 2.0.66.0. The impacted element is an unknown function in the lib…",
+      "cve_id": "CVE-2012-20007",
+      "title": "ThinkPHP 2.0 through 2.2 and 3.0 Lite mode contains an eval injection vulnerability in the Dispatcher PATH_INFO parsing, which uses preg_re…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-14T16:17:04.517",
+      "published": "2026-11-18T16:17:47.560",
       "kev_date_added": "",
-      "description": "A vulnerability was found in Kingston FURY CTRL RGB Control Software up to 2.0.66.0. The impacted element is an unknown function in the library NTIOLib_X64.sys of the component IOCTL Handler. Performing a manipulation results in exposed ioctl with insufficient access control. The attack is only possible with local access.",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00132,
-      "epss_percentile": 0.02842,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.2,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.03. That contributes 0.0 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
-      ],
-      "summary": "CVE-2026-129261 is a critical vulnerability in the affected software. A vulnerability was found in Kingston FURY CTRL RGB Control Software up to 2.0.66.0. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/cve/CVE-2026-129261"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/submit/1043190"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/437302"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/437302/cti"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-130648",
-      "kind": "cve",
-      "cve_id": "CVE-2026-130648",
-      "title": "WWBN AVideo from 6.5 contains a stored cross-site scripting vulnerability that allows users with upload permission to inject script by subm…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-18T12:17:05.910",
-      "kev_date_added": "",
-      "description": "WWBN AVideo from 6.5 contains a stored cross-site scripting vulnerability that allows users with upload permission to inject script by submitting a javascript: scheme videoLink for embed videos. The unvalidated URL is rendered into an iframe src in videoEmbeded.php and PlayerSkins.php, executing for viewers including administrators and enabling creation of new administrator accounts.",
+      "description": "ThinkPHP 2.0 through 2.2 and 3.0 Lite mode contains an eval injection vulnerability in the Dispatcher PATH_INFO parsing, which uses preg_replace with the /e modifier and a double-quoted replacement. Unauthenticated attackers can send crafted requests to index.php with a malicious 's' parameter containing PHP expressions to execute arbitrary code on the server. Exploitation evidence was first observed by the Shadowserver Foundation on 2023-10-14.",
       "cvss": 9.3,
       "cvss_version": "4.0",
       "severity": "CRITICAL",
@@ -1970,13 +1055,903 @@
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 37.2 out of 100."
       ],
-      "summary": "CVE-2026-130648 is a critical vulnerability in the affected software. WWBN AVideo from 6.5 contains a stored cross-site scripting vulnerability that allows users with upload permission to inject script by submitting a javascript: scheme videoLink for embed videos. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2012-20007 is a critical vulnerability in the affected software. ThinkPHP 2.0 through 2.2 and 3.0 Lite mode contains an eval injection vulnerability in the Dispatcher PATH_INFO parsing, which uses preg_replace with the /e modifier and a double-quoted replacement. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
           "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/WWBN/AVideo/security/advisories/GHSA-vq8m-9xp3-76fg"
+          "url": "http://web.archive.org/web/20140201221754/http://www.jb51.net:80/softjc/43550.html"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/projectdiscovery/nuclei-templates/blob/main/http/vulnerabilities/thinkphp/thinkphp-2-rce.yaml"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/vulhub/vulhub/tree/master/thinkphp/2-rce"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/thinkphp-2-x-3.0-lite-unauthenticated-rce-via-dispatcher-path-info"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2018-25443",
+      "kind": "cve",
+      "cve_id": "CVE-2018-25443",
+      "title": "Baidu UEditor 1.4.0 through 1.4.3.3 contains an unrestricted file upload vulnerability in the catchimage action of /ueditor/net/controller.…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T16:17:48.500",
+      "kev_date_added": "",
+      "description": "Baidu UEditor 1.4.0 through 1.4.3.3 contains an unrestricted file upload vulnerability in the catchimage action of /ueditor/net/controller.ashx that only validates the Content-Type header. Unauthenticated attackers can supply a source[] URL like x.jpg?.aspx to retain a malicious extension and write an executable .aspx file for remote code execution. Exploitation evidence was first observed by the Shadowserver Foundation on 2023-10-17.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.2,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.2 out of 100."
+      ],
+      "summary": "CVE-2018-25443 is a critical vulnerability in the affected software. Baidu UEditor 1.4.0 through 1.4.3.3 contains an unrestricted file upload vulnerability in the catchimage action of /ueditor/net/controller.ashx that only validates the Content-Type header. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/fex-team/ueditor/blob/v1.4.3.3/net/App_Code/CrawlerHandler.cs"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/projectdiscovery/nuclei-templates/blob/main/http/vulnerabilities/other/ueditor-file-upload.yaml"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://web.archive.org/web/20190612114715/https://www.freebuf.com/vuls/181814.html"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/baidu-ueditor-1.4.0-1.4.3.3-unrestricted-file-upload-via-controller-ashx"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-130675",
+      "kind": "cve",
+      "cve_id": "CVE-2026-130675",
+      "title": "Craft CMS from 5.0.0 before 5.11.4 contains a remote code execution vulnerability in ImageTransforms::normalizeTransform() that allows atta…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T12:17:10.783",
+      "kev_date_added": "",
+      "description": "Craft CMS from 5.0.0 before 5.11.4 contains a remote code execution vulnerability in ImageTransforms::normalizeTransform() that allows attackers to instantiate arbitrary classes by supplying class:null with a __class key. Attackers can reach the method through Craft Commerce's payments/pay redirect template calling customer.photo.getUrl() with a crafted transform to instantiate classes like yii\\rbac\\PhpManager and execute PHP.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.2,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.2 out of 100."
+      ],
+      "summary": "CVE-2026-130675 is a critical vulnerability in the affected software. Craft CMS from 5.0.0 before 5.11.4 contains a remote code execution vulnerability in ImageTransforms::normalizeTransform() that allows attackers to instantiate arbitrary classes by supplying class:null with a __class key. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/craftcms/cms/security/advisories/GHSA-hq78-cm2m-h24h"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-130683",
+      "kind": "cve",
+      "cve_id": "CVE-2026-130683",
+      "title": "SiYuan before 3.8.10 uses an incomplete deny-list in IsSensitivePath that omits shell-initialization files such as .zshenv and .bash_profil…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T12:17:12.160",
+      "kev_date_added": "",
+      "description": "SiYuan before 3.8.10 uses an incomplete deny-list in IsSensitivePath that omits shell-initialization files such as .zshenv and .bash_profile, as well as ~/.local. Authenticated administrators can call /api/file/copyFile with an absolute destination outside the workspace to write payloads there, which execute as the user on the next shell or login.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.2,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.2 out of 100."
+      ],
+      "summary": "CVE-2026-130683 is a critical vulnerability in the affected software. SiYuan before 3.8.10 uses an incomplete deny-list in IsSensitivePath that omits shell-initialization files such as .zshenv and .bash_profile, as well as ~/.local. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-4xfj-946m-258h"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-130730",
+      "kind": "cve",
+      "cve_id": "CVE-2026-130730",
+      "title": "NocoDB before 2026.10.1 contains an authentication bypass vulnerability that allows OAuth token holders to act as full sessions because OAu…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T12:17:19.130",
+      "kev_date_added": "",
+      "description": "NocoDB before 2026.10.1 contains an authentication bypass vulnerability that allows OAuth token holders to act as full sessions because OAuth access tokens are signed with the instance JWT secret. Attackers can present a narrowly scoped OAuth token to the session strategy, short-lived-token exchange, or NocoSocket handshake to gain the granting user's full privileges.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.2,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.2 out of 100."
+      ],
+      "summary": "CVE-2026-130730 is a critical vulnerability in the affected software. NocoDB before 2026.10.1 contains an authentication bypass vulnerability that allows OAuth token holders to act as full sessions because OAuth access tokens are signed with the instance JWT secret. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/nocodb/nocodb/security/advisories/GHSA-xmfr-pc8j-4xh5"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-130733",
+      "kind": "cve",
+      "cve_id": "CVE-2026-130733",
+      "title": "Grav from 2.0.0 before 2.2.18 contains an authorization bypass vulnerability that allows publishers to overwrite pages their per-page permi…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T12:17:19.627",
+      "kev_date_added": "",
+      "description": "Grav from 2.0.0 before 2.2.18 contains an authorization bypass vulnerability that allows publishers to overwrite pages their per-page permissions deny by abusing FolderStorage key delimiter collisions and PageStorage folder reconstruction. Attackers can rename a folder like locked*** or save from a page with an unusual prefix width through a front-end Flex pages form, replacing protected content and permissions to access the protected subtree.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.2,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.2 out of 100."
+      ],
+      "summary": "CVE-2026-130733 is a critical vulnerability in the affected software. Grav from 2.0.0 before 2.2.18 contains an authorization bypass vulnerability that allows publishers to overwrite pages their per-page permissions deny by abusing FolderStorage key delimiter collisions and PageStorage folder reconstruction. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/getgrav/grav/security/advisories/GHSA-3rxf-jpgc-hwpv"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-130754",
+      "kind": "cve",
+      "cve_id": "CVE-2026-130754",
+      "title": "All versions of LaraDashboard contain an authentication bypass in SocialAuthService::findOrCreateUser(), which links a social login to an e…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T19:17:45.940",
+      "kev_date_added": "",
+      "description": "All versions of LaraDashboard contain an authentication bypass in SocialAuthService::findOrCreateUser(), which links a social login to an existing account by email without checking that the OAuth provider verified that email. Unauthenticated attackers using an OAuth/OIDC provider that asserts a victim's email can log in as any user, including Superadmin, and keep persistent access through a linked social_accounts entry.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.2,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.2 out of 100."
+      ],
+      "summary": "CVE-2026-130754 is a critical vulnerability in the affected software. All versions of LaraDashboard contain an authentication bypass in SocialAuthService::findOrCreateUser(), which links a social login to an existing account by email without checking that the OAuth provider verified that email. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/laradashboard/laradashboard/security/advisories/GHSA-c5x3-wvxj-7cgr"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-130756",
+      "kind": "cve",
+      "cve_id": "CVE-2026-130756",
+      "title": "pnpm exe before 10.34.8 embeds an outdated Node.js runtime that still trusts compromised eMudhra intermediate CA certificates during regist…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T19:17:46.287",
+      "kev_date_added": "",
+      "description": "pnpm exe before 10.34.8 embeds an outdated Node.js runtime that still trusts compromised eMudhra intermediate CA certificates during registry TLS connections. Network attackers holding a recovered intermediate key can intercept standalone pnpm registry fetches and serve forged package metadata or tarballs.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.2,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.2 out of 100."
+      ],
+      "summary": "CVE-2026-130756 is a critical vulnerability in the affected software. pnpm exe before 10.34.8 embeds an outdated Node.js runtime that still trusts compromised eMudhra intermediate CA certificates during registry TLS connections. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/pnpm/pnpm/security/advisories/GHSA-w8f5-6m3h-r453"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-130774",
+      "kind": "cve",
+      "cve_id": "CVE-2026-130774",
+      "title": "Incus before 7.6.0 contains a privilege escalation vulnerability: rebuilding a never-started unprivileged container makes it boot without a…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T19:17:52.023",
+      "kev_date_added": "",
+      "description": "Incus before 7.6.0 contains a privilege escalation vulnerability: rebuilding a never-started unprivileged container makes it boot without a user namespace. Root processes inside the container run as host uid 0, keeping capabilities like sys_module, with no device cgroup restriction, letting them load kernel modules and compromise the host.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.2,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.2 out of 100."
+      ],
+      "summary": "CVE-2026-130774 is a critical vulnerability in the affected software. Incus before 7.6.0 contains a privilege escalation vulnerability: rebuilding a never-started unprivileged container makes it boot without a user namespace. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/lxc/incus/security/advisories/GHSA-9c46-v3hw-v6m8"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-130783",
+      "kind": "cve",
+      "cve_id": "CVE-2026-130783",
+      "title": "Incus before 7.6.0 exposes certificate and cluster join token secrets through the default project event stream and skips authorization when…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T19:17:54.683",
+      "kev_date_added": "",
+      "description": "Incus before 7.6.0 exposes certificate and cluster join token secrets through the default project event stream and skips authorization when cancelling operations without associated permissions. Restricted clients can subscribe to operation events to capture certificate tokens and enroll unrestricted certificates, gaining full server access, or cancel token operations by UUID.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.2,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.2 out of 100."
+      ],
+      "summary": "CVE-2026-130783 is a critical vulnerability in the affected software. Incus before 7.6.0 exposes certificate and cluster join token secrets through the default project event stream and skips authorization when cancelling operations without associated permissions. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/lxc/incus/security/advisories/GHSA-cwg9-8mc4-hf7j"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-130770",
+      "kind": "cve",
+      "cve_id": "CVE-2026-130770",
+      "title": "Incus before 7.6.0 creates the NBD servers used for virtual machine migration and disk export on abstract unix sockets, which have no permi…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T19:17:50.250",
+      "kev_date_added": "",
+      "description": "Incus before 7.6.0 creates the NBD servers used for virtual machine migration and disk export on abstract unix sockets, which have no permission checks and whose names are visible in /proc/net/unix. A local unprivileged user can connect while an operation runs to read or modify the VM disk, gaining code execution in the guest on a migration's receiving side.",
+      "cvss": 9.2,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 36.8,
+      "score_components": {
+        "cvss": 36.8,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 36.8 out of 100."
+      ],
+      "summary": "CVE-2026-130770 is a critical vulnerability in the affected software. Incus before 7.6.0 creates the NBD servers used for virtual machine migration and disk export on abstract unix sockets, which have no permission checks and whose names are visible in /proc/net/unix. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/lxc/incus/security/advisories/GHSA-3rgf-297m-775x"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-114881",
+      "kind": "cve",
+      "cve_id": "CVE-2026-114881",
+      "title": "Vulnerability in the Document Management and Collaboration product of Oracle E-Business Suite (component: Attachments).  Supported versions…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-17T22:18:17.107",
+      "kev_date_added": "",
+      "description": "Vulnerability in the Document Management and Collaboration product of Oracle E-Business Suite (component: Attachments).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows unauthenticated attacker with network access via HTTP to compromise Document Management and Collaboration.  Successful attacks of this vulnerability can result in  unauthorized access to critical data or complete access to all Document Management and Collaboration accessible data…",
+      "cvss": 9.1,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00508,
+      "epss_percentile": 0.44084,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 36.5,
+      "score_components": {
+        "cvss": 36.4,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.1 (3.1, CRITICAL) contributes 36.4 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.44. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 36.5 out of 100."
+      ],
+      "summary": "CVE-2026-114881 is a critical vulnerability in the affected software. Vulnerability in the Document Management and Collaboration product of Oracle E-Business Suite (component: Attachments). It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "secalert_us@oracle.com",
+          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2019-25784",
+      "kind": "cve",
+      "cve_id": "CVE-2019-25784",
+      "title": "FineCMS versions 5.0.4 before 5.0.11 contain an unauthenticated SQL injection vulnerability in the data2 API action handled by list_tag in…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T16:17:49.010",
+      "kev_date_added": "",
+      "description": "FineCMS versions 5.0.4 before 5.0.11 contain an unauthenticated SQL injection vulnerability in the data2 API action handled by list_tag in libraries/Template.php. Attackers can send GET requests to index.php?c=api&m=data2 with a valid auth hash and the param action=sql sql='...' to execute arbitrary SELECT queries and extract database information. Exploitation evidence was first observed by the Shadowserver Foundation on 2023-10-14.",
+      "cvss": 8.8,
+      "cvss_version": "4.0",
+      "severity": "HIGH",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 35.2,
+      "score_components": {
+        "cvss": 35.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 8.8 (4.0, HIGH) contributes 35.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 35.2 out of 100."
+      ],
+      "summary": "CVE-2019-25784 is a high vulnerability in the affected software. FineCMS versions 5.0.4 before 5.0.11 contain an unauthenticated SQL injection vulnerability in the data2 API action handled by list_tag in libraries/Template.php. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "http://www.cnblogs.com/ichunqiu/p/10944669.html"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/projectdiscovery/nuclei-templates/blob/main/http/vulnerabilities/other/finecms-sqli.yaml"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/finecms-5.0.4-5.0.11-sql-injection-via-api-data2-param"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/finecms-5.0.4-before-5.0.11-sql-injection-via-api-data2-param"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2021-48021",
+      "kind": "cve",
+      "cve_id": "CVE-2021-48021",
+      "title": "Chamilo LMS 1.11.10 before 1.11.16 contains an unauthenticated SQL injection vulnerability in the searchOptionsFromTags function through th…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T16:17:50.097",
+      "kev_date_added": "",
+      "description": "Chamilo LMS 1.11.10 before 1.11.16 contains an unauthenticated SQL injection vulnerability in the searchOptionsFromTags function through the options parameter of extra_field.ajax.php. Attackers can send POST requests with a malicious JSON options array to inject SQL into the IN clause and extract database information. Exploitation evidence was first observed by the Shadowserver Foundation on 2023-10-14.",
+      "cvss": 8.8,
+      "cvss_version": "4.0",
+      "severity": "HIGH",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 35.2,
+      "score_components": {
+        "cvss": 35.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 8.8 (4.0, HIGH) contributes 35.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 35.2 out of 100."
+      ],
+      "summary": "CVE-2021-48021 is a high vulnerability in the affected software. Chamilo LMS 1.11.10 before 1.11.16 contains an unauthenticated SQL injection vulnerability in the searchOptionsFromTags function through the options parameter of extra_field.ajax.php. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/chamilo/chamilo-lms/commit/23787842c2013db318e82d6987469fc8b17df0f8"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/chamilo/chamilo-lms/commit/e8332fd9d5607ae7866e27936b4376ea1053ae03"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/projectdiscovery/nuclei-templates/blob/main/http/vulnerabilities/other/chamilo-lms-sqli.yaml"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/chamilo-lms-1.11.10-1.11.16-sql-injection-via-extra-field-ajax-php"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/chamilo-lms-1.11.10-before-1.11.16-sql-injection-via-extra-field-ajax-php"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2022-51028",
+      "kind": "cve",
+      "cve_id": "CVE-2022-51028",
+      "title": "CmsEasy 7.7.5_20210919 contains an unauthenticated SQL injection vulnerability in the execsql_action function at /?case=crossall&act=execsq…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T16:17:51.760",
+      "kev_date_added": "",
+      "description": "CmsEasy 7.7.5_20210919 contains an unauthenticated SQL injection vulnerability in the execsql_action function at /?case=crossall&act=execsql that executes attacker-supplied queries decrypted with the hardcoded key 'cmseasy_sql'. Attackers can send a crafted 'sql' parameter to run arbitrary SQL and dump the admin username and password hash. Exploitation evidence was first observed by the Shadowserver Foundation on 2023-10-22.",
+      "cvss": 8.8,
+      "cvss_version": "4.0",
+      "severity": "HIGH",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 35.2,
+      "score_components": {
+        "cvss": 35.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 8.8 (4.0, HIGH) contributes 35.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 35.2 out of 100."
+      ],
+      "summary": "CVE-2022-51028 is a high vulnerability in the affected software. CmsEasy 7.7.5_20210919 contains an unauthenticated SQL injection vulnerability in the execsql_action function at /?case=crossall&act=execsql that executes attacker-supplied queries decrypted with the hardcoded key 'cmseasy_sql'. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://cn-sec.com/archives/1580677.html"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/cms/CmsEasy/CmsEasy%20crossall_act.php%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/projectdiscovery/nuclei-templates/blob/main/http/vulnerabilities/other/cmseasy-crossall-act-sqli.yaml"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/cmseasy-7.7-5-20210919-unauthenticated-sql-injection-via-crossall-execsql"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2024-58402",
+      "kind": "cve",
+      "cve_id": "CVE-2024-58402",
+      "title": "Azon Dominator releases through 2024-06-03 contain an SQL injection vulnerability that allows unauthenticated attackers to manipulate datab…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T16:17:54.363",
+      "kev_date_added": "",
+      "description": "Azon Dominator releases through 2024-06-03 contain an SQL injection vulnerability that allows unauthenticated attackers to manipulate database queries through the cid parameter in /fetch_products.php. Attackers can send crafted POST requests with boolean-based or time-based blind payloads to extract sensitive database information. Exploitation evidence was first observed by the Shadowserver Foundation on 2024-07-30.",
+      "cvss": 8.8,
+      "cvss_version": "4.0",
+      "severity": "HIGH",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 35.2,
+      "score_components": {
+        "cvss": 35.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 8.8 (4.0, HIGH) contributes 35.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 35.2 out of 100."
+      ],
+      "summary": "CVE-2024-58402 is a high vulnerability in the affected software. Azon Dominator releases through 2024-06-03 contain an SQL injection vulnerability that allows unauthenticated attackers to manipulate database queries through the cid parameter in /fetch_products.php. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/projectdiscovery/nuclei-templates/blob/main/http/vulnerabilities/other/azon-dominator-sqli.yaml"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://packetstorm.news/files/id/179283/"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.codester.com/items/12775/azon-dominator-affiliate-marketing-script"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.exploit-db.com/exploits/52059"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/azon-dominator-sql-injection-via-fetch-products-php-cid-parameter"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-130766",
+      "kind": "cve",
+      "cve_id": "CVE-2026-130766",
+      "title": "Obot from 0.26.0 before 0.27.0 fails to validate the resource identifier in remote MCP server protected resource metadata, allowing malicio…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T19:17:48.003",
+      "kev_date_added": "",
+      "description": "Obot from 0.26.0 before 0.27.0 fails to validate the resource identifier in remote MCP server protected resource metadata, allowing malicious MCP servers to steal access tokens. Attackers can name a different service and authorization server with chosen scopes, causing Obot to obtain the victim's token for that service and forward it to the attacker.",
+      "cvss": 8.8,
+      "cvss_version": "4.0",
+      "severity": "HIGH",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": null,
+      "epss_percentile": null,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 35.2,
+      "score_components": {
+        "cvss": 35.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 8.8 (4.0, HIGH) contributes 35.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 35.2 out of 100."
+      ],
+      "summary": "CVE-2026-130766 is a high vulnerability in the affected software. Obot from 0.26.0 before 0.27.0 fails to validate the resource identifier in remote MCP server protected resource metadata, allowing malicious MCP servers to steal access tokens. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/obot-platform/obot/security/advisories/GHSA-x3hf-v55x-jcp6"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-114860",
+      "kind": "cve",
+      "cve_id": "CVE-2026-114860",
+      "title": "Vulnerability in Oracle Application Testing Suite (component: Test Manager for Web Apps).   The supported version that is affected is 13.3.…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-17T22:18:14.573",
+      "kev_date_added": "",
+      "description": "Vulnerability in Oracle Application Testing Suite (component: Test Manager for Web Apps).   The supported version that is affected is 13.3.0.1. Difficult to exploit vulnerability allows unauthenticated attacker with network access via TLS to compromise Oracle Application Testing Suite.  While the vulnerability is in Oracle Application Testing Suite, attacks may significantly impact additional products (scope change).  Successful attacks of this vulnerability can result in  unauthorized creation…",
+      "cvss": 8.7,
+      "cvss_version": "3.1",
+      "severity": "HIGH",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00341,
+      "epss_percentile": 0.28095,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 34.9,
+      "score_components": {
+        "cvss": 34.8,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 8.7 (3.1, HIGH) contributes 34.8 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.28. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 34.9 out of 100."
+      ],
+      "summary": "CVE-2026-114860 is a high vulnerability in the affected software. Vulnerability in Oracle Application Testing Suite (component: Test Manager for Web Apps). It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "secalert_us@oracle.com",
+          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-114916",
+      "kind": "cve",
+      "cve_id": "CVE-2026-114916",
+      "title": "Vulnerability in the Oracle Applications Framework product of Oracle E-Business Suite (component: Security).  Supported versions that are a…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-17T22:18:21.423",
+      "kev_date_added": "",
+      "description": "Vulnerability in the Oracle Applications Framework product of Oracle E-Business Suite (component: Security).  Supported versions that are affected are 12.2.3-12.2.15. Easily exploitable vulnerability allows low privileged attacker with network access via HTTP to compromise Oracle Applications Framework.  Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in Oracle Applications Framework, attacks may significantly impact additional p…",
+      "cvss": 8.7,
+      "cvss_version": "3.1",
+      "severity": "HIGH",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00353,
+      "epss_percentile": 0.29479,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 34.9,
+      "score_components": {
+        "cvss": 34.8,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 8.7 (3.1, HIGH) contributes 34.8 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.29. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 34.9 out of 100."
+      ],
+      "summary": "CVE-2026-114916 is a high vulnerability in the affected software. Vulnerability in the Oracle Applications Framework product of Oracle E-Business Suite (component: Security). It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "secalert_us@oracle.com",
+          "url": "https://www.oracle.com/security-alerts/cspunov2026.html"
         }
       ],
       "version_ranges": [],
@@ -2024,6 +1999,84 @@
       "aliases": []
     },
     {
+      "id": "news-dd71654a2f47",
+      "kind": "news",
+      "cve_id": null,
+      "title": "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-19T13:30:00+05:30",
+      "description": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) on Wednesday added four vulnerabilities impacting Synology DiskStation Manager (DSM), BerriAI LiteLLM, Apache Axis, and Vanderbilt University Research Electronic Data Capture (REDCap) to its Known Exploited Vulnerabilities (KEV) catalog, citing evidence of active exploitation. The vulnerabilities are listed below -",
+      "source": "The Hacker News",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 0.0,
+        "urgency": 10.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Does not mention the small-business software list: 0 of 10.",
+        "Uses the urgency term 'ransomware': 10.0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from The Hacker News: CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "The Hacker News",
+          "url": "https://thehackernews.com/2026/11/cisa-warns-of-4-exploited-flaws-linked.html"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "news-c3f1d9d987e8",
+      "kind": "news",
+      "cve_id": null,
+      "title": "Data breach impacts 40 Irish credit unions in reported IT provider hack",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T14:39:33-05:00",
+      "description": "A reported cyberattack on Wellington IT has exposed sensitive information belonging to members of 50 credit unions, the majority of which are located in Ireland. [...]",
+      "source": "BleepingComputer",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 0.0,
+        "urgency": 10.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Does not mention the small-business software list: 0 of 10.",
+        "Uses the urgency term 'data breach': 10.0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from BleepingComputer: Data breach impacts 40 Irish credit unions in reported IT provider hack. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/data-breach-impacts-40-irish-credit-unions-in-reported-it-provider-hack/"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "news-986d78299706",
       "kind": "news",
       "cve_id": null,
@@ -2059,47 +2112,6 @@
         {
           "label": "CISA advisories",
           "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-321-01"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "news-54e4290953ac",
-      "kind": "news",
-      "cve_id": null,
-      "title": "Inside Modern Phishing Kits Built to Steal Microsoft 365 Sessions",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-17T10:01:11-05:00",
-      "description": "Huntress researchers break down how EvilTokens, Knight Office, and Kali365 capture and replay M365 tokens, plus how defenders can detect and contain them. [...]",
-      "source": "BleepingComputer",
-      "cvss": null,
-      "severity": null,
-      "in_kev": false,
-      "epss": null,
-      "smb_matches": [
-        "Microsoft 365 / Exchange"
-      ],
-      "formula_id": "news-relevance-v1",
-      "score": 10.0,
-      "score_components": {
-        "smb": 10.0,
-        "urgency": 0.0
-      },
-      "reasons": [
-        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Mentions software on the small-business list (Microsoft 365 / Exchange): 10.0 of 10.",
-        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
-        "Total 10.0 out of 20 on the news scale."
-      ],
-      "summary": "Headline from BleepingComputer: Inside Modern Phishing Kits Built to Steal Microsoft 365 Sessions. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "If you use Microsoft 365 / Exchange, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "BleepingComputer",
-          "url": "https://www.bleepingcomputer.com/news/security/inside-modern-phishing-kits-built-to-steal-microsoft-365-sessions/"
         }
       ],
       "version_ranges": [],
@@ -2147,14 +2159,14 @@
       "aliases": []
     },
     {
-      "id": "news-405d067acd3f",
+      "id": "news-b737cfc44cd6",
       "kind": "news",
       "cve_id": null,
-      "title": "Microsoft testing Remote Lock for lost or stolen Windows devices",
+      "title": "Microsoft confirms app installation, launch issues after hotpatch",
       "vendor": "",
       "product": "",
-      "published": "2026-11-17T06:19:51-05:00",
-      "description": "Microsoft is testing a new feature that lets enterprise IT administrators remotely lock stolen or lost Windows devices without wiping them. [...]",
+      "published": "2026-11-19T05:35:05-05:00",
+      "description": "Microsoft has shared a workaround for installation and launch issues affecting Office and third-party applications after installing this month's Windows 11 hotpatch. [...]",
       "source": "BleepingComputer",
       "cvss": null,
       "severity": null,
@@ -2175,68 +2187,66 @@
         "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
         "Total 10.0 out of 20 on the news scale."
       ],
-      "summary": "Headline from BleepingComputer: Microsoft testing Remote Lock for lost or stolen Windows devices. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "summary": "Headline from BleepingComputer: Microsoft confirms app installation, launch issues after hotpatch. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
       "what_to_do": "If you use Windows, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
       "summary_engine": "rules-v1",
       "references": [
         {
           "label": "BleepingComputer",
-          "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-testing-remote-lock-for-lost-or-stolen-windows-devices/"
+          "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-confirms-app-installation-launch-issues-after-hotpatch/"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "news-1f9af5fe35a3",
+      "id": "news-dc1081452c88",
       "kind": "news",
       "cve_id": null,
-      "title": "New GitDoor and GraphDoor Backdoors Turn GitHub and SharePoint Into Covert C2 Channels",
+      "title": "NVIDIA investigating Gentlemen ransomware breach claims",
       "vendor": "",
       "product": "",
-      "published": "2026-11-17T16:50:18+05:30",
-      "description": "Government sectors in Asia and Africa have been targeted by an active cyber intrusion campaign that delivers to previously undocumented backdoors that leverage legitimate services like Microsoft SharePoint and GitHub for command‑and‑control (C2). The activity has been codenamed Operation ShadowCloud by Kaspersky. The Russian cybersecurity company said it identified the campaign in early 2026.",
-      "source": "The Hacker News",
+      "published": "2026-11-19T04:23:21-05:00",
+      "description": "NVIDIA is investigating claims of a security breach after the Gentlemen ransomware group has added the company to its dark web data leak site. [...]",
+      "source": "BleepingComputer",
       "cvss": null,
       "severity": null,
       "in_kev": false,
       "epss": null,
-      "smb_matches": [
-        "Microsoft 365 / Exchange"
-      ],
+      "smb_matches": [],
       "formula_id": "news-relevance-v1",
       "score": 10.0,
       "score_components": {
-        "smb": 10.0,
-        "urgency": 0.0
+        "smb": 0.0,
+        "urgency": 10.0
       },
       "reasons": [
         "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Mentions software on the small-business list (Microsoft 365 / Exchange): 10.0 of 10.",
-        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
+        "Does not mention the small-business software list: 0 of 10.",
+        "Uses the urgency term 'ransomware': 10.0 of 10.",
         "Total 10.0 out of 20 on the news scale."
       ],
-      "summary": "Headline from The Hacker News: New GitDoor and GraphDoor Backdoors Turn GitHub and SharePoint Into Covert C2 Channels. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "If you use Microsoft 365 / Exchange, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
+      "summary": "Headline from BleepingComputer: NVIDIA investigating Gentlemen ransomware breach claims. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "The Hacker News",
-          "url": "https://thehackernews.com/2026/11/new-gitdoor-and-graphdoor-backdoors.html"
+          "label": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/nvidia-investigating-gentlemen-ransomware-breach-claims/"
         }
       ],
       "version_ranges": [],
       "aliases": []
     },
     {
-      "id": "news-e8aac6829dfb",
+      "id": "news-90f84e48047f",
       "kind": "news",
       "cve_id": null,
-      "title": "New N-central Exploits Work Against Patched Servers, Enable Root RCE and Windows SYSTEM Access",
+      "title": "New Attack Bypasses TPM Lockout to Crack Windows Hello and BitLocker PINs in Days, Not Years",
       "vendor": "",
       "product": "",
-      "published": "2026-11-12T17:21:43+05:30",
-      "description": "N-able on Thursday said it's investigating a new public disclosure containing claims of additional vulnerabilities in on-premise versions of N-central running version 2026.4.1 HF2. \"Based on our initial review, the server issue described depends on a non-default configuration in which the Legacy API is turned on and exposed to the public internet,\" N-able said in a new advisory. \"Legacy API is",
+      "published": "2026-11-18T17:58:30+05:30",
+      "description": "On AMD-based PCs and some Intel PCs, the TPM lockout for Windows Hello and BitLocker PINs can be reset by someone who opens the PC's case, researchers at Technische Universität Berlin say. That leaves short PINs open to guessing. In lab tests, the researchers found a four-digit Hello PIN on an AMD laptop and a 6-digit BitLocker PIN on an Intel laptop this way. Both PINs were set by the",
       "source": "The Hacker News",
       "cvss": null,
       "severity": null,
@@ -2257,52 +2267,13 @@
         "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
         "Total 10.0 out of 20 on the news scale."
       ],
-      "summary": "Headline from The Hacker News: New N-central Exploits Work Against Patched Servers, Enable Root RCE and Windows SYSTEM Access. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "summary": "Headline from The Hacker News: New Attack Bypasses TPM Lockout to Crack Windows Hello and BitLocker PINs in Days, Not Years. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
       "what_to_do": "If you use Windows, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
       "summary_engine": "rules-v1",
       "references": [
         {
           "label": "The Hacker News",
-          "url": "https://thehackernews.com/2026/11/new-n-central-exploits-work-against.html"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "news-d25f99854f90",
-      "kind": "news",
-      "cve_id": null,
-      "title": "Operation Endgame Takes Down Gootloader, CastleRAT and StealC Servers, Seizes 6.4M Stolen Logins",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-13T16:25:03+05:30",
-      "description": "An international police operation took down servers behind Gootloader, CastleRAT and StealC this week. Criminals used the three malware tools to gain access to computers, steal passwords, and launch ransomware attacks. Police also seized about 6.4 million stolen logins belonging to more than 40,000 victims, according to Germany's Federal Criminal Police Office (BKA). Gootloader is a loader:",
-      "source": "The Hacker News",
-      "cvss": null,
-      "severity": null,
-      "in_kev": false,
-      "epss": null,
-      "smb_matches": [],
-      "formula_id": "news-relevance-v1",
-      "score": 10.0,
-      "score_components": {
-        "smb": 0.0,
-        "urgency": 10.0
-      },
-      "reasons": [
-        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Does not mention the small-business software list: 0 of 10.",
-        "Uses the urgency term 'ransomware': 10.0 of 10.",
-        "Total 10.0 out of 20 on the news scale."
-      ],
-      "summary": "Headline from The Hacker News: Operation Endgame Takes Down Gootloader, CastleRAT and StealC Servers, Seizes 6.4M Stolen Logins. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "The Hacker News",
-          "url": "https://thehackernews.com/2026/11/operation-endgame-takes-down-gootloader.html"
+          "url": "https://thehackernews.com/2026/11/flash-chip-attack-bypasses-tpm-lockout.html"
         }
       ],
       "version_ranges": [],
