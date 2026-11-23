@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-22T12:37:36.482236+00:00",
+  "generated_at": "2026-11-23T14:42:39.792424+00:00",
   "mode": "live",
   "formula": {
     "id": "smb-sa-v1",
@@ -18,13 +18,13 @@
     }
   },
   "counts": {
-    "catalog_cves": 1935,
+    "catalog_cves": 1962,
     "brief_items": 48,
     "brief_cves": 40,
     "brief_news": 8,
     "kev": 1790,
-    "nvd": 145,
-    "epss": 102
+    "nvd": 172,
+    "epss": 199
   },
   "warnings": [],
   "sources": [
@@ -213,23 +213,23 @@
       "severity": null,
       "in_kev": true,
       "ransomware": "Unknown",
-      "epss": 0.8768,
-      "epss_percentile": 0.99764,
+      "epss": 0.95538,
+      "epss_percentile": 0.99871,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 42.5,
+      "score": 44.1,
       "score_components": {
         "cvss": 0.0,
         "kev": 25.0,
-        "epss": 17.5,
+        "epss": 19.1,
         "smb": 0.0
       },
       "reasons": [
         "No CVSS score was published, so that part contributes 0 of 40.",
         "Listed in the CISA Known Exploited Vulnerabilities catalog (added 2026-11-09), so that part contributes 25.0 of 25.",
-        "EPSS 0.88 means FIRST estimates about a 88% probability of exploitation activity in the next 30 days, percentile 1.00. That contributes 17.5 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.96 means FIRST estimates about a 96% probability of exploitation activity in the next 30 days, percentile 1.00. That contributes 19.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 42.5 out of 100."
+        "Total 44.1 out of 100."
       ],
       "summary": "CVE-2026-123158 is a unspecified vulnerability in OpenBSD OpenSSH. OpenBSD OpenSSH on Linux contains an unexpected status code or return value vulnerability that could allow for authentication bypass. The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "If you use OpenBSD OpenSSH, apply the vendor update. CISA lists this as already exploited. If you do not use it, you can skip this item.",
@@ -254,7 +254,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.08054,
-      "epss_percentile": 0.94924,
+      "epss_percentile": 0.94929,
       "smb_matches": [
         "WordPress"
       ],
@@ -281,6 +281,51 @@
       "aliases": []
     },
     {
+      "id": "CVE-2026-40217",
+      "kind": "cve",
+      "cve_id": "CVE-2026-40217",
+      "title": "BerriAI LiteLLM Unprotected Alternate Channel Vulnerability",
+      "vendor": "BerriAI",
+      "product": "LiteLLM",
+      "published": "2026-11-18",
+      "kev_date_added": "2026-11-18",
+      "description": "BerriAI LiteLLM contains an unprotected alternate channel vulnerability that could allow remote attackers to execute arbitrary code via bytecode rewriting at the /guardrails/test_custom_code URI.",
+      "cvss": null,
+      "cvss_version": null,
+      "severity": null,
+      "in_kev": true,
+      "ransomware": "Unknown",
+      "epss": 0.82799,
+      "epss_percentile": 0.99678,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 41.6,
+      "score_components": {
+        "cvss": 0.0,
+        "kev": 25.0,
+        "epss": 16.6,
+        "smb": 0.0
+      },
+      "reasons": [
+        "No CVSS score was published, so that part contributes 0 of 40.",
+        "Listed in the CISA Known Exploited Vulnerabilities catalog (added 2026-11-18), so that part contributes 25.0 of 25.",
+        "EPSS 0.83 means FIRST estimates about a 83% probability of exploitation activity in the next 30 days, percentile 1.00. That contributes 16.6 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 41.6 out of 100."
+      ],
+      "summary": "CVE-2026-40217 is a unspecified vulnerability in BerriAI LiteLLM. BerriAI LiteLLM contains an unprotected alternate channel vulnerability that could allow remote attackers to execute arbitrary code via bytecode rewriting at the /guardrails/test_custom_code URI. The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "If you use BerriAI LiteLLM, apply the vendor update. CISA lists this as already exploited. If you do not use it, you can skip this item.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "CISA advisories",
+          "url": "https://www.cisa.gov/news-events/alerts/2026/11/18/cisa-adds-four-known-exploited-vulnerabilities-catalog"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "CVE-2026-48356",
       "kind": "cve",
       "cve_id": "CVE-2026-48356",
@@ -296,7 +341,7 @@
       "in_kev": true,
       "ransomware": "Unknown",
       "epss": 0.81624,
-      "epss_percentile": 0.9965,
+      "epss_percentile": 0.99651,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 41.3,
@@ -321,45 +366,61 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-40217",
+      "id": "CVE-2026-134882",
       "kind": "cve",
-      "cve_id": "CVE-2026-40217",
-      "title": "BerriAI LiteLLM Unprotected Alternate Channel Vulnerability",
-      "vendor": "BerriAI",
-      "product": "LiteLLM",
-      "published": "2026-11-18",
-      "kev_date_added": "2026-11-18",
-      "description": "BerriAI LiteLLM contains an unprotected alternate channel vulnerability that could allow remote attackers to execute arbitrary code via bytecode rewriting at the /guardrails/test_custom_code URI.",
-      "cvss": null,
-      "cvss_version": null,
-      "severity": null,
-      "in_kev": true,
+      "cve_id": "CVE-2026-134882",
+      "title": "A weakness has been identified in TOTOLINK A7100RU 7.4cu.2313_B20191024. This issue affects the function exportOvpn of the file /cgi-bin/cs…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-23T09:17:05.653",
+      "kev_date_added": "",
+      "description": "A weakness has been identified in TOTOLINK A7100RU 7.4cu.2313_B20191024. This issue affects the function exportOvpn of the file /cgi-bin/cstecgi.cgi of the component CGI Handler. This manipulation of the argument Username causes os command injection. The attack is possible to be carried out remotely.",
+      "cvss": 10.0,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.78004,
-      "epss_percentile": 0.99581,
+      "epss": 0.02524,
+      "epss_percentile": 0.85271,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 40.6,
+      "score": 40.5,
       "score_components": {
-        "cvss": 0.0,
-        "kev": 25.0,
-        "epss": 15.6,
+        "cvss": 40.0,
+        "kev": 0.0,
+        "epss": 0.5,
         "smb": 0.0
       },
       "reasons": [
-        "No CVSS score was published, so that part contributes 0 of 40.",
-        "Listed in the CISA Known Exploited Vulnerabilities catalog (added 2026-11-18), so that part contributes 25.0 of 25.",
-        "EPSS 0.78 means FIRST estimates about a 78% probability of exploitation activity in the next 30 days, percentile 1.00. That contributes 15.6 of 20. It is a forecast, not a statement that you will be attacked.",
+        "CVSS 10.0 (4.0, CRITICAL) contributes 40.0 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.03 means FIRST estimates about a 3% probability of exploitation activity in the next 30 days, percentile 0.85. That contributes 0.5 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 40.6 out of 100."
+        "Total 40.5 out of 100."
       ],
-      "summary": "CVE-2026-40217 is a unspecified vulnerability in BerriAI LiteLLM. BerriAI LiteLLM contains an unprotected alternate channel vulnerability that could allow remote attackers to execute arbitrary code via bytecode rewriting at the /guardrails/test_custom_code URI. The US CISA catalog lists it as already exploited. That catalog is written for US federal agencies. It is still a strong sign the bug is being used in real attacks, including against smaller organisations. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "If you use BerriAI LiteLLM, apply the vendor update. CISA lists this as already exploited. If you do not use it, you can skip this item.",
+      "summary": "CVE-2026-134882 is a critical vulnerability in the affected software. A weakness has been identified in TOTOLINK A7100RU 7.4cu.2313_B20191024. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
-          "label": "CISA advisories",
-          "url": "https://www.cisa.gov/news-events/alerts/2026/11/18/cisa-adds-four-known-exploited-vulnerabilities-catalog"
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/cve/CVE-2026-134882"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/submit/1054781"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/442238"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://vuldb.com/vuln/442238/cti"
+        },
+        {
+          "label": "cna@vuldb.com",
+          "url": "https://www.totolink.net/"
         }
       ],
       "version_ranges": [],
@@ -381,7 +442,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.0027,
-      "epss_percentile": 0.19446,
+      "epss_percentile": 0.19419,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 40.1,
@@ -506,7 +567,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.02157,
-      "epss_percentile": 0.82633,
+      "epss_percentile": 0.82651,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 39.6,
@@ -552,6 +613,51 @@
       "aliases": []
     },
     {
+      "id": "CVE-2026-120382",
+      "kind": "cve",
+      "cve_id": "CVE-2026-120382",
+      "title": "An improper neutralization of argument delimiters in a command vulnerability in the OAuth API in Synology DiskStation Manager (DSM) before…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-23T08:17:14.183",
+      "kev_date_added": "",
+      "description": "An improper neutralization of argument delimiters in a command vulnerability in the OAuth API in Synology DiskStation Manager (DSM) before 7.1.1-42962-10, 7.2.1-69057-14, 7.2.2-72806-11, 7.3.2-86009-6, and 7.4.1-90080-2 allows remote attackers to read or write arbitrary files and conduct denial-of-service attacks.",
+      "cvss": 9.8,
+      "cvss_version": "3.1",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.01214,
+      "epss_percentile": 0.69299,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 39.4,
+      "score_components": {
+        "cvss": 39.2,
+        "kev": 0.0,
+        "epss": 0.2,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.69. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 39.4 out of 100."
+      ],
+      "summary": "CVE-2026-120382 is a critical vulnerability in the affected software. An improper neutralization of argument delimiters in a command vulnerability in the OAuth API in Synology DiskStation Manager (DSM) before 7.1.1-42962-10, 7.2.1-69057-14, 7.2.2-72806-11, 7.3.2-86009-6, and 7.4.1-90080-2 allows remote attackers to read or write arbitrary files an… It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "security@synology.com",
+          "url": "https://www.synology.com/en-global/security/advisory/Synology_SA_26_21"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "CVE-2026-125294",
       "kind": "cve",
       "cve_id": "CVE-2026-125294",
@@ -566,23 +672,23 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00801,
+      "epss_percentile": 0.57573,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 39.2,
+      "score": 39.4,
       "score_components": {
         "cvss": 39.2,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.2,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.8 (3.1, CRITICAL) contributes 39.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.58. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 39.2 out of 100."
+        "Total 39.4 out of 100."
       ],
       "summary": "CVE-2026-125294 is a critical vulnerability in the affected software. The Nexter Blocks Pro plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 5.0.10 via the `tpgb_ajax_register_user()` function. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -656,7 +762,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00518,
-      "epss_percentile": 0.44889,
+      "epss_percentile": 0.44906,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 37.7,
@@ -686,104 +792,6 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-130774",
-      "kind": "cve",
-      "cve_id": "CVE-2026-130774",
-      "title": "Incus before 7.6.0 contains a privilege escalation vulnerability: rebuilding a never-started unprivileged container makes it boot without a…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-18T19:17:52.023",
-      "kev_date_added": "",
-      "description": "Incus before 7.6.0 contains a privilege escalation vulnerability: rebuilding a never-started unprivileged container makes it boot without a user namespace. Root processes inside the container run as host uid 0, keeping capabilities like sys_module, with no device cgroup restriction, letting them load kernel modules and compromise the host.",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.0014,
-      "epss_percentile": 0.03318,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.2,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.03. That contributes 0.0 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
-      ],
-      "summary": "CVE-2026-130774 is a critical vulnerability in the affected software. Incus before 7.6.0 contains a privilege escalation vulnerability: rebuilding a never-started unprivileged container makes it boot without a user namespace. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/lxc/incus/security/advisories/GHSA-9c46-v3hw-v6m8"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-133528",
-      "kind": "cve",
-      "cve_id": "CVE-2026-133528",
-      "title": "BeamNG.drive before 0.40.6 contains an out-of-bounds write vulnerability because JIT-compiled LuaJIT traces omit FFI array bounds checks, l…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-20T01:17:10.633",
-      "kev_date_added": "",
-      "description": "BeamNG.drive before 0.40.6 contains an out-of-bounds write vulnerability because JIT-compiled LuaJIT traces omit FFI array bounds checks, letting untrusted Lua escape the sandbox. Attackers supplying a malicious mod can JIT-compile an FFI store loop, write out of range using a tostring() address leak, re-enable ffi.load, and run commands as the game user.",
-      "cvss": 9.3,
-      "cvss_version": "4.0",
-      "severity": "CRITICAL",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00129,
-      "epss_percentile": 0.02541,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 37.2,
-      "score_components": {
-        "cvss": 37.2,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.03. That contributes 0.0 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
-      ],
-      "summary": "CVE-2026-133528 is a critical vulnerability in the affected software. BeamNG.drive before 0.40.6 contains an out-of-bounds write vulnerability because JIT-compiled LuaJIT traces omit FFI array bounds checks, letting untrusted Lua escape the sandbox. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/drbloop2000/BeamNG-Drive-RCE"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://store.steampowered.com/news/app/284160/view/681890829846973542"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/beamng-drive-before-0.40.6-luajit-ffi-sandbox-escape-via-jit-bounds-check-bypass"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
       "id": "CVE-2026-133993",
       "kind": "cve",
       "cve_id": "CVE-2026-133993",
@@ -798,23 +806,23 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.01052,
+      "epss_percentile": 0.6519,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 37.2,
+      "score": 37.4,
       "score_components": {
         "cvss": 37.2,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.2,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.65. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
+        "Total 37.4 out of 100."
       ],
       "summary": "CVE-2026-133993 is a critical vulnerability in the affected software. A security flaw has been discovered in D-Link DIR-600L 2.17b02. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -859,23 +867,23 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00698,
+      "epss_percentile": 0.54055,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 37.2,
+      "score": 37.3,
       "score_components": {
         "cvss": 37.2,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.54. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
+        "Total 37.3 out of 100."
       ],
       "summary": "CVE-2026-134258 is a critical vulnerability in the affected software. Admidio 5.0.0 before 5.0.18 contains a path traversal vulnerability in the Documents & Files renameFile() action that allows authenticated users with folder upload rights to move files outside adm_my_files by supplying ../ sequences in adm_new_name. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -908,23 +916,23 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00703,
+      "epss_percentile": 0.54198,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 37.2,
+      "score": 37.3,
       "score_components": {
         "cvss": 37.2,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.54. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 37.2 out of 100."
+        "Total 37.3 out of 100."
       ],
       "summary": "CVE-2026-134292 is a critical vulnerability in the affected software. SurrealDB 1.0.0 before 4.0.0 contains a capability check bypass in its embedded JavaScript scripting engine, where the surrealdb.functions bridge calls the internal fnc::synchronous() and fnc::asynchronous() dispatchers without enforcing function capability checks. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -943,45 +951,204 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-130770",
+      "id": "CVE-2026-121613",
       "kind": "cve",
-      "cve_id": "CVE-2026-130770",
-      "title": "Incus before 7.6.0 creates the NBD servers used for virtual machine migration and disk export on abstract unix sockets, which have no permi…",
+      "cve_id": "CVE-2026-121613",
+      "title": "Missing authentication and authorization on an exposed interface allows an unauthenticated remote attacker to send arbitrary commands to th…",
       "vendor": "",
       "product": "",
-      "published": "2026-11-18T19:17:50.250",
+      "published": "2026-11-23T10:17:15.397",
       "kev_date_added": "",
-      "description": "Incus before 7.6.0 creates the NBD servers used for virtual machine migration and disk export on abstract unix sockets, which have no permission checks and whose names are visible in /proc/net/unix. A local unprivileged user can connect while an operation runs to read or modify the VM disk, gaining code execution in the guest on a migration's receiving side.",
-      "cvss": 9.2,
+      "description": "Missing authentication and authorization on an exposed interface allows an unauthenticated remote attacker to send arbitrary commands to the affected component, which can force a device reboot or let the attacker upload malicious firmware.",
+      "cvss": 9.3,
       "cvss_version": "4.0",
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.00119,
-      "epss_percentile": 0.01756,
+      "epss": null,
+      "epss_percentile": null,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 36.8,
+      "score": 37.2,
       "score_components": {
-        "cvss": 36.8,
+        "cvss": 37.2,
         "kev": 0.0,
         "epss": 0.0,
         "smb": 0.0
       },
       "reasons": [
-        "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.02. That contributes 0.0 of 20. It is a forecast, not a statement that you will be attacked.",
+        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 36.8 out of 100."
+        "Total 37.2 out of 100."
       ],
-      "summary": "CVE-2026-130770 is a critical vulnerability in the affected software. Incus before 7.6.0 creates the NBD servers used for virtual machine migration and disk export on abstract unix sockets, which have no permission checks and whose names are visible in /proc/net/unix. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "summary": "CVE-2026-121613 is a critical vulnerability in the affected software. Missing authentication and authorization on an exposed interface allows an unauthenticated remote attacker to send arbitrary commands to the affected component, which can force a device reboot or let the attacker upload malicious firmware. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "info@cert.vde.com",
+          "url": "https://www.certvde.com/en/advisories/VDE-2026-148/"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-130774",
+      "kind": "cve",
+      "cve_id": "CVE-2026-130774",
+      "title": "Incus before 7.6.0 contains a privilege escalation vulnerability: rebuilding a never-started unprivileged container makes it boot without a…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T19:17:52.023",
+      "kev_date_added": "",
+      "description": "Incus before 7.6.0 contains a privilege escalation vulnerability: rebuilding a never-started unprivileged container makes it boot without a user namespace. Root processes inside the container run as host uid 0, keeping capabilities like sys_module, with no device cgroup restriction, letting them load kernel modules and compromise the host.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.0014,
+      "epss_percentile": 0.03308,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.2,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.03. That contributes 0.0 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.2 out of 100."
+      ],
+      "summary": "CVE-2026-130774 is a critical vulnerability in the affected software. Incus before 7.6.0 contains a privilege escalation vulnerability: rebuilding a never-started unprivileged container makes it boot without a user namespace. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
       "summary_engine": "rules-v1",
       "references": [
         {
           "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/lxc/incus/security/advisories/GHSA-3rgf-297m-775x"
+          "url": "https://github.com/lxc/incus/security/advisories/GHSA-9c46-v3hw-v6m8"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-133528",
+      "kind": "cve",
+      "cve_id": "CVE-2026-133528",
+      "title": "BeamNG.drive before 0.40.6 contains an out-of-bounds write vulnerability because JIT-compiled LuaJIT traces omit FFI array bounds checks, l…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-20T01:17:10.633",
+      "kev_date_added": "",
+      "description": "BeamNG.drive before 0.40.6 contains an out-of-bounds write vulnerability because JIT-compiled LuaJIT traces omit FFI array bounds checks, letting untrusted Lua escape the sandbox. Attackers supplying a malicious mod can JIT-compile an FFI store loop, write out of range using a tostring() address leak, re-enable ffi.load, and run commands as the game user.",
+      "cvss": 9.3,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00201,
+      "epss_percentile": 0.09915,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.2,
+      "score_components": {
+        "cvss": 37.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.3 (4.0, CRITICAL) contributes 37.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.10. That contributes 0.0 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.2 out of 100."
+      ],
+      "summary": "CVE-2026-133528 is a critical vulnerability in the affected software. BeamNG.drive before 0.40.6 contains an out-of-bounds write vulnerability because JIT-compiled LuaJIT traces omit FFI array bounds checks, letting untrusted Lua escape the sandbox. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/drbloop2000/BeamNG-Drive-RCE"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://store.steampowered.com/news/app/284160/view/681890829846973542"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/beamng-drive-before-0.40.6-luajit-ffi-sandbox-escape-via-jit-bounds-check-bypass"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-134815",
+      "kind": "cve",
+      "cve_id": "CVE-2026-134815",
+      "title": "simple-git before 4.1.0 contains an argument injection vulnerability that allows attackers to bypass the allowUnsafePack guard by supplying…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-22T22:17:35.807",
+      "kev_date_added": "",
+      "description": "simple-git before 4.1.0 contains an argument injection vulnerability that allows attackers to bypass the allowUnsafePack guard by supplying the --exec option to non-push git operations. Attackers who influence arguments passed to listRemote() or raw() can inject --exec for ls-remote, archive, fetch-pack or send-pack to execute commands on the host.",
+      "cvss": 9.2,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00751,
+      "epss_percentile": 0.55914,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 37.0,
+      "score_components": {
+        "cvss": 36.8,
+        "kev": 0.0,
+        "epss": 0.2,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.56. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 37.0 out of 100."
+      ],
+      "summary": "CVE-2026-134815 is a critical vulnerability in the affected software. simple-git before 4.1.0 contains an argument injection vulnerability that allows attackers to bypass the allowUnsafePack guard by supplying the --exec option to non-push git operations. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/steveukx/git-js/blob/simple-git%404.0.2/packages/argv-parser/src/vulnerabilities/detect-vulnerable-flags.ts#L71"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/steveukx/git-js/commit/c8ee6bb4dd0c1259af31da821dc68d74ff5d6f10"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/steveukx/git-js/releases/tag/%40simple-git%2Fargv-parser%403.0.0"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/steveukx/git-js/releases/tag/simple-git%404.1.0"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/simple-git-before-4.1.0-argument-injection-via-exec-option-in-ls-remote"
         }
       ],
       "version_ranges": [],
@@ -1002,23 +1169,23 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00635,
+      "epss_percentile": 0.51419,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 36.8,
+      "score": 36.9,
       "score_components": {
         "cvss": 36.8,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.51. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 36.8 out of 100."
+        "Total 36.9 out of 100."
       ],
       "summary": "CVE-2026-134262 is a critical vulnerability in the affected software. Admidio 5.0.0 before 5.0.18 contains a stored cross-site scripting vulnerability that allows role administrators to inject JavaScript by placing quote-breaking payloads in role names rendered unencoded in the data-message attribute in modules/profile/roles_functions.php. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -1051,23 +1218,23 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.0057,
+      "epss_percentile": 0.48112,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 36.8,
+      "score": 36.9,
       "score_components": {
         "cvss": 36.8,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.48. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 36.8 out of 100."
+        "Total 36.9 out of 100."
       ],
       "summary": "CVE-2026-134287 is a critical vulnerability in the affected software. OpenRemote core before 1.34.0 contains an authentication bypass vulnerability in UserAssetProvisioningMQTTHandler that allows unauthenticated attackers to impersonate provisioned devices without proof of private key possession. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -1100,23 +1267,23 @@
       "severity": "CRITICAL",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00404,
+      "epss_percentile": 0.35441,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 36.8,
+      "score": 36.9,
       "score_components": {
         "cvss": 36.8,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.35. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 36.8 out of 100."
+        "Total 36.9 out of 100."
       ],
       "summary": "CVE-2026-134352 is a critical vulnerability in the affected software. Rclone from 1.51.0 before 1.76.0 contains an authentication bypass vulnerability in serve sftp --auth-proxy because the generateCacheKey cache key omits the authentication method. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -1129,6 +1296,177 @@
         {
           "label": "disclosure@vulncheck.com",
           "url": "https://www.vulncheck.com/advisories/rclone-1.51.0-before-1.76.0-authentication-bypass-via-serve-sftp-auth-proxy-cache"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-134814",
+      "kind": "cve",
+      "cve_id": "CVE-2026-134814",
+      "title": "binary-parser before 2.3.1 contains a code injection vulnerability that allows attackers controlling parser definitions to inject JavaScrip…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-22T22:17:35.660",
+      "kev_date_added": "",
+      "description": "binary-parser before 2.3.1 contains a code injection vulnerability that allows attackers controlling parser definitions to inject JavaScript through string-typed options passed unvalidated by Context.generateOption(). Attackers can supply crafted length, lengthInBytes, key, tag, offset, or namely() alias values to execute arbitrary JavaScript in the Node.js process when the parser is compiled.",
+      "cvss": 9.2,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00608,
+      "epss_percentile": 0.50077,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 36.9,
+      "score_components": {
+        "cvss": 36.8,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.50. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 36.9 out of 100."
+      ],
+      "summary": "CVE-2026-134814 is a critical vulnerability in the affected software. binary-parser before 2.3.1 contains a code injection vulnerability that allows attackers controlling parser definitions to inject JavaScript through string-typed options passed unvalidated by Context.generateOption(). It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/keichi/binary-parser/blob/v2.3.0/lib/binary_parser.ts#L26-L35"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/keichi/binary-parser/commit/110206bb126a80071158fb0e2e3d7cc658f2bfe4"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/keichi/binary-parser/commit/4b26e04c396253e704ad8e41b928d9e31316f62e"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/keichi/binary-parser/security/advisories/GHSA-xmxc-6c22-m377"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/binary-parser-before-2.3.1-code-injection-via-string-typed-parser-options"
+        },
+        {
+          "label": "The Hacker News",
+          "url": "https://thehackernews.com/2026/11/critical-binary-parser-flaw-enables.html"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-130770",
+      "kind": "cve",
+      "cve_id": "CVE-2026-130770",
+      "title": "Incus before 7.6.0 creates the NBD servers used for virtual machine migration and disk export on abstract unix sockets, which have no permi…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T19:17:50.250",
+      "kev_date_added": "",
+      "description": "Incus before 7.6.0 creates the NBD servers used for virtual machine migration and disk export on abstract unix sockets, which have no permission checks and whose names are visible in /proc/net/unix. A local unprivileged user can connect while an operation runs to read or modify the VM disk, gaining code execution in the guest on a migration's receiving side.",
+      "cvss": 9.2,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00119,
+      "epss_percentile": 0.01751,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 36.8,
+      "score_components": {
+        "cvss": 36.8,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.2 (4.0, CRITICAL) contributes 36.8 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.02. That contributes 0.0 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 36.8 out of 100."
+      ],
+      "summary": "CVE-2026-130770 is a critical vulnerability in the affected software. Incus before 7.6.0 creates the NBD servers used for virtual machine migration and disk export on abstract unix sockets, which have no permission checks and whose names are visible in /proc/net/unix. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/lxc/incus/security/advisories/GHSA-3rgf-297m-775x"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-134838",
+      "kind": "cve",
+      "cve_id": "CVE-2026-134838",
+      "title": "Weblate before 2026.11 contains an account takeover vulnerability in the reset_password view that allows unauthenticated attackers to reset…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-22T22:17:39.607",
+      "kev_date_added": "",
+      "description": "Weblate before 2026.11 contains an account takeover vulnerability in the reset_password view that allows unauthenticated attackers to reset victim passwords by abusing case-insensitive Unicode e-mail matching. Attackers controlling a lookalike mailbox using a dotless i or other case-folding variant receive the victim's reset link, since it is sent to the typed address, and set a new password.",
+      "cvss": 9.1,
+      "cvss_version": "4.0",
+      "severity": "CRITICAL",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00546,
+      "epss_percentile": 0.4665,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 36.5,
+      "score_components": {
+        "cvss": 36.4,
+        "kev": 0.0,
+        "epss": 0.1,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 9.1 (4.0, CRITICAL) contributes 36.4 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.47. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 36.5 out of 100."
+      ],
+      "summary": "CVE-2026-134838 is a critical vulnerability in the affected software. Weblate before 2026.11 contains an account takeover vulnerability in the reset_password view that allows unauthenticated attackers to reset victim passwords by abusing case-insensitive Unicode e-mail matching. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/WeblateOrg/weblate/blob/weblate-2026.10.1/weblate/accounts/forms.py#L87-L99"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/WeblateOrg/weblate/commit/8340ccd9dee8c6d0586e62c19697c3de2c42ffd2"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/WeblateOrg/weblate/commit/c129f67ec98e6da36b4f27103283a091fa15310c"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/WeblateOrg/weblate/pull/22506"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/WeblateOrg/weblate/releases/tag/weblate-2026.11"
         }
       ],
       "version_ranges": [],
@@ -1150,7 +1488,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00794,
-      "epss_percentile": 0.57304,
+      "epss_percentile": 0.57337,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 35.4,
@@ -1210,8 +1548,8 @@
       "severity": "HIGH",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": 0.00568,
-      "epss_percentile": 0.47949,
+      "epss": 0.00711,
+      "epss_percentile": 0.54494,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 35.3,
@@ -1224,7 +1562,7 @@
       "reasons": [
         "CVSS 8.8 (3.1, HIGH) contributes 35.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.48. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.54. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
         "Total 35.3 out of 100."
       ],
@@ -1257,51 +1595,6 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-130766",
-      "kind": "cve",
-      "cve_id": "CVE-2026-130766",
-      "title": "Obot from 0.26.0 before 0.27.0 fails to validate the resource identifier in remote MCP server protected resource metadata, allowing malicio…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-18T19:17:48.003",
-      "kev_date_added": "",
-      "description": "Obot from 0.26.0 before 0.27.0 fails to validate the resource identifier in remote MCP server protected resource metadata, allowing malicious MCP servers to steal access tokens. Attackers can name a different service and authorization server with chosen scopes, causing Obot to obtain the victim's token for that service and forward it to the attacker.",
-      "cvss": 8.8,
-      "cvss_version": "4.0",
-      "severity": "HIGH",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.00155,
-      "epss_percentile": 0.04593,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 35.2,
-      "score_components": {
-        "cvss": 35.2,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 8.8 (4.0, HIGH) contributes 35.2 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.05. That contributes 0.0 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 35.2 out of 100."
-      ],
-      "summary": "CVE-2026-130766 is a high vulnerability in the affected software. Obot from 0.26.0 before 0.27.0 fails to validate the resource identifier in remote MCP server protected resource metadata, allowing malicious MCP servers to steal access tokens. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/obot-platform/obot/security/advisories/GHSA-x3hf-v55x-jcp6"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
       "id": "CVE-2026-134250",
       "kind": "cve",
       "cve_id": "CVE-2026-134250",
@@ -1316,23 +1609,23 @@
       "severity": "HIGH",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.0025,
+      "epss_percentile": 0.16494,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 35.2,
+      "score": 35.3,
       "score_components": {
         "cvss": 35.2,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 8.8 (4.0, HIGH) contributes 35.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.16. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 35.2 out of 100."
+        "Total 35.3 out of 100."
       ],
       "summary": "CVE-2026-134250 is a high vulnerability in the affected software. Grav Form plugin 1.1.0 before 9.1.40 contains a stored cross-site scripting vulnerability in Form::uploadFiles(), which sanitizes SVG only when a file's last extension is .svg and accepts markup under unrecognized extensions. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -1365,23 +1658,23 @@
       "severity": "HIGH",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00263,
+      "epss_percentile": 0.18333,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 35.2,
+      "score": 35.3,
       "score_components": {
         "cvss": 35.2,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.1,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 8.8 (4.0, HIGH) contributes 35.2 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.18. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 35.2 out of 100."
+        "Total 35.3 out of 100."
       ],
       "summary": "CVE-2026-134293 is a high vulnerability in the affected software. SurrealDB 3.1.0 before 4.0.0 contains an SQL injection vulnerability in its Model Context Protocol (MCP) server because the identifier validator (consume_backtick_ident and validate_identifier) treats the first backtick as the closing delimiter, ignoring escape characters that t… It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -1394,6 +1687,149 @@
         {
           "label": "disclosure@vulncheck.com",
           "url": "https://www.vulncheck.com/advisories/surrealdb-3.1.0-before-4.0.0-sql-injection-via-mcp-tool-identifier-escaped-backticks"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-130766",
+      "kind": "cve",
+      "cve_id": "CVE-2026-130766",
+      "title": "Obot from 0.26.0 before 0.27.0 fails to validate the resource identifier in remote MCP server protected resource metadata, allowing malicio…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-18T19:17:48.003",
+      "kev_date_added": "",
+      "description": "Obot from 0.26.0 before 0.27.0 fails to validate the resource identifier in remote MCP server protected resource metadata, allowing malicious MCP servers to steal access tokens. Attackers can name a different service and authorization server with chosen scopes, causing Obot to obtain the victim's token for that service and forward it to the attacker.",
+      "cvss": 8.8,
+      "cvss_version": "4.0",
+      "severity": "HIGH",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.00155,
+      "epss_percentile": 0.04579,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 35.2,
+      "score_components": {
+        "cvss": 35.2,
+        "kev": 0.0,
+        "epss": 0.0,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 8.8 (4.0, HIGH) contributes 35.2 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.00 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.05. That contributes 0.0 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 35.2 out of 100."
+      ],
+      "summary": "CVE-2026-130766 is a high vulnerability in the affected software. Obot from 0.26.0 before 0.27.0 fails to validate the resource identifier in remote MCP server protected resource metadata, allowing malicious MCP servers to steal access tokens. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/obot-platform/obot/security/advisories/GHSA-x3hf-v55x-jcp6"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-134253",
+      "kind": "cve",
+      "cve_id": "CVE-2026-134253",
+      "title": "Grav API plugin from 1.0.0 before 1.1.4 contains a remote code execution vulnerability that allows publishers with media and page write rig…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-21T17:16:42.870",
+      "kev_date_added": "",
+      "description": "Grav API plugin from 1.0.0 before 1.1.4 contains a remote code execution vulnerability that allows publishers with media and page write rights to write theme template files through the blueprint-upload endpoint. Attackers can upload a file into a theme's Twig templates folder and include it from sandboxed page Twig to execute commands as the web-server user.",
+      "cvss": 8.7,
+      "cvss_version": "4.0",
+      "severity": "HIGH",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.01255,
+      "epss_percentile": 0.7025,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 35.1,
+      "score_components": {
+        "cvss": 34.8,
+        "kev": 0.0,
+        "epss": 0.3,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 8.7 (4.0, HIGH) contributes 34.8 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.70. That contributes 0.3 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 35.1 out of 100."
+      ],
+      "summary": "CVE-2026-134253 is a high vulnerability in the affected software. Grav API plugin from 1.0.0 before 1.1.4 contains a remote code execution vulnerability that allows publishers with media and page write rights to write theme template files through the blueprint-upload endpoint. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/getgrav/grav/security/advisories/GHSA-3rqp-8h7g-xxv8"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/grav-api-plugin-1.0.0-before-1.1.4-rce-via-blueprint-upload-theme-template-write"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "CVE-2026-134359",
+      "kind": "cve",
+      "cve_id": "CVE-2026-134359",
+      "title": "AzuraCast before 0.24.1 fails to escape backslashes in Liquidsoap annotation values, allowing media managers to break out of quoted annotat…",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-21T17:16:57.063",
+      "kev_date_added": "",
+      "description": "AzuraCast before 0.24.1 fails to escape backslashes in Liquidsoap annotation values, allowing media managers to break out of quoted annotation strings. Attackers can set a crafted ID3 title ending in a backslash to inject a process: protocol URI, achieving OS command execution in the Liquidsoap container during playback.",
+      "cvss": 8.7,
+      "cvss_version": "4.0",
+      "severity": "HIGH",
+      "in_kev": false,
+      "ransomware": "Unknown",
+      "epss": 0.01446,
+      "epss_percentile": 0.73982,
+      "smb_matches": [],
+      "formula_id": "smb-sa-v1",
+      "score": 35.1,
+      "score_components": {
+        "cvss": 34.8,
+        "kev": 0.0,
+        "epss": 0.3,
+        "smb": 0.0
+      },
+      "reasons": [
+        "CVSS 8.7 (4.0, HIGH) contributes 34.8 of 40.",
+        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.74. That contributes 0.3 of 20. It is a forecast, not a statement that you will be attacked.",
+        "Does not match the small-business software list, so that part contributes 0 of 15.",
+        "Total 35.1 out of 100."
+      ],
+      "summary": "CVE-2026-134359 is a high vulnerability in the affected software. AzuraCast before 0.24.1 fails to escape backslashes in Liquidsoap annotation values, allowing media managers to break out of quoted annotation strings. It does not match the small-business software list, so a typical shop or office may not run it.",
+      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://github.com/AzuraCast/AzuraCast/security/advisories/GHSA-mf65-hj88-hvrw"
+        },
+        {
+          "label": "disclosure@vulncheck.com",
+          "url": "https://www.vulncheck.com/advisories/azuracast-before-0.24.1-os-command-injection-via-liquidsoap-annotation-values"
         }
       ],
       "version_ranges": [],
@@ -1415,7 +1851,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00969,
-      "epss_percentile": 0.62721,
+      "epss_percentile": 0.62752,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 35.0,
@@ -1476,7 +1912,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00807,
-      "epss_percentile": 0.57744,
+      "epss_percentile": 0.57775,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 35.0,
@@ -1537,7 +1973,7 @@
       "in_kev": false,
       "ransomware": "Unknown",
       "epss": 0.00752,
-      "epss_percentile": 0.55934,
+      "epss_percentile": 0.5596,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
       "score": 35.0,
@@ -1583,234 +2019,6 @@
       "aliases": []
     },
     {
-      "id": "CVE-2026-133172",
-      "kind": "cve",
-      "cve_id": "CVE-2026-133172",
-      "title": "Cozy Cloud cozy-stack 1.6.62 before 1.6.69 contains an authorization bypass vulnerability in the shared-drive move handler that allows auth…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-19T15:17:37.253",
-      "kev_date_added": "",
-      "description": "Cozy Cloud cozy-stack 1.6.62 before 1.6.69 contains an authorization bypass vulnerability in the shared-drive move handler that allows authenticated users to access other instances' files. Attackers owning a shared drive can name another instance's domain and any directory ID as the move source to copy and delete the victim's file tree.",
-      "cvss": 8.7,
-      "cvss_version": "4.0",
-      "severity": "HIGH",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.005,
-      "epss_percentile": 0.43658,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 34.9,
-      "score_components": {
-        "cvss": 34.8,
-        "kev": 0.0,
-        "epss": 0.1,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 8.7 (4.0, HIGH) contributes 34.8 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.01 means FIRST estimates about a 0% probability of exploitation activity in the next 30 days, percentile 0.44. That contributes 0.1 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 34.9 out of 100."
-      ],
-      "summary": "CVE-2026-133172 is a high vulnerability in the affected software. Cozy Cloud cozy-stack 1.6.62 before 1.6.69 contains an authorization bypass vulnerability in the shared-drive move handler that allows authenticated users to access other instances' files. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/linagora/cozy-stack/blob/1.6.68/web/sharings/move.go#L250-L263"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/linagora/cozy-stack/commit/983fe4b1218b8a7d83a2734b5ce2fe04227acc0c"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/linagora/cozy-stack/pull/5179"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/linagora/cozy-stack/releases/tag/1.6.69"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://hackmd.io/@hieund/cozy-stack-shared-drive-move-cross-instance-authz-bypass"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-133680",
-      "kind": "cve",
-      "cve_id": "CVE-2026-133680",
-      "title": "A vulnerability was found in D-Link DCS-935L 1.10.01. This affects the function loginRouter of the file web/cgi-bin/localrecording/setconf.…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-20T20:17:35.750",
-      "kev_date_added": "",
-      "description": "A vulnerability was found in D-Link DCS-935L 1.10.01. This affects the function loginRouter of the file web/cgi-bin/localrecording/setconf.cgi of the component Local Recording CGI. Performing a manipulation of the argument account/password results in os command injection. Remote exploitation of the attack is possible. The exploit has been made public and could be used.",
-      "cvss": 8.6,
-      "cvss_version": "4.0",
-      "severity": "HIGH",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": 0.02215,
-      "epss_percentile": 0.83073,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 34.8,
-      "score_components": {
-        "cvss": 34.4,
-        "kev": 0.0,
-        "epss": 0.4,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 8.6 (4.0, HIGH) contributes 34.4 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "EPSS 0.02 means FIRST estimates about a 2% probability of exploitation activity in the next 30 days, percentile 0.83. That contributes 0.4 of 20. It is a forecast, not a statement that you will be attacked.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 34.8 out of 100."
-      ],
-      "summary": "CVE-2026-133680 is a high vulnerability in the affected software. A vulnerability was found in D-Link DCS-935L 1.10.01. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://github.com/roit-wolf/CVE/"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/cve/CVE-2026-133680"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/submit/1051805"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/441406"
-        },
-        {
-          "label": "cna@vuldb.com",
-          "url": "https://vuldb.com/vuln/441406/cti"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-134245",
-      "kind": "cve",
-      "cve_id": "CVE-2026-134245",
-      "title": "SiYuan 3.8.0 before 3.8.10 contains an incorrect authorization vulnerability in the serveAssets route that allows unauthenticated attackers…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-21T17:16:41.657",
-      "kev_date_added": "",
-      "description": "SiYuan 3.8.0 before 3.8.10 contains an incorrect authorization vulnerability in the serveAssets route that allows unauthenticated attackers to read password-protected document assets via name collisions. Attackers can request GET /assets/<name> when a visible document references the same relative asset name, retrieving the protected file's contents on public-publish instances with Basic Auth disabled.",
-      "cvss": 8.7,
-      "cvss_version": "4.0",
-      "severity": "HIGH",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 34.8,
-      "score_components": {
-        "cvss": 34.8,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 8.7 (4.0, HIGH) contributes 34.8 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 34.8 out of 100."
-      ],
-      "summary": "CVE-2026-134245 is a high vulnerability in the affected software. SiYuan 3.8.0 before 3.8.10 contains an incorrect authorization vulnerability in the serveAssets route that allows unauthenticated attackers to read password-protected document assets via name collisions. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/siyuan-note/siyuan/commit/76bbb54d0e23cf27b789376826d982a616c79488"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-xxqp-6jxw-qr84"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/siyuan-3.8.0-before-3.8.10-incorrect-authorization-via-assets-cross-document-asset-collision"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-134246",
-      "kind": "cve",
-      "cve_id": "CVE-2026-134246",
-      "title": "SiYuan 3.6.0 before 3.6.2 and 3.7.3 before 3.8.10 contains a missing authorization vulnerability in the /api/block/getDOMText endpoint, whi…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-21T17:16:41.833",
-      "kev_date_added": "",
-      "description": "SiYuan 3.6.0 before 3.6.2 and 3.7.3 before 3.8.10 contains a missing authorization vulnerability in the /api/block/getDOMText endpoint, which renders caller-supplied DOM without checking publish access for referenced image paths. When publish authentication is disabled, anonymous visitors can submit DOM referencing a known unpublished, non-encrypted asset path to retrieve its already-cached OCR text.",
-      "cvss": 8.7,
-      "cvss_version": "4.0",
-      "severity": "HIGH",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 34.8,
-      "score_components": {
-        "cvss": 34.8,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 8.7 (4.0, HIGH) contributes 34.8 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 34.8 out of 100."
-      ],
-      "summary": "CVE-2026-134246 is a high vulnerability in the affected software. SiYuan 3.6.0 before 3.6.2 and 3.7.3 before 3.8.10 contains a missing authorization vulnerability in the /api/block/getDOMText endpoint, which renders caller-supplied DOM without checking publish access for referenced image paths. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/siyuan-note/siyuan/commit/0432ef213d112e5ace886963f8e57fdf348c76c5"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-vmvr-gf8m-x483"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/siyuan-3.6.0-before-3.6.2-and-3.7.3-before-3.8.10-missing-authorization-in-getdomtext-exposes-cached-ocr-text"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
       "id": "CVE-2026-134247",
       "kind": "cve",
       "cve_id": "CVE-2026-134247",
@@ -1825,23 +2033,23 @@
       "severity": "HIGH",
       "in_kev": false,
       "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
+      "epss": 0.00763,
+      "epss_percentile": 0.5631,
       "smb_matches": [],
       "formula_id": "smb-sa-v1",
-      "score": 34.8,
+      "score": 35.0,
       "score_components": {
         "cvss": 34.8,
         "kev": 0.0,
-        "epss": 0.0,
+        "epss": 0.2,
         "smb": 0.0
       },
       "reasons": [
         "CVSS 8.7 (4.0, HIGH) contributes 34.8 of 40.",
         "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
+        "EPSS 0.01 means FIRST estimates about a 1% probability of exploitation activity in the next 30 days, percentile 0.56. That contributes 0.2 of 20. It is a forecast, not a statement that you will be attacked.",
         "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 34.8 out of 100."
+        "Total 35.0 out of 100."
       ],
       "summary": "CVE-2026-134247 is a high vulnerability in the affected software. SiYuan 3.8.0 before 3.8.10 contains an incorrect authorization vulnerability that allows anonymous attackers to read indexed asset text referenced only by publish-disabled attribute-view rows. It does not match the small-business software list, so a typical shop or office may not run it.",
       "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
@@ -1858,206 +2066,6 @@
         {
           "label": "disclosure@vulncheck.com",
           "url": "https://www.vulncheck.com/advisories/siyuan-3.8.0-before-3.8.10-incorrect-authorization-exposes-asset-text-via-getassetcontentbypath"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-134249",
-      "kind": "cve",
-      "cve_id": "CVE-2026-134249",
-      "title": "SiYuan before 3.8.10 contains an authentication bypass vulnerability that allows unauthenticated attackers to gain Administrator role by sp…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-21T17:16:42.373",
-      "kev_date_added": "",
-      "description": "SiYuan before 3.8.10 contains an authentication bypass vulnerability that allows unauthenticated attackers to gain Administrator role by spoofing X-Forwarded-For through a loopback-trusted reverse proxy. Attackers can send requests with Host set to localhost and X-Forwarded-For set to 127.0.0.1 to read private note-history contents via the /history/*path route when no lock-screen password is set.",
-      "cvss": 8.7,
-      "cvss_version": "4.0",
-      "severity": "HIGH",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 34.8,
-      "score_components": {
-        "cvss": 34.8,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 8.7 (4.0, HIGH) contributes 34.8 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 34.8 out of 100."
-      ],
-      "summary": "CVE-2026-134249 is a high vulnerability in the affected software. SiYuan before 3.8.10 contains an authentication bypass vulnerability that allows unauthenticated attackers to gain Administrator role by spoofing X-Forwarded-For through a loopback-trusted reverse proxy. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/siyuan-note/siyuan/commit/f951019168faf035b36c98f8e672719d511881ac"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-gmcm-mggw-8759"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/siyuan-before-3.8.10-authentication-bypass-via-x-forwarded-for-on-history-route"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-134253",
-      "kind": "cve",
-      "cve_id": "CVE-2026-134253",
-      "title": "Grav API plugin from 1.0.0 before 1.1.4 contains a remote code execution vulnerability that allows publishers with media and page write rig…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-21T17:16:42.870",
-      "kev_date_added": "",
-      "description": "Grav API plugin from 1.0.0 before 1.1.4 contains a remote code execution vulnerability that allows publishers with media and page write rights to write theme template files through the blueprint-upload endpoint. Attackers can upload a file into a theme's Twig templates folder and include it from sandboxed page Twig to execute commands as the web-server user.",
-      "cvss": 8.7,
-      "cvss_version": "4.0",
-      "severity": "HIGH",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 34.8,
-      "score_components": {
-        "cvss": 34.8,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 8.7 (4.0, HIGH) contributes 34.8 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 34.8 out of 100."
-      ],
-      "summary": "CVE-2026-134253 is a high vulnerability in the affected software. Grav API plugin from 1.0.0 before 1.1.4 contains a remote code execution vulnerability that allows publishers with media and page write rights to write theme template files through the blueprint-upload endpoint. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/getgrav/grav/security/advisories/GHSA-3rqp-8h7g-xxv8"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/grav-api-plugin-1.0.0-before-1.1.4-rce-via-blueprint-upload-theme-template-write"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-134291",
-      "kind": "cve",
-      "cve_id": "CVE-2026-134291",
-      "title": "SurrealDB 3.0.0 before 4.0.0 contains a path traversal vulnerability in its filesystem storage bucket that only canonicalizes the bucket ro…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-21T17:16:48.727",
-      "kev_date_added": "",
-      "description": "SurrealDB 3.0.0 before 4.0.0 contains a path traversal vulnerability in its filesystem storage bucket that only canonicalizes the bucket root, not descendant symlinks. Attackers can reference paths through a pre-existing symlink inside the bucket that pass the lexical prefix check, reading and writing files across the host filesystem.",
-      "cvss": 8.7,
-      "cvss_version": "4.0",
-      "severity": "HIGH",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 34.8,
-      "score_components": {
-        "cvss": 34.8,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 8.7 (4.0, HIGH) contributes 34.8 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 34.8 out of 100."
-      ],
-      "summary": "CVE-2026-134291 is a high vulnerability in the affected software. SurrealDB 3.0.0 before 4.0.0 contains a path traversal vulnerability in its filesystem storage bucket that only canonicalizes the bucket root, not descendant symlinks. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/surrealdb/surrealdb/security/advisories/GHSA-7pqw-x84x-frxc"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/surrealdb-3.0.0-before-4.0.0-path-traversal-via-filesystem-bucket-symlinks"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "CVE-2026-134294",
-      "kind": "cve",
-      "cve_id": "CVE-2026-134294",
-      "title": "SurrealDB 3.0.0 before 4.0.0 contains a path traversal vulnerability in its bucket storage layer on Windows, where ObjectKey::check_no_trav…",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-21T17:16:49.223",
-      "kev_date_added": "",
-      "description": "SurrealDB 3.0.0 before 4.0.0 contains a path traversal vulnerability in its bucket storage layer on Windows, where ObjectKey::check_no_traversal splits object keys only on forward slashes while FileStore::to_os_path treats backslashes as directory separators. Attackers can supply object keys such as /..\\bucket2\\secret to bypass the traversal check and read or modify files in other buckets.",
-      "cvss": 8.7,
-      "cvss_version": "4.0",
-      "severity": "HIGH",
-      "in_kev": false,
-      "ransomware": "Unknown",
-      "epss": null,
-      "epss_percentile": null,
-      "smb_matches": [],
-      "formula_id": "smb-sa-v1",
-      "score": 34.8,
-      "score_components": {
-        "cvss": 34.8,
-        "kev": 0.0,
-        "epss": 0.0,
-        "smb": 0.0
-      },
-      "reasons": [
-        "CVSS 8.7 (4.0, HIGH) contributes 34.8 of 40.",
-        "Not listed in the CISA KEV catalog, so that part contributes 0 of 25.",
-        "No EPSS score was available for this entry, so that part contributes 0 of 20.",
-        "Does not match the small-business software list, so that part contributes 0 of 15.",
-        "Total 34.8 out of 100."
-      ],
-      "summary": "CVE-2026-134294 is a high vulnerability in the affected software. SurrealDB 3.0.0 before 4.0.0 contains a path traversal vulnerability in its bucket storage layer on Windows, where ObjectKey::check_no_traversal splits object keys only on forward slashes while FileStore::to_os_path treats backslashes as directory separators. It does not match the small-business software list, so a typical shop or office may not run it.",
-      "what_to_do": "No urgent action unless you actually use the affected software. Keep the vendor's automatic updates turned on.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://github.com/surrealdb/surrealdb/security/advisories/GHSA-6c37-x4jm-529x"
-        },
-        {
-          "label": "disclosure@vulncheck.com",
-          "url": "https://www.vulncheck.com/advisories/surrealdb-3.0.0-before-4.0.0-path-traversal-via-windows-backslashes-in-bucket-keys"
         }
       ],
       "version_ranges": [],
@@ -2183,6 +2191,84 @@
       "aliases": []
     },
     {
+      "id": "news-a3400f3457d4",
+      "kind": "news",
+      "cve_id": null,
+      "title": "CISA flags critical Cisco RCE flaw as actively exploited in attacks",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-23T02:44:19-05:00",
+      "description": "The US Cybersecurity and Infrastructure Security Agency (CISA) warned federal agencies that attackers are now exploiting a recently patched critical Cisco Expressway vulnerability in the wild. [...]",
+      "source": "BleepingComputer",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 0.0,
+        "urgency": 10.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Does not mention the small-business software list: 0 of 10.",
+        "Uses the urgency term 'actively exploited': 10.0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from BleepingComputer: CISA flags critical Cisco RCE flaw as actively exploited in attacks. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/cisa-flags-critical-cisco-expressway-rce-flaw-as-actively-exploited/"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
+      "id": "news-c75a4d0a4b58",
+      "kind": "news",
+      "cve_id": null,
+      "title": "Cleverbridge warns hackers stole credit card numbers, CVVs in data breach",
+      "vendor": "",
+      "product": "",
+      "published": "2026-11-22T10:43:04-05:00",
+      "description": "E-commerce platform Cleverbridge is warning that hackers breached its systems and stole customers' payment card information, including credit card numbers and CVV security codes. [...]",
+      "source": "BleepingComputer",
+      "cvss": null,
+      "severity": null,
+      "in_kev": false,
+      "epss": null,
+      "smb_matches": [],
+      "formula_id": "news-relevance-v1",
+      "score": 10.0,
+      "score_components": {
+        "smb": 0.0,
+        "urgency": 10.0
+      },
+      "reasons": [
+        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
+        "Does not mention the small-business software list: 0 of 10.",
+        "Uses the urgency term 'data breach': 10.0 of 10.",
+        "Total 10.0 out of 20 on the news scale."
+      ],
+      "summary": "Headline from BleepingComputer: Cleverbridge warns hackers stole credit card numbers, CVVs in data breach. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
+      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
+      "summary_engine": "rules-v1",
+      "references": [
+        {
+          "label": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/news/security/cleverbridge-warns-hackers-stole-credit-card-numbers-cvvs-in-data-breach/"
+        }
+      ],
+      "version_ranges": [],
+      "aliases": []
+    },
+    {
       "id": "news-63edce0941e0",
       "kind": "news",
       "cve_id": null,
@@ -2296,86 +2382,6 @@
         {
           "label": "BleepingComputer",
           "url": "https://www.bleepingcomputer.com/news/security/hackers-use-autonomous-ai-tool-cairn-to-find-zero-day-take-over-server/"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "news-cd00c38abb0c",
-      "kind": "news",
-      "cve_id": null,
-      "title": "Microsoft Entra Connect Health flaw exploited to steal tenant data",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-21T13:01:58-05:00",
-      "description": "Microsoft is warning organizations that it suffered a data breach after attackers exploited a vulnerability in its Entra Connect Health service to gain unauthorized access to administrator email addresses and tenant configuration information. [...]",
-      "source": "BleepingComputer",
-      "cvss": null,
-      "severity": null,
-      "in_kev": false,
-      "epss": null,
-      "smb_matches": [],
-      "formula_id": "news-relevance-v1",
-      "score": 10.0,
-      "score_components": {
-        "smb": 0.0,
-        "urgency": 10.0
-      },
-      "reasons": [
-        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Does not mention the small-business software list: 0 of 10.",
-        "Uses the urgency term 'data breach': 10.0 of 10.",
-        "Total 10.0 out of 20 on the news scale."
-      ],
-      "summary": "Headline from BleepingComputer: Microsoft Entra Connect Health flaw exploited to steal tenant data. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "Read it only if it names software you use. It did not match the small-business list.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "BleepingComputer",
-          "url": "https://www.bleepingcomputer.com/news/security/microsoft-entra-connect-health-flaw-exploited-to-steal-tenant-data/"
-        }
-      ],
-      "version_ranges": [],
-      "aliases": []
-    },
-    {
-      "id": "news-0736dd63e3ff",
-      "kind": "news",
-      "cve_id": null,
-      "title": "Microsoft now automatically installs Windows 11 26H2 on unmanaged devices",
-      "vendor": "",
-      "product": "",
-      "published": "2026-11-20T07:14:28-05:00",
-      "description": "Starting this week, Microsoft has begun automatically upgrading eligible devices that aren't managed by an IT department to Windows 11 26H2. [...]",
-      "source": "BleepingComputer",
-      "cvss": null,
-      "severity": null,
-      "in_kev": false,
-      "epss": null,
-      "smb_matches": [
-        "Windows"
-      ],
-      "formula_id": "news-relevance-v1",
-      "score": 10.0,
-      "score_components": {
-        "smb": 10.0,
-        "urgency": 0.0
-      },
-      "reasons": [
-        "This is a news headline, so it does not use the CVE impact formula. Relevance is capped at 20.",
-        "Mentions software on the small-business list (Windows): 10.0 of 10.",
-        "No ransomware, zero-day, or active-exploitation wording: 0 of 10.",
-        "Total 10.0 out of 20 on the news scale."
-      ],
-      "summary": "Headline from BleepingComputer: Microsoft now automatically installs Windows 11 26H2 on unmanaged devices. This is a news item from a third party. It is not a finding on your network, and this project has not verified the article.",
-      "what_to_do": "If you use Windows, read the article and ask whoever looks after your IT whether you need to patch or change a setting.",
-      "summary_engine": "rules-v1",
-      "references": [
-        {
-          "label": "BleepingComputer",
-          "url": "https://www.bleepingcomputer.com/news/microsoft/microsoft-now-automatically-installs-windows-11-26h2-on-personal-and-unmanaged-pcs/"
         }
       ],
       "version_ranges": [],
